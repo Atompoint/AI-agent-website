@@ -16,8 +16,9 @@ export default function App() {
           {/* Steps Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight">
-              <span className="text-gray-300">All It Takes Is 3 Simple Steps and </span>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">You're Done</span>
+              <span className="gradient-white-text">All It Takes Is 3 Simple Steps and </span>
+             <span className="gradient-mask-text">You're Done</span>
+
             </h2>
           </div>
 

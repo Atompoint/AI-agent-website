@@ -45,8 +45,8 @@ const Section02 = () => {
           }`}
         >
           {/* Text Section */}
-          <div className="w-[500px] flex flex-col items-center text-center md:text-left">
-            <div className="text-4xl font-bold">{section.title}</div>
+          <div className="w-[500px] flex flex-col gradient-white-textitems-center text-center md:text-left">
+            <div className="text-4xl gradient-white-text font-bold">{section.title}</div>
             <div className="text-lg w-[500px] mt-7">{section.description}</div>
           </div>
 

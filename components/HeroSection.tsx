@@ -64,26 +64,13 @@ export default function HeroHeader() {
 
           {/* Headline */}
           <div
-            className="max-w-[90%] sm:max-w-4xl lg:max-w-[60rem] text-center text-transparent text-[24px] sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[52px] leading-[1.05] font-normal bg-clip-text mb-4 sm:mb-6"
-            style={{
-              backgroundImage:
-                "linear-gradient(96.62deg, #50525F 9.7%, #FFFFFF 27.72%, #FFFFFF 51.06%, #9698A6 76.56%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              fontFamily: "Radio Grotesk, sans-serif",
-            }}
+            className="gradient-white-text max-w-[90%] sm:max-w-4xl lg:max-w-[60rem] text-center text-transparent text-[24px] sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[52px] leading-[1.05] font-normal bg-clip-text mb-4 sm:mb-6"
+           
           >
             World's First{" "}
-            <span
-              style={{
-                backgroundImage:
-                  "linear-gradient(93.89deg, #1F0B46 29.91%, #DEBFFF 41.47%, #5A27B1 55.16%, #BF84F9 71.42%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Smart Voice AI
-            </span>{" "}
+          <span className="gradient-mask-text">
+    Smart Voice AI
+  </span>{" "}
             Agent That Actually TALKS to Your Website Visitors & Guides Them to
             Buy... While You Sleep!
           </div>

@@ -9,7 +9,7 @@ const Section09 = () => {
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 leading-tight">
             I Hate to Be the Bearer of Bad News, But<br />
-            This <span className="text-purple-400">Pricing</span> Disappears After Launch
+            This <span className="gradient-mask-text">Pricing</span> Disappears After Launch
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -46,7 +46,7 @@ const Section09 = () => {
         {/* Second Section */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            Zero Risk, 100% <span className="text-purple-400">Guarantee</span>
+            Zero Risk, 100% <span className="gradient-mask-text`">Guarantee</span>
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">

@@ -67,10 +67,10 @@ const Section08 = () => {
       <div className="container mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-white mb-4 max-w-5xl mx-auto leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl gradient-white-text mb-4 max-w-5xl mx-auto leading-tight">
             Just a Few of the Ways VoiceAgent <br />
             AI Turns Visitors Into{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="gradient-mask-text">
               Customers
             </span>
           </h1>
@@ -96,10 +96,10 @@ const Section08 = () => {
         <div className="container mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-white mb-4 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl gradient-white-text mb-4 max-w-4xl mx-auto leading-tight">
             The Numbers Don't Lie<br />
             Voice AI Is{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="gradient-mask-text">
               Dominating
             </span>
           </h1>

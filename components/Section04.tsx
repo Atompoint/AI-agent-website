@@ -7,12 +7,12 @@ const Section04 = () => {
     <div className='flex flex-col items-center'>
     
     <h1 className="flex justify-center text-4xl md:text-5xl lg:text-6xl leading-tight">
-        <span className="text-gray-500">Introducing </span>
-        <span className="text-purple-500 bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
+        <span className="gradient-white-text">Introducing </span>
+        <span className="gradient-mask-text px-5">
           VoiceAgent AI
         </span>
       </h1>
-        <div className='text-white mt-0.5'>The Game-Changer That's Making "Silent" Websites Extinct
+        <div className='gradient-white-text mt-0.5'>The Game-Changer That's Making "Silent" Websites Extinct
 </div>
     
     <div>

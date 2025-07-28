@@ -230,8 +230,8 @@ const TimelineUI: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="text-3xl text-white text-center max-w-[800px] mx-auto px-4 mb-8">
-            Here's How This <span className="text-[#7B08FF]">"Set It & Forget It"</span> System Transforms Any Website Into a Conversion Machine
+          <div className="text-3xl gradient-white-text text-center max-w-[800px] mx-auto px-4 mb-8">
+            Here's How This <span className="gradient-mask-text">"Set It & Forget It"</span> System Transforms Any Website Into a Conversion Machine
           </div>
         </div>
 

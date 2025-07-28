@@ -78,13 +78,13 @@ export default function Section07() {
 
    <div className="container mx-auto px-6 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4 max-w-6xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl gradient-white-text mb-4 max-w-6xl mx-auto leading-tight">
             Turn Your Silent Website Into a 24/7{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="gradient-mask-text">
               Money-Making Machine
             </span>{" "}
             That{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="gradient-mask-text">
               Talks!
             </span>
           </h1>

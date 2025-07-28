@@ -5,7 +5,7 @@ const Offer = () => {
     <div className="max-w-4xl mx-auto text-center py-16">
           {/* Limited Time Offer Header */}
           <div className="mb-4">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl text-white">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl gradient-white-text">
               Limited Time Offer
             </h3>
           </div>
@@ -13,7 +13,7 @@ const Offer = () => {
           {/* Purple Gradient Subheading */}
           <div className="mb-12">
             <h4 className="text-2xl md:text-3xl lg:text-4xl">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="gradient-mask-text">
                 Only A One time Investment Today!
               </span>
             </h4>
