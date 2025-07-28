@@ -52,7 +52,7 @@ export default function HeroHeader() {
               text-[6px] sm:text-xs lg:text-[12px]
               px-3 sm:px-4 py-1.5 sm:py-2
               rounded-full
-              border border-white/30
+              border border-gray-700
               text-white
               bg-white/10
               backdrop-blur-md

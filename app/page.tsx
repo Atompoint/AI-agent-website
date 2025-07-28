@@ -1,4 +1,4 @@
-import HeroHeader from "@/components/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import Section01 from '@/components/Section01'
 import Section02 from "@/components/Section02";
 import Section03 from '@/components/Section03'
@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
    <div>
-    <HeroHeader/>
+    <HeroSection/>
    <Section01/>
    <Section02/>
    <Section03/>
