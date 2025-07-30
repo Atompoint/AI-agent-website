@@ -83,13 +83,13 @@ export default function HeroHeader() {
       </section>
 
       {/* Section 2 - with overlapping image */}
-      <section className="relative min-h-80 bg-black">
+      <section className="relative min-h-80 ">
         {/* OVERLAID Product Image positioned over section 2 */}
         <div className="absolute top-[-15rem] sm:top-[-20rem] md:top-[-25rem] lg:top-[-8rem] w-full right-3 flex justify-center z-30">
           {/* Glow Effect */}
           <div className="absolute -top-8 w-[800px] h-[80px] bg-[#773DBA] opacity-90 blur-2xl rounded-full z-[-1]" />
 
-          <div className="relative rounded-xl overflow-hidden bg-black">
+          <div className="relative rounded-xl overflow-hidden ">
             <Image
               src="/main.png"
               width={900}
@@ -118,7 +118,7 @@ export default function HeroHeader() {
         </div>
 
         <div className="flex justify-center items-center mt-10">
-          <div className="inline-flex items-center justify-center bg-black border border-gray-900 text-white rounded-full px-3 py-1">
+          <div className="inline-flex items-center justify-center border border-gray-900 text-white rounded-full px-3 py-1">
             <BsStars className="mr-1 text-sm" />
             <span className="font-semibold text-sm">GIVE IT A TRY!</span>
           </div>

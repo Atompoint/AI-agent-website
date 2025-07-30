@@ -32,11 +32,10 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Full width horizontal line */}
-      <hr className="border-t border-gray-600 my-6 w-full" />
+      
 
       {/* Footer Links - full width container with padding */}
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 w-full max-w-screen-xl mx-auto px-6">
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 w-full max-w-screen-xl mx-auto mt-14 px-6">
         {footerLinks.map((link, index) => (
           <a
             key={index}
