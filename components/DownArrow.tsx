@@ -4,7 +4,7 @@ const DownArrow = () => {
   return (
    <div className="space-y-4">
         
-        <div className="relative flex justify-center items-center h-40 bg-black rounded-lg">
+        <div className="relative flex justify-center items-center h-40 rounded-lg">
           <div className="absolute w-24 h-24 rounded-full blur-3xl bg-[#BF84F9] opacity-40 animate-pulse" />
           <div className="relative z-10">
             <div className="relative animate-bounce">

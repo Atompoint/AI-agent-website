@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Code2, Mic, Search, Clock, Zap, DollarSign } from 'lucide-react';
 import DownArrow from './DownArrow';
-
-type IconType = typeof Code2;
-
+import Offer from './Offer';
 interface TimelineStepData {
   step: string;
-  icon: IconType;
+  imageUrl?: string;
+  icon?: React.ComponentType<{ className?: string }>;
   title: string;
   subtitle?: string;
   position: 'left' | 'right';
@@ -21,7 +19,7 @@ interface TimelineStepProps {
 }
 
 const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) => {
-  const { step, icon: Icon, title, subtitle, position } = data;
+  const { step, imageUrl, icon: Icon, title, subtitle, position } = data;
   
   return (
     <div className={`relative transition-all duration-700 ease-out transform ${
@@ -33,17 +31,25 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
           {position === 'left' && (
             <div className="max-w-sm text-right">
               <div className="flex items-center justify-end gap-3 mb-3">
-                <div className={`p-2 rounded-lg border transition-all ${
-                  isActive ? 'bg-white/10 border-white/20' : 'bg-white/5 border-white/10'
-                }`}>
-                  <Icon className={`w-5 h-5 transition-all ${
-                    isActive ? 'text-white' : 'text-gray-400'
-                  }`} />
-                </div>
                 <div className={`text-3xl font-bold transition-all ${
                   isActive ? 'text-white' : 'text-gray-500'
                 }`}>
                   {step.padStart(2, '0')}
+                </div>
+                <div className="p-2 transition-all">
+                  {imageUrl ? (
+                    <img 
+                      src={imageUrl} 
+                      alt={`Step ${step} icon`}
+                      className={`w-5 h-5 object-contain transition-all ${
+                        isActive ? 'opacity-100' : 'opacity-60'
+                      }`}
+                    />
+                  ) : Icon ? (
+                    <Icon className={`w-5 h-5 transition-all ${
+                      isActive ? 'text-white' : 'text-gray-400'
+                    }`} />
+                  ) : null}
                 </div>
               </div>
               <h3 className={`text-base font-medium leading-tight mb-2 transition-all ${
@@ -67,17 +73,25 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
           {position === 'right' && (
             <div className="max-w-sm text-left">
               <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 transition-all">
+                  {imageUrl ? (
+                    <img 
+                      src={imageUrl} 
+                      alt={`Step ${step} icon`}
+                      className={`w-5 h-5 object-contain transition-all ${
+                        isActive ? 'opacity-100' : 'opacity-60'
+                      }`}
+                    />
+                  ) : Icon ? (
+                    <Icon className={`w-5 h-5 transition-all ${
+                      isActive ? 'text-white' : 'text-gray-400'
+                    }`} />
+                  ) : null}
+                </div>
                 <div className={`text-3xl font-bold transition-all ${
                   isActive ? 'text-white' : 'text-gray-500'
                 }`}>
                   {step.padStart(2, '0')}
-                </div>
-                <div className={`p-2 rounded-lg border transition-all ${
-                  isActive ? 'bg-white/10 border-white/20' : 'bg-white/5 border-white/10'
-                }`}>
-                  <Icon className={`w-5 h-5 transition-all ${
-                    isActive ? 'text-white' : 'text-gray-400'
-                  }`} />
                 </div>
               </div>
               <h3 className={`text-base font-medium leading-tight mb-2 transition-all ${
@@ -142,41 +156,39 @@ const TimelineUI: React.FC = () => {
   const steps: TimelineStepData[] = [
     {
       step: '1',
-      icon: Code2,
-      title: 'Paste one simple line of code onto your website',
-      subtitle: '(Takes 62 seconds)',
-      position: 'left'
+      imageUrl: '/braces.svg',
+      title: 'You paste one simple line of code onto your website (takes 60 seconds)',
+      position: 'right'
     },
     {
       step: '2',
-      icon: Mic,
-      title: 'VoiceGPT AI automatically indexes and indexes every page, product, and piece of content on your site',
-      subtitle: '(Improves instantly)',
-      position: 'right'
+      imageUrl: '/mic.svg',
+      title: 'VoiceAgent AI automatically reads and indexes every page, product, and piece of content on your site (happens instantly)',
+      position: 'left'
     },
     {
       step: '3',
-      icon: Search,
-      title: 'A small, customizable voice bar appears on your website',
-      position: 'left'
+      imageUrl: '/search.svg',
+      title: 'A small, customizable voice button appears on your website',
+      position: 'right'
     },
     {
       step: '4',
-      icon: Clock,
-      title: 'When visitors click, the AI speaks product names and can open memory to talk about services, products, reviews, or context.',
-      position: 'right'
-    },
-    {
-      step: '5',
-      icon: Zap,
-      title: 'The AI responds immediately with a human-like voice, even across pages, sections, or when they return later',
+      imageUrl: '/hi.svg',
+      title: 'When visitors click it, the agent greets them and they can speak naturally to ask questions about your products, services, or business',
       position: 'left'
     },
     {
-      step: '6',
-      icon: DollarSign,
-      title: 'Watch your conversions spike. Great customer experience = great results.',
+      step: '5',
+      imageUrl: '/thunder.svg',
+      title: 'The AI responds immediately with human-like speech AND can navigate them to the exact page, section, or form they need',
       position: 'right'
+    },
+    {
+      step: '6',
+      imageUrl: '/dollar.svg',
+      title: 'Watch your conversions skyrocket as confused visitors become paying customers',
+      position: 'left'
     }
   ];
 
@@ -225,12 +237,13 @@ const TimelineUI: React.FC = () => {
     stepRefs.current[index] = el;
   };
 
-   return (
+  return (
     <div className="min-h-screen font-['Inter',sans-serif]">
+      <Offer/>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="text-3xl gradient-white-text text-center max-w-[800px] mx-auto px-4 mb-8">
+          <div className="text-3xl gradient-white-text text-center max-w-[800px] mx-auto mt-20 mb-8">
             Here's How This <span className="gradient-mask-text">"Set It & Forget It"</span> System Transforms Any Website Into a Conversion Machine
           </div>
         </div>

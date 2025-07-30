@@ -41,53 +41,57 @@ const Section14: React.FC = () => {
   return (
     <div className=" text-white">
       {/* Signature Section with Purple Background Image */}
-      <div className="relative overflow-hidden rounded-2xl mx-6 my-8">
-        <Image 
-          src='/purple.jpg' 
-          alt='purple gradient background' 
-          width={1200} 
-          height={200} 
-          className='absolute inset-0 w-full opacity-60 h-full object-cover'
-        />
-        <div className="relative z-10 py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-white">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Mikey Formby
-                </h2>
-              </div>
-              
-              <div className="bg-gray-300 rounded-lg p-5 w-80 h-52 flex items-center justify-center">
-               
-              </div>
-              
-              <div className="text-white">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                  See You On<br />
-                  The Inside!
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="relative overflow-hidden rounded-2xl mx-auto my-8 max-w-[1200px] h-[250] flex items-center justify-center">
+  {/* Background Image */}
+  <Image 
+    src='/purple.jpg' 
+    alt='purple gradient background' 
+    fill
+    className='absolute inset-0 w-full h-full object-cover opacity-75'
+  />
+
+  {/* Content */}
+  <div className="relative z-10 w-full px-7">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-9 text-center md:text-left">
+      {/* Left text */}
+      <div>
+        <h2 className="gradient-white-text text-4xl md:text-5xl font-medium mb-2">
+          Mikey Formby
+        </h2>
       </div>
+
+      {/* Center box */}
+      <div className="bg-gray-300 rounded-2xl p-7 w-90 h-50 flex items-center justify-center">
+        {/* Add content here */}
+      </div>
+
+      {/* Right text */}
+      <div>
+        <h2 className="gradient-white-text text-4xl md:text-5xl font-medium leading-tight">
+          See You On<br />
+          The Inside!
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* FAQ Section */}
       <div className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+          <h2 className="gradient-white-text text-4xl md:text-5xl font-medium text-center mb-12">
             Frequently Asked Questions
           </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-4 w-180 m-auto mb-20">
             {faqData.map((faq: FAQItem, index: number) => (
-              <div key={index} className="border border-gray-700 rounded-lg">
+              <div key={index} className="bg-white/10 border border-gray-700 rounded-[10px]">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-800 transition-colors duration-200"
+                  className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-800 transition-colors duration-200"
                 >
-                  <span className="text-lg font-medium text-white pr-4">
+                  <span className="text-sm font-medium text-white pr-4">
                     {faq.question}
                   </span>
                   <div className="text-gray-400 flex-shrink-0">

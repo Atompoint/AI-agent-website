@@ -5,71 +5,71 @@ export default function Section07() {
     {
       title: "Real Voice Conversations That Replace Frustrating Text Chat",
       description: "Your visitors can actually talk to your website like they're calling your business - no more typing back and forth or waiting for responses.",
-      placeholder: "Voice Demo"
+    
     },
     {
       title: "Automatically Learns Your Entire Website Without Training", 
       description: "The moment you install it, your AI instantly memorizes every product, service, and page on your site with zero setup work from you.",
-      placeholder: "AI Learning"
+     
     },
     {
       title: "60-Second Setup With Just One Line of Code",
       description: "Simply copy and paste one line of code and your website instantly becomes interactive - no technical skills or complicated configuration required.",
-      placeholder: "Setup Guide"
+    
     },
     {
-      title: "24/7 Sales Agent That Never Sleeps",
-      description: "Your AI sales agent works around the clock, qualifying leads and converting visitors even when you're sleeping or on vacation.",
-      placeholder: "Sales Analytics"
+      title: "Handles Conversations Simultaneously 24/7",
+      description: "While human agents can only help one person at a time, your AI talks to hundreds of visitors at once without ever taking a break.",
+      
     },
     {
-      title: "Instant Customer Support Without Hiring Staff",
-      description: "Provide immediate answers to customer questions, resolve issues, and handle support tickets without expanding your team.",
-      placeholder: "Support Demo"
+      title: "Smart Website Navigation That Guides Visitors to Buy",
+      description: "Your AI doesn't just answer questions - it actually walks visitors through your pages and escorts them directly to your checkout.",
+      
     },
     {
-      title: "Lead Qualification on Autopilot",
-      description: "Automatically identify high-value prospects, collect contact information, and schedule appointments without lifting a finger.",
-      placeholder: "Lead Dashboard"
+      title: "Complete Analytics Dashboard To Track Every Conversation",
+      description: "See exactly what visitors are asking, which conversations lead to sales, and how much money your AI is making you in real-time.",
+     
     },
     {
-      title: "Multi-Language Support for Global Reach",
-      description: "Speak with customers in over 50 languages, breaking down barriers and expanding your market reach internationally.",
-      placeholder: "Language Demo"
+      title: "Fully Customizable Voice and Personality",
+      description: "Choose your AI's voice, personality, colors, and greetings to perfectly match your brand and make visitors feel at home.",
+    
     },
     {
-      title: "Smart Appointment Booking System",
-      description: "Let visitors schedule meetings directly through voice conversation, with automatic calendar integration and reminder emails.",
-      placeholder: "Calendar Preview"
+      title: "Natural Interruption Handling Just Like Real Conversations",
+      description: "Visitors can interrupt your AI anytime to ask follow-up questions or change topics, creating fluid conversations that feel completely natural.",
+     
     },
     {
-      title: "Real-Time Analytics & Insights",
-      description: "Track conversation quality, conversion rates, and customer satisfaction with detailed reports and actionable insights.",
-      placeholder: "Analytics Chart"
+      title: "Works Perfectly On Any Website Platform",
+      description: "Whether you use WordPress, Shopify, Webflow, Clickfunnels, GoHighLevel or custom code, your voice AI works flawlessly without breaking anything on your existing site.",
+      
     },
     {
-      title: "Custom Voice & Personality Training",
-      description: "Train your AI to match your brand's tone, personality, and communication style for authentic customer interactions.",
-      placeholder: "Voice Training"
+      title: "Real-Time Objection Handling That Closes More Sales",
+      description: "Your AI recognizes hesitation and objections, then responds with the perfect counter-arguments to turn skeptics into buyers instantly.",
+     
     },
     {
-      title: "CRM Integration & Data Sync",
-      description: "Seamlessly connect with your existing CRM, email marketing tools, and sales platforms for unified customer management.",
-      placeholder: "Integration Map"
+      title: "Match Your Brand Colors and Style Perfectly",
+      description: "Customize the voice button and interface to blend seamlessly with your website design so it looks like it was always part of your site.",
+     
     },
     {
-      title: "Advanced Security & Privacy Protection",
-      description: "Enterprise-grade encryption, GDPR compliance, and secure data handling to protect your business and customer information.",
-      placeholder: "Security Shield"
+      title: "Set Custom Welcome Messages That Match Your Business",
+      description: "Create personalized greetings that introduce your AI exactly how you want, setting the perfect tone for every visitor interaction.",
+     
     }
   ];
 
   return (
-   <div className=" bg-black flex flex-col items-center mb-10 justify-center px-4">
+   <div className=" flex flex-col items-center mb-10 justify-center px-4">
   <div className="text-center relative">
-    <p className="text-2xl text-white/90 font-light max-w-3xl leading-relaxed">
-      The entire <strong className="font-medium">setup takes less than 60 seconds.</strong> No technical skills
-      required. <strong className="font-medium">No content creation needed.</strong> No ongoing maintenance.
+    <p className="text-2xl gradient-white-text font-medium max-w-3xl leading-relaxed">
+      The entire setup takes less than 60 seconds. No technical skills
+      required. No content creation needed. No ongoing maintenance.
     </p>
 
     {/* Glowing Border Underline */}
@@ -78,12 +78,12 @@ export default function Section07() {
 
    <div className="container mx-auto px-6 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl gradient-white-text mb-4 max-w-6xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-4xl gradient-white-text mb-4 max-w-2xl mx-auto leading-tight">
             Turn Your Silent Website Into a 24/7{" "}
             <span className="gradient-mask-text">
-              Money-Making Machine
+              Money-Making 
             </span>{" "}
-            That{" "}
+          Machine That{" "}
             <span className="gradient-mask-text">
               Talks!
             </span>
@@ -91,23 +91,24 @@ export default function Section07() {
         </div>
 
         {/* Features Grid - 3 columns, 4 rows */}
-        <div className="grid grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-3 gap-8  lg:gap-7">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col space-y-4">
               {/* Placeholder area for video/image */}
-              <div className="bg-gray-800 rounded-lg aspect-video flex items-center justify-center border border-gray-700">
-                <span className="text-gray-500 text-sm">{feature.placeholder}</span>
+              <div className="bg-gray-800 rounded-2xl aspect-video flex items-center justify-center border border-gray-950">
+              
               </div>
               
-              {/* Title */}
-              <h3 className="text-white text-lg leading-tight">
+              <div className="w-[350px] mb-10">
+                <h3 className="text-white text-lg w-80 leading-tight">
                 {feature.title}
               </h3>
               
               {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {feature.description}
-              </p>
+              <p className="text-gray-400 py-5 text-sm leading-relaxed">
+                 {feature.description}
+              </p></div>
+              
             </div>
           ))}
         </div>

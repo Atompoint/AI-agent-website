@@ -12,7 +12,7 @@ const Section04 = () => {
           VoiceAgent AI
         </span>
       </h1>
-        <div className='gradient-white-text mt-0.5'>The Game-Changer That's Making "Silent" Websites Extinct
+        <div className='gradient-white-text m-6'>The Game-Changer That's Making "Silent" Websites Extinct
 </div>
     
     <div>

@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        radio: ['"Radio Grotesk"', 'sans-serif'],
+       heading: ['"Radio Grotesk"', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'sans-serif'],
+        logo: ['var(--font-questrial)', 'sans-serif'],
       },
       animation: {
         glow: 'glow 3s ease-in-out infinite',

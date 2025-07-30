@@ -4,6 +4,7 @@ import Image from "next/image";
 import { TiMicrophoneOutline } from "react-icons/ti";
 import { BsStars } from "react-icons/bs";
 import { Check } from 'lucide-react';
+import circleSrc from '@/public/circle.svg';
 
 import DownArrow from "./DownArrow";
 
@@ -20,14 +21,14 @@ const features = [
 
 export default function HeroHeader() {
   return (
-    <div className="overflow-x-hidden"> {/* Added overflow-x-hidden to prevent horizontal scroll */}
+    <div className="overflow-x-hidden">
       {/* Hero Section - Full Height with Background */}
       <section className="relative w-full min-h-[130vh] overflow-visible">
         <Header />
 
         {/* Background Image */}
         <div
-          className="absolute inset-0 w-full h-full z-0 scale-[1.6]  mt-30"
+          className="absolute inset-0 w-full h-full z-0 scale-[1.6] mt-30"
           style={{
             backgroundImage: "url('/bgimg.png')",
             backgroundPosition: "calc(50% + 20px) center",
@@ -53,34 +54,30 @@ export default function HeroHeader() {
               px-3 sm:px-4 py-1.5 sm:py-2
               rounded-full
               border border-gray-700
-              text-white
+              text-white/85
               bg-white/10
               backdrop-blur-md
               max-w-[90%] sm:max-w-none
             "
           >
-            Tired of Watching 95% of Your Website Visitors Leave Without Buying?
+            Tired of Watching 67% of Your Website Visitors Leave Without Buying?
           </div>
 
           {/* Headline */}
           <div
-            className="gradient-white-text max-w-[90%] sm:max-w-4xl lg:max-w-[60rem] text-center text-transparent text-[24px] sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[52px] leading-[1.05] font-normal bg-clip-text mb-4 sm:mb-6"
-           
+            className="gradient-white-text font-heading max-w-[88%] sm:max-w-4xl lg:max-w-[60rem] text-center text-transparent text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] font-normal bg-clip-text mb-4 sm:mb-6"
           >
             World's First{" "}
-          <span className="gradient-mask-text">
-    Smart Voice AI
-  </span>{" "}
+            <span className="gradient-mask-text">
+              Smart Voice AI
+            </span>{" "}
             Agent That Actually TALKS to Your Website Visitors & Guides Them to
             Buy... While You Sleep!
           </div>
 
           {/* Subtext */}
           <p className="max-w-[90%] sm:max-w-xl lg:max-w-3xl text-xs sm:text-sm lg:text-base text-gray-300 font-light leading-relaxed">
-            Just Press One Line of Code & Instantly Watch This Revolutionary AI
-            Turn Your Website Visitors Into 24/7 Sales Machines That Answer
-            Questions, Overcome Objections & Convert Visitors Into Paying
-            Customers — Instantly!
+            Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
           </p>
         </div>
       </section>
@@ -104,38 +101,59 @@ export default function HeroHeader() {
         </div>
 
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[15rem] sm:pt-[20rem] md:pt-[25rem] lg:pt-[30rem]">
+        <div className="pt-[1rem] sm:pt-[20rem] md:pt-[25rem] lg:pt-[25rem]">
           {/* Your section 2 content goes here */}
         </div>
 
-        <div className="absolute top-[400px] left-[600px] z-80 flex m-auto justify-center h-[80px] w-[80px] items-center rounded-full bg-[#5D11D5]/30 backdrop-blur-md border border-white/20">
-          <TiMicrophoneOutline className="z-90 text-white text-[30px]" />
-        </div>
-        <div className="text-white mr-[70px] flex justify-center py-4 ">
-          <div><BsStars className="mr-[6px]"/></div> 
-          <div className="font-semibold text-sm"> GIVE IT A TRY!</div>
+        {/* Circle with microphone - using original SVG without modifications */}
+        <div className="relative z-30 flex justify-center items-center mx-auto w-[80px] h-[80px]">
+          <Image 
+            src={circleSrc} 
+            alt="Circle background" 
+            width={80}
+            height={80}
+            className="absolute inset-0"
+          />
+          <TiMicrophoneOutline className="relative z-10 text-white text-[30px]" />
         </div>
 
-    <div className="py-20">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-10 text-center sm:text-left">
-    {features.map((feature, i) => (
-      <div key={i} className="flex items-center gap-3 justify-center sm:justify-start">
-        <span className="text-[#9D4DFF]">
-          <Check size={20} />
-        </span>
-        <span className="text-sm sm:text-base font-medium text-white">
-          {feature}
-        </span>
-      </div>
-    ))}
-  </div>
-  
- <DownArrow/>
-  
-</div>
+        <div className="flex justify-center items-center mt-10">
+          <div className="inline-flex items-center justify-center bg-black border border-gray-900 text-white rounded-full px-3 py-1">
+            <BsStars className="mr-1 text-sm" />
+            <span className="font-semibold text-sm">GIVE IT A TRY!</span>
+          </div>
+        </div>
 
+        <div className="py-20">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-10 text-center sm:text-left">
+            {features.map((feature, i) => (
+              <div key={i} className="flex items-center gap-3 justify-center sm:justify-start">
+                
+                {/* Icon with circle background - using original SVG */}
+                <div className="relative w-6 h-6 flex items-center justify-center">
+                  <Image
+                    src="/circle.svg"
+                    alt="Circle"  
+                    width={24}
+                    height={24}
+                    className="absolute inset-0"
+                  />
+                  <Check
+                    size={14}
+                    className="relative z-10 text-white"
+                  />
+                </div>
+
+                <span className="text-sm sm:text-base font-medium text-white">
+                  {feature}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <DownArrow />
+        </div>
       </section>
-
     </div>
   );
 }
