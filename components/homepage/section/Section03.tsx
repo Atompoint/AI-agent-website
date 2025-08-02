@@ -2,8 +2,8 @@ import React from "react";
 import { MessageCircle, Bot, Mic, AlertTriangle } from 'lucide-react';
 import Image from "next/image";
 import { BsStars } from "react-icons/bs";
-import DownArrow from "./DownArrow";
-import Gradient from "@/public/grad2.png"
+import DownArrow from '../../ui/DownArrow';
+import Gradient from "@/public/assets/images/grad2.png"
 
 interface ComparisonItem {
   id: number;

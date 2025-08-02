@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import DownArrow from './DownArrow';
-import Offer from './Offer';
+import DownArrow from '../../ui/DownArrow';
+import Offer from '@/components/ui/Offer';
 interface TimelineStepData {
   step: string;
   imageUrl?: string;

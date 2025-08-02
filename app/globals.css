@@ -4,16 +4,17 @@
 
 @font-face {
   font-family: 'Radio Grotesk';
-  src: url('/fonts/PPRadioGrotesk-Regular.woff2') format('woff2');
+  src: url('/fonts/radio-grotesk/RadioGrotesk-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @custom-variant dark (&:is(.dark *));
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+ --font-manrope: 'Manrope';
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -48,14 +49,45 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
+  --animate-shine: shine var(--duration) infinite linear
+;
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }}
 
 body {
   background-color: #01000C;
   @apply text-white;
 }
-
-
 
 @keyframes updown {
   0%, 100% {
@@ -65,30 +97,45 @@ body {
     transform: translateY(-10px);
   }
 }
+.Heading{
+ font-family: 'Radio Grotesk', sans-serif;
+ font-size: 40px;
+}
+
+.sub-text{
+  font-size: 13px;
+   font-weight: 300;
+   color: rgba=(255, 255, 255);
+
+}
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-
-  
-
-  /* Optional smoothing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .gradient-white-text {
-  background-image: linear-gradient(96.62deg, #50525F 2.7%, #FFFFFF 37.72%, #FFFFFF 69.06%, #9698A6 76.56%);
+  background: linear-gradient(
+    to right,
+    #49494d 0%,
+    #8f8b8b 20%,
+    #e2dbdb 50%,
+    #A9ABB5 80%,
+    #afb0b6 100%
+  );
   -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 0 0.3px rgba(0, 0, 0, 0.1);
 }
 
+.font-radio {
+  font-family: 'Radio Grotesk', sans-serif;
+}
 
 .animate-updown {
   animation: updown 3s ease-in-out infinite;
@@ -105,8 +152,6 @@ body {
   );
 }
 
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -115,4 +160,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

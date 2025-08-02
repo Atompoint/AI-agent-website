@@ -1,5 +1,5 @@
 import React from "react";
-import DownArrow from "./DownArrow";
+import DownArrow from "@/components/ui/DownArrow";
 
 const Section02 = () => {
   const sections = [

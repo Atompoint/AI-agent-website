@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import DownArrow from './DownArrow';
-import Offer from '@/components/Offer';
+import DownArrow from '../../ui/DownArrow';
+import Offer from '@/components/ui/Offer';
 import Image from 'next/image';
 
 export default function App() {
@@ -36,12 +36,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <div className="relative z-10 container mb-20 mx-auto px-4 py-16 text-center">
-        <div className="max-w-2xl mx-auto">
+      <div className="relative z-10 container mb-20 mx-auto text-center">
+        <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="m-auto text-3xl md:text-4xl lg:text-5xl max-w-[500px] leading-tight">
-              <span className="gradient-white-text">All It Takes Is 3 Simple Steps and </span>
-              <span className="gradient-mask-text">You're Done</span>
+            <h2 className="m-auto  max-w-[400px] leading-tight">
+              <span className="Heading gradient-white-text">All It Takes Is 3 Simple Steps and </span>
+              <span className=" Heading gradient-mask-text text-[35px] ">You're Done</span>
             </h2>
           </div>
 
@@ -50,7 +50,7 @@ export default function App() {
               const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
               return (
-                <div key={index} ref={ref} className="flex items-start gap-8 text-left relative">
+                <div key={index} ref={ref} className="flex items-start gap-15 text-left relative">
                   {/* Timeline number with animated line */}
                   <div className="relative flex flex-col items-center">
                     {/* Step Number */}
@@ -65,7 +65,7 @@ export default function App() {
 
                     {/* Vertical Line below number (except for last step) */}
                     {index !== steps.length - 1 && (
-                      <div className="relative py-6">
+                      <div className="relative py-5">
                         {index === 0 ? (
                           // Step 1 to 2: Half gray, half white
                           <div className="relative h-[120px]">
@@ -74,14 +74,14 @@ export default function App() {
                               initial={{ height: 0 }}
                               animate={inView ? { height: '60px' } : {}}
                               transition={{ duration: 0.6, delay: 0.2 }}
-                              className="w-[2px] bg-gray-500 absolute bottom-0 left-1/2 transform -translate-x-1/2"
+                              className="w-[0.3px] bg-gray-500 absolute bottom-0 left-1/2 transform -translate-x-1/2"
                             />
                             {/* White top half */}
                             <motion.div
                               initial={{ height: 0 }}
                               animate={inView ? { height: '60px' } : {}}
                               transition={{ duration: 0.6, delay: 0.4 }}
-                              className="w-[2px] bg-white absolute top-0 left-1/2 transform -translate-x-1/2"
+                              className="w-[2px] bg-white absolute top-0 left-1/2 transform rounded-full -translate-x-1/2"
                             />
                           </div>
                         ) : (
@@ -90,7 +90,7 @@ export default function App() {
                             initial={{ height: 0 }}
                             animate={inView ? { height: '120px' } : {}}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="w-[2px] bg-gray-500 left-1/2 transform -translate-x-1/2 relative"
+                            className="w-[0.3px] bg-gray-500 left-1/2 transform -translate-x-1/2 relative"
                           />
                         )}
                       </div>
@@ -116,7 +116,7 @@ export default function App() {
                     </div>
                     <div>
                       <div className="inline-block rounded-full p-[1px] mb-2 bg-[linear-gradient(93.89deg,_#1F0B46_0.91%,_#DEBFFF_11.47%,_#5A27B1_55.16%,_#BF84F9_71.42%)]">
-                        <div className="rounded-full bg-black/90 px-3 py-1 text-xs text-white">
+                        <div className="rounded-full bg-[#030216] px-3 py-1 text-xs text-white">
                           {step.stepText}
                         </div>
                       </div>

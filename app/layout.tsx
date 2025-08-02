@@ -6,7 +6,7 @@ import "./globals.css";
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['200','400', '600', '700'],
   variable: '--font-manrope',
   display: 'swap',
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${questrial.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-manrope">{children}</body>
     </html>
   );
 }

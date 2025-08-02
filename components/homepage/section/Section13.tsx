@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import Offer from './Offer'
-
+import DownArrow from '../../ui/DownArrow';
+import Offer from '@/components/ui/Offer';
 interface FAQItem {
   question: string
   answer: string

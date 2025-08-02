@@ -3,19 +3,20 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}', // include this if using `pages/`
+    './pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-       heading: ['"Radio Grotesk"', 'sans-serif'],
-        sans: ['var(--font-manrope)', 'sans-serif'],
+        radio: ['"Radio Grotesk"', 'sans-serif'],
+        manrope: ['var(--font-manrope)', 'Manrope', 'system-ui', 'sans-serif'],
         logo: ['var(--font-questrial)', 'sans-serif'],
       },
-      animation: {
-        glow: 'glow 3s ease-in-out infinite',
-      },
       keyframes: {
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
+        },
         glow: {
           '0%, 100%': {
             opacity: '0.8',
@@ -26,6 +27,10 @@ module.exports = {
             filter: 'blur(12px)',
           },
         },
+      },
+      animation: {
+        shine: 'shine 5s linear infinite',
+        glow: 'glow 3s ease-in-out infinite',
       },
     },
   },

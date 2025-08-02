@@ -1,6 +1,6 @@
 import React from 'react'
-import DownArrow from './DownArrow';
-import Image from 'next/image';
+import DownArrow from '../../ui/DownArrow';
+
 
 interface Feature {
   title: string;
