@@ -2,7 +2,7 @@ import React from 'react';
 
 const DownArrow = () => {
   return (
-    <div className="flex justify-center items-center py-[40px] "> {/* Added padding/margin */}
+    <div className="flex justify-center items-center p-[40px] "> {/* Added padding/margin */}
       <div className="relative">
        
         

@@ -1,9 +1,10 @@
 'use client';
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import DownArrow from '../../ui/DownArrow';
 import Offer from '@/components/ui/Offer';
+import { ShineBorder } from "@/components/magicui/shine-border";
+import ShinyText from '@/components/ui/ShinyText';
 import Image from 'next/image';
 
 export default function App() {
@@ -40,8 +41,7 @@ export default function App() {
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="m-auto  max-w-[400px] leading-tight">
-              <span className="Heading gradient-white-text">All It Takes Is 3 Simple Steps and </span>
-              <span className=" Heading gradient-mask-text text-[35px] ">You're Done</span>
+               <ShinyText text="All It Takes Is 3 Simple Steps and You're Done " disabled={false} speed={6}  className='Heading'/>
             </h2>
           </div>
 
@@ -55,13 +55,14 @@ export default function App() {
                   <div className="relative flex flex-col items-center">
                     {/* Step Number */}
                     <motion.span
-                      initial={{ opacity: 0, y: 40 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.6, ease: 'easeOut' }}
-                      className="z-10 text-6xl md:text-7xl lg:text-6xl gradient-white-text mb-0"
-                    >
-                      {step.number}
-                    </motion.span>
+  initial={{ opacity: 0, y: 40 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.6, ease: 'easeOut' }}
+  className="z-10 text-6xl md:text-7xl lg:text-6xl  mb-0"
+>
+  <ShinyText text={`${step.number}`} disabled={false} speed={6} />
+</motion.span>
+
 
                     {/* Vertical Line below number (except for last step) */}
                     {index !== steps.length - 1 && (
@@ -115,11 +116,21 @@ export default function App() {
                       />
                     </div>
                     <div>
-                      <div className="inline-block rounded-full p-[1px] mb-2 bg-[linear-gradient(93.89deg,_#1F0B46_0.91%,_#DEBFFF_11.47%,_#5A27B1_55.16%,_#BF84F9_71.42%)]">
-                        <div className="rounded-full bg-[#030216] px-3 py-1 text-xs text-white">
-                          {step.stepText}
-                        </div>
-                      </div>
+<div className="relative inline-block w-fit rounded-full overflow-hidden mb-2">
+  {/* Inner content */}
+  <div className="rounded-full  px-3 py-1 text-xs text-white relative z-10">
+    {step.stepText}
+  </div>
+
+  {/* Shine border effect */}
+  <ShineBorder
+    borderWidth={2}
+    duration={6}
+    shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+    className="absolute inset-0 rounded-full pointer-events-none"
+  />
+</div>
+
                       <div className={`${step.textColor} text-lg font-medium`}>
                         {step.title}
                       </div>

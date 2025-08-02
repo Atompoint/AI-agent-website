@@ -89,7 +89,7 @@ export default function HeroHeader() {
         </div>
       </section>
 
-<section className="relative min-h-80 " style={{ backgroundColor: '#01000C' }}>
+<section className="relative  " style={{ backgroundColor: '#01000C' }}>
         {/* OVERLAID Product Image positioned over section 2 */}
 <div className="absolute top-[-15rem] sm:top-[-20rem] md:top-[-25rem] lg:top-[-8rem] w-full right-3 flex justify-center z-30">
   {/* Glow Effect */}
@@ -161,7 +161,7 @@ export default function HeroHeader() {
           </div>
         </div>
 
-       <div className="py-20">
+       <div className="mt-20">
   <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-10 text-center sm:text-left">
     {features.map((feature, i) => (
       <div
