@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import { ShineBorder } from "@/components/magicui/shine-border";
+import ShinyText from '../ui/ShinyText';
 import Header from "../layout/Header";
 import Image from "next/image";
 import { BsStars } from "react-icons/bs";
+import { ShineBorder } from "@/components/magicui/shine-border";
 
 import circleSrc from '@/public/circle1.svg';
 
@@ -38,7 +39,13 @@ export default function HeroHeader() {
           }}
         />
 
-        {/* Gradient overlay at bottom */}
+        {/* Gradient overlay to blend bottom with background color */}
+        <div
+          className="absolute inset-0 w-full h-full z-10"
+          style={{
+            background: `linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.3) 75%, rgba(1,0,12,0.7) 85%, #01000C 100%)`
+          }}
+        />
         
         {/* Text Content */}
         <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[25vh]">
@@ -69,15 +76,8 @@ export default function HeroHeader() {
   <div
   className="font-radio max-w-[88%] sm:max-w-4xl lg:max-w-[60rem] text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] font-normal mb-4 sm:mb-6"
 >
-  <span className="gradient-white-text text-transparent bg-clip-text">
-    World's First{" "}
-  </span>
-  <span className="gradient-mask-text text-transparent bg-clip-text font-medium">
-    Smart Voice AI
-  </span>{" "}
-  <span className="gradient-white-text text-transparent bg-clip-text">
-    Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!
-  </span>
+  <ShinyText text="World's First Smart Voice AI Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!
+" disabled={false} speed={6}  />
 </div>
 
 
@@ -89,7 +89,7 @@ export default function HeroHeader() {
         </div>
       </section>
 
-<section className="relative min-h-80 ">
+<section className="relative min-h-80 " style={{ backgroundColor: '#01000C' }}>
         {/* OVERLAID Product Image positioned over section 2 */}
 <div className="absolute top-[-15rem] sm:top-[-20rem] md:top-[-25rem] lg:top-[-8rem] w-full right-3 flex justify-center z-30">
   {/* Glow Effect */}
@@ -103,27 +103,38 @@ export default function HeroHeader() {
         className="absolute inset-0 opacity-80 mix-blend-lighten"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 10% 20%, rgba(255,255,255,0.9) 2px, transparent 1px),
-            radial-gradient(circle at 30% 40%, rgba(255,255,255,0.8) 0.5px, transparent 1px),
-            radial-gradient(circle at 70% 30%, rgba(255,255,255,0.7) 0.5px, transparent 1px),
-            radial-gradient(circle at 90% 20%, rgba(255,255,255,0.6) 0.5px, transparent 1px)
-          `,
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0.5px, transparent 1px),
+      radial-gradient(circle at 28% 42%, rgba(255,255,255,0.85) 0.5px, transparent 1px),
+      radial-gradient(circle at 45% 70%, rgba(255,255,255,0.75) 0.5px, transparent 1px),
+      radial-gradient(circle at 68% 33%, rgba(255,255,255,0.7) 0.5px, transparent 1px),
+      radial-gradient(circle at 81% 15%, rgba(255,255,255,0.65) 0.5px, transparent 1px),
+      radial-gradient(circle at 90% 45%, rgba(255,255,255,0.6) 0.5px, transparent 1px),
+      radial-gradient(circle at 55% 55%, rgba(255,255,255,0.5) 0.5px, transparent 1px)
+    `,
           backgroundSize: '150px 150px',
-          filter: 'blur(0.5px)'
+          filter: 'blur(0.6px)'
         }}
       />
+
     </div>
 
-    {/* Main Product Image */}
-    <div className="relative rounded-2xl overflow-hidden z-10">
-      <Image
-        src="/main.png"
-        width={900}
-        height={600}
-        alt="product web image"
-        className="object-contain max-w-full h-auto relative z-10"
-      />
-    </div>
+   <div className="relative rounded-2xl overflow-hidden z-10 p-1">
+  <Image
+    src="/main.png"
+    width={900}
+    height={600}
+    alt="product web image"
+    className="object-contain max-w-full h-auto relative z-10 rounded-2xl"
+  />
+  <ShineBorder
+    borderWidth={1}
+    duration={23}
+    shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+    className="absolute inset-0 rounded-2xl pointer-events-none"
+  />
+</div>
+
+
   </div>
 </div>
         {/* Section 2 content can go here - positioned below the image */}

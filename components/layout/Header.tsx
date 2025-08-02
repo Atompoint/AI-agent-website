@@ -2,47 +2,9 @@
 import React from 'react';
 import { ShineBorder } from "@/components/magicui/shine-border";
 
-interface ShinyTextProps {
-  text: string;
-  disabled?: boolean;
-  speed?: number;
-  className?: string;
-}
 
-const ShinyText: React.FC<ShinyTextProps> = ({
-  text,
-  disabled = false,
-  speed = 5,
-  className = "",
-}) => {
-  const keyframes = `
-    @keyframes shine {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-  `;
-
-  return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: keyframes }} />
-      <span
-        className={className}
-        style={{
-          background: "linear-gradient(120deg, #b5b5b5a4 30%, rgba(255, 255, 255, 0.9) 50%, #b5b5b5a4 70%)",
-          backgroundSize: "200% 100%",
-          backgroundClip: "text",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-          animation: disabled ? "none" : `shine ${speed}s linear infinite`,
-          display: "inline-block",
-        }}
-      >
-        {text}
-      </span>
-    </>
-  );
-};
-
+import ShinyText from '../ui/ShinyText';
+ 
 const Header = () => {
   
   return (
@@ -55,7 +17,7 @@ const Header = () => {
       <div className="relative w-[105px] h-[30px] rounded-full overflow-hidden">
         {/* Actual Button */}
         <button className="w-full h-full  text-[13px] font-semibold z-10 relative rounded-full">
-          <ShinyText text="Join Now" disabled={false} speed={3} className='custom-class' />
+          <ShinyText text="Join Now" disabled={false} speed={3}  />
         </button>
 
         {/* Shimmer Border */}
