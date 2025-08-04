@@ -11,42 +11,39 @@ const Footer: React.FC = () => {
   ]
 
   return (
-    <footer className="text-white py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Copyright Text */}
-        <div className="mb-8">
-          <p className="m-auto text-sm text-gray-300 leading-relaxed text-center max-w-2xl">
-            © 2025 <span className="font-medium text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
-            other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
-            strictly prohibited without the express written consent of <span className="font-medium text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 
-            service name displayed on this website are the property of Voice AI and cannot be used without permission. By using this website, you agree 
-            to comply with all applicable laws and our Terms of Use and Privacy Policy. For any inquiries or permissions, please contact us at
-          </p>
-        </div>
-
-        {/* Copyright Notice */}
-        <div className="text-center mb-8">
-          <p className="text-sm text-gray-400">
-            Copyright © 2025 Voice AI
-          </p>
-        </div>
-      </div>
-
+    <div className="relative">
+      {/* Elliptical purple glow effect - positioned outside/above footer */}
+      <div 
+        className="absolute left-1/2 transform -translate-x-1/2 w-296 h-34 opacity-20 blur-2xl rounded-full pointer-events-none"
+        style={{
+          background: '#5A27B1',
+        }}
+      />
       
+      {/* Secondary elliptical glow for more intensity */}
+      <div 
+        className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-280 h-46 opacity-4 blur-xl rounded-full pointer-events-none"
+        style={{
+          background: '#5A27B1',
+        }}
+      />
 
-      {/* Footer Links - full width container with padding */}
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 w-full max-w-screen-xl mx-auto mt-14 px-6">
-        {footerLinks.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
-    </footer>
+      {/* Footer section */}
+      <footer className="text-white px-6 relative z-10">
+        {/* Footer Links */}
+        <div className="flex flex-wrap justify-center items-center gap-15 w-full max-w-screen-xl mx-auto py-10 px-6">
+          {footerLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="text-sm font-light text-white transition-colors duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </footer>
+    </div>
   )
 }
 

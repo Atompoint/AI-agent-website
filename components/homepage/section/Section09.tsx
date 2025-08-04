@@ -1,20 +1,36 @@
 import React from 'react'
 import DownArrow from '../../ui/DownArrow';
+import ShinyText from '@/components/ui/ShinyText';
 
 const Section09 = () => {
   return (
-    <div className="flex justify-center flex-col items-center text-white py-16 ">
+    <div className="flex justify-center flex-col items-center text-white  ">
       <div className="max-w-6xl mx-auto">
         {/* First Section */}
         <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-medium text-center mb-12 leading-tight">
-            I Hate to Be the Bearer of Bad News, But<br />
-            This <span className="gradient-mask-text">Pricing</span> Disappears After Launch
-          </h2>
+          
+           <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
+             {/* First Line - Normal Text */}
+             <ShinyText
+               text="I Hate to Be the Bearer of Bad News, But"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+           
+             {/* Second Line - With Gradient Text */}
+             <ShinyText
+               text="This Pricing Disappears After Launch"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+            
+           </h2>
           
        <div className="grid md:grid-cols-2 gap-4 items-center px-17 py-8">
           {/* Left column - text */}
-          <div className="space-y-4 text-gray-300 w-122 p-2">
+          <div className="space-y-4 text-sm text-gray-300 w-115 p-2">
             <p>As the world's first smart voice AI agent for websites, we're offering 
             this exclusive founding member discount to help early adopters get 
             maximum advantage over their competitors.</p>
@@ -49,11 +65,20 @@ const Section09 = () => {
         </div>
 
         {/* Second Section */}
-        <div>
-          <h2 className="text-4xl md:text-5xl font-medium text-center mb-22">
-            Zero Risk, 100% <span className="gradient-mask-text">Guarantee</span>
-          </h2>
+        <div className='py-10'>
+        
           
+          <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
+             {/* First Line - Normal Text */}
+             <ShinyText
+               text="Zero Risk, 100% Guarantee"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+           
+             
+           </h2>
           <div className="grid md:grid-cols-2 gap-0 items-center ">
             <div className="bg-[#797979] h-69 w-120 rounded-[10px]"></div>
             

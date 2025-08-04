@@ -1,7 +1,13 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef, useState } from "react";
 import DownArrow from "@/components/ui/DownArrow";
+import Threads from '@/components/ui/Threads';
+import ShinyText from '@/components/ui/ShinyText';
 
 const Section02 = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
   const sections = [
     {
       title: "67% Of Your Website Visitors Leave Within 10 Seconds... And Take Their Money With Them",
@@ -47,35 +53,74 @@ const Section02 = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Show threads when 10% of section is visible
+        rootMargin: '-10% 0px -10% 0px' // Add some margin for better UX
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="space-y-12 py-5">
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          className={`flex gap-15 text-white justify-center items-center p-4 rounded-xl ${
-            index % 2 !== 0 ? "flex-row-reverse" : ""
-          }`}
-        >
-          {/* Text Section */}
-          <div className="w-[400px] h-[400px] flex flex-col text-white items-center justify-center text-center md:text-left">
-            <div className="text-2xl gradient-white-text font-bold mb-8">{section.title}</div>
-            <div className="text-sm space-y-3">
-              {section.description.map((paragraph, paragraphIndex) => (
-                <div key={paragraphIndex} className="text-sm leading-relaxed">
-                  {paragraph}
-                </div>
-              ))}
+    <>
+      {/* Fixed Threads Background - with smooth fade transition */}
+      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-0 pointer-events-none transition-opacity duration-1000 ease-in-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}>
+        <Threads
+          amplitude={1}
+          distance={0.2}
+          enableMouseInteraction={false}
+        />
+      </div>
+      
+      <div ref={sectionRef} className="space-y-12">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className={`relative z-10 flex gap-15 text-white justify-center items-center p-4 rounded-xl ${
+              index % 2 !== 0 ? "flex-row-reverse" : ""
+            }`}
+          >
+            {/* Text Section */}
+            <div className="w-[400px] h-[400px] flex flex-col items-center justify-center text-center md:text-left">
+              <div className="text-2xl text-white font-bold mb-8">
+                <ShinyText text={`${section.title}`} disabled={false} speed={6} />
+              </div>
+              <div className="text-sm space-y-3">
+                {section.description.map((paragraph, paragraphIndex) => (
+                  <div key={paragraphIndex} className="text-sm leading-relaxed">
+                    {paragraph}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Image Section */}
+            <div className="h-[400px] w-[450px] rounded-2xl bg-gray-500 bg-opacity-30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+              <span className="text-xl"></span>
             </div>
           </div>
-
-          {/* Image Section */}
-          <div className="h-[400px] w-[450px] rounded-2xl bg-gray-500 bg-opacity-30 flex items-center justify-center flex-shrink-0">
-            <span className="text-xl"></span>
-          </div>
+        ))}
+        <div className="relative z-10">
+          <DownArrow />
         </div>
-      ))}
-      <DownArrow />
-    </div>
+      </div>
+    </>
   );
 };
 

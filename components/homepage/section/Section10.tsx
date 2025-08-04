@@ -1,9 +1,135 @@
 import React from 'react'
 import DownArrow from '../../ui/DownArrow';
 import Image from 'next/image'
+import ShinyText from '@/components/ui/ShinyText';
 
-const Section10 = () => {
-  const withoutVoiceAI = [
+// Type definitions
+interface ComparisonColumnProps {
+  title: string;
+  items: string[];
+  isPositive: boolean;
+}
+
+interface BonusSectionProps {
+  title: string;
+  description: string[];
+  imagePosition?: 'left' | 'right';
+}
+
+interface ComparisonData {
+  title: string;
+  items: string[];
+  isPositive: boolean;
+}
+
+interface BonusData {
+  title: string;
+  description: string[];
+  imagePosition: 'left' | 'right';
+}
+
+// Single reusable ComparisonColumn component
+const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPositive }) => {
+  const iconColor = isPositive ? "text-green-500" : "text-red-500";
+  
+  const renderIcon = (): React.ReactElement => {
+    if (isPositive) {
+      return (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clipRule="evenodd"
+          />
+        </svg>
+      );
+    }
+    
+    return (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fillRule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
+  };
+
+  return (
+    <div className="relative max-w-[600px] rounded-lg overflow-hidden">
+      <Image
+        src="/rect3.png"
+        alt={`${title} Background`}
+       
+        fill
+        priority
+      />
+
+      <div className="relative flex flex-col p-10 pr-25">
+        <h3 className="text-md font-semibold mb-6">
+          {title}
+        </h3>
+
+        <div className="space-y-3">
+          {items.map((item: string, index: number) => (
+            <div key={index} className="flex items-start gap-3">
+              <div className={`${iconColor}  flex-shrink-0`}>
+                {renderIcon()}
+              </div>
+              <span className="text-gray-300 text-[13px]  ">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Reusable BonusSection component
+const BonusSection: React.FC<BonusSectionProps> = ({ title, description, imagePosition = 'right' }) => {
+  const content = (
+    <div className="space-y-4 flex flex-col justify-center p-10 items-center text-gray-300 w-105">
+      {description.map((paragraph: string, index: number) => (
+        <p key={index} className="text-[13px] leading-relaxed">
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+
+  const image = <div className="bg-[#797979] h-84 w-110  rounded-[7px]"></div>;
+
+  return (
+    <div>
+      <h2 className="text-white  text-3xl md:text-4xl font-medium text-center mb-12">
+        <ShinyText
+          text={title}
+          disabled={false}
+          speed={6}
+          className="Heading"
+        />
+      </h2>
+      
+      <div className="grid md:grid-cols-2 gap-5 items-center py-7">
+        {imagePosition === 'left' ? (
+          <>
+            {image}
+            {content}
+          </>
+        ) : (
+          <>
+            {content}
+            {image}
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Section10: React.FC = () => {
+  const withoutVoiceAI: string[] = [
     "Constantly losing visitors who can't find answers",
     "Paying expensive monthly fees for live chat software",
     "Hiring and training customer service staff",
@@ -16,9 +142,9 @@ const Section10 = () => {
     "Losing international customers in different time zones",
     "High bounce rates from visitors who leave immediately",
     "No way to qualify leads before they contact you"
-  ]
+  ];
 
-  const withVoiceAI = [
+  const withVoiceAI: string[] = [
     "24/7 availability to answer every visitor question",
     "Directing visitors around your website",
     "One-time payment with no monthly subscription fees",
@@ -31,162 +157,88 @@ const Section10 = () => {
     "Serving global customers in any time zone",
     "Zero hiring or training - AI handles everything",
     "Detailed analytics for every visitors conversation"
-  ]
+  ];
+
+  const comparisonData: ComparisonData[] = [
+    {
+      title: "Without Voice AI (Hard Way)",
+      items: withoutVoiceAI,
+      isPositive: false
+    },
+    {
+      title: "With Voice AI (Easy Way)",
+      items: withVoiceAI,
+      isPositive: true
+    }
+  ];
+
+  const bonusData: BonusData[] = [
+    {
+      title: "Exclusive Bonus 1: Name Here",
+      description: [
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
+      ],
+      imagePosition: 'right'
+    },
+    {
+      title: "Exclusive Bonus 2: Name Here",
+      description: [
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
+        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
+      ],
+      imagePosition: 'left'
+    }
+  ];
 
   return (
-    <div className=" text-white/90 py-16 px-6">
+    <div className="text-white/90 py-8 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="gradient-white-text text-3xl md:text-4xl font-medium text-center mb-12 leading-tight">
-          Two Paths Forward: Stay Silent & Lose<br />
-          Sales... Or Let Your Website Talk & Profit
+        <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
+          <ShinyText
+            text="Two Paths Forward: Stay Silent & Lose"
+            disabled={false}
+            speed={6}
+            className="Heading"
+          />
+          <ShinyText
+            text=" Sales... Or Let Your Website Talk & Profit"
+            disabled={false}
+            speed={6}
+            className="Heading"
+          />
         </h2>
-        
-       
 
-<div className="grid md:grid-cols-2 gap-4">
-  {/* Without Voice AI Column */}
-  <div className="relative rounded-lg overflow-hidden">
-    {/* Background Image */}
-    <Image
-      src="/rect3.png"
-      alt="Without Voice AI Background"
-      fill
-      
-      priority
-    />
-
-    {/* Overlay content */}
-    <div className="relative p-8">
-      <h3 className="text-2xl font-medium mb-6 ">
-        Without Voice AI (Hard Way)
-      </h3>
-
-      <div className="space-y-4">
-        {withoutVoiceAI.map((item, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <div className="text-red-500 mt-1 flex-shrink-0">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-300 leading-relaxed">{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  {/* With Voice AI Column */}
-  <div className="relative rounded-lg overflow-hidden ">
-    {/* Background Image */}
-    <Image
-      src="/rect3.png"
-      alt="With Voice AI Background"
-      fill
-    
-    />
-
-    {/* Overlay content */}
-    <div className="relative p-8">
-      <h3 className="text-2xl font-medium mb-6 ">
-        With Voice AI (Easy Way)
-      </h3>
-
-      <div className="space-y-4">
-        {withVoiceAI.map((item, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <div className="text-green-500 mt-1 flex-shrink-0">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-300 leading-relaxed">{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-  </div>
-      </div>
-       <div className=" text-white py-16 px-6">
-      <div className="max-w-4xl mx-auto space-y-16">
-        
-        {/* Exclusive Bonus 1 */}
-        <div>
-          <h2 className="gradient-white-text text-3xl md:text-4xl font-medium text-center mb-12">
-            Exclusive Bonus 1: Name Here
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-5 items-center py-7">
-            <div className="space-y-4 flex flex-col justify-center items-center text-gray-300 w-110">
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-              
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-              
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-            </div>
-            
-            <div className="bg-[#797979] h-64 w-100 md:h-80 rounded-[10px]"></div>
-          </div>
+        <div className="flex gap-4 justify-center mt-15">
+          {comparisonData.map((column: ComparisonData, index: number) => (
+            <ComparisonColumn
+              key={index}
+              title={column.title}
+              items={column.items}
+              isPositive={column.isPositive}
+            />
+          ))}
         </div>
-
-       
-          
-          <h2 className="gradient-white-text text-3xl md:text-4xl font-medium text-center mb-12">
-            Exclusive Bonus 2: Name Here
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-5 items-center py-7">
-            <div className="bg-[#797979] h-64 w-100 md:h-80 rounded-[10px]"></div>
-            <div className="space-y-4 flex flex-col justify-center items-center text-gray-300 w-110">
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-              
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-              
-              <p className="text-sm leading-relaxed">
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus. Text About this bonus. Text About this bonus. 
-                Text About this bonus.
-              </p>
-            </div>
-            
-            
-          
-        </div>
-
       </div>
-    </div>
-    <DownArrow/>
-    </div>
-  )
-}
 
-export default Section10
+      <div className="text-white text-sm py-16 px-6">
+        <div className="max-w-4xl mx-auto space-y-16">
+          {bonusData.map((bonus: BonusData, index: number) => (
+            <BonusSection
+              key={index}
+              title={bonus.title}
+              description={bonus.description}
+              imagePosition={bonus.imagePosition}
+            />
+          ))}
+        </div>
+      </div>
+
+      <DownArrow/>
+    </div>
+  );
+};
+
+export default Section10;

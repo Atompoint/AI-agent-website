@@ -6,7 +6,7 @@ import Image from "next/image";
 import { BsStars } from "react-icons/bs";
 import { ShineBorder } from "@/components/magicui/shine-border";
 
-import circleSrc from '@/public/circle1.svg';
+import circleSrc from '@/public//assets/icons/audio.svg';
 
 
 import DownArrow from "../ui/DownArrow";
@@ -120,7 +120,7 @@ export default function HeroHeader() {
 
    <div className="relative rounded-2xl overflow-hidden z-10 p-1">
   <Image
-    src="/main.png"
+    src="/assets/images/main1.png"
     width={900}
     height={600}
     alt="product web image"
@@ -138,7 +138,7 @@ export default function HeroHeader() {
   </div>
 </div>
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[1rem] sm:pt-[20rem] md:pt-[25rem] lg:pt-[23.5rem]">
+        <div className="pt-[1rem] sm:pt-[20rem] md:pt-[25rem] lg:pt-[21.8rem]">
           {/* Your section 2 content goes here */}
         </div>
 
@@ -170,7 +170,7 @@ export default function HeroHeader() {
       >
         {/* Icon */}
         <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
-          <Image src="/tickmark.svg" alt="Tick" width={28} height={28} />
+          <Image src="/assets/images/tickmark.svg" alt="Tick" width={28} height={28} />
         </div>
 
         {/* Text: fixed max width, allow wrap inside this box */}

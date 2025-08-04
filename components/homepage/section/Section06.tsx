@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import DownArrow from '../../ui/DownArrow';
 import Offer from '@/components/ui/Offer';
+import ShinyText from '@/components/ui/ShinyText';
 interface TimelineStepData {
   step: string;
   imageUrl?: string;
@@ -243,9 +244,28 @@ const TimelineUI: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="text-3xl gradient-white-text text-center max-w-[800px] mx-auto mt-20 mb-8">
-            Here's How This <span className="gradient-mask-text">"Set It & Forget It"</span> System Transforms Any Website Into a Conversion Machine
-          </div>
+         
+ <h2 className="m-auto leading-tight text-center mx-auto mt-20 mb-8">
+             {/* First Line - Normal Text */}
+             <ShinyText
+               text=" Here's How This Set It & Forget It System "
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+           
+             {/* Second Line - With Gradient Text */}
+             <ShinyText
+               text="Transforms Any Website Into a Conversion Machine"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+            
+           </h2>
+
+            
+          
         </div>
 
         {/* Timeline Container */}

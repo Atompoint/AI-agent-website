@@ -1,6 +1,6 @@
 import React from 'react'
 import DownArrow from '../../ui/DownArrow';
-
+import ShinyText from '@/components/ui/ShinyText';
 
 interface Feature {
   title: string;
@@ -77,16 +77,29 @@ const Section08: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 ">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl gradient-white-text mb-4 max-w-5xl mx-auto leading-tight">
-            Just a Few of the Ways VoiceAgent <br />
-            AI Turns Visitors Into{" "}
-            <span className="gradient-mask-text">
-              Customers
-            </span>
-          </h1>
+        
+          
+           <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
+             {/* First Line - Normal Text */}
+             <ShinyText
+               text=" Just a Few of the Ways VoiceAgent"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+           
+             {/* Second Line - With Gradient Text */}
+             <ShinyText
+               text="AI Turns Visitors Into Customers"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
+            
+           </h2>
         </div>
 
         {/* Features Grid - 3 columns, 3 rows */}
@@ -113,23 +126,35 @@ const Section08: React.FC = () => {
 
       <div className="container mx-auto px-6 py-16">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl gradient-white-text mb-4 max-w-4xl mx-auto font-medium leading-tight">
-            The Numbers Don't Lie<br />
-            Voice AI Is{" "}
+        <div className="text-center mt-10 mb-16">
+
+          <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
+             {/* First Line - Normal Text */}
+             <ShinyText
+               text="The Numbers Don't Lie"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
            
-              Dominating
+             {/* Second Line - With Gradient Text */}
+             <ShinyText
+               text=" Voice AI Is Dominating"
+               disabled={false}
+               speed={6}
+               className="Heading"
+             />
             
-          </h1>
+           </h2>
         </div>
 
         {/* Statistics Grid */}
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-6xl mx-auto">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto">
           {/* First row - 3 equal-width cards */}
           {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-            <div key={index} className="bg-[#0D0B1B] border border-gray-700/50 rounded-[10px] p-8 h-94 backdrop-blur-sm flex flex-col justify-end">
+            <div key={index} className="bg-[#0D0B1B] border border-gray-900 rounded-[10px] p-8 h-84 backdrop-blur-sm flex flex-col justify-end">
              
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 subheading px-1 max-w-[300px] leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -139,13 +164,13 @@ const Section08: React.FC = () => {
           <div className="col-span-3 flex gap-3">
             <div className="w-1/2 bg-[#0D0B1B] border border-gray-700/50 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
              
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="subheading leading-relaxed max-w-[400px]">
                 {statistics[3].description}
               </p>
             </div>
             <div className="w-1/2 bg-[#0D0B1B] border border-gray-700/50 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
               
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="subheading max-w-[400px] leading-relaxed">
                 {statistics[4].description}
               </p>
             </div>
