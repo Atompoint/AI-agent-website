@@ -41,7 +41,7 @@ const Section13: React.FC = () => {
   }
 
   return (
-    <div className=" text-white border border-b border-gray-400">
+    <div className=" text-white border-b border-gray-400">
       {/* Signature Section with Purple Background Image */}
       <div className="relative overflow-hidden rounded-2xl mx-auto  max-w-[1200px] h-[250] flex items-center justify-center">
         {/* Background Image */}
