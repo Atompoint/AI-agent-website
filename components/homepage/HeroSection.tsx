@@ -5,10 +5,6 @@ import Header from "../layout/Header";
 import Image from "next/image";
 import { BsStars } from "react-icons/bs";
 import { ShineBorder } from "@/components/magicui/shine-border";
-
-import circleSrc from '@/public//assets/icons/audio.svg';
-
-
 import DownArrow from "../ui/DownArrow";
 
 const features = [
@@ -73,13 +69,12 @@ export default function HeroHeader() {
 
 
           {/* Headline */}
-  <div
+<div
   className="font-radio max-w-[88%] sm:max-w-4xl lg:max-w-[60rem] text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] font-normal mb-4 sm:mb-6"
 >
   <ShinyText text="World's First Smart Voice AI Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!
 " disabled={false} speed={6}  />
 </div>
-
 
 
           {/* Subtext */}
@@ -145,7 +140,7 @@ export default function HeroHeader() {
         {/* Circle with microphone - using original SVG without modifications */}
         <div className="relative z-30 flex justify-center items-center mx-auto w-[160px] h-[160px]">
           <Image 
-            src={circleSrc} 
+            src='/assets/icons/mymic.png' 
             alt="Circle background" 
             width={160}
             height={160}
@@ -174,7 +169,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Text: fixed max width, allow wrap inside this box */}
-        <span className="text-sm sm:text-base font-semibold text-white/90 max-w-[120px] break-words">
+        <span className="text-sm sm:text-base font-semibold text-white/90 max-w-[330px] ">
           {feature}
         </span>
       </div>

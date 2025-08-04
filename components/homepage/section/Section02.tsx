@@ -78,7 +78,7 @@ const Section02 = () => {
   return (
     <>
       {/* Fixed Threads Background - with smooth fade transition */}
-      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-0 pointer-events-none transition-opacity duration-1000 ease-in-out ${
+      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-0 pointer-events-none transition-opacity duration-10 ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}>
         <Threads

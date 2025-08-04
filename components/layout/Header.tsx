@@ -3,21 +3,22 @@ import React from 'react';
 import { ShineBorder } from "@/components/magicui/shine-border";
 
 
-import ShinyText from '../ui/ShinyText';
  
 const Header = () => {
   
   return (
     <header className="w-full h-auto flex justify-between items-center px-16 py-6 relative z-10 max-w-7xl mx-auto">
       {/* Logo */}
-      <div className="text-[25px] leading-tight font-medium font-logo capitalize ">
-        <ShinyText text="Voice Ai" disabled={false} speed={6}  />
+      <div className="text-[25px] leading-tight font-medium  ">
+        
+        <div className='font-logo gradient-white-text'>Voice Ai</div>
       </div>
       {/* Shimmer Button */}
       <div className="relative w-[105px] h-[30px] rounded-full overflow-hidden">
         {/* Actual Button */}
-        <button className="w-full h-full  text-[13px] font-semibold z-10 relative rounded-full">
-          <ShinyText text="Join Now" disabled={false} speed={3}  />
+        <button className="w-full h-full  text-[11px] font-medium tracking-widest z-10 relative rounded-full">
+          
+          <div className='font-radio gradient-white-text'>JOIN NOW</div>
         </button>
 
         {/* Shimmer Border */}
