@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
     <div className="relative">
       {/* Elliptical purple glow effect - positioned outside/above footer */}
       <div 
-        className="absolute left-1/2 transform -translate-x-1/2 w-296 h-34 opacity-20 blur-2xl rounded-full pointer-events-none"
+        className="absolute left-1/2 transform -translate-x-1/2 w-296 h-24 opacity-20 blur-2xl rounded-full pointer-events-none"
         style={{
           background: '#5A27B1',
         }}
