@@ -32,27 +32,26 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
         {/* Mobile Layout - Single Column */}
         <div className="sm:hidden flex flex-col items-center text-center space-y-3 px-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 xs:p-2.5 bg-white/10 rounded-full">
+            <div className="p-1.5 xs:p-2">
               {imageUrl ? (
                 <img 
                   src={imageUrl} 
                   alt={`Step ${step} icon`}
-                  className={`w-6 h-6 xs:w-7 xs:h-7 object-contain transition-all ${
-                    isActive ? 'opacity-100' : 'opacity-70'
+                  className={`w-4 h-4 xs:w-5 xs:h-5 object-contain transition-all ${
+                    isActive ? 'opacity-100' : 'opacity-60'
                   }`}
                 />
               ) : Icon ? (
-                <Icon className={`w-6 h-6 xs:w-7 xs:h-7 transition-all ${
-                  isActive ? 'text-white' : 'text-gray-300'
+                <Icon className={`w-4 h-4 xs:w-5 xs:h-5 transition-all ${
+                  isActive ? 'text-white' : 'text-gray-400'
                 }`} />
               ) : null}
             </div>
-            <ShinyText
-              text={step.padStart(2, '0')}
-              disabled={!isActive}
-              speed={6}
-              className="text-2xl xs:text-3xl font-bold transition-all"
-            />
+            <div className={`text-xl xs:text-2xl font-bold transition-all ${
+              isActive ? 'text-white' : 'text-gray-500'
+            }`}>
+              {step.padStart(2, '0')}
+            </div>
           </div>
           <h3 className={`text-sm xs:text-base font-medium leading-tight transition-all max-w-[280px] ${
             isActive ? 'text-white' : 'text-gray-400'
@@ -74,25 +73,24 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
           <div className={`hidden sm:flex ${position === 'left' ? 'justify-end pr-4 md:pr-6 lg:pr-8 xl:pr-8 2xl:pr-10' : 'justify-start pl-4 md:pl-6 lg:pl-8 xl:pl-8 2xl:pl-10'}`}>
             {position === 'left' && (
               <div className="max-w-[200px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[280px] xl:max-w-sm 2xl:max-w-md text-right">
-                <div className="flex items-center justify-end gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <ShinyText
-                    text={step.padStart(2, '0')}
-                    disabled={!isActive}
-                    speed={6}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold transition-all"
-                  />
-                  <div className="p-2 sm:p-2.5 bg-white/10 rounded-full">
+                <div className="flex items-center justify-end gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <div className={`text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold transition-all ${
+                    isActive ? 'text-white' : 'text-gray-500'
+                  }`}>
+                    {step.padStart(2, '0')}
+                  </div>
+                  <div className="p-1 sm:p-1.5 md:p-2 transition-all">
                     {imageUrl ? (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all ${
-                          isActive ? 'opacity-100' : 'opacity-70'
+                        className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 object-contain transition-all ${
+                          isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                       />
                     ) : Icon ? (
-                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 transition-all ${
-                        isActive ? 'text-white' : 'text-gray-300'
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 transition-all ${
+                        isActive ? 'text-white' : 'text-gray-400'
                       }`} />
                     ) : null}
                   </div>
@@ -111,34 +109,33 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                 )}
               </div>
             )}
-          </div> 
+          </div>
 
           {/* Right Side Content */}
           <div className={`hidden sm:flex ${position === 'right' ? 'justify-start pl-4 md:pl-6 lg:pl-8 xl:pl-8 2xl:pl-10' : 'justify-end pr-4 md:pr-6 lg:pr-8 xl:pr-8 2xl:pl-10'}`}>
             {position === 'right' && (
               <div className="max-w-[200px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[280px] xl:max-w-sm 2xl:max-w-md text-left">
-                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="p-2 sm:p-2.5 bg-white/10 rounded-full">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <div className="p-1 sm:p-1.5 md:p-2 transition-all">
                     {imageUrl ? (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all ${
-                          isActive ? 'opacity-100' : 'opacity-70'
+                        className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 object-contain transition-all ${
+                          isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                       />
                     ) : Icon ? (
-                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 transition-all ${
-                        isActive ? 'text-white' : 'text-gray-300'
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 transition-all ${
+                        isActive ? 'text-white' : 'text-gray-400'
                       }`} />
                     ) : null}
                   </div>
-                  <ShinyText
-                    text={step.padStart(2, '0')}
-                    disabled={!isActive}
-                    speed={6}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold transition-all"
-                  />
+                  <div className={`text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold transition-all ${
+                    isActive ? 'text-white' : 'text-gray-500'
+                  }`}>
+                    {step.padStart(2, '0')}
+                  </div>
                 </div>
                 <h3 className={`text-xs sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-lg font-medium leading-tight mb-1 sm:mb-2 transition-all ${
                   isActive ? 'text-white' : 'text-gray-400'
