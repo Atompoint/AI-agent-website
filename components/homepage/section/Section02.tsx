@@ -1,5 +1,4 @@
 import DownArrow from "@/components/ui/DownArrow";
-import Threads from '@/components/ui/Threads';
 import ShinyText from '@/components/ui/ShinyText';
 
 const Section02 = () => {
@@ -51,16 +50,7 @@ const Section02 = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Threads - Positioned within section, moves with content */}
-      <div 
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-0 pointer-events-none"
-        
-      >
-        <Threads
-          amplitude={1}
-          distance={0}
-          enableMouseInteraction={true}
-        />
-      </div>
+      
       
       {/* Content Container - Fully Responsive */}
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 2xl:px-16 py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-16 2xl:py-24">
