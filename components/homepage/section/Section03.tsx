@@ -23,7 +23,7 @@ const Section03: React.FC = () => {
       icon: '/assets/icons/qmark.svg',
       alt: 'question mark',
       iconSize: { height: 70, width: 70 },
-      containerClass: 'w-16 h-16 md:w-20 md:h-20 mb-2',
+      containerClass: 'w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 mb-2',
       textLines: [
         "67% of website visitors abandon sites",
         "when they can't get immediate answers"
@@ -34,7 +34,7 @@ const Section03: React.FC = () => {
       icon: '/assets/icons/anxious.svg',
       alt: 'anxious face',
       iconSize: { height: 70, width: 70 },
-      containerClass: 'w-16 h-16 md:w-20 md:h-20 mb-2',
+      containerClass: 'w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 mb-2',
       textLines: [
         "79% say they won't return to a",
         "website after a bad user experience"
@@ -45,7 +45,7 @@ const Section03: React.FC = () => {
       icon: '/assets/icons/wing.svg',
       alt: 'wings',
       iconSize: { height: 70, width: 70 },
-      containerClass: 'w-16 h-16 md:w-20 md:h-20 mb-2',
+      containerClass: 'w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 mb-2',
       textLines: [
         "You lose an average of $1,430 for every",
         "1,000 visitors who leave confused"
@@ -122,67 +122,64 @@ const Section03: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center p-6">
+    <div className="flex flex-col justify-center items-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-6 2xl:px-16 py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 xl:py-6 2xl:py-12">
       
-      {/* Spotlight section with external glow */}
-      <div className="relative w-full flex mb-10 justify-center">
-        {/* Glow effect containers - positioned outside the spotlight */}
-        <div className="absolute inset-x-0 bottom-0 h-32 z-0">
+      {/* Spotlight section with external glow - Fully Responsive */}
+      <div className="relative w-full flex mb-6 xs:mb-7 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-10 2xl:mb-12 justify-center">
+        {/* Glow effect containers - Responsive sizing */}
+        <div className="absolute inset-x-0 bottom-0 h-20 xs:h-24 sm:h-28 md:h-32 lg:h-36 xl:h-32 2xl:h-40 z-0">
           <div 
-            className="w-full h-full rounded-full blur-3xl opacity-50"
+            className="w-full h-full rounded-full blur-2xl xs:blur-2xl sm:blur-3xl md:blur-3xl lg:blur-3xl xl:blur-3xl 2xl:blur-3xl opacity-40 xs:opacity-45 sm:opacity-50 md:opacity-50 lg:opacity-50 xl:opacity-50 2xl:opacity-60"
             style={{
               background: 'radial-gradient(ellipse at center, rgba(138, 43, 226, 0.8) 0%, rgba(75, 0, 130, 0.6) 30%, rgba(72, 61, 139, 0.4) 50%, transparent 80%)'
             }}
           />
         </div>
         
-        {/* Secondary glow for more intensity */}
-        <div className="absolute inset-x-0 bottom-5 h-20 z-0">
+        {/* Secondary glow - Responsive */}
+        <div className="absolute inset-x-0 bottom-3 xs:bottom-4 sm:bottom-5 md:bottom-5 lg:bottom-5 xl:bottom-5 2xl:bottom-6 h-12 xs:h-16 sm:h-20 md:h-20 lg:h-20 xl:h-20 2xl:h-24 z-0">
           <div 
-            className="w-full h-full rounded-full blur-2xl opacity-60"
+            className="w-full h-full rounded-full blur-xl xs:blur-xl sm:blur-2xl md:blur-2xl lg:blur-2xl xl:blur-2xl 2xl:blur-2xl opacity-50 xs:opacity-55 sm:opacity-60 md:opacity-60 lg:opacity-60 xl:opacity-60 2xl:opacity-70"
             style={{
               background: 'radial-gradient(ellipse at center, rgba(147, 112, 219, 0.9) 0%, rgba(138, 43, 226, 0.5) 40%, transparent 70%)'
             }}
           />
         </div>
 
-        {/* Spotlight container */}
+        {/* Spotlight container - Responsive width and padding */}
         <div 
-          className="relative bg-cover w-[90%] py-7 border border-gray-900 rounded-2xl bg-center bg-no-repeat flex items-center justify-center  z-10"
+          className="relative bg-cover w-[95%] xs:w-[92%] sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[85%] py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 xl:py-7 2xl:py-9 border border-gray-900 rounded-xl xs:rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl xl:rounded-2xl 2xl:rounded-3xl bg-center bg-no-repeat flex items-center justify-center z-10"
           style={{
             backgroundImage: "url('/assets/images/Spotlight.png')",
           }}
         >
           
-          {/* Content Container */}
-          <div className="relative z-10 max-w-5xl w-full text-center">
-            {/* Main Heading */}
-           <h2 className="m-auto max-w-[600px] leading-tight text-center ">
-             {/* First Line - Normal Text */}
+          {/* Content Container - Responsive max-width */}
+          <div className="relative z-10 max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl 2xl:max-w-6xl w-full text-center">
+            {/* Main Heading - Responsive typography */}
+           <h2 className="m-auto max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[700px] leading-tight text-center">
              <ShinyText
                text="Stop Losing Money Every Single"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            
-             {/* Second Line - With Gradient Text */}
              <ShinyText
                text="Day Your Website Stays Silent!"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            </h2>
            
-           
-            {/* Subtitle */}
-            <p className="text-gray-300 text-sm py-7 font-light">
+            {/* Subtitle - Responsive sizing */}
+            <p className="text-gray-300 text-xs xs:text-sm sm:text-sm md:text-base lg:text-base xl:text-sm 2xl:text-base py-4 xs:py-5 sm:py-6 md:py-7 lg:py-7 xl:py-7 2xl:py-8 font-light">
               The statistics are brutal!
             </p>
             
-            {/* Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+            {/* Statistics Cards - Responsive grid and spacing */}
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
               {statisticsData.map((stat) => (
                 <div key={stat.id} className="flex flex-col items-center text-center">
                   <div className={`${stat.containerClass} flex items-center justify-center`}>
@@ -191,9 +188,10 @@ const Section03: React.FC = () => {
                       alt={stat.alt} 
                       height={stat.iconSize.height} 
                       width={stat.iconSize.width}
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <p className="text-white font-normal text-sm md:text-base mb-6 py-4 leading-tight max-w-xs">
+                  <p className="text-white font-normal text-xs xs:text-sm sm:text-sm md:text-base lg:text-base xl:text-sm 2xl:text-base mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-6 xl:mb-6 2xl:mb-8 py-2 xs:py-3 sm:py-4 md:py-4 lg:py-4 xl:py-4 2xl:py-5 leading-tight max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-xs xl:max-w-xs 2xl:max-w-sm">
                     <span>{stat.textLines[0]}</span>
                     <br />
                     {stat.textLines[1]}
@@ -205,45 +203,43 @@ const Section03: React.FC = () => {
         </div>
       </div>
         
-      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl p-8 md:p-12 overflow-hidden">
+      {/* Comparison Section - Responsive container */}
+      <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-6xl 2xl:max-w-7xl mx-auto bg-transparent rounded-2xl xs:rounded-2xl sm:rounded-3xl md:rounded-3xl lg:rounded-3xl xl:rounded-3xl 2xl:rounded-3xl p-4 xs:p-5 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 overflow-hidden">
         {/* Content */}
         <div className="relative z-10">
-          {/* Main headline */}
-          <div className="text-center mb-12 py-7">
-            <h2 className="m-auto  leading-tight text-center ">
-             {/* First Line - Normal Text */}
+          {/* Main headline - Responsive typography */}
+          <div className="text-center mb-8 xs:mb-9 sm:mb-10 md:mb-11 lg:mb-12 xl:mb-12 2xl:mb-16 py-4 xs:py-5 sm:py-6 md:py-7 lg:py-7 xl:py-7 2xl:py-9">
+            <h2 className="m-auto leading-tight text-center">
              <ShinyText
                text="Why Business Owners Are Ditching"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            
-             {/* Second Line - With Gradient Text */}
              <ShinyText
                text="Expensive Alternatives for VoiceAgent AI"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            </h2>
           </div>
 
-          {/* Dynamic Comparison Grid with Center Lines */}
-          <div className="w-full max-w-5xl mb-20 mx-auto relative">
-            {/* Center vertical line */}
-            <div className="absolute left-1/2 top-0 w-px h-full bg-gray-800 transform -translate-x-1/2 z-20"></div>
+          {/* Dynamic Comparison Grid - Responsive layout */}
+          <div className="w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl 2xl:max-w-6xl mb-12 xs:mb-14 sm:mb-16 md:mb-18 lg:mb-20 xl:mb-20 2xl:mb-24 mx-auto relative">
+            {/* Center lines - Only visible on larger screens */}
+            <div className="hidden lg:block xl:block 2xl:block absolute left-1/2 top-0 w-px h-full bg-gray-800 transform -translate-x-1/2 z-20"></div>
+            <div className="hidden lg:block xl:block 2xl:block absolute top-1/2 left-0 w-full h-px bg-gray-800 transform -translate-y-1/2 z-20"></div>
             
-            {/* Center horizontal line */}
-            <div className="absolute top-1/2 left-0 w-full h-px bg-gray-800 transform -translate-y-1/2 z-20"></div>
-            
-            <div className="grid grid-cols-2 gap-10">
+            {/* Grid - Responsive columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-10 2xl:gap-12">
               {comparisonData.map((item: ComparisonItem, index: number) => (
                 <div 
                   key={item.id}
                   className={`
                     ${item.backgroundColor} 
-                    rounded-xl p-8 h-80 relative overflow-hidden
+                    rounded-lg xs:rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-xl xl:rounded-xl 2xl:rounded-xl p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-8 2xl:p-10 h-64 xs:h-72 sm:h-80 md:h-80 lg:h-80 xl:h-80 2xl:h-96 relative overflow-hidden
                   `}
                 >
                   {/* Gradient overlay for special sections */}
@@ -252,32 +248,38 @@ const Section03: React.FC = () => {
                   )}
                   
                   <div className="relative z-10 flex flex-col justify-center items-center h-full">
-                    {/* Content container - centered in grid but content starts from left */}
-                    <div className={`w-full max-w-sm ${item.id === 4 ? '-mt-15' : ''}`}>
-                      {/* Header */}
-                      <div className="flex flex-col items-start mb-4">
-                        <Image src={item.icon} alt={`${item.title} icon`} height={50} width={50} className="py-3"/>
+                    {/* Content container */}
+                    <div className={`w-full max-w-xs xs:max-w-sm sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm 2xl:max-w-md ${item.id === 4 ? '-mt-8 xs:-mt-10 sm:-mt-12 md:-mt-15 lg:-mt-15 xl:-mt-15 2xl:-mt-20' : ''}`}>
+                      {/* Header - Responsive icon and text */}
+                      <div className="flex flex-col items-start mb-3 xs:mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-4 2xl:mb-5">
+                        <Image 
+                          src={item.icon} 
+                          alt={`${item.title} icon`} 
+                          height={50} 
+                          width={50} 
+                          className="py-2 xs:py-2 sm:py-3 md:py-3 lg:py-3 xl:py-3 2xl:py-4 w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 object-contain"
+                        />
                         {item.id === 4 ? (
-                          <h3 className="gradient-mask-text text-lg font-semibold text-start">{item.title}</h3>
+                          <h3 className="gradient-mask-text text-sm xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">{item.title}</h3>
                         ) : (
-                          <h3 className="text-white text-lg font-semibold text-start">
+                          <h3 className="text-white text-sm xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">
                             {item.title}
                             {item.subtitle && (
                               <>
                                 <br/>
-                                <span className="text-yellow-200 text-sm">{item.subtitle}</span>
+                                <span className="text-yellow-200 text-xs xs:text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-base">{item.subtitle}</span>
                               </>
                             )}
                           </h3>
                         )}
                       </div>
 
-                      {/* Features List */}
-                      <ul className={`space-y-3 font-light text-[14px] text-${item.textColor} text-start`}>
+                      {/* Features List - Responsive text sizing */}
+                      <ul className={`space-y-2 xs:space-y-2 sm:space-y-3 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-4 font-light text-xs xs:text-xs sm:text-sm md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-base text-${item.textColor} text-start`}>
                         {item.features.map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-start">
                             <div className={`w-1 h-1 bg-${item.bulletColor} rounded-full mt-1.5 mr-2 flex-shrink-0`}></div>
-                            <span>{feature}</span>
+                            <span className="leading-relaxed">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -290,55 +292,48 @@ const Section03: React.FC = () => {
         </div>
       </div>
       
+      {/* Final CTA Section - Responsive */}
       <div 
-        className="relative w-full  max-w-6xl mx-auto rounded-3xl p-8 md:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-6xl 2xl:max-w-7xl mx-auto rounded-2xl xs:rounded-2xl sm:rounded-3xl md:rounded-3xl lg:rounded-3xl xl:rounded-3xl 2xl:rounded-3xl p-4 xs:p-5 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${Gradient.src})`
         }}
       >
         {/* Content */}
         <div className="relative z-10 text-center">
-         
-
- <h2 className="m-auto max-w-[600px] leading-tight text-center ">
-             {/* First Line - Normal Text */}
+         <h2 className="m-auto max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[700px] leading-tight text-center">
              <ShinyText
                text=" But what if I told you there's now a"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            
-             {/* Second Line - With Gradient Text */}
              <ShinyText
                text="way to have a tireless smart voice"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
              <ShinyText
                text=" agent on your website 24/7!"
                disabled={false}
                speed={6}
-               className="Heading"
+               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
            </h2>
-
-
-
-
-
-
-
           
-          {/* Supporting text */}
-          <p className="sub-text lg:text-sm max-w-4xl py-5 mx-auto">
+          {/* Supporting text - Responsive */}
+          <p className="sub-text text-xs xs:text-sm sm:text-sm md:text-base lg:text-base xl:text-sm 2xl:text-base max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl 2xl:max-w-5xl py-3 xs:py-4 sm:py-5 md:py-5 lg:py-5 xl:py-5 2xl:py-6 mx-auto leading-relaxed">
             Ready to answer every question, handle every objection, and guide every visitor straight to your checkout page
           </p>
         </div>
       </div>
       
-      <DownArrow/>
+      {/* Down Arrow with responsive spacing */}
+      <div className="mt-4 xs:mt-5 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-6 2xl:mt-12">
+        <DownArrow/>
+      </div>
     </div>
   );
 };

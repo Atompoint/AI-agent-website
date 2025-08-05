@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import DownArrow from '../../ui/DownArrow';
 import Offer from '@/components/ui/Offer';
 import ShinyText from '@/components/ui/ShinyText';
+
 interface TimelineStepData {
   step: string;
   imageUrl?: string;
@@ -23,134 +24,162 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
   const { step, imageUrl, icon: Icon, title, subtitle, position } = data;
   
   return (
-    <div className={`relative transition-all duration-700 ease-out transform ${
-      isActive ? 'opacity-100 scale-100 translate-y-0' : 'opacity-30 scale-95 translate-y-4'
+    <div className={`relative transition-all duration-500 ease-out transform ${
+      isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-98'
     }`}>
-      <div className={`grid grid-cols-2 gap-0 items-center min-h-[120px]`}>
-        {/* Left Side Content */}
-        <div className={`flex ${position === 'left' ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
-          {position === 'left' && (
-            <div className="max-w-sm text-right">
-              <div className="flex items-center justify-end gap-3 mb-3">
-                <div className={`text-3xl font-bold transition-all ${
-                  isActive ? 'text-white' : 'text-gray-500'
-                }`}>
-                  {step.padStart(2, '0')}
-                </div>
-                <div className="p-2 transition-all">
-                  {imageUrl ? (
-                    <img 
-                      src={imageUrl} 
-                      alt={`Step ${step} icon`}
-                      className={`w-5 h-5 object-contain transition-all ${
-                        isActive ? 'opacity-100' : 'opacity-60'
-                      }`}
-                    />
-                  ) : Icon ? (
-                    <Icon className={`w-5 h-5 transition-all ${
-                      isActive ? 'text-white' : 'text-gray-400'
-                    }`} />
-                  ) : null}
-                </div>
-              </div>
-              <h3 className={`text-base font-medium leading-tight mb-2 transition-all ${
-                isActive ? 'text-white' : 'text-gray-400'
-              }`}>
-                {title}
-              </h3>
-              {subtitle && (
-                <p className={`text-sm italic transition-all ${
-                  isActive ? 'text-gray-300' : 'text-gray-500'
-                }`}>
-                  {subtitle}
-                </p>
-              )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 sm:gap-0 md:gap-0 lg:gap-0 xl:gap-0 2xl:gap-0 items-center min-h-[80px] xs:min-h-[90px] sm:min-h-[100px] md:min-h-[110px] lg:min-h-[120px] xl:min-h-[120px] 2xl:min-h-[140px]">
+        
+        {/* Mobile Layout - Single Column */}
+        <div className="sm:hidden flex flex-col items-center text-center space-y-3 px-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2 xs:p-2.5 bg-white/10 rounded-full">
+              {imageUrl ? (
+                <img 
+                  src={imageUrl} 
+                  alt={`Step ${step} icon`}
+                  className={`w-6 h-6 xs:w-7 xs:h-7 object-contain transition-all ${
+                    isActive ? 'opacity-100' : 'opacity-70'
+                  }`}
+                />
+              ) : Icon ? (
+                <Icon className={`w-6 h-6 xs:w-7 xs:h-7 transition-all ${
+                  isActive ? 'text-white' : 'text-gray-300'
+                }`} />
+              ) : null}
             </div>
+            <ShinyText
+              text={step.padStart(2, '0')}
+              disabled={!isActive}
+              speed={6}
+              className="text-2xl xs:text-3xl font-bold transition-all"
+            />
+          </div>
+          <h3 className={`text-sm xs:text-base font-medium leading-tight transition-all max-w-[280px] ${
+            isActive ? 'text-white' : 'text-gray-400'
+          }`}>
+            {title}
+          </h3>
+          {subtitle && (
+            <p className={`text-xs xs:text-sm italic transition-all ${
+              isActive ? 'text-gray-300' : 'text-gray-500'
+            }`}>
+              {subtitle}
+            </p>
           )}
         </div>
 
-        {/* Right Side Content */}
-        <div className={`flex ${position === 'right' ? 'justify-start pl-8' : 'justify-end pr-8'}`}>
-          {position === 'right' && (
-            <div className="max-w-sm text-left">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 transition-all">
-                  {imageUrl ? (
-                    <img 
-                      src={imageUrl} 
-                      alt={`Step ${step} icon`}
-                      className={`w-5 h-5 object-contain transition-all ${
-                        isActive ? 'opacity-100' : 'opacity-60'
-                      }`}
-                    />
-                  ) : Icon ? (
-                    <Icon className={`w-5 h-5 transition-all ${
-                      isActive ? 'text-white' : 'text-gray-400'
-                    }`} />
-                  ) : null}
+        {/* Desktop Layout - Two Columns */}
+        <>
+          {/* Left Side Content */}
+          <div className={`hidden sm:flex ${position === 'left' ? 'justify-end pr-4 md:pr-6 lg:pr-8 xl:pr-8 2xl:pr-10' : 'justify-start pl-4 md:pl-6 lg:pl-8 xl:pl-8 2xl:pl-10'}`}>
+            {position === 'left' && (
+              <div className="max-w-[200px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[280px] xl:max-w-sm 2xl:max-w-md text-right">
+                <div className="flex items-center justify-end gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <ShinyText
+                    text={step.padStart(2, '0')}
+                    disabled={!isActive}
+                    speed={6}
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold transition-all"
+                  />
+                  <div className="p-2 sm:p-2.5 bg-white/10 rounded-full">
+                    {imageUrl ? (
+                      <img 
+                        src={imageUrl} 
+                        alt={`Step ${step} icon`}
+                        className={`w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all ${
+                          isActive ? 'opacity-100' : 'opacity-70'
+                        }`}
+                      />
+                    ) : Icon ? (
+                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 transition-all ${
+                        isActive ? 'text-white' : 'text-gray-300'
+                      }`} />
+                    ) : null}
+                  </div>
                 </div>
-                <div className={`text-3xl font-bold transition-all ${
-                  isActive ? 'text-white' : 'text-gray-500'
+                <h3 className={`text-xs sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-lg font-medium leading-tight mb-1 sm:mb-2 transition-all ${
+                  isActive ? 'text-white' : 'text-gray-400'
                 }`}>
-                  {step.padStart(2, '0')}
-                </div>
+                  {title}
+                </h3>
+                {subtitle && (
+                  <p className={`text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-base italic transition-all ${
+                    isActive ? 'text-gray-300' : 'text-gray-500'
+                  }`}>
+                    {subtitle}
+                  </p>
+                )}
               </div>
-              <h3 className={`text-base font-medium leading-tight mb-2 transition-all ${
-                isActive ? 'text-white' : 'text-gray-400'
-              }`}>
-                {title}
-              </h3>
-              {subtitle && (
-                <p className={`text-sm italic transition-all ${
-                  isActive ? 'text-gray-300' : 'text-gray-500'
-                }`}>
-                  {subtitle}
-                </p>
-              )}
-            </div>
-          )}
-        </div>
+            )}
+          </div> 
 
-        {/* Center Line Dot */}
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className={`w-4 h-4 rounded-full border-2 transition-all duration-500 ${
-            isActive 
-              ? 'border-white bg-white shadow-lg shadow-white/50' 
-              : 'border-gray-600 bg-gray-800'
-          }`}></div>
-        </div>
+          {/* Right Side Content */}
+          <div className={`hidden sm:flex ${position === 'right' ? 'justify-start pl-4 md:pl-6 lg:pl-8 xl:pl-8 2xl:pl-10' : 'justify-end pr-4 md:pr-6 lg:pr-8 xl:pr-8 2xl:pl-10'}`}>
+            {position === 'right' && (
+              <div className="max-w-[200px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[280px] xl:max-w-sm 2xl:max-w-md text-left">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="p-2 sm:p-2.5 bg-white/10 rounded-full">
+                    {imageUrl ? (
+                      <img 
+                        src={imageUrl} 
+                        alt={`Step ${step} icon`}
+                        className={`w-7 h-7 sm:w-8 sm:h-8 object-contain transition-all ${
+                          isActive ? 'opacity-100' : 'opacity-70'
+                        }`}
+                      />
+                    ) : Icon ? (
+                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 transition-all ${
+                        isActive ? 'text-white' : 'text-gray-300'
+                      }`} />
+                    ) : null}
+                  </div>
+                  <ShinyText
+                    text={step.padStart(2, '0')}
+                    disabled={!isActive}
+                    speed={6}
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold transition-all"
+                  />
+                </div>
+                <h3 className={`text-xs sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-lg font-medium leading-tight mb-1 sm:mb-2 transition-all ${
+                  isActive ? 'text-white' : 'text-gray-400'
+                }`}>
+                  {title}
+                </h3>
+                {subtitle && (
+                  <p className={`text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-base italic transition-all ${
+                    isActive ? 'text-gray-300' : 'text-gray-500'
+                  }`}>
+                    {subtitle}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        </>
       </div>
     </div>
   );
 };
 
-const AnimatedCenterLine: React.FC<{ height: number }> = ({ height }) => {
+const ThermometerLine: React.FC<{ progress: number }> = ({ progress }) => {
   return (
-    <div className="absolute left-1/2 top-0 h-full w-px bg-gray-600 transform -translate-x-1/2 z-0">
-      {/* Animated glow effect */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white/80 to-transparent animate-pulse opacity-60"></div>
-      
-      {/* Moving dot */}
-      <div className="absolute top-0 left-0 w-1 h-1 bg-white rounded-full animate-bounce" 
-           style={{ 
-             animation: 'moveDown 4s linear infinite',
-           }}>
-      </div>
-      
-      <style jsx>{`
-        @keyframes moveDown {
-          0% { top: 0%; opacity: 1; }
-          50% { opacity: 0.5; }
-          100% { top: 100%; opacity: 0; }
-        }
-      `}</style>
+    <div className="absolute left-1/2 top-0 h-full w-0.5 sm:w-px bg-gray-600 transform -translate-x-1/2 z-0 hidden sm:block">
+      {/* Filled progress line with gradient */}
+      <div 
+        className="absolute top-0 left-0 w-full transition-all duration-300 ease-out"
+        style={{
+          height: `${Math.min(progress, 100)}%`,
+          background: 'linear-gradient(to bottom, #BF84F9, #DEBFFF)',
+          boxShadow: '0 0 8px rgba(191, 132, 249, 0.5)'
+        }}
+      />
     </div>
   );
 };
 
 const TimelineUI: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
-  const [containerHeight, setContainerHeight] = useState<number>(0);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -194,21 +223,33 @@ const TimelineUI: React.FC = () => {
   ];
 
   useEffect(() => {
-    const updateHeight = () => {
+    const handleScroll = () => {
       if (containerRef.current) {
-        setContainerHeight(containerRef.current.scrollHeight);
+        const container = containerRef.current;
+        const containerTop = container.offsetTop;
+        const containerHeight = container.offsetHeight;
+        const scrollTop = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate progress based on scroll position
+        const startScroll = containerTop - windowHeight * 0.5;
+        const endScroll = containerTop + containerHeight - windowHeight * 0.5;
+        const currentProgress = ((scrollTop - startScroll) / (endScroll - startScroll)) * 100;
+        
+        setScrollProgress(Math.max(0, Math.min(100, currentProgress)));
       }
     };
 
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: '-30% 0px -30% 0px',
+      rootMargin: '-40% 0px -40% 0px',
       threshold: 0.1
     };
 
@@ -239,40 +280,33 @@ const TimelineUI: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen font-['Inter',sans-serif]">
+    <div className="min-h-screen font-['Inter',sans-serif] px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 2xl:px-16">
       <Offer/>
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-         
- <h2 className="m-auto leading-tight text-center mx-auto mt-20 mb-8">
-             {/* First Line - Normal Text */}
-             <ShinyText
-               text=" Here's How This Set It & Forget It System "
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-           
-             {/* Second Line - With Gradient Text */}
-             <ShinyText
-               text="Transforms Any Website Into a Conversion Machine"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-            
-           </h2>
-
-            
+      <div className="container mx-auto">
+        {/* Header - Responsive typography */}
+        <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-16 2xl:mb-20">
+          <h2 className="m-auto leading-tight text-center mx-auto mt-12 xs:mt-14 sm:mt-16 md:mt-18 lg:mt-20 xl:mt-20 2xl:mt-24 mb-6 xs:mb-7 sm:mb-8 md:mb-8 lg:mb-8 xl:mb-8 2xl:mb-10 max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full">
+            <ShinyText
+              text=" Here's How This Set It & Forget It System "
+              disabled={false}
+              speed={6}
+              className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
+            />
           
+            <ShinyText
+              text="Transforms Any Website Into a Conversion Machine"
+              disabled={false}
+              speed={6}
+              className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
+            />
+          </h2>
         </div>
 
-        {/* Timeline Container */}
-        <div className="max-w-6xl mx-auto">
-          <div ref={containerRef} className="relative py-8">
-            {/* Timeline Steps */}
-            <div className="relative z-10 space-y-8">
+        {/* Timeline Container - Responsive max-width */}
+        <div className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
+          <div ref={containerRef} className="relative py-6 xs:py-7 sm:py-8 md:py-8 lg:py-8 xl:py-8 2xl:py-12">
+            {/* Timeline Steps - Responsive spacing */}
+            <div className="relative z-10 space-y-6 xs:space-y-7 sm:space-y-8 md:space-y-10 lg:space-y-12 xl:space-y-8 2xl:space-y-12">
               {steps.map((step, index) => (
                 <div
                   key={index}
@@ -283,19 +317,23 @@ const TimelineUI: React.FC = () => {
                     data={step}
                     isActive={activeStep === index}
                     index={index}
-                  />
+/>
                 </div>
               ))}
             </div>
             
-            {/* Center Line - Now properly contained */}
-            <AnimatedCenterLine height={containerHeight} />
+            {/* Thermometer Progress Line */}
+            <ThermometerLine progress={scrollProgress} />
           </div>
         </div>
 
-        {/* Bottom spacing */}
-        <div className="h-32"></div>
-        <DownArrow/>
+        {/* Bottom spacing - Responsive */}
+        <div className="h-16 xs:h-20 sm:h-24 md:h-28 lg:h-32 xl:h-32 2xl:h-40"></div>
+        
+        {/* Down Arrow with responsive spacing */}
+        <div className="pb-6 xs:pb-7 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-8 2xl:pb-16">
+          <DownArrow/>
+        </div>
       </div>
     </div>
   );

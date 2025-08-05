@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ShinyText from '../ui/ShinyText';
+import ShinyText from '@/components/ui/ShinyText';
 import Header from "../layout/Header";
 import Image from "next/image";
 import { BsStars } from "react-icons/bs";
@@ -88,7 +88,11 @@ export default function HeroHeader() {
         {/* OVERLAID Product Image positioned over section 2 */}
 <div className="absolute top-[-15rem] sm:top-[-20rem] md:top-[-25rem] lg:top-[-8rem] w-full right-3 flex justify-center z-30">
   {/* Glow Effect */}
-  <div className="absolute -top-3 w-[800px] h-[80px] bg-[#773DBA] opacity-90 blur-2xl rounded-full z-[-1]" />
+{/* Outer soft glow */}
+<div className="absolute -top-4 left-1/2 -translate-x-1/2 w-[800px] h-[30px] bg-[#773DBA] opacity-100 blur-[30px] rounded-[50%/100%] z-[-1]" />
+<div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[700px] h-[30px] bg-[#773DBA] opacity-80 blur-[6px] rounded-[50%/100%] z-[-1]" />
+
+{/* Inner sharper glow */}
 
   {/* Container for both sparkles and main image */}
   <div className="relative w-full max-w-[900px]">
@@ -122,7 +126,7 @@ export default function HeroHeader() {
     className="object-contain max-w-full h-auto relative z-10 rounded-2xl"
   />
   <ShineBorder
-    borderWidth={1}
+    borderWidth={2}
     duration={23}
     shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
     className="absolute inset-0 rounded-2xl pointer-events-none"
