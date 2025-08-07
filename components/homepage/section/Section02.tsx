@@ -49,11 +49,15 @@ const Section02 = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background Threads - Positioned within section, moves with content */}
+      {/* Glow Effects */}
+      <div className="absolute top-200 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
+      <div className="absolute bottom-400 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
+      
+
       
       
       {/* Content Container - Fully Responsive */}
-      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 2xl:px-16 py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-16 2xl:py-24">
+      <div className="relative z-10 container mx-auto px-3 mb-3">
         <div className="space-y-8 xs:space-y-10 sm:space-y-12 md:space-y-16 lg:space-y-20 xl:space-y-12 2xl:space-y-16">
           
           {sections.map((section, index) => (
@@ -86,7 +90,7 @@ const Section02 = () => {
               </div>
 
               {/* Image Section - Responsive sizing optimized for your screen */}
-              <div className="w-full max-w-[300px] h-[250px] xs:max-w-[320px] xs:h-[270px] sm:max-w-[350px] sm:h-[300px] md:max-w-[400px] md:h-[350px] lg:w-[350px] lg:h-[350px] xl:w-[450px] xl:h-[400px] 2xl:w-[550px] 2xl:h-[450px] rounded-xl xs:rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl xl:rounded-2xl 2xl:rounded-3xl bg-gray-500 bg-opacity-20 xs:bg-opacity-25 sm:bg-opacity-30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
+              <div className="w-full max-w-[450px] h-[350px]  rounded-[7px]  2xl:rounded-3xl bg-gray-500 bg-opacity-20 xs:bg-opacity-25 sm:bg-opacity-30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
                 <span className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl text-gray-400">
                   {/* Placeholder for future content */}
                 </span>

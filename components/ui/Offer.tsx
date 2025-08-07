@@ -5,7 +5,7 @@ import ShinyText from '@/components/ui/ShinyText';
 
 const Offer = () => {
   return (
-    <div className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl mx-auto text-center mb-4 xs:mb-5 sm:mb-6 md:mb-6 lg:mb-6 xl:mb-6 2xl:mb-8 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 2xl:px-16">
+    <div className="max-w-xs xs:max-w-sm py-4  sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl mx-auto text-center mb-4 xs:mb-5 sm:mb-6 md:mb-6 lg:mb-6 xl:mb-6 2xl:mb-8 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 2xl:px-16">
       {/* Limited Time Offer Header - Responsive */}
       <h2 className="m-auto max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[700px] leading-tight text-center">
         {/* First Line - Normal Text */}
@@ -21,7 +21,7 @@ const Offer = () => {
           text="Only A One time Investment Today!"
           disabled={false}
           speed={6}
-          className="Heading text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
+          className="Heading gradient-mask-text text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
         />
       </h2>
 

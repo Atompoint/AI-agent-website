@@ -2,7 +2,7 @@ import React from 'react';
 
 const DownArrow = () => {
   return (
-    <div className="flex justify-center items-center py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 xl:py-4 2xl:py-8">
+    <div className="flex justify-center items-center py-10">
       {/* Animate this wrapper instead of individual elements - Responsive sizing */}
       <div 
         className="relative w-[120px] h-[120px] xs:w-[140px] xs:h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] xl:w-[200px] xl:h-[200px] 2xl:w-[240px] 2xl:h-[240px] flex justify-center items-center animate-bounce" 

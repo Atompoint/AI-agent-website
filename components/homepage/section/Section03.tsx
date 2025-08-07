@@ -3,6 +3,7 @@ import Image from "next/image";
 import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
 import Gradient from "@/public/assets/images/grad2.png"
+import { BsStars } from "react-icons/bs";
 
 interface ComparisonItem {
   id: number;
@@ -122,30 +123,13 @@ const Section03: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-6 2xl:px-16 py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 xl:py-6 2xl:py-12">
+    <div className="relative flex flex-col justify-center items-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-6 2xl:px-16 py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 xl:py-6 2xl:py-12 overflow-hidden">
+      {/* Single Centered Glow Effect */}
+      <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[900px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[130px] -z-10" />
       
       {/* Spotlight section with external glow - Fully Responsive */}
       <div className="relative w-full flex mb-6 xs:mb-7 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-10 2xl:mb-12 justify-center">
-        {/* Glow effect containers - Responsive sizing */}
-        <div className="absolute inset-x-0 bottom-0 h-20 xs:h-24 sm:h-28 md:h-32 lg:h-36 xl:h-32 2xl:h-40 z-0">
-          <div 
-            className="w-full h-full rounded-full blur-2xl xs:blur-2xl sm:blur-3xl md:blur-3xl lg:blur-3xl xl:blur-3xl 2xl:blur-3xl opacity-40 xs:opacity-45 sm:opacity-50 md:opacity-50 lg:opacity-50 xl:opacity-50 2xl:opacity-60"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(138, 43, 226, 0.8) 0%, rgba(75, 0, 130, 0.6) 30%, rgba(72, 61, 139, 0.4) 50%, transparent 80%)'
-            }}
-          />
-        </div>
         
-        {/* Secondary glow - Responsive */}
-        <div className="absolute inset-x-0 bottom-3 xs:bottom-4 sm:bottom-5 md:bottom-5 lg:bottom-5 xl:bottom-5 2xl:bottom-6 h-12 xs:h-16 sm:h-20 md:h-20 lg:h-20 xl:h-20 2xl:h-24 z-0">
-          <div 
-            className="w-full h-full rounded-full blur-xl xs:blur-xl sm:blur-2xl md:blur-2xl lg:blur-2xl xl:blur-2xl 2xl:blur-2xl opacity-50 xs:opacity-55 sm:opacity-60 md:opacity-60 lg:opacity-60 xl:opacity-60 2xl:opacity-70"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(147, 112, 219, 0.9) 0%, rgba(138, 43, 226, 0.5) 40%, transparent 70%)'
-            }}
-          />
-        </div>
-
         {/* Spotlight container - Responsive width and padding */}
         <div 
           className="relative bg-cover w-[95%] xs:w-[92%] sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[85%] py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 xl:py-7 2xl:py-9 border border-gray-900 rounded-xl xs:rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl xl:rounded-2xl 2xl:rounded-3xl bg-center bg-no-repeat flex items-center justify-center z-10"
@@ -157,22 +141,34 @@ const Section03: React.FC = () => {
           {/* Content Container - Responsive max-width */}
           <div className="relative z-10 max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl 2xl:max-w-6xl w-full text-center">
             {/* Main Heading - Responsive typography */}
-           <h2 className="m-auto max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[700px] leading-tight text-center">
-             <ShinyText
-               text="Stop Losing Money Every Single"
-               disabled={false}
-               speed={6}
-               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
-             />
-           
-             <ShinyText
-               text="Day Your Website Stays Silent!"
-               disabled={false}
-               speed={6}
-               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
-             />
-           </h2>
-           
+            <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <span className="block leading-[1]">
+    <ShinyText text="Stop" speed={5} className="Heading" />
+    {' '}
+    <ShinyText text="Losing Money" speed={5} className="Heading" />
+    {' '}
+    <ShinyText text="Every Single Day" speed={5} className="Heading" />
+  </span>
+  <span className="block leading-[1] -mt-2">
+    <ShinyText
+      text="Day Your Website Stays Silent!"
+      speed={5}
+      className="Heading gradient-mask-text"
+    />
+    
+  </span>
+</h2>
+
             {/* Subtitle - Responsive sizing */}
             <p className="text-gray-300 text-xs xs:text-sm sm:text-sm md:text-base lg:text-base xl:text-sm 2xl:text-base py-4 xs:py-5 sm:py-6 md:py-7 lg:py-7 xl:py-7 2xl:py-8 font-light">
               The statistics are brutal!
@@ -209,21 +205,28 @@ const Section03: React.FC = () => {
         <div className="relative z-10">
           {/* Main headline - Responsive typography */}
           <div className="text-center mb-8 xs:mb-9 sm:mb-10 md:mb-11 lg:mb-12 xl:mb-12 2xl:mb-16 py-4 xs:py-5 sm:py-6 md:py-7 lg:py-7 xl:py-7 2xl:py-9">
-            <h2 className="m-auto leading-tight text-center">
-             <ShinyText
-               text="Why Business Owners Are Ditching"
-               disabled={false}
-               speed={6}
-               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
-             />
            
-             <ShinyText
-               text="Expensive Alternatives for VoiceAgent AI"
-               disabled={false}
-               speed={6}
-               className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
-             />
-           </h2>
+            <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <div className="m-0 leading-[1]">
+    <ShinyText text="Why Business Owners Are Ditching" speed={5} className="Heading" />
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="Expensive Alternatives for " speed={5} className="Heading" />
+    {' '}
+    <ShinyText text="VoiceAgent AI" speed={5} className="Heading gradient-mask-text" />
+  </div>
+</h2>
+       
           </div>
 
           {/* Dynamic Comparison Grid - Responsive layout */}
@@ -260,9 +263,9 @@ const Section03: React.FC = () => {
                           className="py-2 xs:py-2 sm:py-3 md:py-3 lg:py-3 xl:py-3 2xl:py-4 w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 object-contain"
                         />
                         {item.id === 4 ? (
-                          <h3 className="gradient-mask-text text-sm xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">{item.title}</h3>
+                          <h3 className="gradient-mask-text text-[14px] xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">{item.title}</h3>
                         ) : (
-                          <h3 className="text-white text-sm xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">
+                          <h3 className="text-white text-[14px] xs:text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg 2xl:text-xl font-semibold text-start">
                             {item.title}
                             {item.subtitle && (
                               <>
@@ -275,11 +278,11 @@ const Section03: React.FC = () => {
                       </div>
 
                       {/* Features List - Responsive text sizing */}
-                      <ul className={`space-y-2 xs:space-y-2 sm:space-y-3 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-4 font-light text-xs xs:text-xs sm:text-sm md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-base text-${item.textColor} text-start`}>
+                      <ul className={`space-y-2 xs:space-y-2 sm:space-y-3 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-4 font-light text-[14px] text-${item.textColor} text-start`}>
                         {item.features.map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-start">
                             <div className={`w-1 h-1 bg-${item.bulletColor} rounded-full mt-1.5 mr-2 flex-shrink-0`}></div>
-                            <span className="leading-relaxed">{feature}</span>
+                            <span className="leading-relaxed text-[14px]">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -315,12 +318,15 @@ const Section03: React.FC = () => {
                speed={6}
                className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
+             <div className="flex items-center">
              <ShinyText
                text=" agent on your website 24/7!"
                disabled={false}
                speed={6}
                className="Heading text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
              />
+<BsStars className="text-[30px] ml-2"/>
+</div>
            </h2>
           
           {/* Supporting text - Responsive */}

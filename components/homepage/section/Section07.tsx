@@ -69,10 +69,11 @@ export default function Section07() {
    <div className=" flex flex-col items-center justify-center px-4">
   <div className="text-center relative">
    
+  <div className="absolute top-[20rem] right-[3px] -translate-x-1/2 -translate-y-1/2 w-[430px] h-[1200px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
+      
 
-
- <h2 className="m-auto  leading-tight text-center ">
-             {/* First Line - Normal Text */}
+ <h2 className="m-auto py-2 leading-tight text-center ">
+             
              <ShinyText
                text="The entire setup takes less than 60 seconds. No technical skills
     "
@@ -92,8 +93,14 @@ export default function Section07() {
            </h2>
 
 
-    {/* Glowing Border Underline */}
-    <div className="absolute left-1/2 bottom-[-20px] w-[550px] h-[4px] rounded-full bg-gradient-to-r from-purple-500/20 via-purple-300 to-purple-500/20 -translate-x-1/2"></div>
+           <div className="absolute left-1/2 bottom-[-15px] w-[600px] h-[4.3px] 
+  bg-gradient-to-r 
+  from-transparent via-purple-300 to-transparent 
+  bg-[length:100%_100%] bg-no-repeat
+  -translate-x-1/2">
+</div>
+
+
   </div>
 
    <div className="container mx-auto px-6 py-16">
@@ -101,24 +108,28 @@ export default function Section07() {
         
 
 
-           <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mt-10 mb-8">
-             {/* First Line - Normal Text */}
-             <ShinyText
-               text="Turn Your Silent Website Into a 24/7"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-           
-             {/* Second Line - With Gradient Text */}
-             <ShinyText
-               text="Money-Making Machine That Talks!"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-            
-           </h2>
+        <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <div className="m-0 leading-[1]">
+    <ShinyText text="Turn your silent website into a 24/7" speed={5} className="Heading" />
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="Money-Making" speed={5} className="Heading gradient-mask-text" />
+    {' '}
+    <ShinyText text="Machine" speed={5} className="Heading" />
+    {' '}
+    <ShinyText text="That Talks!" speed={5} className="Heading gradient-mask-text" />
+  </div>
+</h2>
 
 
         </div>

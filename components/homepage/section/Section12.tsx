@@ -9,22 +9,31 @@ const Section12 = () => {
       <div className="max-w-5xl mx-auto">
         
 
-<h2 className="m-auto mb-10 leading-tight text-center">
-        <ShinyText
-          text="The Only Thing Standing Between"
-          disabled={false}
-          speed={6}
-          className="Heading"
-        />
-         <ShinyText
-          text="You and More Sales Is This One Click"
-          disabled={false}
-          speed={6}
-          className="Heading"
-        />
-      </h2>
+      <h2
+  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
 
-          <div className="grid md:grid-cols-2 gap-2 items-center py-10 ">
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="The Only Thing Standing Between" speed={5} className="Heading" />  
+    
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="You and More Sales Is This" speed={5} className="Heading" />  
+    {' '}
+    <ShinyText text="One Click" speed={5} className="Heading gradient-mask-text" />  
+    
+  </div>
+</h2>
+
+          <div className="grid md:grid-cols-2 gap-1 py-10 ">
            
             
             <div className="space-y-3 w-100 text-[13px] text-gray-300">

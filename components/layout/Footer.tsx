@@ -12,37 +12,26 @@ const Footer: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Elliptical purple glow effect - positioned outside/above footer */}
-      <div 
-        className="absolute left-1/2 transform -translate-x-1/2 w-296 h-24 opacity-20 blur-2xl rounded-full pointer-events-none"
-        style={{
-          background: '#5A27B1',
-        }}
-      />
-      
-      {/* Secondary elliptical glow for more intensity */}
-      <div 
-        className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-280 h-46 opacity-4 blur-xl rounded-full pointer-events-none"
-        style={{
-          background: '#5A27B1',
-        }}
-      />
-
-      {/* Footer section */}
-      <footer className="text-white px-6 relative z-10">
+      {/* Footer section with glow effect */}
+      <div className="relative">
+        {/* Glow Effect */}
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[1100px] h-[150px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[80px] -z-10" />
+        
         {/* Footer Links */}
-        <div className="flex flex-wrap justify-center items-center gap-15 w-full max-w-screen-xl mx-auto py-10 px-6">
-          {footerLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="text-sm font-light text-white transition-colors duration-200"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      </footer>
+        <footer className="text-white relative z-10">
+          <div className="flex flex-wrap justify-center items-center gap-4 w-full max-w-screen-xl mx-auto py-10 px-6">
+            {footerLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-sm font-light text-white hover:text-purple-300 transition-colors duration-200 px-10 py-1"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }

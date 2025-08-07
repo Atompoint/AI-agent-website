@@ -79,32 +79,39 @@ const Section08: React.FC = () => {
     <div className="min-h-screen bg-transparent">
       <div className="container mx-auto px-6 ">
         {/* Header */}
+        
         <div className="text-center mb-16">
         
-          
-           <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
-             {/* First Line - Normal Text */}
-             <ShinyText
-               text=" Just a Few of the Ways VoiceAgent"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-           
-             {/* Second Line - With Gradient Text */}
-             <ShinyText
-               text="AI Turns Visitors Into Customers"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-            
-           </h2>
-        </div>
 
+           <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <div className="m-0 leading-[1]">
+    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="Heading" />
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="AI Turns Visitors Into " speed={5} className="Heading" />  
+    {' '}
+    <ShinyText text="Customers" speed={5} className="Heading gradient-mask-text" />
+  </div>
+</h2>
+        </div>
+          
+         
         {/* Features Grid - 3 columns, 3 rows */}
-        <div className="flex justify-center max-w-7xl mx-auto">
-          <div className="grid grid-cols-3 gap-3 lg:gap-3">
+        <div className="relative">
+          {/* Glow Effect */}
+          <div className="absolute top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[100px] -z-10" />
+          <div className="flex justify-center max-w-7xl mx-auto relative">
+            <div className="grid grid-cols-3 gap-3 lg:gap-3">
             {features.map((feature: Feature, index: number) => (
               <div key={index} className="flex items-center justify-center relative h-44 w-90">
                 <img
@@ -112,7 +119,7 @@ const Section08: React.FC = () => {
                   alt="background"
                   className="w-full h-full"
                 />
-                <h3 className="absolute top-6 left-6 w-58 text-white text-lg mb-4 leading-tight font-normal drop-shadow-lg">
+                <h3 className="absolute top-6 left-6 w-68 text-white text-lg mb-4 leading-tight font-normal drop-shadow-lg">
                   {feature.title}
                 </h3>
                 <p className="absolute top-16  mt-3 left-6 right-6 font-light text-gray-200 text-sm leading-relaxed drop-shadow-md">
@@ -120,6 +127,7 @@ const Section08: React.FC = () => {
                 </p>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>
@@ -128,28 +136,33 @@ const Section08: React.FC = () => {
         {/* Header */}
         <div className="text-center mt-10 mb-16">
 
-          <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
-             {/* First Line - Normal Text */}
-             <ShinyText
-               text="The Numbers Don't Lie"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-           
-             {/* Second Line - With Gradient Text */}
-             <ShinyText
-               text=" Voice AI Is Dominating"
-               disabled={false}
-               speed={6}
-               className="Heading"
-             />
-            
-           </h2>
+         
+           <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <div className="m-0 leading-[1]">
+    <ShinyText text="The Numbers Don't Lie" speed={5} className="Heading" />
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="Voice AI Is " speed={5} className="Heading" />  
+    {' '}
+    <ShinyText text="Dominating" speed={5} className="Heading gradient-mask-text" />
+  </div>
+</h2>
         </div>
 
         {/* Statistics Grid */}
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto">
+        <div className="relative">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto relative">
           {/* First row - 3 equal-width cards */}
           {statistics.slice(0, 3).map((item: Statistic, index: number) => (
             <div key={index} className="bg-[#0D0B1B] border border-gray-900 rounded-[10px] p-8 h-84 backdrop-blur-sm flex flex-col justify-end">
@@ -174,6 +187,7 @@ const Section08: React.FC = () => {
                 {statistics[4].description}
               </p>
             </div>
+          </div>
           </div>
         </div>
       </div>

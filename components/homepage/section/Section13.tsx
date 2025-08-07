@@ -41,9 +41,11 @@ const Section13: React.FC = () => {
   }
 
   return (
-    <div className=" text-white border-b border-gray-400">
+    <div className=" text-white ">
       {/* Signature Section with Purple Background Image */}
-      <div className="relative overflow-hidden rounded-2xl mx-auto  max-w-[1200px] h-[250] flex items-center justify-center">
+      <div className="relative overflow-hidden rounded-2xl mx-auto max-w-[1200px] h-[250] flex items-center justify-center">
+      {/* Left Side Glow Effect */}
+      
         {/* Background Image */}
         <Image 
           src={Purple}
@@ -94,7 +96,9 @@ const Section13: React.FC = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-16 px-6">
+      <div className="py-16 px-6 relative">
+        {/* Background Glow Effect */}
+        <div className="absolute top-[15rem] left-[3rem] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[200px] -z-10" />
         <div className="max-w-4xl mx-auto">
           <h2 className="m-auto mb-10 leading-tight text-center">
             <ShinyText

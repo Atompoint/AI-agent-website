@@ -6,20 +6,31 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 
 const Section04 = () => {
   return (
-    <div className='flex flex-col items-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-6 2xl:px-16 py-6 xs:py-7 sm:py-8 md:py-10 lg:py-12 xl:py-8 2xl:py-16'>
+    <div className='flex flex-col items-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-6 2xl:px-16 '>
     
       {/* Main Heading - Comprehensive responsive typography */}
-      <h2 className="flex justify-center text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2xl:text-6xl leading-tight text-center max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full">
-        <ShinyText 
-          text="Introducing VoiceAgent AI" 
-          disabled={false} 
-          speed={6} 
-          className='Heading'
-        />
-      </h2>
+     
+      <h2
+  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] "
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  
+  <div className="m-0 leading-[1] ">
+    <ShinyText text="Introducing" speed={5} className="Heading" />
+    {' '}
+    <ShinyText text="VoiceAgent AI" speed={5} className="Heading gradient-mask-text" />
+  </div>
+</h2>
       
       {/* Subtitle - Responsive sizing and spacing */}
-      <div className='sub-text text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-xl py-4 xs:py-5 sm:py-6 md:py-6 lg:py-6 xl:py-6 2xl:py-8 text-center max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[600px] 2xl:max-w-[800px] leading-relaxed'>
+      <div className='sub-text text-center py-5 '>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
     

@@ -104,8 +104,8 @@ body {
 .sub-text{
   font-size: 14px;
    font-weight: 300;
-   color: rgba=(255, 255, 255);
-
+   color: rgba(255, 255, 255, 0.8);
+   
 }
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
