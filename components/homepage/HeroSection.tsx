@@ -30,18 +30,17 @@ export default function HeroHeader() {
           className="absolute inset-0 w-full overflow-x-hidden h-full z-0 scale-[1.6] mt-25"
           style={{
             backgroundImage: "url('/assets/images/bgimg.webp')",
-            backgroundPosition: "center center",
+            backgroundPosition: "calc(50% - 20px)  center",
             backgroundSize: "cover",
           }}
         />
 
-          {/* Gradient overlay to blend bottom with background color */}
-          <div
-          className="absolute inset-0 mt-4 w-full h-full z-10"
-          style={{
-            background: `linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.3) 75%, rgba(1,0,12,0.7) 85%, #01000C 100%)`
-          }}
-        />
+<div
+  className="absolute inset-0 mt-4 w-full h-full z-10"
+  style={{
+    background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`
+  }}
+/>
 
         {/* Text Content */}
         <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[25vh]">
@@ -99,22 +98,12 @@ export default function HeroHeader() {
         <div className="absolute top-[-8rem] w-full flex justify-center z-30">
           
           {/* Container for both glow image and main image - INCREASED BY 50PX */}
-          <div className="relative w-full max-w-[900px]">
-            {/* Glow Image - positioned behind main image - SLIGHTLY DECREASED */}
-            <div className="absolute top-[-6.2rem] w-full h-full left-1/2 -translate-x-1/2 z-0">
-              <Image
-                src="/assets/images/glow.png"
-                width={1200}
-                height={900}
-                alt="glow effect"
-                className="object-contain opacity-100"
-              />
-            </div>
-
+          <div className="relative w-full max-w-[950px]">
+           
            
 
             {/* Main Image with Shine Border - SLIGHTLY DECREASED */}
-            <div className="relative rounded-2xl overflow-hidden z-10 p-0.5 w-full">
+            <div className="relative rounded-2xl overflow-hidden  mt-8 z-10 p-0.5 w-full">
               <ShineBorder
                 borderWidth={2}
                 duration={23}
