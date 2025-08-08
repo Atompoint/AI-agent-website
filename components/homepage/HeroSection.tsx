@@ -123,7 +123,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[21.7rem] ">
+        <div className="pt-[25.7rem] ">
           {/* Your section 2 content goes here */}
         </div>
 
