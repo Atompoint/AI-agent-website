@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm font-light text-white hover:text-purple-300 transition-colors duration-200 px-10 py-1"
+                className="sub-text hover:text-purple-300 transition-colors duration-200 px-8 py-1"
               >
                 {link.name}
               </a>

@@ -98,7 +98,7 @@ const Section13: React.FC = () => {
       {/* FAQ Section */}
       <div className="py-16 px-6 relative">
         {/* Background Glow Effect */}
-        <div className="absolute top-[15rem] left-[3rem] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[200px] -z-10" />
+        <div className="absolute top-[10rem] left-[12rem] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[150px] -z-10" />
         <div className="max-w-4xl mx-auto">
           <h2 className="m-auto mb-10 leading-tight text-center">
             <ShinyText
@@ -140,7 +140,7 @@ const Section13: React.FC = () => {
                 }`}>
                   <div className="p-3">
                     
-                      <p className="text-white/80 text-sm font-light leading-relaxed">
+                      <p className="subtext2">
                         {faq.answer}
                       </p>
                    
@@ -156,7 +156,7 @@ const Section13: React.FC = () => {
        <div className="max-w-6xl mx-auto">
         {/* Copyright Text */}
         <div >
-          <p className="m-auto text-sm text-gray-300 leading-relaxed text-center max-w-4xl">
+          <p className="m-auto sub-text leading-relaxed text-center max-w-4xl">
             © 2025 <span className="font-medium text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
             strictly prohibited without the express written consent of <span className="font-medium text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 
@@ -167,7 +167,7 @@ const Section13: React.FC = () => {
 
         {/* Copyright Notice */}
         <div className="text-center py-10">
-          <p className="text-sm text-white font-semibold">
+          <p className="subtext1">
             Copyright © 2025 Voice AI
           </p>
         </div>

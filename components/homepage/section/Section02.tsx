@@ -53,23 +53,20 @@ const Section02 = () => {
       <div className="absolute top-200 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
       <div className="absolute bottom-400 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
       
-
-      
-      
-      {/* Content Container - Fully Responsive */}
-      <div className="relative z-10 container mx-auto px-3 mb-3">
-        <div className="space-y-8 xs:space-y-10 sm:space-y-12 md:space-y-16 lg:space-y-20 xl:space-y-12 2xl:space-y-16">
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-3">
+        <div >
           
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`relative flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-15 2xl:gap-20 text-white justify-center items-center p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8 xl:p-4 2xl:p-8 rounded-xl lg:flex-row xl:flex-row 2xl:flex-row ${
-                index % 2 !== 0 ? "lg:flex-row-reverse xl:flex-row-reverse 2xl:flex-row-reverse" : ""
+              className={`relative flex gap-12 text-white justify-center items-center p-8 rounded-xl flex-row ${
+                index % 2 !== 0 ? "flex-row-reverse" : ""
               }`}
             >
-              {/* Text Section - Comprehensive responsive sizing */}
-              <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] flex flex-col items-center justify-center text-center lg:text-left xl:text-left 2xl:text-left">
-                <div className="text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl text-white font-bold mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-8 2xl:mb-10 leading-tight">
+              {/* Text Section */}
+              <div className="w-[440px] h-[400px] flex flex-col items-center justify-center text-left">
+                <div className="text-[32px] text-white font-semibold mb-5 leading-tight">
                   <ShinyText 
                     text={`${section.title}`} 
                     disabled={false} 
@@ -77,33 +74,31 @@ const Section02 = () => {
                     className="leading-tight"
                   />
                 </div>
-                <div className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-base space-y-2 xs:space-y-2 sm:space-y-3 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-4">
+                <div className="space-y-3">
                   {section.description.map((paragraph, paragraphIndex) => (
-                    <div 
+                    <p 
                       key={paragraphIndex} 
-                      className="leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-loose text-gray-100"
+                      className="sub-text"
                     >
                       {paragraph}
-                    </div>
+                    </p>
                   ))}
                 </div>
               </div>
 
-              {/* Image Section - Responsive sizing optimized for your screen */}
-              <div className="w-full max-w-[450px] h-[350px]  rounded-[7px]  2xl:rounded-3xl bg-gray-500 bg-opacity-20 xs:bg-opacity-25 sm:bg-opacity-30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
-                <span className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl text-gray-400">
-                  {/* Placeholder for future content */}
-                </span>
+              {/* Image Section */}
+              <div className="w-full max-w-[450px] h-[350px] rounded-[7px] bg-[#797979]  flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
+               
               </div>
             </div>
           ))}
           
-          {/* Down Arrow - Positioned with responsive spacing */}
-          <div className="relative z-10 mt-8 xs:mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-12 2xl:mt-16">
-            <DownArrow />
+          {/* Down Arrow */}
+          <div>
           </div>
         </div>
       </div>
+            <DownArrow />
     </div>
   );
 };

@@ -36,7 +36,7 @@ const Section12 = () => {
           <div className="grid md:grid-cols-2 gap-1 py-10 ">
            
             
-            <div className="space-y-3 w-100 text-[13px] text-gray-300">
+            <div className="space-y-4 w-100 text-[13px] text-gray-300">
          <p>
           If you're on the fence, ask yourself: How much money have you already lost from visitors who left empty-handed?
           </p> 

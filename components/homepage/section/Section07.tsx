@@ -79,7 +79,7 @@ export default function Section07() {
     "
                disabled={false}
                speed={6}
-               className="font-radio text-[34px] font-normal"
+               className="font-radio text-[35px] font-normal"
              />
            
              {/* Second Line - With Gradient Text */}
@@ -87,29 +87,30 @@ export default function Section07() {
                text="required. No content creation needed. No ongoing maintenance."
                disabled={false}
                speed={6}
-               className="font-radio text-[34px] font-normal"
+               className="font-radio text-[35px] font-normal"
              />
              
            </h2>
 
 
+
            <div className="absolute left-1/2 bottom-[-15px] w-[600px] h-[4.3px] 
   bg-gradient-to-r 
   from-transparent via-purple-300 to-transparent 
-  bg-[length:100%_100%] bg-no-repeat
+  bg-[length:100%_100%] bg-no-repeat 
   -translate-x-1/2">
 </div>
 
 
   </div>
 
-   <div className="container mx-auto px-6 py-16">
-        <div className="text-center mb-16">
+   <div className="container mx-auto px-6  ">
+        <div className="text-center py-20">
         
 
 
         <h2
-  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  className="relative font-radio mt-20 leading-[1.05] "
   style={{
     textTransform: 'capitalize',
     color: 'transparent',
@@ -119,10 +120,10 @@ export default function Section07() {
     backgroundClip: 'text',
   }}
 >
-  <div className="m-0 leading-[1]">
+  <div >
     <ShinyText text="Turn your silent website into a 24/7" speed={5} className="Heading" />
   </div>
-  <div className="m-0 leading-[1] -mt-2">
+  <div >
     <ShinyText text="Money-Making" speed={5} className="Heading gradient-mask-text" />
     {' '}
     <ShinyText text="Machine" speed={5} className="Heading" />

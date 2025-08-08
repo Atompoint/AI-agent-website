@@ -45,7 +45,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
           {title}
         </h3>
 
-        <div className="space-y-3 mb-8">
+        <div className="space-y-2 mb-8">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-3">
               <div className="text-green-500 mt-1 flex-shrink-0">
@@ -61,7 +61,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
                   />
                 </svg>
               </div>
-              <span className="text-gray-300 text-[13px] leading-relaxed ">
+              <span className="sub-text leading-relaxed ">
                 {feature}
               </span>
             </div>
@@ -79,13 +79,13 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
 const HeroSection: React.FC<HeroSectionProps> = ({  image, description }) => {
   return (
     <div className="mb-20 relative"> {/* Added relative positioning */}
-    {/* Enhanced glow effect */}
-    <div className="absolute top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[120px] -z-10" />
+      <div className="absolute top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[120px] -z-10" />
+
     
     
     
     <h2
-      className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6 z-10" // Added z-10
+      className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05]  z-10" // Added z-10
       style={{
         textTransform: 'capitalize',
         color: 'transparent',
@@ -116,7 +116,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({  image, description }) => {
         }}
       ></div>
       
-      <div className="space-y-2 w-100 text-sm text-gray-300">
+      <div className="space-y-4 w-100 sub-text">
         {description.map((paragraph, index) => (
           <p key={index}>
             {paragraph}
@@ -208,7 +208,7 @@ const Section11: React.FC = () => {
 
       {/* Pricing Section */}
       <h2
-  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-15"
   style={{
     textTransform: 'capitalize',
     color: 'transparent',

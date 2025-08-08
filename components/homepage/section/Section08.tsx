@@ -119,10 +119,10 @@ const Section08: React.FC = () => {
                   alt="background"
                   className="w-full h-full"
                 />
-                <h3 className="absolute top-6 left-6 w-68 text-white text-lg mb-4 leading-tight font-normal drop-shadow-lg">
+                <h3 className="absolute top-6 left-6 w-68 subtext2 drop-shadow-lg">
                   {feature.title}
                 </h3>
-                <p className="absolute top-16  mt-3 left-6 right-6 font-light text-gray-200 text-sm leading-relaxed drop-shadow-md">
+                <p className="absolute top-16 w-70 py-5 left-6 right-6 sub-text leading-relaxed drop-shadow-md">
                   {feature.description}
                 </p>
               </div>
@@ -132,7 +132,7 @@ const Section08: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 ">
         {/* Header */}
         <div className="text-center mt-10 mb-16">
 
@@ -157,6 +157,43 @@ const Section08: React.FC = () => {
     <ShinyText text="Dominating" speed={5} className="Heading gradient-mask-text" />
   </div>
 </h2>
+
+
+<h1 className="relative z-10" style={{
+                fontFamily: 'Archivo, sans-serif',
+                fontWeight: 500,
+                fontSize: '65px',
+                lineHeight: '67px',
+                letterSpacing: '0%',
+                margin: '0 0 -0.5rem 0',
+                padding: '0.2em 0',
+                textTransform: 'capitalize',
+                color: 'transparent',
+                background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                <div>
+                  <ShinyText text="Simplify" speed={5} className="font-extralight" />
+                  {' '}
+                  <ShinyText text="Cloud" speed={5} className="font-medium" />
+                </div>
+                <div>
+                  <ShinyText text="Security" speed={5} className="font-medium" />
+                  {' '}
+                  <ShinyText text="Without" speed={5} className="font-extralight" />
+                </div>
+                <div>
+                  <ShinyText text="Compromise" speed={5} className="font-medium" />
+                </div>
+              </h1>
+
+
+
+
+
+
         </div>
 
         {/* Statistics Grid */}
@@ -165,7 +202,7 @@ const Section08: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto relative">
           {/* First row - 3 equal-width cards */}
           {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-            <div key={index} className="bg-[#0D0B1B] border border-gray-900 rounded-[10px] p-8 h-84 backdrop-blur-sm flex flex-col justify-end">
+            <div key={index} className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-84 backdrop-blur-sm flex flex-col justify-end">
              
               <p className="text-gray-300 subheading px-1 max-w-[300px] leading-relaxed">
                 {item.description}

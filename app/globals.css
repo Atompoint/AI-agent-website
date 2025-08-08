@@ -98,14 +98,31 @@ body {
 }
 .Heading{
  font-family: 'Radio Grotesk', sans-serif;
- font-size: 40px;
+ font-size: 45px;
+ font-weight: 500;
+}
+.border-class{
+   border: '1px solid #FFFFFF12',
 }
 
 .sub-text{
+  font-size: 13px;
+   font-weight: 100;
+   color: rgba(255, 255, 255,0.9);
+ letter-spacing: 0.4px;
+
+}
+.subtext1{
   font-size: 14px;
-   font-weight: 300;
-   color: rgba(255, 255, 255, 0.8);
-   
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+letter-spacing: 0.4px;
+}
+.subtext2{
+  font-size: 16px;
+   font-weight: 600;
+   color: rgb(255, 255, 255);
+ letter-spacing: 0.4px;
 }
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
@@ -161,14 +178,3 @@ body {
 }
 
 
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}

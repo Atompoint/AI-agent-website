@@ -27,10 +27,10 @@ export default function HeroHeader() {
 
         {/* Background Image - NO GRADIENT OVERLAY */}
         <div
-          className="absolute inset-0 w-full h-full z-0 scale-[1.6] mt-25"
+          className="absolute inset-0 w-full overflow-x-hidden h-full z-0 scale-[1.6] mt-25"
           style={{
-            backgroundImage: "url('/assets/images/bgimg.png')",
-            backgroundPosition: "calc(50% + 20px) center",
+            backgroundImage: "url('/assets/images/bgimg.webp')",
+            backgroundPosition: "center center",
             backgroundSize: "cover",
           }}
         />
@@ -49,15 +49,15 @@ export default function HeroHeader() {
           <div
             className="
               sub-text
-              mb-5 
-              px-5
+              
+              px-6.5
               py-1.5
               rounded-full
-              mt-1
-               sm:max-w-none
+              -mt-6
+            
             "
             style={{
-              border: '1px solid #FFFFFF12',
+            border: '1px solid #FFFFFF12',
               backdropFilter: 'blur(3px)',
               background: '#FFFFFF08',
             }}
@@ -65,7 +65,7 @@ export default function HeroHeader() {
             Tired of Watching 67% of Your Website Visitors Leave Without Buying?
           </div>
 
-          <h1 className="relative font-radio font-normal  text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] font-normal mb-4 sm:mb-6" style={{
+          <h1 className="relative font-radio font-normal  text-[50px] leading-[1.05] font-normal py-6" style={{
             textTransform: 'capitalize',
             color: 'transparent',
             background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
@@ -88,7 +88,7 @@ export default function HeroHeader() {
           </h1>
 
           {/* Subtext */}
-          <p className="text-[13px] font-light w-175 mt-1 leading-relaxed">
+          <p className="sub-text w-190 mt-2 leading-relaxed">
             Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
           </p>
         </div>
@@ -96,12 +96,12 @@ export default function HeroHeader() {
 
       <section className="relative" style={{ backgroundColor: '#01000C' }}>
         {/* OVERLAID Product Image positioned over section 2 - INCREASED SIZE */}
-        <div className="absolute top-[-15rem] sm:top-[-20rem] md:top-[-25rem] lg:top-[-8rem] w-full right-3 flex justify-center z-30">
+        <div className="absolute top-[-8rem] w-full flex justify-center z-30">
           
           {/* Container for both glow image and main image - INCREASED BY 50PX */}
-          <div className="relative w-full max-w-[1060px]">
+          <div className="relative w-full max-w-[900px]">
             {/* Glow Image - positioned behind main image - SLIGHTLY DECREASED */}
-            <div className="absolute top-[-6.1rem] w-full h-full left-1/2  -translate-x-1/2 z-0">
+            <div className="absolute top-[-6.2rem] w-full h-full left-1/2 -translate-x-1/2 z-0">
               <Image
                 src="/assets/images/glow.png"
                 width={1200}
@@ -111,28 +111,16 @@ export default function HeroHeader() {
               />
             </div>
 
-            {/* Sparkles - Top Only - ADJUSTED FOR LARGER CONTAINER */}
-            <div className="absolute -top-20 left-50 right-0 h-[100px] w-[590px] z-0 overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-80 mix-blend-lighten"
-                style={{
-                  backgroundImage: `
-                    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0.5px, transparent 1px),
-                    radial-gradient(circle at 28% 42%, rgba(255,255,255,0.85) 0.5px, transparent 1px),
-                    radial-gradient(circle at 45% 70%, rgba(255,255,255,0.75) 0.5px, transparent 1px),
-                    radial-gradient(circle at 68% 33%, rgba(255,255,255,0.7) 0.5px, transparent 1px),
-                    radial-gradient(circle at 81% 15%, rgba(255,255,255,0.65) 0.5px, transparent 1px),
-                    radial-gradient(circle at 90% 45%, rgba(255,255,255,0.6) 0.5px, transparent 1px),
-                    radial-gradient(circle at 55% 55%, rgba(255,255,255,0.5) 0.5px, transparent 1px)
-                  `,
-                  backgroundSize: '150px 150px',
-                  filter: 'blur(0.6px)'
-                }}
-              />
-            </div>
+           
 
             {/* Main Image with Shine Border - SLIGHTLY DECREASED */}
-            <div className="relative rounded-2xl overflow-hidden z-10 p-1 w-full">
+            <div className="relative rounded-2xl overflow-hidden z-10 p-0.5 w-full">
+              <ShineBorder
+                borderWidth={2}
+                duration={23}
+                shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+                className="absolute inset-0 rounded-2xl pointer-events-none"
+              />
               <Image
                 src="/assets/images/main1.png"
                 width={1200}
@@ -141,53 +129,47 @@ export default function HeroHeader() {
                 className="object-contain w-full h-auto relative z-10 rounded-2xl"
                 priority
               />
-              <ShineBorder
-                borderWidth={2}
-                duration={23}
-                shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-                className="absolute inset-0 rounded-2xl pointer-events-none"
-              />
             </div>
           </div>
         </div>
 
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[27.5rem] ">
+        <div className="pt-[21.7rem] ">
           {/* Your section 2 content goes here */}
         </div>
 
         {/* Circle with microphone - using original SVG without modifications */}
-        <div className="relative z-30 flex justify-center items-center mx-auto w-[160px] h-[160px]">
+        <div className="relative z-30 mt-2 flex justify-center items-center mx-auto w-[130px] h-[130px]">
           <Image
             src='/assets/icons/mymic.png'
             alt="Circle background"
-            width={160}
-            height={160}
+            width={130}
+            height={130}
             className="absolute inset-0"
           />
         </div>
 
-        <div className="flex justify-center -mt-2 items-center">
-          <div className="inline-flex items-center justify-center border border-gray-900 bg-black text-white rounded-full px-3 py-1">
-            <BsStars className="mr-1 text-sm" />
-            <span className="font-semibold text-sm">GIVE IT A TRY!</span>
+        <div className="flex justify-center -mt-1 items-center">
+          <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 text-white rounded-full px-3 py-1">
+            <BsStars className="mr-2 text-[17px]  -rotate-90" />
+            <span className="subtext1 font-semibold">GIVE IT A TRY!</span>
           </div>
         </div>
 
         <div className="mt-20">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-10 text-center sm:text-left">
+          <div className="max-w-[950px] mx-auto grid grid-cols-4  gap-y-6 gap-x-12 text-left ">
             {features.map((feature, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 justify-center sm:justify-start flex-nowrap"
+                className="flex items-center gap-1 justify-center sm:justify-start flex-nowrap"
               >
                 {/* Icon */}
-                <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
-                  <Image src="/assets/images/tickmark.svg" alt="Tick" width={28} height={28} />
+                <div className="w-13 h-13 flex items-center justify-center flex-shrink-0">
+                  <Image src="/assets/images/tickmark.svg" alt="Tick" width={31} height={31} />
                 </div>
 
                 {/* Text: fixed max width, allow wrap inside this box */}
-                <span className="text-sm sm:text-base font-semibold text-white/90 max-w-[330px]">
+                <span className="subtext2 max-w-[300px]">
                   {feature}
                 </span>
               </div>

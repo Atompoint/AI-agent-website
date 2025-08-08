@@ -7,7 +7,7 @@ const Section09 = () => {
     <div className="flex justify-center flex-col items-center text-white  ">
       <div className="max-w-6xl mx-auto">
         {/* First Section */}
-        <div className="mb-20 relative">
+        <div className=" relative">
           {/* Glow Effect */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[100px] -z-10" />
           
@@ -36,9 +36,9 @@ const Section09 = () => {
              </div>
            </h2>
           
-       <div className="grid md:grid-cols-2 gap-4 items-center px-17 py-8">
+       <div className="grid md:grid-cols-2 gap-7 items-center px-17 py-8">
           {/* Left column - text */}
-          <div className="space-y-4 text-sm text-gray-300 w-115 p-2">
+          <div className="space-y-4 sub-text w-110 p-2">
             <p>As the world's first smart voice AI agent for websites, we're offering 
             this exclusive founding member discount to help early adopters get 
             maximum advantage over their competitors.</p>
@@ -66,17 +66,17 @@ const Section09 = () => {
           </div>
 
           {/* Right column - box */}
-          <div className="bg-[#797979] h-[400px] w-[500px] rounded-[10px] mx-auto md:mx-0"></div>
+          <div className="bg-[#797979] h-[350px] w-[450px] rounded-[10px] mx-auto md:mx-0"></div>
           
         </div>
 
         </div>
 
         {/* Second Section */}
-        <div className='py-10'>
+        <div>
 
            <h2
-  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  className="relative font-radio font-normal text-center  leading-[1.05] py-15"
   style={{
     textTransform: 'capitalize',
     color: 'transparent',
@@ -87,7 +87,7 @@ const Section09 = () => {
   }}
 >
 
-  <div className="m-0 leading-[1] -mt-2">
+  <div className="m-0 leading-[1] ">
     <ShinyText text="Zero Risk, 100%" speed={5} className="Heading" />  
     {' '}
     <ShinyText text="Guarantee" speed={5} className="Heading gradient-mask-text" />
@@ -96,7 +96,7 @@ const Section09 = () => {
           <div className="grid md:grid-cols-2 gap-0 items-center ">
             <div className="bg-[#797979] h-69 w-120 rounded-[10px]"></div>
             
-            <div className="space-y-4 text-gray-300 w-120 my-12">
+            <div className="space-y-4 text-gray-300 w-120 ">
               <p className="text-sm leading-relaxed">
                 We're so confident VoiceAgent AI will transform your website into a 
                 conversion machine that we're backing it with our iron-clad 14-Day 

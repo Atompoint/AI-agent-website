@@ -13,7 +13,6 @@ interface ComparisonColumnProps {
 interface BonusSectionProps {
   title: string;
   description: string[];
-  imagePosition?: 'left' | 'right';
 }
 
 interface ComparisonData {
@@ -25,7 +24,6 @@ interface ComparisonData {
 interface BonusData {
   title: string;
   description: string[];
-  imagePosition: 'left' | 'right';
 }
 
 // Single reusable ComparisonColumn component
@@ -77,7 +75,7 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
               <div className={`${iconColor}  flex-shrink-0`}>
                 {renderIcon()}
               </div>
-              <span className="text-gray-300 text-[13px]  ">{item}</span>
+              <span className="sub-text  ">{item}</span>
             </div>
           ))}
         </div>
@@ -86,10 +84,10 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
   );
 };
 
-// Reusable BonusSection component
-const BonusSection: React.FC<BonusSectionProps> = ({ title, description, imagePosition = 'right' }) => {
+// Reusable BonusSection component - always shows image on right
+const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
   const content = (
-    <div className="space-y-4 flex flex-col justify-center p-10 items-center text-gray-300 w-105">
+    <div className="space-y-4 flex flex-col justify-center p-10 items-center text-gray-300 w-125">
       {description.map((paragraph: string, index: number) => (
         <p key={index} className="text-[13px] leading-relaxed">
           {paragraph}
@@ -111,18 +109,9 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description, imagePo
         />
       </h2>
       
-      <div className="grid md:grid-cols-2 gap-5 items-center py-7">
-        {imagePosition === 'left' ? (
-          <>
-            {image}
-            {content}
-          </>
-        ) : (
-          <>
-            {content}
-            {image}
-          </>
-        )}
+      <div className="grid md:grid-cols-2 gap-25 items-center ">
+        {content}
+        {image}
       </div>
     </div>
   );
@@ -179,8 +168,7 @@ const Section10: React.FC = () => {
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
-      ],
-      imagePosition: 'right'
+      ]
     },
     {
       title: "Exclusive Bonus 2: Name Here",
@@ -188,28 +176,34 @@ const Section10: React.FC = () => {
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
         "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
-      ],
-      imagePosition: 'left'
+      ]
     }
   ];
 
   return (
-    <div className="text-white/90 py-8 px-6">
+    <div className="text-white/90 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="m-auto max-w-[700px] leading-tight text-center mx-auto mb-8">
-          <ShinyText
-            text="Two Paths Forward: Stay Silent & Lose"
-            disabled={false}
-            speed={6}
-            className="Heading"
-          />
-          <ShinyText
-            text=" Sales... Or Let Your Website Talk & Profit"
-            disabled={false}
-            speed={6}
-            className="Heading"
-          />
-        </h2>
+       
+
+        <h2
+  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  style={{
+    textTransform: 'capitalize',
+    color: 'transparent',
+    background:
+      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+  }}
+>
+  <div className="m-0 leading-[1]">
+    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className="Heading" />
+  </div>
+  <div className="m-0 leading-[1] -mt-2">
+    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="Heading" />  
+    
+  </div>
+</h2>
 
         <div className="flex gap-4 justify-center mt-15">
           {comparisonData.map((column: ComparisonData, index: number) => (
@@ -230,7 +224,6 @@ const Section10: React.FC = () => {
               key={index}
               title={bonus.title}
               description={bonus.description}
-              imagePosition={bonus.imagePosition}
             />
           ))}
         </div>
