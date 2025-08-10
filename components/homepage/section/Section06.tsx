@@ -34,9 +34,9 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
           {position === 'left' && (
             <div className="max-w-[340px] text-right">
               <div className="flex flex-col items-end gap-4">
-                <div className="flex items-start justify-end gap-3">
+                <div className="flex items-start  justify-end gap-2">
                   <div className='flex flex-col items-right justify-end content-end'>
-                    <div className="text-6xl font-bold transition-all">
+                    <div className="num2 transition-all">
                       <ShinyText
                         text={step.padStart(2, '0')}
                         disabled={!isActive}
@@ -44,8 +44,8 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                         className="block leading-none"
                       />
                     </div>
-                    <div>
-                      <h3 className={`text-[14px] w-50 py-2 font-medium leading-[1.3] transition-all ${
+                    <div style={{letterSpacing: '0.8px'}}>
+                      <h3 className={`subtextpt2 w-55 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -53,20 +53,17 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                   
-                  <div className="p-1 transition-all">
-                    {imageUrl ? (
+                  <div className="p-1 mt-4 transition-all">
+                    {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-11 h-11 object-contain transition-all ${
+                        className={`w-12 h-12 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
+                        style={{ filter: 'brightness(0) invert(1)' }}
                       />
-                    ) : Icon ? (
-                      <Icon className={`w-13 h-13 transition-all ${
-                        isActive ? 'text-white' : 'text-gray-400'
-                      }`} />
-                    ) : null}
+                    )}
                   </div>
                 </div>
               </div>
@@ -86,24 +83,21 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
           {position === 'right' && (
             <div className="max-w-[340px] text-left">
               <div className="flex flex-col items-start gap-4">
-                <div className="flex items-start justify-start gap-3">
-                  <div className="p-1 transition-all">
-                    {imageUrl ? (
+                <div className="flex items-start justify-start gap-5">
+                  <div className="p-1 mt-4 transition-all">
+                    {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-11 h-11 object-contain transition-all ${
+                        className={`w-12 h-12 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
+                        style={{ filter: 'brightness(0) invert(1)' }}
                       />
-                    ) : Icon ? (
-                      <Icon className={`w-13 h-13 transition-all ${
-                        isActive ? 'text-white' : 'text-gray-400'
-                      }`} />
-                    ) : null}
+                    )}
                   </div>
                   <div className='flex flex-col items-right justify-end content-end'>
-                    <div className="text-6xl font-bold transition-all">
+                    <div className="num2 transition-all">
                       <ShinyText
                         text={step.padStart(2, '0')}
                         disabled={!isActive}
@@ -111,8 +105,8 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                         className="block leading-none"
                       />
                     </div>
-                    <div>
-                      <h3 className={`text-[14px] w-50 py-2 font-medium leading-[1.3] transition-all ${
+                    <div style={{letterSpacing: '0.8px'}}>
+                      <h3 className={`subtextpt2 w-55 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -121,13 +115,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                   </div>
                 </div>
               </div>
-              {subtitle && (
-                <p className={`text-base italic transition-all ${
-                  isActive ? 'text-gray-300' : 'text-gray-500'
-                }`}>
-                  {subtitle}
-                </p>
-              )}
+             
             </div>
           )}
         </div>
@@ -258,37 +246,34 @@ const TimelineUI: React.FC = () => {
     <div className="min-h-screen px-12">
       <Offer/>
       <div className="container mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1
-            className="relative font-radio font-normal text-[60px] py-10 leading-[1.05] mb-6"
-            style={{
-              textTransform: 'capitalize',
-              color: 'transparent',
-              background:
-                'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-            }}
-          >
-            <div className="m-0 leading-[1]">
-              <ShinyText text="Here's How This" speed={5} className="Heading" />
-              {" "}
-              <ShinyText text={`"Set It and Forget It"`}  speed={5} className="Heading gradient-mask-text" />
-              {" "}
-              <ShinyText text="System" speed={5} className="Heading" />
-            </div>
-            <div className="m-0 leading-[1] -mt-2">
-              <ShinyText text="Transforms Any Website Into a Conversion Machine" speed={5} className="Heading" />
-            </div>
-          </h1>
-        </div>
 
+        <div
+  className="relative text-center z-10 py-25"
+  style={{
+  
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  
+  }}
+>
+<div className="flex items-center justify-center space-x-3">
+              <ShinyText text="Here's How This" speed={5} className="Heading2 gradient-white-text" />
+           
+              <ShinyText text={`"Set It and Forget It"`}  speed={5} className="Heading2 gradient-mask-text" />
+              
+              <ShinyText text="System" speed={5} className="Heading2 gradient-white-text" />
+            </div>
+            <div >
+              <ShinyText text="Transforms Any Website Into a Conversion Machine" speed={5} className="Heading2 gradient-white-text" />
+            </div>
+</div>
         {/* Timeline Container */}
-        <div className="max-w-xl mx-auto py-10">
-          <div ref={containerRef} className="relative ">
+        <div className="max-w-6xl mx-auto py-10">
+          <div ref={containerRef} className="relative">
             {/* Timeline Steps */}
-            <div className="relative z-10 space-y-12">
+            <div className="relative z-10 space-y-8">
               {steps.map((step, index) => (
                 <div
                   key={index}
@@ -309,13 +294,11 @@ const TimelineUI: React.FC = () => {
           </div>
         </div>
 
-       
-        
         {/* Down Arrow */}
         <div>
         </div>
       </div>
-          <DownArrow/>
+      <DownArrow/>
     </div>
   );
 };

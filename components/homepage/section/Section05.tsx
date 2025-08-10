@@ -22,7 +22,7 @@ const Section05: React.FC = () => {
   // Demo section
   const demoSection = {
     mainImage: "/assets/images/main1.png",
-    playIcon: "/icon.png"
+    playIcon: "/assets/images/icon.png"
   };
 
   return (
@@ -34,36 +34,35 @@ const Section05: React.FC = () => {
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center">
-        <h2
-className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
-style={{
-  
-  color: 'transparent',
-  background:
-    'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-}}
+        <div
+  className="relative text-center z-10 mt-8"
+  style={{
+  lineHeight: "40px",
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    
+  }}
 >
-<div className="m-0 leading-[1]">
-  <ShinyText text="Forget everything you know about website" speed={5} className="Heading" />
+<div >
+  <ShinyText text="Forget everything you know about website" speed={5} className="Heading3 gradient-white-text" />
 </div>
-<div className="m-0 leading-[1]">
-  <ShinyText text="chat boxes, pop-ups, and static FAQ pages." speed={5} className="Heading" />
+<div >
+  <ShinyText text="chat boxes, pop-ups, and static FAQ pages." speed={5} className="Heading3 gradient-white-text" />
 </div>
-<div className="m-0 leading-[1]">
-  <ShinyText text="This is different. This is" speed={5} className="Heading" />
+<div className="flex items-center justify-center space-x-3">
+  <ShinyText text="This is different. This is" speed={5} className="Heading3 gradient-white-text" />
   {' '}
-  <ShinyText text="REVOLUTIONARY" speed={5} className="Heading gradient-mask-text" />
+  <ShinyText text="REVOLUTIONARY" speed={5} className="Heading3 gradient-mask-text" />
 </div>
-</h2>
-        </div>
+</div> 
+     
 
         {/* First Row */}
         <div className="grid lg:grid-cols-2 gap-0 py-20">
           {/* Left Column - Text */}
-          <div className="sub-text space-y-4 flex flex-col justify-center px-22">
+          <div className="subtext1 space-y-4 flex flex-col justify-center px-22">
             {firstRowText.map((text, index) => (
               <p key={index}>
                 {index === 0 ? (
@@ -83,7 +82,7 @@ style={{
           
           {/* Right Column - Box */}
           <div className="flex justify-start">
-            <div className="bg-[#797979] rounded-[8px] h-60 w-[470px] flex items-center justify-center">
+            <div className="bg-[#797979] rounded-[8px] h-60 w-[460px] flex items-center justify-center">
              
             </div>
           </div>
@@ -99,7 +98,7 @@ style={{
           </div>
           
           {/* Right Column - Text */}
-          <div className="text-[13px] text-white/85  space-y-4 flex flex-col justify-center px-19">
+          <div className="subtext1  space-y-4 flex flex-col justify-center px-19">
             {secondRowText.map((text, index) => (
               <p key={index}>
                 {index === 1 ? (
@@ -115,51 +114,52 @@ style={{
         </div>
       </div>
 
-      {/* Demo Section */}
-      <div className="flex flex-col mt-12 justify-center items-center ">
-      <h2
-className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
-style={{
 
-  color: 'transparent',
-  background:
-    'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-}}
+      <div
+  className="relative text-center z-10 mt-15"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    
+  }}
 >
-
-<div >
-  <ShinyText text="Watch" speed={5} className="Heading" />
-  {' '}
-  <ShinyText text="The Demo" speed={5} className="Heading gradient-mask-text" />
+<div className="flex items-center justify-center space-x-3">
+  <ShinyText text="Watch" speed={5} className="Heading2 gradient-white-text" />
+  
+  <ShinyText text="The Demo" speed={5} className="Heading2 gradient-mask-text" />
 </div>
-</h2>
-        
-        {/* Fixed Demo Container - Removed overflow hidden and adjusted positioning */}
-        <div className="relative inline-block mt-8 rounded-2xl p-1 z-10">
-          
-          {/* Image with Shine Border */}
-          <div className="relative">
-            <Image
-              src={demoSection.mainImage}
-              width={900}
-              height={600}
-              alt="product web image"
-              className="object-contain max-w-full h-auto relative z-10 rounded-2xl"
-            />
+</div> 
 
-            {/* Shine border */}
-            <ShineBorder
-              borderWidth={2}
-              duration={23}
-              shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-              className="absolute inset-0 rounded-2xl pointer-events-none"
-            />
-          </div>
 
-          {/* Large Play icon overlay - Positioned outside the image container */}
-          <div className="absolute inset-0 flex items-center justify-center z-30">
+
+
+
+ {/* Image Container with Glow Effect */}
+      <div className="relative max-w-[900px] m-auto mt-12">
+        {/* Glow Image - positioned behind main image */}
+      
+        <div className="absolute top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[100px] -z-10" />
+        {/* Main Image with Shine Border */}
+        <div className="relative rounded-2xl overflow-hidden z-10 p-0.5 w-full">
+          <ShineBorder
+            borderWidth={2}
+            duration={23}
+            shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+            className="absolute inset-0 rounded-2xl pointer-events-none"
+          />
+          <Image
+            src="/assets/images/main1.png"
+            width={1200}
+            height={900}
+            alt="product web image"
+            className="object-contain w-full h-auto relative z-10 rounded-2xl"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center z-30">
             <div className="relative">
               {/* Play button background circle for better visibility */}
               <div className="absolute inset-0 bg-black/30 rounded-full blur-sm transform scale-110"></div>
@@ -172,9 +172,9 @@ style={{
               />
             </div>
           </div>
-        </div>
-
       </div>
+      
+     
      
       
         <DownArrow />

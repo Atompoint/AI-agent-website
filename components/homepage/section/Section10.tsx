@@ -65,7 +65,7 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
       />
 
       <div className="relative flex flex-col p-10 pr-25">
-        <h3 className="text-md font-semibold mb-6">
+        <h3 className="subtext3 mb-6">
           {title}
         </h3>
 
@@ -75,7 +75,7 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
               <div className={`${iconColor}  flex-shrink-0`}>
                 {renderIcon()}
               </div>
-              <span className="sub-text  ">{item}</span>
+              <span className="subtext1  ">{item}</span>
             </div>
           ))}
         </div>
@@ -87,9 +87,9 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
 // Reusable BonusSection component - always shows image on right
 const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
   const content = (
-    <div className="space-y-4 flex flex-col justify-center p-10 items-center text-gray-300 w-125">
+    <div className="space-y-4 flex flex-col justify-center p-10 items-center w-130">
       {description.map((paragraph: string, index: number) => (
-        <p key={index} className="text-[13px] leading-relaxed">
+        <p key={index} className="subtext1 ">
           {paragraph}
         </p>
       ))}
@@ -105,11 +105,11 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
           text={title}
           disabled={false}
           speed={6}
-          className="Heading"
+          className="Heading2"
         />
       </h2>
       
-      <div className="grid md:grid-cols-2 gap-25 items-center ">
+      <div className="grid grid-cols-2 gap-35 items-center ">
         {content}
         {image}
       </div>
@@ -185,25 +185,23 @@ const Section10: React.FC = () => {
       <div className="max-w-6xl mx-auto">
        
 
-        <h2
-  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+        <div
+  className="relative  text-center  mb-4 "
   style={{
     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
     backgroundClip: 'text',
   }}
 >
-  <div className="m-0 leading-[1]">
-    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className="Heading" />
+  <div>
+    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className="Heading2 gradient-text-white" />
   </div>
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="Heading" />  
+  <div >
+    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="Heading2 gradient-text-white" />  
     
   </div>
-</h2>
+</div>
 
         <div className="flex gap-4 justify-center mt-15">
           {comparisonData.map((column: ComparisonData, index: number) => (
@@ -217,7 +215,7 @@ const Section10: React.FC = () => {
         </div>
       </div>
 
-      <div className="text-white text-sm py-16 px-6">
+      <div className="  py-16 ">
         <div className="max-w-4xl mx-auto space-y-16">
           {bonusData.map((bonus: BonusData, index: number) => (
             <BonusSection

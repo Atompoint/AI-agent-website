@@ -5,40 +5,40 @@ import ShinyText from '@/components/ui/ShinyText';
 const Section09 = () => {
   return (
     <div className="flex justify-center flex-col items-center text-white  ">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto ">
         {/* First Section */}
         <div className=" relative">
           {/* Glow Effect */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[100px] -z-10" />
-          
+          <div
+  className="relative text-center z-10 mb-10"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  
+  }}
+>
+<div >
+               <ShinyText text="I Hate to Be the Bearer of Bad News, But" speed={5} className="Heading2 gradient-white-text" />
+             </div>
+             <div className="flex items-center justify-center space-x-3">
+               <ShinyText text="This" speed={5} className="Heading2 gradient-white-text" />  
+               
+               <ShinyText text="Pricing" speed={5} className="Heading2 gradient-mask-text" />
+              
+               <ShinyText text="Disappears After Launch" speed={5} className="Heading2 gradient-white-text" />
+             </div>
+</div>
            
 
-            <h2
-             className="relative font-radio text-center  font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
-             style={{
-               textTransform: 'capitalize',
-               color: 'transparent',
-               background:
-                 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-               WebkitBackgroundClip: 'text',
-               backgroundClip: 'text',
-             }}
-           >
-             <div className="m-0 leading-[1]">
-               <ShinyText text="I Hate to Be the Bearer of Bad News, But" speed={5} className="Heading" />
-             </div>
-             <div className="m-0 leading-[1] -mt-2">
-               <ShinyText text="This" speed={5} className="Heading" />  
-               {' '}
-               <ShinyText text="Pricing" speed={5} className="Heading gradient-mask-text" />
-               {' '}
-               <ShinyText text="Disappears After Launch" speed={5} className="Heading" />
-             </div>
-           </h2>
+          
           
        <div className="grid md:grid-cols-2 gap-7 items-center px-17 py-8">
           {/* Left column - text */}
-          <div className="space-y-4 sub-text w-110 p-2">
+          <div className="space-y-4 subtext1 w-110 p-2">
             <p>As the world's first smart voice AI agent for websites, we're offering 
             this exclusive founding member discount to help early adopters get 
             maximum advantage over their competitors.</p>
@@ -74,42 +74,41 @@ const Section09 = () => {
 
         {/* Second Section */}
         <div>
-
-           <h2
-  className="relative font-radio font-normal text-center  leading-[1.05] py-15"
+        <div
+  className="relative text-center z-10 py-20"
   style={{
-    textTransform: 'capitalize',
+     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
+<div className="flex items-center justify-center space-x-3">
+    <ShinyText text="Zero Risk, 100%" speed={5} className="Heading2 gradient-white-text" />  
+   <ShinyText text="Guarantee" speed={5} className="Heading2 gradient-mask-text" />
+  </div> 
+</div>
 
-  <div className="m-0 leading-[1] ">
-    <ShinyText text="Zero Risk, 100%" speed={5} className="Heading" />  
-    {' '}
-    <ShinyText text="Guarantee" speed={5} className="Heading gradient-mask-text" />
-  </div>
-</h2>
+        
           <div className="grid md:grid-cols-2 gap-0 items-center ">
             <div className="bg-[#797979] h-69 w-120 rounded-[10px]"></div>
             
-            <div className="space-y-4 text-gray-300 w-120 ">
-              <p className="text-sm leading-relaxed">
+            <div className="space-y-4 w-110 ">
+              <p className="subtext1 leading-relaxed">
                 We're so confident VoiceAgent AI will transform your website into a 
                 conversion machine that we're backing it with our iron-clad 14-Day 
                 Money-Back Guarantee.
               </p>
               
-              <p className="text-sm leading-relaxed">
+              <p className="subtext1 leading-relaxed">
                 Install it, test it out, watch the conversations flow in. If you're not 
                 completely satisfied for ANY reason within 14 days, simply email us 
                 and we'll refund every penny. You literally cannot lose.
               </p>
               
-              <p className="text-sm leading-relaxed">
+              <p className="subtext1 leading-relaxed">
                 Either VoiceAgent AI pays for itself many times over by converting 
                 more visitors into customers... or you get your money back.
               </p>

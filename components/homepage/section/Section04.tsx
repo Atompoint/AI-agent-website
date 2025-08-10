@@ -7,29 +7,27 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 const Section04 = () => {
   return (
     <div className='flex flex-col items-center px-12 relative'>
+   <div
+  className="relative text-center z-10 mt-8"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     
-      {/* Main Heading - Fixed LG size */}
-      <h2
-        className="relative font-radio  leading-[1.05]"
-        style={{
-          textTransform: 'capitalize',
-          color: 'transparent',
-          background:
-            'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-        }}
-      >
-        
-        <div className="m-0 leading-[1]">
-          <ShinyText text="Introducing" speed={5} className="Heading" />
+  }}
+>
+<div className="flex items-center justify-center space-x-3">
+          <ShinyText text="Introducing" speed={5} className="Heading2 gradient-white-text" />
           {' '}
-          <ShinyText text="VoiceAgent AI" speed={5} className="Heading gradient-mask-text" />
+          <ShinyText text="VoiceAgent AI" speed={5} className="Heading2 gradient-mask-text" />
         </div>
-      </h2>
+</div> 
+     
       
       {/* Subtitle - Fixed size */}
-      <div className='sub-text text-center py-5 mb-5'>
+      <div className='subtext1 text-center py-5 mb-5'>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
       

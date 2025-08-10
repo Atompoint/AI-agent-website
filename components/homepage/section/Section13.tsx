@@ -59,12 +59,12 @@ const Section13: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-9 text-center md:text-left">
             {/* Left text */}
             <div>
-              <h2 className="m-auto mb-10 leading-tight text-center">
+              <h2 className="m-auto leading-tight text-center">
                 <ShinyText
                   text="Mikey Formby"
                   disabled={false}
                   speed={6}
-                  className="font-radio font-medium text-[54px]"
+                  className="Heading1 gradient-white-text"
                 />
               </h2>
             </div>
@@ -81,13 +81,13 @@ const Section13: React.FC = () => {
                   text=" See You On "
                   disabled={false}
                   speed={6}
-                  className="font-radio font-medium text-[54px]"
+                  className="Heading1 gradient-white-text"
                 />
                 <ShinyText
                   text="The Inside"
                   disabled={false}
                   speed={6}
-                  className="font-radio font-medium text-[54px]"
+                  className="Heading1 gradient-white-text"
                 />
               </h2>
             </div>
@@ -105,7 +105,7 @@ const Section13: React.FC = () => {
               text="Frequently Asked Questions"
               disabled={false}
               speed={6}
-              className="Heading"
+              className="Heading2 gradient-white-text"
             />
           </h2>
           
@@ -116,7 +116,7 @@ const Section13: React.FC = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between p-3 text-left hover:bg-opacity-40 transition-all duration-200"
                 >
-                  <span className="text-sm font-semibold text-white ">
+                  <span className="subtextpt2 ">
                     {faq.question}
                   </span>
                   <div className="text-gray-400 flex-shrink-0 transition-transform duration-200">
@@ -140,7 +140,7 @@ const Section13: React.FC = () => {
                 }`}>
                   <div className="p-3">
                     
-                      <p className="subtext2">
+                      <p className="subtext1">
                         {faq.answer}
                       </p>
                    
@@ -156,7 +156,7 @@ const Section13: React.FC = () => {
        <div className="max-w-6xl mx-auto">
         {/* Copyright Text */}
         <div >
-          <p className="m-auto sub-text leading-relaxed text-center max-w-4xl">
+          <p className="m-auto subtext1 leading-relaxed text-center max-w-4xl">
             © 2025 <span className="font-medium text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
             strictly prohibited without the express written consent of <span className="font-medium text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 
@@ -167,7 +167,7 @@ const Section13: React.FC = () => {
 
         {/* Copyright Notice */}
         <div className="text-center py-10">
-          <p className="subtext1">
+          <p className="subtextpt2">
             Copyright © 2025 Voice AI
           </p>
         </div>

@@ -43,51 +43,66 @@ export default function HeroHeader() {
 />
 
         {/* Text Content */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[25vh]">
+        <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 pt-[25vh]">
           {/* Label */}
           <div
             className="
-              sub-text
+              subtext1
+              h-[33px]
+              w-[478px]
               
-              px-6.5
-              py-1.5
+              flex items-center justify-center
               rounded-full
-              -mt-6
+              -mt-9
             
             "
             style={{
             border: '1px solid #FFFFFF12',
               backdropFilter: 'blur(3px)',
               background: '#FFFFFF08',
+              lineHeight: 18.2,
+              letterSpacing: 0.4,
+           
             }}
           >
             Tired of Watching 67% of Your Website Visitors Leave Without Buying?
           </div>
 
-          <h1 className="relative font-radio font-normal  text-[50px] leading-[1.05] font-normal py-6" style={{
-            textTransform: 'capitalize',
-            color: 'transparent',
-            background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text'
-          }}>
-            <div>
-              <ShinyText text="World's First" speed={5} className="font-extralight" />
-              {' '}
-              <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text font-extralight" />
-              {' '}
-              <ShinyText text="Agent That" speed={5} className="font-extralight" />
-            </div>
-            <div>
-              <ShinyText text="Actually TALKS to Your Website Visitors" speed={5} className="font-medium" />
-            </div>
-            <div>
-              <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="font-medium" />
-            </div>
-          </h1>
+      
+          <div
+  className="relative py-3 z-10"
+  style={{
+
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  }}
+>
+  <div style={{ marginBottom: '-18px' }} className='flex items-center justify-center space-x-4'>
+    <ShinyText text="World's First" speed={5} className="Heading1 gradient-white-text" />
+    
+    <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text Heading1" />
+  
+    <ShinyText text="Agent That" speed={5} className="Heading1 gradient-white-text" />
+  </div>
+
+  <div style={{ marginBottom: '-18px' }}>
+    <ShinyText text="Actually TALKS to Your Website Visitors" speed={5} className="Heading1 gradient-white-text" />
+  </div>
+
+  <div>
+    <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="Heading1 gradient-white-text" />
+  </div>
+</div>
+
+
+
+
+
 
           {/* Subtext */}
-          <p className="sub-text w-190 mt-2 leading-relaxed">
+          <p   style={{ lineHeight: '22.1px'}} className="subtext1 w-190 mt-3">
             Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
           </p>
         </div>
@@ -98,12 +113,12 @@ export default function HeroHeader() {
         <div className="absolute top-[-8rem] w-full flex justify-center z-30">
           
           {/* Container for both glow image and main image - INCREASED BY 50PX */}
-          <div className="relative w-full max-w-[950px]">
+          <div className="relative w-full max-w-[980px]">
            
            
 
             {/* Main Image with Shine Border - SLIGHTLY DECREASED */}
-            <div className="relative rounded-2xl overflow-hidden  mt-8 z-10 p-0.5 w-full">
+            <div className="relative rounded-2xl overflow-hidden  mt-7 z-10 p-0.5 w-full">
               <ShineBorder
                 borderWidth={2}
                 duration={23}
@@ -123,7 +138,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[25.7rem] ">
+        <div className="pt-[26rem] ">
           {/* Your section 2 content goes here */}
         </div>
 
@@ -139,18 +154,18 @@ export default function HeroHeader() {
         </div>
 
         <div className="flex justify-center -mt-1 items-center">
-          <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 text-white rounded-full px-3 py-1">
+          <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-2">
             <BsStars className="mr-2 text-[17px]  -rotate-90" />
-            <span className="subtext1 font-semibold">GIVE IT A TRY!</span>
+            <span className="subtextpt2">GIVE IT A TRY!</span>
           </div>
         </div>
 
-        <div className="mt-20">
-          <div className="max-w-[950px] mx-auto grid grid-cols-4  gap-y-6 gap-x-12 text-left ">
+        <div className="mt-18">
+          <div className="max-w-[960px] mx-auto grid grid-cols-4  gap-y-6 gap-x-12 text-left ">
             {features.map((feature, i) => (
               <div
                 key={i}
-                className="flex items-center gap-1 justify-center sm:justify-start flex-nowrap"
+                className="flex items-center gap-1 justify-start flex-nowrap"
               >
                 {/* Icon */}
                 <div className="w-13 h-13 flex items-center justify-center flex-shrink-0">

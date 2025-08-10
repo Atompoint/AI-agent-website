@@ -9,6 +9,8 @@
   font-display: swap;
 }
 
+
+
 @custom-variant dark (&:is(.dark *));
 @theme inline {
   --color-background: var(--background);
@@ -96,33 +98,94 @@ body {
     transform: translateY(-10px);
   }
 }
-.Heading{
- font-family: 'Radio Grotesk', sans-serif;
- font-size: 45px;
- font-weight: 500;
+
+.Button{
+font-size: 9.76px;
+font-weight: 700;
+letter-spacing: 1px;
+line-height: 22.8px;
+
 }
+
+.Heading1{
+ font-family: 'Radio Grotesk';
+ font-size: 52px;
+ font-weight: 400;
+ 
+}
+.Heading2{
+ font-family: 'Radio Grotesk';
+ font-size: 43px;
+ font-weight: 400;
+ line-height: 45px;
+}
+.Heading3{
+ font-family: 'Radio Grotesk';
+ font-size: 36px;
+ font-weight: 400;
+ 
+}
+.Heading4{
+ font-family: 'Radio Grotesk';
+ font-size: 22.5px;
+
+ line-height: 26px;
+}
+
 .border-class{
    border: '1px solid #FFFFFF12',
 }
 
-.sub-text{
-  font-size: 13px;
-   font-weight: 100;
-   color: rgba(255, 255, 255,0.9);
- letter-spacing: 0.4px;
-
-}
 .subtext1{
-  font-size: 14px;
+  font-size: 13.1px;
+   font-weight: 200;
+   color: white;
+   letter-spacing: 0.6px;
+  
+}
+.subtextpt2 {
+  font-size: 13px;
   font-weight: 600;
-  color: rgb(255, 255, 255);
-letter-spacing: 0.4px;
+  color: white;
+
+
 }
 .subtext2{
   font-size: 16px;
+  font-weight: 600;
+  color: white;
+
+}
+.subtext3{
+  font-size: 16.25px;
    font-weight: 600;
-   color: rgb(255, 255, 255);
+   color: white;
+
+}
+
+.subtext4{
+  font-size: 15.27px;
+   font-weight: 300;
+   color: white;
  letter-spacing: 0.4px;
+}
+.GetStarted{
+font-size: 24.4px;
+letter-spacing: 0.4px;
+font-weight:800 ;
+letter-spacing: -0.4px;
+}
+
+
+.num1{
+ font-size: 60px;
+ font-weight: 500;
+}
+
+
+.num2{
+  font-size: 60px;
+  font-weight: 800;
 }
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
@@ -135,14 +198,7 @@ letter-spacing: 0.4px;
 }
 
 .gradient-white-text {
-  background: linear-gradient(
-    to right,
-    #49494d 0%,
-    #8f8b8b 20%,
-    #e2dbdb 50%,
-    #A9ABB5 80%,
-    #afb0b6 100%
-  );
+  background: linear-gradient(95.14deg, #50525F 4.45%, #FFFFFF 29.02%, #FFFFFF 60.85%, #9698A6 95.61%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

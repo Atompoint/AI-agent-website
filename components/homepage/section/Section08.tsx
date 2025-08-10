@@ -80,31 +80,29 @@ const Section08: React.FC = () => {
       <div className="container mx-auto px-6 ">
         {/* Header */}
         
-        <div className="text-center mb-16">
-        
-
-           <h2
-  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+        <div
+  className="relative text-center z-10 mb-15"
   style={{
-    textTransform: 'capitalize',
+     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
-  <div className="m-0 leading-[1]">
-    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="Heading" />
+<div >
+    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="Heading2 gradient-white-text" />
   </div>
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="AI Turns Visitors Into " speed={5} className="Heading" />  
-    {' '}
-    <ShinyText text="Customers" speed={5} className="Heading gradient-mask-text" />
+  <div className='flex items-center justify-center space-x-3'>
+    <ShinyText text="AI Turns Visitors Into " speed={5} className="Heading2 gradient-white-text" />  
+  
+    <ShinyText text="Customers" speed={5} className="Heading2 gradient-mask-text" />
   </div>
-</h2>
-        </div>
-          
+</div>
+
+        
+     
          
         {/* Features Grid - 3 columns, 3 rows */}
         <div className="relative">
@@ -119,10 +117,10 @@ const Section08: React.FC = () => {
                   alt="background"
                   className="w-full h-full"
                 />
-                <h3 className="absolute top-6 left-6 w-68 subtext2 drop-shadow-lg">
+                <div className="absolute top-6 left-6 w-68 subtext2 drop-shadow-lg leading-6">
                   {feature.title}
-                </h3>
-                <p className="absolute top-16 w-70 py-5 left-6 right-6 sub-text leading-relaxed drop-shadow-md">
+                </div>
+                <p className="absolute top-16 w-65 py-5 left-6 right-6 subtext1 leading-relaxed drop-shadow-md">
                   {feature.description}
                 </p>
               </div>
@@ -133,92 +131,53 @@ const Section08: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6 ">
-        {/* Header */}
-        <div className="text-center mt-10 mb-16">
+      
 
-         
-           <h2
-  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+  <div
+  className="relative text-center z-10 mt-25 mb-10"
   style={{
-    textTransform: 'capitalize',
+     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
-  <div className="m-0 leading-[1]">
-    <ShinyText text="The Numbers Don't Lie" speed={5} className="Heading" />
+<div >
+    <ShinyText text="The Numbers Don't Lie" speed={5} className="Heading2 gradient-white-text" />
   </div>
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="Voice AI Is " speed={5} className="Heading" />  
-    {' '}
-    <ShinyText text="Dominating" speed={5} className="Heading gradient-mask-text" />
+  <div className='flex items-center justify-center space-x-3'>
+    <ShinyText text="Voice AI Is " speed={5} className="Heading2 gradient-white-text" />  
+    
+    <ShinyText text="Dominating" speed={5} className="Heading2 gradient-mask-text" />
   </div>
-</h2>
+</div>
 
-
-<h1 className="relative z-10" style={{
-                fontFamily: 'Archivo, sans-serif',
-                fontWeight: 500,
-                fontSize: '65px',
-                lineHeight: '67px',
-                letterSpacing: '0%',
-                margin: '0 0 -0.5rem 0',
-                padding: '0.2em 0',
-                textTransform: 'capitalize',
-                color: 'transparent',
-                background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
-                <div>
-                  <ShinyText text="Simplify" speed={5} className="font-extralight" />
-                  {' '}
-                  <ShinyText text="Cloud" speed={5} className="font-medium" />
-                </div>
-                <div>
-                  <ShinyText text="Security" speed={5} className="font-medium" />
-                  {' '}
-                  <ShinyText text="Without" speed={5} className="font-extralight" />
-                </div>
-                <div>
-                  <ShinyText text="Compromise" speed={5} className="font-medium" />
-                </div>
-              </h1>
-
-
-
-
-
-
-        </div>
 
         {/* Statistics Grid */}
         <div className="relative">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto relative">
+          <div className="grid grid-cols-3 gap-4 max-w-7xl mx-auto relative">
           {/* First row - 3 equal-width cards */}
           {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-            <div key={index} className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-84 backdrop-blur-sm flex flex-col justify-end">
+            <div key={index} className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 h-84 backdrop-blur-sm flex flex-col justify-end">
              
-              <p className="text-gray-300 subheading px-1 max-w-[300px] leading-relaxed">
+              <p className="subtext4  max-w-[270px] leading-6">
                 {item.description}
               </p>
             </div>
           ))}
 
           {/* Second row - 2 half-width cards */}
-          <div className="col-span-3 flex gap-3">
-            <div className="w-1/2 bg-[#0D0B1B] border border-gray-700/50 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
+          <div className="col-span-3 flex gap-4">
+            <div className="w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
              
               <p className="subheading leading-relaxed max-w-[400px]">
                 {statistics[3].description}
               </p>
             </div>
-            <div className="w-1/2 bg-[#0D0B1B] border border-gray-700/50 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
+            <div className="w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
               
               <p className="subheading max-w-[400px] leading-relaxed">
                 {statistics[4].description}

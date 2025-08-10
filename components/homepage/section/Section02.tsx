@@ -54,31 +54,31 @@ const Section02 = () => {
       <div className="absolute bottom-400 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-3">
+      <div className="relative z-10 container mx-auto ">
         <div >
           
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`relative flex gap-12 text-white justify-center items-center p-8 rounded-xl flex-row ${
+              className={`relative flex gap-12 text-white justify-center items-center py-8 rounded-xl flex-row ${
                 index % 2 !== 0 ? "flex-row-reverse" : ""
               }`}
             >
               {/* Text Section */}
-              <div className="w-[440px] h-[400px] flex flex-col items-center justify-center text-left">
-                <div className="text-[32px] text-white font-semibold mb-5 leading-tight">
+              <div className="w-[430px] h-[400px] flex flex-col items-center justify-center text-left">
+                <div style={{ lineHeight: "38px"}} className="Heading3 mb-5">
                   <ShinyText 
                     text={`${section.title}`} 
                     disabled={false} 
                     speed={6} 
-                    className="leading-tight"
+            
                   />
                 </div>
                 <div className="space-y-3">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p 
                       key={paragraphIndex} 
-                      className="sub-text"
+                      className="subtext1"
                     >
                       {paragraph}
                     </p>
@@ -87,7 +87,7 @@ const Section02 = () => {
               </div>
 
               {/* Image Section */}
-              <div className="w-full max-w-[450px] h-[350px] rounded-[7px] bg-[#797979]  flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
+              <div className="w-[460px] h-[350px] rounded-[7px] bg-[#797979]  flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
                
               </div>
             </div>

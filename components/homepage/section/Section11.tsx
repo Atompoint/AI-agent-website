@@ -41,7 +41,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
 
       {/* Content Overlay */}
       <div className="relative p-8">
-        <h3 className="text-md font-semibold text-white mb-6">
+        <h3 className="subtext3 mb-6">
           {title}
         </h3>
 
@@ -61,7 +61,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
                   />
                 </svg>
               </div>
-              <span className="sub-text leading-relaxed ">
+              <span className="subtext1 ">
                 {feature}
               </span>
             </div>
@@ -80,34 +80,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({  image, description }) => {
   return (
     <div className="mb-20 relative"> {/* Added relative positioning */}
       <div className="absolute top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[120px] -z-10" />
-
-    
-    
-    
-    <h2
-      className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05]  z-10" // Added z-10
-      style={{
-        textTransform: 'capitalize',
-        color: 'transparent',
-        background:
-          'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-      }}
-    >
-      <div className="m-0 leading-[1] -mt-2">
-        <ShinyText text="Now Is the Time to Turn Your" speed={5} className="Heading" />  
+      <div
+  className="relative text-center z-10 "
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  
+  }}
+>
+<div >
+        <ShinyText text="Now Is the Time to Turn Your" speed={5} className="Heading2 gradient-white-text" />  
       </div>
-      <div className="m-0 leading-[1] -mt-2">
-        <ShinyText text="Website Into a" speed={5} className="Heading" />  
-        {' '}
-        <ShinyText text="24/7" speed={5} className="Heading gradient-mask-text" />
-        {' '}
-        <ShinyText text="Sales Machine" speed={5} className="Heading" />
+      <div className="flex items-center justify-center space-x-3">
+        <ShinyText text="Website Into a" speed={5} className="Heading2 gradient-white-text" />  
+       
+        <ShinyText text="24/7" speed={5} className="Heading2 gradient-mask-text" />
+      
+        <ShinyText text="Sales Machine" speed={5} className="Heading2 gradient-white-text" />
       </div>
-    </h2>
-          
-    <div className="grid md:grid-cols-2 gap-2 items-center pt-20 relative z-10"> {/* Added z-10 */}
+</div>
+    
+    
+    
+    
+    <div className="grid grid-cols-2 gap-2 justify-center items-center pt-20 relative z-10"> {/* Added z-10 */}
       <div 
         className={`bg-[#797979] rounded-[8px]`}
         style={{ 
@@ -116,7 +115,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({  image, description }) => {
         }}
       ></div>
       
-      <div className="space-y-4 w-100 sub-text">
+      <div className="space-y-3 w-100 subtext1">
         {description.map((paragraph, index) => (
           <p key={index}>
             {paragraph}
@@ -205,29 +204,28 @@ const Section11: React.FC = () => {
         image={heroContent.image}
         description={heroContent.description}
       />
-
-      {/* Pricing Section */}
-      <h2
-  className="relative font-radio font-normal text-center text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-15"
+  <div
+  className="relative text-center z-10 mb-10"
   style={{
-    textTransform: 'capitalize',
+     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
+<div >
+    <ShinyText text="Here's What You Get Access to" speed={5} className="Heading2 gradient-white-text" />  
+    
+  </div>
+  <div >
+    <ShinyText text="Immediately" speed={5} className="Heading2 gradient-mask-text" />  
+    
+  </div>
+</div>
 
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="Here's What You Get Access to" speed={5} className="Heading" />  
-    
-  </div>
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="Immediately" speed={5} className="Heading gradient-mask-text" />  
-    
-  </div>
-</h2>
+     
 
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-5">

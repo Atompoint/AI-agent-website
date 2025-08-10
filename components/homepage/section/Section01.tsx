@@ -195,29 +195,27 @@ export default function App(): React.JSX.Element {
   };
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="text-center">
-        <h2
-          className="relative mb-20"
-          style={{
-            textTransform: 'capitalize',
-            color: 'transparent',
-            background:
-              'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-          }}
-        >
-          <div className="m-0">
-            <ShinyText text="All It Takes Is 3 Simple" speed={5} className="Heading" />
+    <div className="relative ">
+      <div
+  className="relative text-center z-10 mb-25"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  
+  }}
+>
+  <div >
+            <ShinyText text="All It Takes Is 3 Simple" speed={5} className="Heading2 gradient-white-text" />
           </div>
-          <div className="m-0 leading-[1]">
-            <ShinyText text="steps and" speed={5} className="Heading" />
-            {' '}
-            <ShinyText text=" you're done" speed={5} className="Heading gradient-mask-text" />
+          <div className="flex items-center justify-center space-x-3">
+            <ShinyText text="steps and" speed={5} className="Heading2 gradient-white-text" />
+            <ShinyText text="you're done" speed={5} className="Heading2 gradient-mask-text" />
           </div>
-        </h2>
-      </div>
+</div>
+
       
       <div className="relative z-10 container mx-auto mb-20 px-3">
         {/* Glow effect for heading */}
@@ -233,7 +231,7 @@ export default function App(): React.JSX.Element {
                 <motion.div
                   key={index}
                   ref={ref}
-                  className="flex items-start gap-7 text-left relative mb-8"
+                  className="flex items-start gap-7 text-left relative "
                   variants={containerVariants}
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
@@ -243,15 +241,15 @@ export default function App(): React.JSX.Element {
                     {/* Step Number */}
                     <motion.div
                       variants={numberVariants}
-                      className="z-10 font-semibold text-6xl mb-4"
+                      className="z-10 num1 "
                     >
                       <ShinyText text={step.number} disabled={false} speed={6} />
                     </motion.div>
 
                     {/* Vertical Line */}
                     {index !== steps.length - 1 && (
-                      <div className="relative py-2 w-full justify-center flex">
-                        <div className="relative h-[90px] w-[1px]">
+                      <div className="relative w-full justify-center flex">
+                        <div className="relative h-[125px] w-[1px]">
                           {/* Background gray line */}
                           <div className="bg-gray-500 absolute inset-0 w-full" />
 
@@ -298,11 +296,11 @@ export default function App(): React.JSX.Element {
                         variants={textVariants}
                         className="relative inline-block w-fit rounded-full overflow-hidden mb-2"
                       >
-                        <div className="rounded-full px-4 py-1 subtext1 relative z-10 bg-gray-900/50">
+                        <div className="rounded-full px-4 py-1 subtextpt2  relative z-10">
                           {step.stepText}
                         </div>
                         <ShineBorder
-                          borderWidth={2}
+                          borderWidth={1}
                           duration={6}
                           shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
                           className="absolute inset-0 rounded-full pointer-events-none"

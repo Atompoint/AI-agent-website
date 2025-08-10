@@ -67,19 +67,27 @@ export default function Section07() {
 
   return (
    <div className=" flex flex-col items-center justify-center px-4">
-  <div className="text-center relative">
+  <div className="text-center relative mb-20">
    
   <div className="absolute top-[20rem] right-[3px] -translate-x-1/2 -translate-y-1/2 w-[430px] h-[1200px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
       
-
- <h2 className="m-auto py-2 leading-tight text-center ">
-             
-             <ShinyText
+  <div
+  className="relative text-center z-10 mb-4"
+  style={{
+  
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  lineHeight: '1.2',
+  }}
+>
+<ShinyText
                text="The entire setup takes less than 60 seconds. No technical skills
     "
                disabled={false}
                speed={6}
-               className="font-radio text-[35px] font-normal"
+               className="Heading3 gradient-white-text"
              />
            
              {/* Second Line - With Gradient Text */}
@@ -87,11 +95,14 @@ export default function Section07() {
                text="required. No content creation needed. No ongoing maintenance."
                disabled={false}
                speed={6}
-               className="font-radio text-[35px] font-normal"
+               className="Heading3 gradient-white-text"
              />
-             
-           </h2>
+</div>
 
+
+
+
+ 
 
 
            <div className="absolute left-1/2 bottom-[-15px] w-[600px] h-[4.3px] 
@@ -104,36 +115,32 @@ export default function Section07() {
 
   </div>
 
-   <div className="container mx-auto px-6  ">
-        <div className="text-center py-20">
+   <div className="container mx-auto px-6 ">
+       
         
 
-
-        <h2
-  className="relative font-radio mt-20 leading-[1.05] "
+        <div
+  className="relative text-center z-10 py-16 "
   style={{
-    textTransform: 'capitalize',
+  textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
-  <div >
-    <ShinyText text="Turn your silent website into a 24/7" speed={5} className="Heading" />
+<div >
+    <ShinyText text="Turn your silent website into a 24/7" speed={5} className="Heading2 gradient-white-text" />
   </div>
-  <div >
-    <ShinyText text="Money-Making" speed={5} className="Heading gradient-mask-text" />
-    {' '}
-    <ShinyText text="Machine" speed={5} className="Heading" />
-    {' '}
-    <ShinyText text="That Talks!" speed={5} className="Heading gradient-mask-text" />
+  <div className="flex items-center justify-center space-x-4" >
+    <ShinyText text="Money-Making" speed={5} className="Heading2 gradient-mask-text" />
+  
+    <ShinyText text="Machine that" speed={5} className="Heading2 gradient-white-text" />
+    
+    <ShinyText text="talks!" speed={5} className="Heading2 gradient-mask-text" />
   </div>
-</h2>
-
-
-        </div>
+</div>
 
         {/* Features Grid - 3 columns, 4 rows */}
         <div className="grid grid-cols-3 gap-6">
@@ -144,13 +151,13 @@ export default function Section07() {
               
               </div>
               
-              <div className="w-[340px] py-5 font-medium">
-                <h3 className="text-white text-[22px] w-80 leading-7">
+              <div className="w-[360px] py-5 ">
+                <div style={{ wordSpacing: '3px' }} className="text-[22.4px] font-medium w-90 leading-7">
                 {feature.title}
-              </h3>
+              </div>
               
               {/* Description */}
-              <p className="text-white/90 py-5 text-[12px] leading-relaxed">
+              <p className="py-5 subtext1 leading-4">
                  {feature.description}
               </p></div>
               

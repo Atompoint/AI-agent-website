@@ -139,42 +139,42 @@ const Section03: React.FC = () => {
         >
           
           {/* Content Container */}
-          <div className="relative z-10 max-w-6xl w-full text-center">
+          <div className="relative z-10 max-w-5xl w-full text-center">
             {/* Main Heading */}
           
-
-
-
-     <h2
-  className="relative font-radio font-normal text-[24px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[52px] leading-[1.05] mb-4 sm:mb-6"
+            <div
+  className="relative text-center z-10 py-6"
   style={{
-    textTransform: 'capitalize',
+     textTransform: 'capitalize',
     color: 'transparent',
-    background:
-      'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+  
   }}
 >
-  <div className="m-0 leading-[1]">
-    <ShinyText text="Stop" speed={5} className="Heading" />
+<div className="flex items-center justify-center space-x-3">
+    <ShinyText text="Stop" speed={5} className="Heading2 gradient-white-text" />
     {' '}
-    <ShinyText text="Losing Money" speed={5} className="Heading gradient-mask-text" />
+    <ShinyText text="Losing Money" speed={5} className="Heading2 gradient-mask-text" />
     {' '}
-    <ShinyText text="Every Single" speed={5} className="Heading" />
+    <ShinyText text="Every Single" speed={5} className="Heading2 gradient-white-text" />
   </div>
-  <div className="m-0 leading-[1] -mt-2">
-    <ShinyText text="Day Your Website Stays Silent!" speed={5} className="Heading" />  
+  <div >
+    <ShinyText text="Day Your Website Stays Silent!" speed={5} className="Heading2 gradient-white-text" />  
     
   </div>
-</h2>
+</div>
+
+
+     
             {/* Subtitle */}
-            <p className="sub-text mb-10 font-light">
+            <p className="subtext1 mb-10">
               The statistics are brutal!
             </p>
             
             {/* Statistics Cards */}
-            <div className="grid grid-cols-3 gap-20  mx-auto">
+            <div className="grid grid-cols-3 gap-9  mx-auto">
               {statisticsData.map((stat) => (
                 <div key={stat.id} className="flex flex-col items-center text-center">
                   <div className={`${stat.containerClass} flex items-center justify-center`}>
@@ -186,7 +186,7 @@ const Section03: React.FC = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="subtext1 mb-6 py-4 leading-tight">
+                  <div className="subtext3 mb-6 py-4 leading-tight">
                     {stat.textLines[0]}               
                       <br />
                     {stat.textLines[1]}
@@ -204,26 +204,31 @@ const Section03: React.FC = () => {
         <div className="relative z-10">
           {/* Main headline */}
           <div className="text-center mb-10 py-3">
-            <h2
-              className="relative font-radio"
-              style={{
-                textTransform: 'capitalize',
-                color: 'transparent',
-                background:
-                  'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-              }}
-            >
-              <div className="m-0 leading-[1.4]">
-                <ShinyText text="Why Business Owners Are Ditching" speed={5} className="Heading" />
+
+
+
+          <div
+  className="relative text-center z-10 py-6"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+  
+  }}
+>
+<div >
+                <ShinyText text="Why Business Owners Are Ditching" speed={5} className="Heading2 gradient-white-text" />
               </div>
-              <div className="m-0 leading-[1]">
-                <ShinyText text="Expensive Alternatives for " speed={5} className="Heading" />
+              <div className="flex items-center justify-center space-x-3">
+                <ShinyText text="Expensive Alternatives for " speed={5} className="Heading2 gradient-white-text" />
                 {' '}
-                <ShinyText text="VoiceAgent AI" speed={5} className="Heading gradient-mask-text" />
+                <ShinyText text="VoiceAgent AI" speed={5} className="Heading2 gradient-mask-text" />
               </div>
-            </h2>
+</div>
+            
+          
           </div>
 
             {/* Dynamic Comparison Grid with Center Lines */}
@@ -255,9 +260,9 @@ const Section03: React.FC = () => {
                       <div className="flex flex-col items-start mb-4">
                         <Image src={item.icon} alt={`${item.title} icon`} height={50} width={50} className="py-4"/>
                         {item.id === 4 ? (
-                          <h3 className="gradient-mask-text text-lg font-semibold text-start">{item.title}</h3>
+                          <h3 className="subtext3 gradient-mask-text  text-start">{item.title}</h3>
                         ) : (
-                          <h3 className="text-white text-lg font-semibold text-start">
+                          <h3 className="subtext3 text-start">
                             {item.title}
                             {item.subtitle && (
                               <>
@@ -270,7 +275,7 @@ const Section03: React.FC = () => {
                       </div>
 
                       {/* Features List */}
-                      <ul className={`space-y-3 sub-text text-start`}>
+                      <ul className={`space-y-3 subtext1 text-start`}>
                         {item.features.map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-start">
                             <div className={`w-1 h-1 bg-${item.bulletColor} rounded-full mt-1.5 mr-2 flex-shrink-0`}></div>
@@ -297,33 +302,33 @@ const Section03: React.FC = () => {
         {/* Content */}
         <div className="relative z-10 text-center">
         
-
-
-           <h2
-          className="relative "
-          style={{
-            
-            color: 'transparent',
-            background:
-              'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-          }}
-        >
-          <div className="m-0">
-            <ShinyText text="But what if I told you there's now a" speed={5} className="Heading" />
+  <div
+  className="relative text-center z-10 mt-8"
+  style={{
+     textTransform: 'capitalize',
+    color: 'transparent',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    
+  }}
+>
+<div >
+            <ShinyText text="But what if I told you there's now a" speed={5} className="Heading2 gradient-white-text" />
           </div>
-          <div className="m-0 leading-[1] -mt-2">
-            <ShinyText text="way to have a tireless smart voice" speed={5} className="Heading" />
+          <div >
+            <ShinyText text="way to have a tireless smart voice" speed={5} className="Heading2 gradient-white-text" />
            
           </div>
-          <div className="m-0 leading-[1]">
-            <ShinyText text="agent on your website 24/7!" speed={5} className="Heading" />
+          <div >
+            <ShinyText text="agent on your website 24/7!" speed={5} className="Heading2 gradient-white-text" />
             <BsStars className="text-[30px] ml-2"/>
           </div>
-        </h2>
+</div>
+
+           
           {/* Supporting text */}
-          <p className="sub-text text-sm max-w-4xl mx-auto  mb-10 leading-relaxed">
+          <p className="subtext1  mb-5 ">
             Ready to answer every question, handle every objection, and guide every visitor straight to your checkout page
           </p>
         </div>

@@ -1,24 +1,26 @@
 'use client';
 import React from 'react';
 import { ShineBorder } from "@/components/magicui/shine-border";
+import Logo from '@/public/assets/icons/logo.svg';
+import Image from 'next/image';
 
 
  
 const Header = () => {
   
   return (
-    <header className="w-full h-auto flex justify-between items-center px-28 py-6 relative z-10 mx-auto">
+    <header className="w-full h-auto flex justify-between items-center px-24 py-6 relative z-10 mx-auto">
       {/* Logo */}
-      <div className="text-[25px] leading-tight font-medium">
+      <div>
         
-        <div className='font-logo gradient-white-text'>Voice Ai</div>
+       <Image src={Logo} alt="Logo"  height={95} width={95}/>
       </div>
       {/* Shimmer Button */}
-      <div className="relative w-[100px] h-[28px] rounded-full overflow-hidden">
+      <div className="relative w-[90px] h-[26px] rounded-full overflow-hidden">
         {/* Actual Button */}
-        <button className="w-full h-full  text-[10px] font-medium tracking-widest z-10 relative rounded-full">
+        <button className="flex items-center justify-center w-full h-full  z-10 relative rounded-full">
           
-          <div className='font-radio gradient-white-text'>JOIN NOW</div>
+          <div className='Button gradient-white-text'>JOIN NOW</div>
         </button>
 
         {/* Shimmer Border */}
