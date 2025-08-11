@@ -134,7 +134,7 @@ const Section03: React.FC = () => {
         <div 
           className="relative bg-cover w-[95%] py-7 border border-[#FFFFFF12] rounded-2xl bg-center bg-no-repeat flex items-center justify-center z-10"
           style={{
-            backgroundImage: "url('/assets/images/Spotlight.png')",
+            backgroundImage: "url('/assets/images/spotlight.png')",
           }}
         >
           
