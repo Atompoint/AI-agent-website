@@ -121,7 +121,7 @@ line-height: 22.8px;
 }
 .Heading3{
  font-family: 'Radio Grotesk';
- font-size: 36px;
+ font-size: 35px;
  font-weight: 400;
  
 }
@@ -182,7 +182,13 @@ letter-spacing: -0.4px;
  font-weight: 500;
 }
 
-
+.percentage{
+  font-family: var(--font-manrope);
+   font-size: 43px;
+ font-weight: 400;
+ letter-spacing: -2px;
+ 
+}
 .num2{
   font-size: 60px;
   font-weight: 800;
@@ -202,6 +208,7 @@ letter-spacing: -0.4px;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  
   -webkit-text-fill-color: transparent;
 }
 

@@ -22,7 +22,7 @@ const Section05: React.FC = () => {
   // Demo section
   const demoSection = {
     mainImage: "/assets/images/main1.png",
-    playIcon: "/assets/images/icon.png"
+    playIcon: "/assets/images/play.png"
   };
 
   return (

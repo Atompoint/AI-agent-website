@@ -13,7 +13,7 @@ interface ComparisonItem {
   bulletColor: string;
   textColor: string;
   backgroundColor: string;
-  features: string[];
+  features: (string | React.ReactNode)[];
 }
 
 const Section03: React.FC = () => {
@@ -114,7 +114,7 @@ const Section03: React.FC = () => {
       backgroundColor: "transparent",
      
       features: [
-        "67% of visitors leave without buying",
+        <span key="visitors">67<span style={{ fontFamily: 'var(--font-manrope)', fontSize: '1.1em', letterSpacing: '-1px' }}>%</span> of visitors leave without buying</span>,
         "No way to overcome objections",
         "Missing sales 24/7",
         "Competitors who adapt will crush you"
@@ -276,10 +276,10 @@ const Section03: React.FC = () => {
 
                       {/* Features List */}
                       <ul className={`space-y-3 subtext1 text-start`}>
-                        {item.features.map((feature: string, featureIndex: number) => (
+                        {item.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">
                             <div className={`w-1 h-1 bg-${item.bulletColor} rounded-full mt-1.5 mr-2 flex-shrink-0`}></div>
-                            <span>{feature}</span>
+                            {typeof feature === 'string' ? <span>{feature}</span> : feature}
                           </li>
                         ))}
                       </ul>

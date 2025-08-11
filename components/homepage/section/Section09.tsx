@@ -77,17 +77,26 @@ const Section09 = () => {
         <div
   className="relative text-center z-10 py-20"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '45px',
+    lineHeight: '67px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-  
+    backgroundClip: 'text'
   }}
 >
-<div className="flex items-center justify-center space-x-3">
-    <ShinyText text="Zero Risk, 100%" speed={5} className="Heading2 gradient-white-text" />  
-   <ShinyText text="Guarantee" speed={5} className="Heading2 gradient-mask-text" />
+<div >
+    <ShinyText text="Zero Risk," speed={5} className="gradient-white-text" />
+    <ShinyText text="100%" speed={5} className="percentage gradient-white-text "  />    
+    {' '}
+   <ShinyText text="Guarantee" speed={5} className="gradient-mask-text" />
   </div> 
 </div>
 

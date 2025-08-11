@@ -6,6 +6,11 @@ import ShinyText from '@/components/ui/ShinyText';
 const Offer = () => {
   return (
     <div className="mx-auto text-center mb-6 px-12 py-4">
+
+
+
+
+
           <div
   className="relative text-center z-10 mb-10"
   style={{
