@@ -197,27 +197,37 @@ export default function App(): React.JSX.Element {
   return (
     <div className="relative ">
       <div
-  className="relative text-center z-10 mb-25"
+  className="relative text-center z-10 "
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
   <div >
-            <ShinyText text="All It Takes Is 3 Simple" speed={5} className="Heading2 gradient-white-text" />
+            <ShinyText text="All It Takes Is 3 Simple" speed={5} className='gradient-white-text'/>
           </div>
-          <div className="flex items-center justify-center space-x-3">
-            <ShinyText text="steps and" speed={5} className="Heading2 gradient-white-text" />
-            <ShinyText text="you're done" speed={5} className="Heading2 gradient-mask-text" />
+          <div >
+            <ShinyText text="steps and " speed={5} className='gradient-white-text'/>
+            {' '}
+            <ShinyText text="you're done" speed={5} className='gradient-mask-text'/>
           </div>
 </div>
 
       
-      <div className="relative z-10 container mx-auto mb-20 px-3">
+      <div className="relative z-10 container mx-auto mb-20 mt-25 px-3">
         {/* Glow effect for heading */}
         <div className="absolute top-5 left-[55%] -translate-x-1/2 w-[300px] h-[600px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[150px] -z-10"></div>
         

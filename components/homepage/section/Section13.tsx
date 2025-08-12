@@ -55,11 +55,11 @@ const Section13: React.FC = () => {
         />
 
         {/* Content */}
-        <div className="relative z-10 w-full px-7">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-9 text-center md:text-left">
+        <div className="relative z-10 w-full px-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-9 w-full max-w-8xl mx-auto">
             {/* Left text */}
-            <div>
-              <h2 className="m-auto leading-tight text-center">
+            <div className="flex-1 flex justify-center lg:justify-end text-center lg:text-right">
+              <h2 className="leading-tight">
                 <ShinyText
                   text="Mikey Formby"
                   disabled={false}
@@ -70,18 +70,18 @@ const Section13: React.FC = () => {
             </div>
 
             {/* Center box */}
-            <div className="bg-gray-300 rounded-2xl p-7 w-90 h-50 flex items-center justify-center">
+            <div className="w-90 h-50  bg-gray-300 rounded-2xl p-8 flex-shrink-0 flex items-center justify-center">
               {/* Add content here */}
             </div>
 
             {/* Right text */}
-            <div>
-              <h2 className="m-auto mb-10 max-w-[300px] leading-tight text-center">
+            <div className="flex-1 flex justify-center lg:justify-start text-center lg:text-left">
+              <h2 className="max-w-[300px] leading-10">
                 <ShinyText
-                  text=" See You On "
+                  text="See You On"
                   disabled={false}
                   speed={6}
-                  className="Heading1 gradient-white-text"
+                  className="Heading1 gradient-white-text block"
                 />
                 <ShinyText
                   text="The Inside"

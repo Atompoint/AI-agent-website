@@ -10,22 +10,31 @@ const Section12 = () => {
       <div
   className="relative text-center z-10 mb-10"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 2rem 0',
+    padding: '0 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-    <ShinyText text="The Only Thing Standing Between" speed={5} className="Heading2 gradient-white-text" />  
+    <ShinyText text="The Only Thing Standing Between" speed={5} className=" gradient-white-text" />  
     
   </div>
-  <div className="flex items-center justify-center space-x-3">
-    <ShinyText text="You and More Sales Is This" speed={5} className="Heading2 gradient-white-text" />  
-   
-    <ShinyText text="One Click" speed={5} className="Heading2 gradient-mask-text" />  
+  <div >
+    <ShinyText text="You and More Sales Is This" speed={5} className=" gradient-white-text" />  
+   {' '}
+    <ShinyText text="One Click" speed={5} className="gradient-mask-text" />  
     
   </div>
 </div>  

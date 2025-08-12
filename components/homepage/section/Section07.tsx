@@ -122,23 +122,32 @@ export default function Section07() {
         <div
   className="relative text-center z-10 py-16 "
   style={{
-  textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '50px 0 4rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-    <ShinyText text="Turn your silent website into a 24/7" speed={5} className="Heading2 gradient-white-text" />
+    <ShinyText text="Turn your silent website into a 24/7" speed={5} className=" gradient-white-text" />
   </div>
-  <div className="flex items-center justify-center space-x-4" >
-    <ShinyText text="Money-Making" speed={5} className="Heading2 gradient-mask-text" />
-  
-    <ShinyText text="Machine that" speed={5} className="Heading2 gradient-white-text" />
-    
-    <ShinyText text="talks!" speed={5} className="Heading2 gradient-mask-text" />
+  <div>
+    <ShinyText text="Money-Making" speed={5} className=" gradient-mask-text" />
+  {' '}
+    <ShinyText text="Machine that" speed={5} className=" gradient-white-text" />
+    {' '}
+    <ShinyText text="talks!" speed={5} className="gradient-mask-text" />
   </div>
 </div>
 
@@ -152,7 +161,7 @@ export default function Section07() {
               </div>
               
               <div className="w-[360px] py-5 ">
-                <div style={{ wordSpacing: '3px' }} className="text-[22.4px] font-medium w-90 leading-7">
+                <div style={{ wordSpacing: '3px' }} className="font-medium text-[22.5px] w-90 leading-7">
                 {feature.title}
               </div>
               

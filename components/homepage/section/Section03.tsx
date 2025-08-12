@@ -4,6 +4,7 @@ import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
 import Gradient from "@/public/assets/images/grad2.png"
 import { BsStars } from "react-icons/bs";
+import { ShineBorder } from "@/components/magicui/shine-border";  
 
 interface ComparisonItem {
   id: number;
@@ -127,72 +128,87 @@ const Section03: React.FC = () => {
       {/* Single Centered Glow Effect */}
       <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[900px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[130px] -z-10" />
       
-      {/* Spotlight section with external glow */}
+      {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex mb-10 justify-center">
-        
-        {/* Spotlight container */}
-        <div 
-          className="relative bg-cover w-[95%] py-7 border border-[#FFFFFF12] rounded-2xl bg-center bg-no-repeat flex items-center justify-center z-10"
-          style={{
-            backgroundImage: "url('/assets/images/spotlight.png')",
-          }}
-        >
-          
-          {/* Content Container */}
-          <div className="relative z-10 max-w-5xl w-full text-center">
-            {/* Main Heading */}
-          
-            <div
-  className="relative text-center z-10 py-6"
-  style={{
-     textTransform: 'capitalize',
-    color: 'transparent',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-  
-  }}
->
-<div className="flex items-center justify-center space-x-3">
-    <ShinyText text="Stop" speed={5} className="Heading2 gradient-white-text" />
-    {' '}
-    <ShinyText text="Losing Money" speed={5} className="Heading2 gradient-mask-text" />
-    {' '}
-    <ShinyText text="Every Single" speed={5} className="Heading2 gradient-white-text" />
-  </div>
-  <div >
-    <ShinyText text="Day Your Website Stays Silent!" speed={5} className="Heading2 gradient-white-text" />  
-    
-  </div>
-</div>
-
-
-     
-            {/* Subtitle */}
-            <p className="subtext1 mb-10">
-              The statistics are brutal!
-            </p>
+        <div className="relative w-[95%] rounded-2xl overflow-hidden">
+          {/* Background image container with ShineBorder */}
+          <div 
+            className="relative bg-cover w-full py-7 rounded-2xl bg-center bg-no-repeat flex items-center justify-center z-10 overflow-hidden"
+            style={{
+              backgroundImage: "url('/assets/images/spotlight.png')",
+            }}
+          >
+            {/* ShineBorder overlay */}
+            <ShineBorder
+              borderWidth={2}
+              duration={15}
+              shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+            />
             
-            {/* Statistics Cards */}
-            <div className="grid grid-cols-3 gap-9  mx-auto">
-              {statisticsData.map((stat) => (
-                <div key={stat.id} className="flex flex-col items-center text-center">
-                  <div className={`${stat.containerClass} flex items-center justify-center`}>
-                    <Image 
-                      src={stat.icon} 
-                      alt={stat.alt} 
-                      height={stat.iconSize.height} 
-                      width={stat.iconSize.width}
-                      className="w-full h-full object-contain"
-                    />
+            {/* Content Container */}
+            <div className="relative z-10 max-w-5xl w-full text-center">
+              {/* Main Heading */}
+            
+              <div
+    className="relative text-center z-10 py-6"
+    style={{
+      fontFamily: 'Radio Grotesk',
+      fontWeight: 400,
+      fontSize: '43px',
+      lineHeight: '45px',
+      letterSpacing: '0%',
+      margin: '0 0 -0.5rem 0',
+      padding: '0.2em 0',
+      textTransform: 'capitalize',
+      color: 'transparent',
+      background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+    }}
+  >
+  <div >
+      <ShinyText text="Stop" speed={5} className=" gradient-white-text" />
+      {' '}
+      <ShinyText text="Losing Money" speed={5} className=" gradient-mask-text" />
+      {' '}
+      <ShinyText text="Every Single" speed={5} className=" gradient-white-text" />
+    </div>
+    <div >
+      <ShinyText text="Day Your Website Stays Silent!" speed={5} className=" gradient-white-text" />  
+      
+    </div>
+  </div>
+
+       
+              {/* Subtitle */}
+              <p className="subtext1 mt-5 mb-10">
+                The statistics are brutal!
+              </p>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-3 gap-9  mx-auto">
+                {statisticsData.map((stat) => (
+                  <div key={stat.id} className="flex flex-col items-center text-center">
+                    <div className={`${stat.containerClass} flex items-center justify-center`}>
+                      <Image 
+                        src={stat.icon} 
+                        alt={stat.alt} 
+                        height={stat.iconSize.height} 
+                        width={stat.iconSize.width}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="subtext3 mb-6 py-4 leading-tight">
+                      {stat.textLines[0]}               
+                        <br />
+                      {stat.textLines[1]}
+                    </div>
                   </div>
-                  <div className="subtext3 mb-6 py-4 leading-tight">
-                    {stat.textLines[0]}               
-                      <br />
-                    {stat.textLines[1]}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -205,28 +221,35 @@ const Section03: React.FC = () => {
           {/* Main headline */}
           <div className="text-center mb-10 py-3">
 
-
-
           <div
-  className="relative text-center z-10 py-6"
-  style={{
-     textTransform: 'capitalize',
-    color: 'transparent',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-  
-  }}
->
-<div >
-                <ShinyText text="Why Business Owners Are Ditching" speed={5} className="Heading2 gradient-white-text" />
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <ShinyText text="Expensive Alternatives for " speed={5} className="Heading2 gradient-white-text" />
-                {' '}
-                <ShinyText text="VoiceAgent AI" speed={5} className="Heading2 gradient-mask-text" />
-              </div>
-</div>
+    className="relative text-center z-10 py-6"
+    style={{
+      fontFamily: 'Radio Grotesk',
+      fontWeight: 400,
+      fontSize: '43px',
+      lineHeight: '45px',
+      letterSpacing: '0%',
+      margin: '0 0 -0.5rem 0',
+      padding: '0.2em 0',
+      textTransform: 'capitalize',
+      color: 'transparent',
+      background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+    }}
+  >
+  <div >
+                  <ShinyText text="Why Business Owners Are Ditching" speed={5} className="gradient-white-text" />
+                </div>
+                <div >
+                  <ShinyText text="Expensive Alternatives for " speed={5} className=" gradient-white-text" />
+                  {' '}
+                  <ShinyText text="VoiceAgent AI" speed={5} className="gradient-mask-text" />
+                </div>
+  </div>
             
           
           </div>
@@ -260,17 +283,13 @@ const Section03: React.FC = () => {
                       <div className="flex flex-col items-start mb-4">
                         <Image src={item.icon} alt={`${item.title} icon`} height={50} width={50} className="py-4"/>
                         {item.id === 4 ? (
-                          <h3 className="subtext3 gradient-mask-text  text-start">{item.title}</h3>
+                           <ShinyText text={item.title} speed={5} className="subtext3 gradient-text-white  text-start" />
+                          
                         ) : (
-                          <h3 className="subtext3 text-start">
-                            {item.title}
-                            {item.subtitle && (
-                              <>
-                         
-                                
-                              </>
-                            )}
-                          </h3>
+                          <ShinyText speed={5}  className="subtext3 gradient-text-white text-start"
+  text={item.title}
+
+                          />
                         )}
                       </div>
 
@@ -302,29 +321,38 @@ const Section03: React.FC = () => {
         {/* Content */}
         <div className="relative z-10 text-center">
         
-  <div
-  className="relative text-center z-10 mt-8"
-  style={{
-     textTransform: 'capitalize',
-    color: 'transparent',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    
-  }}
->
-<div >
-            <ShinyText text="But what if I told you there's now a" speed={5} className="Heading2 gradient-white-text" />
-          </div>
-          <div >
-            <ShinyText text="way to have a tireless smart voice" speed={5} className="Heading2 gradient-white-text" />
-           
-          </div>
-          <div >
-            <ShinyText text="agent on your website 24/7!" speed={5} className="Heading2 gradient-white-text" />
-            <BsStars className="text-[30px] ml-2"/>
-          </div>
-</div>
+    <div
+    className="relative text-center z-10 mt-8"
+    style={{
+      fontFamily: 'Radio Grotesk',
+      fontWeight: 400,
+      fontSize: '43px',
+      lineHeight: '45px',
+      letterSpacing: '0%',
+      margin: '0 0 -0.5rem 0',
+      padding: '0.2em 0',
+      textTransform: 'capitalize',
+      color: 'transparent',
+      background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+    }}
+  >
+  <div >
+              <ShinyText text="But what if I told you there's now a" speed={5} className=" gradient-white-text" />
+            </div>
+            <div >
+              <ShinyText text="way to have a tireless smart voice" speed={5} className=" gradient-white-text" />
+             
+            </div>
+            <div >
+              <ShinyText text="agent on your website 24/7!" speed={5} className=" gradient-white-text" />
+              <BsStars className="text-[30px] ml-2"/>
+            </div>
+  </div>
 
            
           {/* Supporting text */}

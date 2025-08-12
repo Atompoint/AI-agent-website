@@ -83,21 +83,30 @@ const Section08: React.FC = () => {
         <div
   className="relative text-center z-10 mb-15"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 3rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="Heading2 gradient-white-text" />
+    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="gradient-white-text" />
   </div>
-  <div className='flex items-center justify-center space-x-3'>
-    <ShinyText text="AI Turns Visitors Into " speed={5} className="Heading2 gradient-white-text" />  
-  
-    <ShinyText text="Customers" speed={5} className="Heading2 gradient-mask-text" />
+  <div >
+    <ShinyText text="AI Turns Visitors Into " speed={5} className="gradient-white-text" />  
+  {' '}
+    <ShinyText text="Customers" speed={5} className=" gradient-mask-text" />
   </div>
 </div>
 
@@ -136,21 +145,30 @@ const Section08: React.FC = () => {
   <div
   className="relative text-center z-10 mt-25 mb-10"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '70px 0 3rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-    <ShinyText text="The Numbers Don't Lie" speed={5} className="Heading2 gradient-white-text" />
+    <ShinyText text="The Numbers Don't Lie" speed={5} className="gradient-white-text" />
   </div>
-  <div className='flex items-center justify-center space-x-3'>
-    <ShinyText text="Voice AI Is " speed={5} className="Heading2 gradient-white-text" />  
-    
-    <ShinyText text="Dominating" speed={5} className="Heading2 gradient-mask-text" />
+  <div>
+    <ShinyText text="Voice AI Is " speed={5} className=" gradient-white-text" />  
+    {' '}
+    <ShinyText text="Dominating" speed={5} className="gradient-mask-text" />
   </div>
 </div>
 

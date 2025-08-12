@@ -83,23 +83,32 @@ const HeroSection: React.FC<HeroSectionProps> = ({  image, description }) => {
       <div
   className="relative text-center z-10 "
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-        <ShinyText text="Now Is the Time to Turn Your" speed={5} className="Heading2 gradient-white-text" />  
+        <ShinyText text="Now Is the Time to Turn Your" speed={5} className=" gradient-white-text" />  
       </div>
-      <div className="flex items-center justify-center space-x-3">
-        <ShinyText text="Website Into a" speed={5} className="Heading2 gradient-white-text" />  
-       
-        <ShinyText text="24/7" speed={5} className="Heading2 gradient-mask-text" />
-      
-        <ShinyText text="Sales Machine" speed={5} className="Heading2 gradient-white-text" />
+      <div >
+        <ShinyText text="Website Into a" speed={5} className="gradient-white-text" />  
+       {' '}
+        <ShinyText text="24/7" speed={5} className="gradient-mask-text" />
+      {' '}
+        <ShinyText text="Sales Machine" speed={5} className="gradient-white-text" />
       </div>
 </div>
     
@@ -205,22 +214,31 @@ const Section11: React.FC = () => {
         description={heroContent.description}
       />
   <div
-  className="relative text-center z-10 mb-10"
+  className="relative text-center z-10 "
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 3rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-  
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
-    <ShinyText text="Here's What You Get Access to" speed={5} className="Heading2 gradient-white-text" />  
+    <ShinyText text="Here's What You Get Access to" speed={5} className="gradient-white-text" />  
     
   </div>
   <div >
-    <ShinyText text="Immediately" speed={5} className="Heading2 gradient-mask-text" />  
+    <ShinyText text="Immediately" speed={5} className=" gradient-mask-text" />  
     
   </div>
 </div>

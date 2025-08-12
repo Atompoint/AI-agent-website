@@ -37,12 +37,21 @@ const Section05: React.FC = () => {
         <div
   className="relative text-center z-10 mt-8"
   style={{
-  lineHeight: "40px",
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div >
@@ -51,7 +60,7 @@ const Section05: React.FC = () => {
 <div >
   <ShinyText text="chat boxes, pop-ups, and static FAQ pages." speed={5} className="Heading3 gradient-white-text" />
 </div>
-<div className="flex items-center justify-center space-x-3">
+<div >
   <ShinyText text="This is different. This is" speed={5} className="Heading3 gradient-white-text" />
   {' '}
   <ShinyText text="REVOLUTIONARY" speed={5} className="Heading3 gradient-mask-text" />
@@ -116,20 +125,30 @@ const Section05: React.FC = () => {
 
 
       <div
-  className="relative text-center z-10 mt-15"
+  className="relative text-center z-10"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+
+    margin: '50px 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
-<div className="flex items-center justify-center space-x-3">
-  <ShinyText text="Watch" speed={5} className="Heading2 gradient-white-text" />
-  
-  <ShinyText text="The Demo" speed={5} className="Heading2 gradient-mask-text" />
+<div >
+  <ShinyText text="Watch" speed={5} className=" gradient-white-text" />
+  {' '}
+  <ShinyText text="The Demo" speed={5} className=" gradient-mask-text" />
 </div>
 </div> 
 

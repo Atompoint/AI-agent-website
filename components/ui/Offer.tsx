@@ -12,24 +12,34 @@ const Offer = () => {
 
 
           <div
-  className="relative text-center z-10 mb-10"
+  className="relative text-center z-10 "
   style={{
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
    
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
 <div>
-            <ShinyText text="Limited Time Offer" speed={5} className="Heading2 gradient-white-text" />
+            <ShinyText text="Limited Time Offer" speed={5} className=" gradient-white-text" />
           </div>
           <div>
             
-            <ShinyText text="Only A One time Investment Today!" speed={5} className="Heading2 gradient-mask-text" />
+            <ShinyText text="Only A One time Investment Today!" speed={5} className=" gradient-mask-text" />
           </div>
 </div>
-
+<div className='py-8'>
       {/* CTA Button Section */}
       <div className="mb-8">
         <div className="relative inline-block rounded-full overflow-visible">
@@ -39,7 +49,7 @@ const Offer = () => {
           {/* Button Background */}
           <div className="relative rounded-full p-[2px]">
             {/* Actual Button */}
-           <button className="relative inline-flex items-center justify-center px-5 py-6  bg-black rounded-full  transition-all duration-300 hover:scale-100">
+           <button className="relative inline-flex items-center justify-center px-5 py-5  bg-black rounded-full  transition-all duration-300 hover:scale-100">
              <p className="GetStarted transition-all duration-300 hover:scale-104">GET STARTED WITH VOICER - INSTANT ACCESS</p> 
             </button>
           </div>
@@ -64,6 +74,7 @@ const Offer = () => {
           className="w-[450px] h-auto object-contain"
           priority
         />
+      </div>
       </div>
     </div>
   )

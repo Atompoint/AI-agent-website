@@ -10,18 +10,27 @@ const Section04 = () => {
    <div
   className="relative text-center z-10 mt-8"
   style={{
-     textTransform: 'capitalize',
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 -0.5rem 0',
+    padding: '0.2em 0',
+    textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    
+    WebkitTextFillColor: 'transparent',
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
   }}
 >
-<div className="flex items-center justify-center space-x-3">
-          <ShinyText text="Introducing" speed={5} className="Heading2 gradient-white-text" />
+<div >
+          <ShinyText text="Introducing" speed={5} className="gradient-white-text" />
           {' '}
-          <ShinyText text="VoiceAgent AI" speed={5} className="Heading2 gradient-mask-text" />
+          <ShinyText text="VoiceAgent AI" speed={5} className=" gradient-mask-text" />
         </div>
 </div> 
      

@@ -2,6 +2,7 @@ import React from 'react'
 import DownArrow from '../../ui/DownArrow';
 import Image from 'next/image'
 import ShinyText from '@/components/ui/ShinyText';
+import { ShineBorder } from "@/components/magicui/shine-border";  
 
 // Type definitions
 interface ComparisonColumnProps {
@@ -63,6 +64,12 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
         fill
         priority
       />
+         <ShineBorder
+                   borderWidth={2}
+                   duration={23}
+                   shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+                   className="absolute inset-0 rounded-2xl pointer-events-none"
+                 />
 
       <div className="relative flex flex-col p-10 pr-25">
         <h3 className="subtext3 mb-6">
@@ -181,24 +188,33 @@ const Section10: React.FC = () => {
   ];
 
   return (
-    <div className="text-white/90 px-6">
+    <div className="px-6">
       <div className="max-w-6xl mx-auto">
        
 
         <div
-  className="relative  text-center  mb-4 "
+  className="relative  text-center "
   style={{
+    fontFamily: 'Radio Grotesk',
+    fontWeight: 400,
+    fontSize: '43px',
+    lineHeight: '45px',
+    letterSpacing: '0%',
+    margin: '0 0 0 0',
+    padding: '0',
     textTransform: 'capitalize',
     color: 'transparent',
+    background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
     WebkitBackgroundClip: 'text',
-    backgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text'
   }}
 >
   <div>
-    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className="Heading2 gradient-text-white" />
+    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className=" gradient-white-text" />
   </div>
   <div >
-    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="Heading2 gradient-text-white" />  
+    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="gradient-white-text" />  
     
   </div>
 </div>
