@@ -85,14 +85,26 @@
     }
   }}
 
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
+ 
+
+  html, body {
+    width: 100%;
+    min-height: 100%;
     @apply bg-[#01000C] text-white antialiased;
+    scroll-behavior: smooth;
+    width: 100%;
+  min-height: 100%;
+  
+  margin: 0;
+  padding: 0;
   }
 
+
+  @media only screen and (max-width: 330px) {
+    body {
+      overflow-x: hidden;
+    }
+  }
 
 @keyframes updown {
   0%, 100% {

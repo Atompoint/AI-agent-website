@@ -27,7 +27,7 @@ export default function HeroHeader() {
 
         {/* Background Image - NO GRADIENT OVERLAY */}
         <div
-          className="absolute inset-0 w-full overflow-x-hidden h-full z-0 scale-[1.6] mt-25"
+          className="absolute inset-0 w-full overflow-x-hidden h-full z-0 scale-[1.5] mt-25"
           style={{
             backgroundImage: "url('/assets/images/bgimg.webp')",
             backgroundPosition: "calc(50% - 20px) center",
@@ -64,7 +64,7 @@ export default function HeroHeader() {
               fontFamily: 'Radio Grotesk',
               fontWeight: 400,
               fontSize: '52px',
-              lineHeight: '35px',
+              lineHeight: '44px',
               letterSpacing: '0%',
               margin: '10px 0 10px 0',
               padding: '0.2em 0',
@@ -107,7 +107,7 @@ export default function HeroHeader() {
           {/* Container for both glow image and main image - INCREASED BY 50PX */}
           <div className="relative w-full max-w-[980px]">
             {/* Main Image with Shine Border - SLIGHTLY DECREASED */}
-            <div className="relative rounded-2xl overflow-hidden mt-7 z-10 p-0.5 w-full">
+            <div className="relative rounded-2xl overflow-hidden mt-4 z-10 p-0.5 w-full">
               <ShineBorder
                 borderWidth={2}
                 duration={23}
@@ -127,7 +127,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Section 2 content can go here - positioned below the image */}
-        <div className="pt-[26rem]">
+        <div className="pt-[25.1rem]">
           {/* Your section 2 content goes here */}
         </div>
 
