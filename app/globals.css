@@ -85,10 +85,14 @@
     }
   }}
 
-body {
-  background-color: #01000C;
-  @apply text-white;
-}
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#01000C] text-white antialiased;
+  }
+
 
 @keyframes updown {
   0%, 100% {
@@ -240,5 +244,4 @@ letter-spacing: -0.4px;
     @apply bg-background text-foreground;
   }
 }
-
 
