@@ -15,23 +15,23 @@ import Section13 from "@/components/homepage/section/Section13";
 import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
-   <div>
-    
-    <HeroSection/>
-   <Section01/>
-   <Section02/>
-   <Section03/>
-   <Section04/>
-   <Section05/>
-   <Section06/>
-<Section07/>
-<Section08/>
-<Section09/>
-<Section10/>
-<Section11/>
-<Section12/>
-<Section13/>
-<Footer/>
+   <div className="w-full overflow-hidden">
+   
+      <HeroSection/>
+      <Section01/>
+      <Section02/>
+      <Section03/>
+      <Section04/>
+      <Section05/>
+      <Section06/>
+      <Section07/>
+      <Section08/>
+      <Section09/>
+      <Section10/>
+      <Section11/>
+      <Section12/>
+      <Section13/>
+    <Footer/>
    </div>
   );
 }

@@ -103,7 +103,7 @@ export default function Section07() {
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
             fontSize: '43px',
-            lineHeight: '45px',
+            lineHeight: '0.8',
             letterSpacing: '0%',
             margin: '50px 0 4rem 0',
             padding: '0.2em 0',

@@ -9,11 +9,11 @@ import Image from 'next/image';
 const Header = () => {
   
   return (
-    <header className="w-full h-auto flex justify-between items-center px-24 py-6 relative z-10 mx-auto">
+    <header className="w-full h-auto flex justify-between items-center px-6 sm:px-12 md:px-16 lg:px-20 py-6 sm:py-6 md:py-6 lg:py-6 relative z-10 mx-auto">
       {/* Logo */}
       <div>
         
-       <Image src={Logo} alt="Logo"  height={95} width={95}/>
+       <Image src={Logo} alt="Logo"  height={90} width={90}/>
       </div>
       {/* Shimmer Button */}
       <div className="relative w-[90px] h-[26px] rounded-full overflow-hidden">

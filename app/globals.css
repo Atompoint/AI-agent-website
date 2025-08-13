@@ -85,26 +85,10 @@
     }
   }}
 
- 
-
-  html, body {
-    width: 100%;
-    min-height: 100%;
-    @apply bg-[#01000C] text-white antialiased;
-    scroll-behavior: smooth;
-    width: 100%;
-  min-height: 100%;
-  
-  margin: 0;
-  padding: 0;
-  }
-
-
-  @media only screen and (max-width: 330px) {
-    body {
-      overflow-x: hidden;
-    }
-  }
+body {
+  background-color: #01000C;
+  @apply text-white;
+}
 
 @keyframes updown {
   0%, 100% {
@@ -154,14 +138,14 @@ line-height: 22.8px;
 }
 
 .subtext1{
-  font-size: 13.1px;
+  font-size: clamp(9px, 2vw, 13.1px);
    font-weight: 200;
    color: white;
    letter-spacing: 0.6px;
   
 }
 .subtextpt2 {
-  font-size: 13px;
+  font-size: clamp(11px, 2vw, 13.1px);
   font-weight: 600;
   color: white;
 

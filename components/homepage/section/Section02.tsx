@@ -49,36 +49,40 @@ const Section02 = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Glow Effects */}
-      <div className="absolute top-200 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
-      <div className="absolute bottom-400 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[100px] -z-10"></div>
+      {/* Glow Effects - Responsive positioning */}
+      <div className="absolute top-32 md:top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
+      <div className="absolute bottom-32 md:bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto ">
-        <div >
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`relative flex gap-12 text-white justify-center items-center py-8 rounded-xl flex-row ${
-                index % 2 !== 0 ? "flex-row-reverse" : ""
-              }`}
+              className={`
+                relative flex flex-col lg:flex-row gap-6 lg:gap-12 
+                text-white justify-center items-center py-6 lg:py-8 
+                rounded-xl
+                ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}
+              `}
             >
               {/* Text Section */}
-              <div className="w-[430px] h-[400px] flex flex-col items-center justify-center text-left">
-                <div style={{ lineHeight: "38px"}} className="Heading3 mb-5">
+              <div className="w-full lg:w-[430px] flex flex-col items-center lg:items-start text-center lg:text-left px-4 lg:px-0">
+                <div 
+                  className="Heading3 mb-4 lg:mb-5 leading-tight lg:leading-[38px]"
+                >
                   <ShinyText 
                     text={`${section.title}`} 
                     disabled={false} 
                     speed={6} 
-            
                   />
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 lg:space-y-4 max-w-none lg:max-w-[430px]">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p 
                       key={paragraphIndex} 
-                      className="subtext1"
+                      className="subtext1 leading-relaxed"
                     >
                       {paragraph}
                     </p>
@@ -87,18 +91,27 @@ const Section02 = () => {
               </div>
 
               {/* Image Section */}
-              <div className="w-[460px] h-[350px] rounded-[7px] bg-[#797979]  flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-gray-700/30 hover:border-gray-600/50 transition-colors duration-300">
-               
+              <div className="
+                w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[460px] 
+                h-48 sm:h-56 md:h-64 lg:h-[350px] 
+                rounded-[7px] bg-[#797979] 
+                flex items-center justify-center 
+                flex-shrink-0 backdrop-blur-sm 
+                border border-gray-700/30 
+                hover:border-gray-600/50 
+                transition-colors duration-300
+                mx-4 lg:mx-0
+              ">
+                {/* Placeholder for image/content */}
               </div>
             </div>
           ))}
           
-          {/* Down Arrow */}
-          <div>
-          </div>
         </div>
       </div>
-            <DownArrow />
+      
+      {/* Down Arrow */}
+      <DownArrow />
     </div>
   );
 };
