@@ -195,44 +195,43 @@ export default function App(): React.JSX.Element {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <div
-  className="relative text-center z-10 "
-  style={{
-    fontFamily: 'Radio Grotesk',
-    fontWeight: 400,
-    fontSize: '43px',
-    lineHeight: '0.8',
-    letterSpacing: '0%',
-    margin: '0 0 -0.5rem 0',
-    padding: '0.2em 0',
-    textTransform: 'capitalize',
-    color: 'transparent',
-    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-    WebkitBackgroundClip: 'text',
-    backgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    WebkitFontSmoothing: 'antialiased',
-    MozOsxFontSmoothing: 'grayscale',
-  }}
->
-  <div >
-            <ShinyText text="All It Takes Is 3 Simple" speed={5} className='gradient-white-text'/>
-          </div>
-          <div >
-            <ShinyText text="steps and " speed={5} className='gradient-white-text'/>
-            {' '}
-            <ShinyText text="you're done" speed={5} className='gradient-mask-text'/>
-          </div>
-</div>
+        className="relative text-center z-10"
+        style={{
+          fontFamily: 'Radio Grotesk',
+          fontWeight: 400,
+          fontSize: 'clamp(33px, 6vw, 43px)',
+          lineHeight: '0.8',
+          letterSpacing: '0%',
+          margin: '0 0 -0.5rem 0',
+          padding: '0.2em 0',
+          textTransform: 'capitalize',
+          color: 'transparent',
+          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+        }}
+      >
+        <div>
+          <ShinyText text="All It Takes Is 3 Simple" speed={5} className='gradient-white-text'/>
+        </div>
+        <div>
+          <ShinyText text="steps and " speed={5} className='gradient-white-text'/>
+          {' '}
+          <ShinyText text="you're done" speed={5} className='gradient-mask-text'/>
+        </div>
+      </div>
 
-      
-      <div className="relative z-10 container mx-auto mb-20 mt-25 px-3">
+      <div className="relative z-10 container mx-auto mb-20 mt-25 px-3 sm:px-6 md:px-8 lg:px-3">
         {/* Glow effect for heading */}
         <div className="absolute top-5 left-[55%] -translate-x-1/2 w-[300px] h-[600px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[150px] -z-10"></div>
         
-        <div className="max-w-[600px] mx-auto">
-          <div className="space-y-3 relative">
+        <div className="max-w-[330px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto">
+          <div className="space-y-2 sm:space-y-2.5 md:space-y-3 lg:space-y-3 relative">
             {steps.map((step: Step, index: number) => {
               const ref = refs[index];
               const inView = inViews[index];
@@ -241,17 +240,17 @@ export default function App(): React.JSX.Element {
                 <motion.div
                   key={index}
                   ref={ref}
-                  className="flex items-start gap-7 text-left relative "
+                  className="flex items-start gap-3 sm:gap-5 md:gap-6 lg:gap-7 text-left relative"
                   variants={containerVariants}
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
                 >
                   {/* Timeline number with animated line */}
-                  <div className="relative flex flex-col items-center min-w-[80px]">
+                  <div className="relative flex flex-col items-center min-w-[60px] sm:min-w-[70px] md:min-w-[75px] lg:min-w-[80px]">
                     {/* Step Number */}
                     <motion.div
                       variants={numberVariants}
-                      className="z-10 num1 "
+                      className="z-10 num1"
                     >
                       <ShinyText text={step.number} disabled={false} speed={6} />
                     </motion.div>
@@ -259,7 +258,7 @@ export default function App(): React.JSX.Element {
                     {/* Vertical Line */}
                     {index !== steps.length - 1 && (
                       <div className="relative w-full justify-center flex">
-                        <div className="relative h-[125px] w-[1px]">
+                        <div className="relative h-[100px] sm:h-[110px] md:h-[120px] lg:h-[125px] w-[1px]">
                           {/* Background gray line */}
                           <div className="bg-gray-500 absolute inset-0 w-full" />
 
@@ -277,7 +276,7 @@ export default function App(): React.JSX.Element {
                   {/* Step Card */}
                   <motion.div
                     variants={cardVariants}
-                    className="flex items-center gap-4 backdrop-blur-sm border border-[#FFFFFF12] rounded-[13px] px-6 py-4 flex-1 w-full  transition-colors duration-200"
+                    className="flex items-center gap-2 sm:gap-3 md:gap-3.5 lg:gap-4 backdrop-blur-sm border border-[#FFFFFF12] rounded-[10px] sm:rounded-[11px] md:rounded-[12px] lg:rounded-[13px] px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 flex-1 w-full transition-colors duration-200"
                     style={{ backgroundColor: '#FFFFFF08' }}
                     whileHover={{
                       scale: 1.02,
@@ -288,7 +287,7 @@ export default function App(): React.JSX.Element {
                     {/* Icon */}
                     <motion.div
                       variants={iconVariants}
-                      className="flex-shrink-0 w-13 h-13 flex items-center justify-center"
+                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-13 lg:h-13 flex items-center justify-center"
                     >
                       <Image
                         src={step.iconSrc}
@@ -304,9 +303,9 @@ export default function App(): React.JSX.Element {
                       {/* Step badge */}
                       <motion.div
                         variants={textVariants}
-                        className="relative inline-block w-fit rounded-full overflow-hidden mb-2"
+                        className="relative inline-block w-fit rounded-full overflow-hidden mb-1 sm:mb-1.5 md:mb-2 lg:mb-2"
                       >
-                        <div className="rounded-full px-4 py-1 subtextpt2  relative z-10">
+                        <div className="rounded-full px-2 sm:px-3 md:px-3.5 lg:px-4 py-0.5 sm:py-0.5 md:py-0.5 lg:py-1 subtextpt2 text-xs sm:text-xs md:text-sm lg:text-sm relative z-10">
                           {step.stepText}
                         </div>
                         <ShineBorder
@@ -320,7 +319,7 @@ export default function App(): React.JSX.Element {
                       {/* Step title */}
                       <motion.div
                         variants={textVariants}
-                        className={`${step.textColor} subtext2 leading-relaxed`}
+                        className={`${step.textColor} subtext2 leading-tight sm:leading-relaxed md:leading-relaxed lg:leading-relaxed text-xs sm:text-sm md:text-base lg:text-base`}
                       >
                         {step.title}
                       </motion.div>
