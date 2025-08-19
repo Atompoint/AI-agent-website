@@ -30,11 +30,11 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
       <div className="grid grid-cols-2 gap-0 items-center min-h-[120px]">
         
         {/* Left Side Content */}
-        <div className={`flex ${position === 'left' ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
+        <div className={`flex ${position === 'left' ? 'justify-end pr-3 lg:pr-8' : 'justify-start pl-3 lg:pl-8'}`}>
           {position === 'left' && (
             <div className="max-w-[340px] text-right">
               <div className="flex flex-col items-end gap-4">
-                <div className="flex items-start  justify-end gap-2">
+                <div className="flex items-start justify-end gap-1 sm:gap-2">
                   <div className='flex flex-col items-right justify-end content-end'>
                     <div className="num2 transition-all">
                       <ShinyText
@@ -45,7 +45,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-55 py-2 leading-[1.5] transition-all ${
+                      <h3 className={`subtextpt2 w-32 lg:w-55 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -53,12 +53,12 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                   
-                  <div className="p-1 mt-4 transition-all">
+                  <div className="p-1 mt-2 lg:mt-4 transition-all">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-12 h-12 object-contain transition-all ${
+                        className={`w-8 h-8 md:w-12 md:h-12 lg:w-12 lg:h-12 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                         style={{ filter: 'brightness(0) invert(1)' }}
@@ -68,7 +68,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                 </div>
               </div>
               {subtitle && (
-                <p className={`text-base italic transition-all ${
+                <p className={`subtextpt2 italic transition-all ${
                   isActive ? 'text-gray-300' : 'text-gray-500'
                 }`}>
                   {subtitle}
@@ -79,17 +79,17 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
         </div>
 
         {/* Right Side Content */}
-        <div className={`flex ${position === 'right' ? 'justify-start pl-8' : 'justify-end pr-8'}`}>
+        <div className={`flex ${position === 'right' ? 'justify-start pl-3 lg:pl-8' : 'justify-end pl-3 lg:pr-8'}`}>
           {position === 'right' && (
             <div className="max-w-[340px] text-left">
               <div className="flex flex-col items-start gap-4">
-                <div className="flex items-start justify-start gap-5">
-                  <div className="p-1 mt-4 transition-all">
+                <div className="flex items-start justify-start gap-2 sm:gap-3 md:gap-5">
+                  <div className="p-1 mt-2 lg:mt-4 transition-all">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-12 h-12 object-contain transition-all ${
+                        className={`w-8 h-8 lg:w-12 lg:h-12 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                         style={{ filter: 'brightness(0) invert(1)' }}
@@ -106,7 +106,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-55 py-2 leading-[1.5] transition-all ${
+                      <h3 className={`subtextpt2 w-32 lg:w-55 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -243,7 +243,7 @@ const TimelineUI: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen px-12">
+    <div className="min-h-screen px-5">
       <Offer/>
       <div className="container mx-auto">
 
@@ -252,7 +252,7 @@ const TimelineUI: React.FC = () => {
   style={{
     fontFamily: 'Radio Grotesk',
     fontWeight: 400,
-    fontSize: '43px',
+    fontSize: 'clamp(24px, 6vw, 43px)',
     lineHeight: '0.8',
     letterSpacing: '0%',
     margin: '20px 0 5rem 0',
@@ -275,7 +275,9 @@ const TimelineUI: React.FC = () => {
               <ShinyText text="System" speed={5} className="gradient-white-text" />
             </div>
             <div >
-              <ShinyText text="Transforms Any Website Into a Conversion Machine" speed={5} className=" gradient-white-text" />
+              <ShinyText text="Transforms Any Website Into" speed={5} className=" gradient-white-text" />
+              {' '}
+              <ShinyText text=" a Conversion Machine" speed={5} className=" gradient-white-text" />
             </div>
 </div>
         {/* Timeline Container */}

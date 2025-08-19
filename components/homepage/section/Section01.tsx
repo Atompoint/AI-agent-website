@@ -201,7 +201,7 @@ export default function App(): React.JSX.Element {
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
-          fontSize: 'clamp(33px, 6vw, 43px)',
+          fontSize: 'clamp(24px, 6vw, 43px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
           margin: '0 0 -0.5rem 0',
@@ -226,7 +226,7 @@ export default function App(): React.JSX.Element {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto mb-20 mt-25 px-3 sm:px-6 md:px-8 lg:px-3">
+      <div className="relative z-10 container mx-auto mb-20  mt-14 lg:mt-25 px-3 md:px-8 lg:px-3">
         {/* Glow effect for heading */}
         <div className="absolute top-5 left-[55%] -translate-x-1/2 w-[300px] h-[600px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[150px] -z-10"></div>
         

@@ -52,12 +52,12 @@ export default function HeroHeader() {
         <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 pt-[28vh]">
           {/* Label */}
           <div
-            className="subtext1 h-[33px] w-[100%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full -mt-9 px-1"
+            className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full -mt-9 px-3 py-1"
             style={{
               border: '1px solid #FFFFFF12',
               backdropFilter: 'blur(3px)',
               background: '#FFFFFF08',
-              lineHeight: 1.1,
+              lineHeight: 1.6,
               letterSpacing: 0.4,
             }}
           >
@@ -108,9 +108,9 @@ export default function HeroHeader() {
       {/* Section 2 */}
       <section className="relative" style={{ backgroundColor: '#01000C' }}>
         {/* Product Images on top of section */}
-        <div className="relative pt-8 w-full flex flex-col items-center z-30 px-0 md:px-8 lg:px-0">
+        <div className="relative pt-8 w-full flex flex-col items-center z-30 px-3 md:px-8 lg:px-0">
           {/* Main Product Image */}
-          <div className="relative w-full max-w-[920px] sm:max-w-[900px] md:max-w-[980px] lg:max-w-[960px]">
+          <div className="relative w-full max-w-[320px] sm:max-w-[300px] md:max-w-[980px] lg:max-w-[960px]">
             <div className="relative rounded-2xl overflow-hidden -mt-34 sm:-mt-41 md:-mt-34 lg:-mt-35 z-10 p-0.5 w-full">
               <ShineBorder
                 borderWidth={2}
@@ -130,7 +130,7 @@ export default function HeroHeader() {
           </div>
 
           {/* Microphone Icon */}
-          <div className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px]">
+          <div className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px]">
             <Image
               src='/assets/icons/mymic.png'
               alt="Circle background"

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface ShinyTextProps {
-  text: string;
+  text?: string;
+  children?: ReactNode;
   disabled?: boolean;
   speed?: number;
   className?: string;
@@ -9,14 +10,17 @@ interface ShinyTextProps {
 
 const ShinyText: React.FC<ShinyTextProps> = ({
   text,
+  children,
   disabled = false,
   speed = 5,
   className = "",
 }) => {
+  const content = children || text || '';
+  
   if (disabled) {
     return (
       <div className={`text-[#b5b5b5a4] inline-block ${className}`}>
-        {text}
+        {content}
       </div>
     );
   }
@@ -25,7 +29,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
     <div className={`relative inline-block pb-3 ${className}`}>
       {/* Base text */}
       <div className="text-[#b5b5b5a4]">
-        {text}
+        {content}
       </div>
       
       {/* Animated shine overlay */}
@@ -40,7 +44,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
           animation: `shine ${speed}s linear infinite`,
         }}
       >
-        {text}
+        {content}
       </div>
     </div>
   );

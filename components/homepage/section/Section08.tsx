@@ -80,60 +80,64 @@ const Section08: React.FC = () => {
       <div className="container mx-auto px-6 ">
         {/* Header */}
         
-        <div
-  className="relative text-center z-10 mb-15"
-  style={{
-    fontFamily: 'Radio Grotesk',
-    fontWeight: 400,
-    fontSize: '43px',
-    lineHeight: '0.8',
-    letterSpacing: '0%',
-    margin: '0 0 3rem 0',
-    padding: '0.2em 0',
-    textTransform: 'capitalize',
-    color: 'transparent',
-    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-    WebkitBackgroundClip: 'text',
-    backgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    WebkitFontSmoothing: 'antialiased',
-    MozOsxFontSmoothing: 'grayscale',
-  }}
->
-<div >
-    <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="gradient-white-text" />
-  </div>
-  <div >
-    <ShinyText text="AI Turns Visitors Into " speed={5} className="gradient-white-text" />  
-  {' '}
-    <ShinyText text="Customers" speed={5} className=" gradient-mask-text" />
-  </div>
-</div>
+        <div className="relative text-center z-10 mb-8 sm:mb-12 lg:mb-15">
+          <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight lg:leading-[0.8] tracking-normal capitalize"
+            style={{
+              fontFamily: 'Radio Grotesk',
+              fontSize: 'clamp(24px, 6vw, 43px)',
+              fontWeight: 400,
+              lineHeight: '0.8',
+              letterSpacing: '0%',
+              margin: '50px 0 4rem 0',
+              padding: '0.2em 0',
+              textTransform: 'capitalize',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+            }}
+          >
+            <div>
+              <ShinyText text="Just a Few of the Ways" speed={5} className="gradient-white-text" />
+            </div>
+            <div >
+              <ShinyText text="VoiceAgent" speed={5} className="gradient-white-text" />
+            </div>
+            <div className="block">
+              <ShinyText text="AI Turns Visitors Into " speed={5} className="gradient-white-text inline" />
+              <ShinyText text="Customers" speed={5} className="gradient-mask-text inline" />
+            </div>
+          </div>
+        </div>
 
         
      
          
-        {/* Features Grid - 3 columns, 3 rows */}
+        {/* Features Grid - Responsive */}
         <div className="relative">
-          {/* Glow Effect */}
-          <div className="absolute top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[100px] -z-10" />
-          <div className="flex justify-center max-w-7xl mx-auto relative">
-            <div className="grid grid-cols-3 gap-3 lg:gap-3">
-            {features.map((feature: Feature, index: number) => (
-              <div key={index} className="flex items-center justify-center relative h-44 w-90">
-                <img
-                  src="/rect2.png"
-                  alt="background"
-                  className="w-full h-full"
-                />
-                <div className="absolute top-6 left-6 w-68 subtext2 drop-shadow-lg leading-6">
-                  {feature.title}
+          {/* Glow Effect - Responsive */}
+          <div className="absolute top-[5rem]  lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] lg:blur-[100px] -z-10" />
+          
+          <div className="flex justify-center max-w-7xl mx-auto relative px-2 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-3 w-full">
+              {features.map((feature: Feature, index: number) => (
+                <div key={index} className="flex items-center justify-center relative h-40  lg:h-44 w-full">
+                  <img
+                    src="/rect2.png"
+                    alt="background"
+                    className="w-full h-full rounded-lg"
+                  />
+                  <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-[calc(100%-2rem)] sm:w-68 text-sm sm:text-base font-medium drop-shadow-lg leading-5 sm:leading-6">
+                    {feature.title}
+                  </div>
+                  <p className="absolute top-16 sm:top-20 left-4 sm:left-6 right-4 sm:right-6 text-xs sm:text-sm text-gray-200 leading-relaxed line-clamp-3 sm:line-clamp-3">
+                    {feature.description}
+                  </p>
                 </div>
-                <p className="absolute top-16 w-65 py-5 left-6 right-6 subtext1 leading-relaxed drop-shadow-md">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
         </div>
@@ -142,66 +146,66 @@ const Section08: React.FC = () => {
       <div className="container mx-auto px-6 ">
       
 
-  <div
-  className="relative text-center z-10 mt-25 mb-10"
-  style={{
-    fontFamily: 'Radio Grotesk',
-    fontWeight: 400,
-    fontSize: '43px',
-    lineHeight: '0.8',
-    letterSpacing: '0%',
-    margin: '70px 0 3rem 0',
-    padding: '0.2em 0',
-    textTransform: 'capitalize',
-    color: 'transparent',
-    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-    WebkitBackgroundClip: 'text',
-    backgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    WebkitFontSmoothing: 'antialiased',
-    MozOsxFontSmoothing: 'grayscale',
-  }}
->
-<div >
-    <ShinyText text="The Numbers Don't Lie" speed={5} className="gradient-white-text" />
+  <div className="relative text-center z-10 mt-16 sm:mt-20 lg:mt-25 mb-8 sm:mb-10">
+    <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight lg:leading-[0.8] tracking-normal capitalize"
+      style={{
+        fontFamily: 'Radio Grotesk',
+        fontWeight: 400,
+        fontSize: 'clamp(24px, 6vw, 43px)',
+        lineHeight: '0.8',
+        letterSpacing: '0%',
+        margin: '50px 0 4rem 0',
+        padding: '0.2em 0',
+        textTransform: 'capitalize',
+        color: 'transparent',
+        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+      }}
+    >
+      <div >
+        <ShinyText text="The Numbers Don't Lie" speed={5} className="gradient-white-text" />
+      </div>
+      <div>
+        <ShinyText text="Voice AI Is " speed={5} className="gradient-white-text " />
+        {' '}
+        <ShinyText text="Dominating" speed={5} className="gradient-mask-text " />
+      </div>
+    </div>
   </div>
-  <div>
-    <ShinyText text="Voice AI Is " speed={5} className=" gradient-white-text" />  
-    {' '}
-    <ShinyText text="Dominating" speed={5} className="gradient-mask-text" />
-  </div>
-</div>
 
 
-        {/* Statistics Grid */}
+        {/* Statistics Grid - Responsive */}
         <div className="relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+            {/* First row - responsive cards */}
+            {statistics.slice(0, 3).map((item: Statistic, index: number) => (
+              <div 
+                key={index} 
+                className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 sm:p-5 lg:p-6 h-48 sm:h-52 lg:h-64 backdrop-blur-sm flex flex-col justify-end"
+              >
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
 
-          <div className="grid grid-cols-3 gap-4 max-w-7xl mx-auto relative">
-          {/* First row - 3 equal-width cards */}
-          {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-            <div key={index} className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 h-84 backdrop-blur-sm flex flex-col justify-end">
-             
-              <p className="subtext4  max-w-[270px] leading-6">
-                {item.description}
-              </p>
+            {/* Second row - full width on mobile, half width on sm+ */}
+            <div className="col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {statistics.slice(3).map((item: Statistic, index: number) => (
+                <div 
+                  key={index + 3} 
+                  className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-5 sm:p-6 lg:p-8 h-40 sm:h-44 lg:h-48 backdrop-blur-sm flex flex-col justify-end"
+                >
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-
-          {/* Second row - 2 half-width cards */}
-          <div className="col-span-3 flex gap-4">
-            <div className="w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
-             
-              <p className="subheading leading-relaxed max-w-[400px]">
-                {statistics[3].description}
-              </p>
-            </div>
-            <div className="w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
-              
-              <p className="subheading max-w-[400px] leading-relaxed">
-                {statistics[4].description}
-              </p>
-            </div>
-          </div>
           </div>
         </div>
       </div>

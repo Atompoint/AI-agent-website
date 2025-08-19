@@ -106,8 +106,8 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
   const image = <div className="bg-[#797979] h-84 w-110  rounded-[7px]"></div>;
 
   return (
-    <div>
-      <h2 className="text-white  text-3xl md:text-4xl font-medium text-center mb-12">
+    <div className="w-full">
+      <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-medium text-center mb-8 sm:mb-10 lg:mb-12 px-2">
         <ShinyText
           text={title}
           disabled={false}
@@ -116,9 +116,13 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
         />
       </h2>
       
-      <div className="grid grid-cols-2 gap-35 items-center ">
-        {content}
-        {image}
+      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 w-full">
+        <div className="w-full lg:w-1/2">
+          {content}
+        </div>
+        <div className="w-full lg:w-1/2 flex justify-center">
+          {image}
+        </div>
       </div>
     </div>
   );
@@ -197,7 +201,7 @@ const Section10: React.FC = () => {
   style={{
     fontFamily: 'Radio Grotesk',
     fontWeight: 400,
-    fontSize: '43px',
+    fontSize: 'clamp(24px, 5vw, 43px)',
     lineHeight: '0.8',
     letterSpacing: '0%',
     margin: '0 0 0 0',
@@ -211,34 +215,40 @@ const Section10: React.FC = () => {
   }}
 >
   <div>
-    <ShinyText text="Two Paths Forward: Stay Silent & Lose" speed={5} className=" gradient-white-text" />
+    <ShinyText text="Two Paths Forward: " speed={5} className=" gradient-white-text" />
+    {' '}
+    <ShinyText text="Stay Silent & Lose" speed={5} className=" gradient-white-text" />
   </div>
   <div >
-    <ShinyText text="Sales... Or Let Your Website Talk & Profit" speed={5} className="gradient-white-text" />  
+    <ShinyText text="Sales... Or Let Your" speed={5} className="gradient-white-text" /> 
+    {' '}
+    <ShinyText text="Website Talk & Profit" speed={5} className="gradient-white-text" /> 
     
   </div>
 </div>
 
-        <div className="flex gap-4 justify-center mt-15">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 justify-center mt-8 sm:mt-12 lg:mt-15 px-2 sm:px-4">
           {comparisonData.map((column: ComparisonData, index: number) => (
-            <ComparisonColumn
-              key={index}
-              title={column.title}
-              items={column.items}
-              isPositive={column.isPositive}
-            />
+            <div key={index} className="w-full max-w-full lg:max-w-[600px] mx-auto">
+              <ComparisonColumn
+                title={column.title}
+                items={column.items}
+                isPositive={column.isPositive}
+              />
+            </div>
           ))}
         </div>
       </div>
 
-      <div className="  py-16 ">
-        <div className="max-w-4xl mx-auto space-y-16">
+      <div className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto space-y-16 sm:space-y-20 lg:space-y-24">
           {bonusData.map((bonus: BonusData, index: number) => (
-            <BonusSection
-              key={index}
-              title={bonus.title}
-              description={bonus.description}
-            />
+            <div key={index} className="w-full">
+              <BonusSection
+                title={bonus.title}
+                description={bonus.description}
+              />
+            </div>
           ))}
         </div>
       </div>
