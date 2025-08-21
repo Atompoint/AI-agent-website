@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ShinyText from '@/components/ui/ShinyText';
 import Header from "../layout/Header";
 import Image from "next/image";
@@ -19,9 +19,29 @@ const features = [
   'Automatic Website Learning',
 ];
 
-
-
 export default function HeroHeader() {
+  const [isSticky, setIsSticky] = useState(false);
+  const [micRef, setMicRef] = useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!micRef) return;
+
+      const micOriginalRect = micRef.getBoundingClientRect();
+      const micOriginalTop = micOriginalRect.top + window.scrollY;
+      
+      // When user scrolls past the original mic position
+      if (window.scrollY > micOriginalTop - window.innerHeight / 2) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [micRef]);
+
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section - Full Height with Background */}
@@ -37,8 +57,6 @@ export default function HeroHeader() {
             backgroundSize: "cover",
           }}
         >
-          
-
         </div>
 
         {/* Gradient Overlay */}
@@ -130,14 +148,21 @@ export default function HeroHeader() {
             </div>
           </div>
 
-          {/* Microphone Icon */}
-          <div className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px]">
+          {/* Microphone Icon - Smoothly moving between positions */}
+          <div 
+            ref={setMicRef}
+            className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto"
+          >
             <Image
               src='/assets/icons/mymic.png'
-              alt="Circle background"
+              alt="Voice Agent Microphone"
               width={130}
               height={130}
-              className="w-full h-full object-contain"
+              className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] object-contain cursor-pointer hover:scale-110 drop-shadow-lg transition-all duration-2000 ease-out ${
+                isSticky 
+                  ? 'fixed bottom-6 right-6 z-50' 
+                  : ''
+              }`}
             />
           </div>
         </div>
@@ -158,22 +183,22 @@ export default function HeroHeader() {
                   key={i}
                   className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5"
                 >
-                {/* Icon with only circle rotating */}
-<div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center relative">
-  {/* Background circle with alternating rotation */}
-  <Image 
-    src="/assets/icons/onlycircle.svg" 
-    alt="Circle" 
-    width={24} 
-    height={24}
-    className="w-full h-full object-contain rotate-alternate"
-  />
-  {/* Check icon centered and stationary */}
-  <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 m-auto text-white" />
-</div>
+                  {/* Icon with only circle rotating */}
+                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center relative">
+                    {/* Background circle with alternating rotation */}
+                    <Image 
+                      src="/assets/icons/onlycircle.svg" 
+                      alt="Circle" 
+                      width={24} 
+                      height={24}
+                      className="w-full h-full object-contain rotate-alternate"
+                    />
+                    {/* Check icon centered and stationary */}
+                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 m-auto text-white" />
+                  </div>
 
                   {/* Text */}
-                  <span className="subtext2  max-w-[calc(100%-2.5rem)]">
+                  <span className="subtext2 max-w-[calc(100%-2.5rem)]">
                     {feature}
                   </span>
                 </div>
@@ -186,8 +211,6 @@ export default function HeroHeader() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }
