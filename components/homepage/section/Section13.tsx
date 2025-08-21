@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Purple from '@/public/assets/images/purple.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
+import Threads from '@/components/ui/Threads';
 
 interface FAQItem {
   question: string
@@ -43,7 +44,7 @@ const Section13: React.FC = () => {
   return (
     <div className="text-white">
       {/* Signature Section with Purple Background Image */}
-      <div className="relative overflow-hidden rounded-[10px] mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1200px] h-[230px] sm:h-[220px] md:h-[240px] lg:h-[250px] flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="relative overflow-hidden rounded-[10px] mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1200px] h-[280px] sm:h-[300px] md:h-[260px] lg:h-[250px] flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
   {/* Background Image */}
   <Image 
     src={Purple}
@@ -53,28 +54,28 @@ const Section13: React.FC = () => {
   />
 
   {/* Content */}
-  <div className="relative z-10 w-full px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 lg:py-8">
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-7 lg:gap-9 w-full max-w-8xl mx-auto">
+  <div className="relative z-10 w-full px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-4 lg:py-8">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-3 md:gap-6 lg:gap-9 w-full max-w-8xl mx-auto">
       {/* Left text */}
-      <div className="flex-1 flex justify-center lg:justify-end text-center lg:text-right px-2 pb-0 sm:px-3 md:px-4">
-        <h2 className="leading-tight">
+      <div className="flex-1 flex justify-center lg:justify-end text-center lg:text-right px-0">
+        <div>
           <ShinyText
             text="Mikey Formby"
             disabled={false}
             speed={6}
-            className="Heading1 gradient-white-text"
+            className="Heading1 gradient-white-text leading-[0.8]"
           />
-        </h2>
+        </div>
       </div>
 
       {/* Center box */}
-      <div className="w-32 h-20 sm:w-40 sm:h-24 md:w-60 md:h-32 lg:w-90 lg:h-50 bg-gray-300 rounded-[9px] sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-6 lg:p-8 flex-shrink-0 flex items-center justify-center mx-2 sm:mx-3 md:mx-4">
+      <div className="w-38 h-30 md:w-48 md:h-28 lg:w-90 lg:h-50 bg-gray-300 rounded-[8px] sm:rounded-[10px] md:rounded-xl lg:rounded-2xl p-2 sm:p-3 md:p-5 lg:p-8 flex-shrink-0 flex items-center justify-center">
         {/* Add content here */}
       </div>
 
       {/* Right text */}
-      <div className="flex-1 flex justify-center lg:justify-start text-center lg:text-left px-2 sm:px-3 md:px-4">
-        <h2 className="max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[300px] leading-5 sm:leading-6 md:leading-8 lg:leading-10">
+      <div className="flex-1 flex justify-center lg:justify-start text-center lg:text-left px-0 sm:px-1 md:px-2 lg:px-4">
+        <h2 className="max-w-[160px] sm:max-w-[180px] md:max-w-[240px] lg:max-w-[300px] leading-[0.9] ">
           <ShinyText
             text="See You On"
             disabled={false}
@@ -147,6 +148,13 @@ const Section13: React.FC = () => {
             ))}
           </div>
         </div>
+        <div style={{ width: '100%', height: '600px', position: 'absolute', opacity: 0.2 }}>
+  <Threads
+    amplitude={2}
+    distance={0}
+    enableMouseInteraction={false}
+  />
+</div>
         <Offer/>
       </div>
 

@@ -55,59 +55,23 @@ export default function Section07() {
   ];
 
   return (
-    <div className="w-full overflow-x-hidden flex flex-col items-center justify-center px-4">
-      <div className="text-center relative mb-20 w-full max-w-6xl">
-        {/* Background blur effect - positioned better */}
-        <div className="absolute top-[45rem] right-[3px] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[1000px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
-        
-        <div
-          className="relative text-center z-10 mb-4 w-full"
-          style={{
-            color: 'transparent',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            lineHeight: '1.2',
-          }}
-        >
-          <ShinyText
-            text="The entire setup takes less than 60 seconds. No technical skills"
-            disabled={false}
-            speed={6}
-            className="Heading3 gradient-white-text"
-          />
-          
-          {/* Second Line - With Gradient Text */}
-          <ShinyText
-            text="required. No content creation needed. No ongoing maintenance."
-            disabled={false}
-            speed={6}
-            className="Heading3 gradient-white-text"
-          />
-        </div>
-
-        {/* Gradient line - centered and constrained */}
-        <div className="flex justify-center w-full">
-          <div className="w-full max-w-[600px] h-[4.3px] 
-            bg-gradient-to-r 
-            from-transparent via-purple-300 to-transparent 
-            bg-[length:100%_100%] bg-no-repeat">
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full max-w-7xl mx-auto px-2 lg:px-6">
-        <div
-          className="relative text-center z-10 py-16 w-full"
-          style={{
-            fontFamily: 'Radio Grotesk',
+    <div className="w-full relative overflow-visible">
+      {/* Background glow effect - moved outside and positioned absolutely */}
+      <div className="absolute top-[10rem] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[1000px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
+      
+      <div className="flex flex-col items-center justify-center px-4">
+        <div className="text-center relative mb-20 w-full max-w-6xl">
+          <div
+            className="relative text-center z-10 w-full"
+            style={{
+              fontFamily: 'Radio Grotesk',
             fontWeight: 400,
-            fontSize: 'clamp(24px, 6vw, 43px)',
+            fontSize:'clamp(20px, 6vw, 37px)',
             lineHeight: '0.8',
             letterSpacing: '0%',
-            margin: '50px 0 4rem 0',
+            margin: '0 0 -0.5rem 0',
             padding: '0.2em 0',
-            textTransform: 'capitalize',
+         
             color: 'transparent',
             background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
             WebkitBackgroundClip: 'text',
@@ -115,46 +79,94 @@ export default function Section07() {
             WebkitTextFillColor: 'transparent',
             WebkitFontSmoothing: 'antialiased',
             MozOsxFontSmoothing: 'grayscale',
-          }}
-        >
-          <div>
-            <ShinyText text="Turn your silent website" speed={5} className="gradient-white-text" />
-            {' '}
-            <ShinyText text="into a 24/7" speed={5} className="gradient-white-text" />
+            }}
+          >
+            <ShinyText
+              text="The entire setup takes less than 60 seconds. No technical skills"
+              disabled={false}
+              speed={6}
+              className="gradient-white-text"
+            />
+            
+            {/* Second Line - With Gradient Text */}
+            <ShinyText
+              text="required. No content creation needed. No ongoing maintenance."
+              disabled={false}
+              speed={6}
+              className="gradient-white-text"
+            />
           </div>
-          <div >
-            <ShinyText text="Money-Making" speed={5} className="gradient-mask-text" />
-            {' '}
-            <ShinyText text="Machine that" speed={5} className="gradient-white-text" />
-            {' '}
-            <ShinyText text="talks!" speed={5} className="gradient-mask-text" />
+
+          {/* Gradient line - centered and constrained */}
+          <div className="flex justify-center w-full mt-4">
+            <div className="w-full max-w-[600px] h-[4.3px] 
+              bg-gradient-to-r 
+              from-transparent via-purple-300 to-transparent 
+              bg-[length:100%_100%] bg-no-repeat">
+            </div>
           </div>
         </div>
 
-        {/* Features Grid - 3 columns, 4 rows with responsive design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
-          {features.map((feature, index) => (
-            <div key={index} className="flex flex-col space-y-4 w-full">
-              {/* Placeholder area for video/image */}
-              <div className="bg-[#1D1D1D] rounded-[10px] aspect-video flex items-center justify-center w-full">
-              </div>
-              
-              <div className="w-full py-5">
-                <div style={{ wordSpacing: '3px' }} className="font-medium  text-[16px] lg:text-[22.5px] leading-5 lg:leading-7 w-full">
-                  {feature.title}
+        <div className="w-full max-w-7xl mx-auto px-2 lg:px-6">
+          <div
+            className="relative text-center z-10 py-16 w-full"
+            style={{
+              fontFamily: 'Radio Grotesk',
+              fontWeight: 400,
+              fontSize: 'clamp(24px, 6vw, 43px)',
+              lineHeight: '0.8',
+              letterSpacing: '0%',
+              margin: '50px 0 4rem 0',
+              padding: '0.2em 0',
+          
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+            }}
+          >
+            <div>
+              <ShinyText text="Turn your silent website" speed={5} className="gradient-white-text" />
+              {' '}
+              <ShinyText text="into a 24/7" speed={5} className="gradient-white-text" />
+            </div>
+            <div >
+              <ShinyText text="Money-Making" speed={5} className="gradient-mask-text" />
+              {' '}
+              <ShinyText text="Machine that" speed={5} className="gradient-white-text" />
+              {' '}
+              <ShinyText text="talks!" speed={5} className="gradient-mask-text" />
+            </div>
+          </div>
+
+          {/* Features Grid - 3 columns, 4 rows with responsive design */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
+            {features.map((feature, index) => (
+              <div key={index} className="flex flex-col space-y-4 w-full">
+                {/* Placeholder area for video/image */}
+                <div className="bg-[#1D1D1D] rounded-[10px] aspect-video flex items-center justify-center w-full">
                 </div>
                 
-                {/* Description */}
-                <p className="py-2 lg:py-5 subtext1 leading-4 w-full">
-                  {feature.description}
-                </p>
+                <div className="w-full py-5">
+                  <div style={{ wordSpacing: '3px' }} className="font-medium  text-[16px] lg:text-[22.5px] leading-5 lg:leading-7 w-full">
+                    {feature.title}
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="py-2 lg:py-5 subtext1 leading-4 w-full">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        
+        <DownArrow/>
       </div>
-      
-      <DownArrow/>
     </div>
   );
 }

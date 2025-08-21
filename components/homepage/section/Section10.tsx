@@ -106,14 +106,14 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
 
   return (
     <div className="w-full">
-      <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">
+      <div className=" text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2 leading-[1.1]">
         <ShinyText
           text={title}
           disabled={false}
           speed={6}
           className="Heading2"
         />
-      </h2>
+      </div>
       
       <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full">
         <div className="w-full lg:w-1/2">
@@ -203,7 +203,7 @@ const Section10: React.FC = () => {
             letterSpacing: '0%',
             margin: '0 0 0 0',
             padding: '0',
-            textTransform: 'capitalize',
+         
             color: 'transparent',
             background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
             WebkitBackgroundClip: 'text',

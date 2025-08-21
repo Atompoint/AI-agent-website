@@ -17,7 +17,7 @@ const Section04 = () => {
           letterSpacing: '0%',
           margin: '0 0 -0.5rem 0',
           padding: '0.2em 0',
-          textTransform: 'capitalize',
+         
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -41,16 +41,7 @@ const Section04 = () => {
       
       {/* Image Container with Glow Effect - Responsive sizing */}
       <div className="relative w-full max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[900px]">
-        {/* Glow Image - positioned behind main image with responsive positioning */}
-        <div className="absolute top-[-1rem] sm:top-[-2rem] md:top-[-2.5rem] lg:top-[-3rem] w-full h-full left-1/2 transform -translate-x-1/2 z-0">
-          <Image
-            src="/assets/images/glow.png"
-            width={1200}
-            height={900}
-            alt="glow effect"
-            className="object-contain opacity-60 sm:opacity-70 md:opacity-80 w-full h-auto"
-          />
-        </div>
+       
 
         {/* Alternative CSS Glow if image doesn't exist - Responsive sizing */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[150px] sm:w-[350px] sm:h-[250px] md:w-[500px] md:h-[350px] lg:w-[600px] lg:h-[400px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 sm:opacity-25 md:opacity-30 blur-[50px] sm:blur-[75px] md:blur-[100px] -z-10" />

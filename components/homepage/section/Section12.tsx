@@ -13,11 +13,11 @@ const Section12 = () => {
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
             fontSize: 'clamp(18px, 4vw, 43px)',
-            lineHeight: '0.85',
+            lineHeight: '0.8',
             letterSpacing: '0%',
             margin: '0 0 1.5rem 0',
             padding: '0 0',
-            textTransform: 'capitalize',
+          
             color: 'transparent',
             background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
             WebkitBackgroundClip: 'text',

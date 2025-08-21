@@ -21,7 +21,7 @@ const Section09 = () => {
               letterSpacing: '0%',
               margin: '0 0 1.5rem 0',
               padding: '0.2em 0',
-              textTransform: 'capitalize',
+            
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
@@ -92,7 +92,7 @@ const Section09 = () => {
               letterSpacing: '0%',
               margin: '0 0 0 0',
               padding: '2rem sm:3rem lg:5rem',
-              textTransform: 'capitalize',
+             
               color: 'transparent',
               background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
               WebkitBackgroundClip: 'text',

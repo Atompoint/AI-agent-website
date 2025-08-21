@@ -86,11 +86,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ image, description }) => {
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
           fontSize: 'clamp(18px, 4vw, 43px)',
-          lineHeight: '0.95',
+          lineHeight: '0.8',
           letterSpacing: '0%',
           margin: '0 0 -0.25rem 0',
           padding: '0.2em 0',
-          textTransform: 'capitalize',
+         
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -100,7 +100,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ image, description }) => {
           MozOsxFontSmoothing: 'grayscale',
         }}
       >
-        <div className="mb-1 sm:mb-2">
+        <div>
           <ShinyText text="Now Is the Time to" speed={5} className="gradient-white-text" /> 
           {' '}
           <ShinyText text="Turn Your" speed={5} className="gradient-white-text" />   
@@ -122,7 +122,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ image, description }) => {
         >
           <div className="w-full h-full rounded-[8px] overflow-hidden">
             {/* Placeholder for actual image */}
-            <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
+            <div className="w-full h-full bg-[#797979] flex items-center justify-center">
               <span className="text-white/70 text-sm sm:text-base"></span>
             </div>
           </div>
@@ -224,11 +224,11 @@ const Section11: React.FC = () => {
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
           fontSize: 'clamp(18px, 4vw, 43px)',
-          lineHeight: '0.95',
+          lineHeight: '0.8',
           letterSpacing: '0%',
           margin: '0 0 2rem 0',
           padding: '0.2em 0',
-          textTransform: 'capitalize',
+        
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -238,7 +238,7 @@ const Section11: React.FC = () => {
           MozOsxFontSmoothing: 'grayscale',
         }}
       >
-        <div className="mb-1 sm:mb-2">
+        <div >
           <ShinyText text="Here's What You Get" speed={5} className="gradient-white-text" />  
           {' '}
           <ShinyText text="Access to" speed={5} className="gradient-white-text" />  

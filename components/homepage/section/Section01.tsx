@@ -214,7 +214,7 @@ export default function App(): React.JSX.Element {
           letterSpacing: '0%',
           margin: '0 0 -0.5rem 0',
           padding: '0.2em 0',
-          textTransform: 'capitalize',
+          
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',

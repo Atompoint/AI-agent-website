@@ -31,7 +31,7 @@ export default function HeroHeader() {
       const micOriginalTop = micOriginalRect.top + window.scrollY;
       
       // When user scrolls past the original mic position
-      if (window.scrollY > micOriginalTop - window.innerHeight / 2) {
+      if (window.scrollY > micOriginalTop - window.innerHeight / 12) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -153,17 +153,20 @@ export default function HeroHeader() {
             ref={setMicRef}
             className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto"
           >
-            <Image
-              src='/assets/icons/mymic.png'
-              alt="Voice Agent Microphone"
-              width={130}
-              height={130}
-              className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] object-contain cursor-pointer hover:scale-110 drop-shadow-lg transition-all duration-2000 ease-out ${
-                isSticky 
-                  ? 'fixed bottom-6 right-6 z-50' 
-                  : ''
-              }`}
-            />
+            <div className="relative group">
+              <div className="absolute inset-0 opacity-70  group-hover:opacity-100 transition-opacity duration-1000"></div>
+              <Image
+                src='/assets/icons/mymic.png'
+                alt="Voice Agent Microphone"
+                width={130}
+                height={130}
+                className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] object-contain cursor-pointer  transition-all duration-1000 ease-in-out ${
+                  isSticky 
+                    ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110 ' 
+                    : 'group-hover:scale-110 transform-gpu'
+                }`}
+              />
+            </div>
           </div>
         </div>
 
@@ -172,7 +175,7 @@ export default function HeroHeader() {
           <div className="flex justify-center -mt-1 items-center px-4 relative z-20">
             <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
               <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] -rotate-90" />
-              <span className="subtextpt2 text-xs sm:text-sm">GIVE IT A TRY!</span>
+              <span className="subtextpt2 ">GIVE IT A TRY!</span>
             </div>
           </div>
 
