@@ -58,7 +58,7 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
   return (
     <div className="relative max-w-[600px] rounded-lg overflow-hidden">
       <Image
-        src="/rect3.png"
+        src="/assets/images/rect3.png"
         alt={`${title} Background`}
         fill
         priority
