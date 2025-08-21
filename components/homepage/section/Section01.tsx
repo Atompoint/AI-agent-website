@@ -13,7 +13,9 @@ interface Step {
   stepText: string;
   title: string;
   iconSrc: string;
+  centerIconSrc: string; // New property for the centered icon
   iconAlt: string;
+  centerIconAlt: string; // New property for the centered icon alt
   textColor: string;
 }
 
@@ -28,24 +30,30 @@ export default function App(): React.JSX.Element {
       number: '01',
       stepText: 'STEP 1',
       title: 'Enter Your Domain Name And Click Add',
-      iconSrc: '/assets/icons/globe.svg',
-      iconAlt: 'Globe Icon',
+      iconSrc: '/assets/icons/onlycircle.svg',
+      centerIconSrc: '/assets/icons/globe1.svg',
+      iconAlt: 'Circle Background',
+      centerIconAlt: 'Globe Icon',
       textColor: 'text-white',
     },
     {
       number: '02',
       stepText: 'STEP 2',
       title: 'Copy And Paste The Code On Your Website',
-      iconSrc: '/assets/icons/code.svg',
-      iconAlt: 'Code Icon',
+      iconSrc: '/assets/icons/onlycircle.svg',
+      centerIconSrc: '/assets/icons/braces1.svg',
+      iconAlt: 'Circle Background',
+      centerIconAlt: 'Code Icon',
       textColor: 'text-white',
     },
     {
       number: '03',
       stepText: 'STEP 3',
       title: "Hit The Call Button & Test It Out. You're Done",
-      iconSrc: '/assets/icons/call.svg',
-      iconAlt: 'Call Icon',
+      iconSrc: '/assets/icons/onlycircle.svg',
+      centerIconSrc: '/assets/icons/call1.svg',
+      iconAlt: 'Circle Background',
+      centerIconAlt: 'Call Icon',
       textColor: 'text-white',
     },
   ];
@@ -284,19 +292,36 @@ export default function App(): React.JSX.Element {
                     }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {/* Icon */}
+                    {/* Icon Container with Circle Background and Centered Icon */}
                     <motion.div
                       variants={iconVariants}
-                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-13 lg:h-13 flex items-center justify-center"
+                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-13 lg:h-13 flex items-center justify-center relative"
                     >
+                      {/* Rotating Circle Background */}
                       <Image
                         src={step.iconSrc}
                         alt={step.iconAlt}
                         width={40}
                         height={40}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain rotate-alternate"
                         priority={index === 0}
                       />
+                      
+                      {/* Centered Static Icon - Larger for first step */}
+                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center ${
+                        index === 0 
+                          ? 'w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:mt-1 mt-0.5 md:mt-1 lg:h-10' 
+                          : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8'
+                      }`}>
+                        <Image
+                          src={step.centerIconSrc}
+                          alt={step.centerIconAlt}
+                          width={index === 0 ? 32 : 16}
+                          height={index === 0 ? 32 : 16}
+                          className={`object-contain w-full h-full`}
+                          priority={index === 0}
+                        />
+                      </div>
                     </motion.div>
 
                     <div className="flex-1 min-w-0">

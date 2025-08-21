@@ -22,10 +22,14 @@ const Section03: React.FC = () => {
   const statisticsData = [
     {
       id: 1,
-      icon: '/assets/icons/qmark.svg',
+      icon: '/assets/icons/onlycircle.svg',
+      centerIcon: '/assets/icons/qmark.svg',
       alt: 'question mark',
+      centerAlt: 'Question Mark Icon',
       iconSize: { height: 75, width: 75 },
+      centerIconSize: { width: 24, height: 24 },
       containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
+      centerIconContainerClass: 'w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10',
       textLines: [
         "67% of website visitors abandon sites",
         "when they can't get immediate answers"
@@ -33,10 +37,14 @@ const Section03: React.FC = () => {
     },
     {
       id: 2,
-      icon: '/assets/icons/anxious.svg',
+      icon: '/assets/icons/onlycircle.svg',
+      centerIcon: '/assets/icons/anxious.svg',
       alt: 'anxious face',
+      centerAlt: 'Anxious Face Icon',
       iconSize: { height: 75, width: 75 },
+      centerIconSize: { width: 24, height: 24 },
       containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
+      centerIconContainerClass: 'w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10',
       textLines: [
         "79% say they won't return to a",
         "website after a bad user experience"
@@ -44,10 +52,14 @@ const Section03: React.FC = () => {
     },
     {
       id: 3,
-      icon: '/assets/icons/wing.svg',
+      icon: '/assets/icons/onlycircle.svg',
+      centerIcon: '/assets/icons/wing.svg',
       alt: 'wings',
+      centerAlt: 'Wings Icon',
       iconSize: { height: 75, width: 75 },
+      centerIconSize: { width: 32, height: 32 }, // Increased from 24x24
       containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
+      centerIconContainerClass: 'w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12', // Increased container
       textLines: [
         "You lose an average of $1,430 for every",
         "1,000 visitors who leave confused"
@@ -191,14 +203,26 @@ const Section03: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-9 mx-auto max-w-4xl lg:max-w-5xl">
                 {statisticsData.map((stat) => (
                   <div key={stat.id} className="flex flex-col items-center text-center">
-                    <div className={`${stat.containerClass} flex items-center justify-center`}>
+                    <div className={`${stat.containerClass} flex items-center justify-center relative`}>
+                      {/* Rotating Circle Background */}
                       <Image 
                         src={stat.icon} 
                         alt={stat.alt} 
                         height={stat.iconSize.height} 
                         width={stat.iconSize.width}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain rotate-alternate"
                       />
+                      
+                      {/* Centered Static Icon */}
+                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${stat.centerIconContainerClass} flex items-center justify-center`}>
+                        <Image
+                          src={stat.centerIcon}
+                          alt={stat.centerAlt}
+                          width={stat.centerIconSize.width}
+                          height={stat.centerIconSize.height}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                     </div>
                     <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight">
                       {stat.textLines[0]}               
@@ -266,7 +290,7 @@ const Section03: React.FC = () => {
                   key={item.id}
                   className={`
                     ${item.backgroundColor} 
-                    rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 relative overflow-hidden
+                    rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 md:h-80 lg:h-80 relative overflow-hidden
                   `}
                 >
                   {/* Gradient overlay for special sections */}
@@ -274,17 +298,20 @@ const Section03: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20"></div>
                   )}
                   
-                  <div className="relative z-10 flex flex-col justify-center items-center h-full">
-                    {/* Content container */}
-                    <div className={`w-full max-w-sm ${item.id === 4 ? '-mt-8 sm:-mt-12 lg:-mt-15' : ''}`}>
-                      {/* Header */}
-                      <div className="flex flex-col items-start mb-3 sm:mb-4">
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Fixed Header Section - Always at top */}
+                    <div className="flex-shrink-0 mb-3 sm:mb-4">
+                      <div className="flex flex-col items-start">
                         <Image 
                           src={item.icon} 
                           alt={`${item.title} icon`} 
                           height={40} 
                           width={40} 
-                          className="py-2 sm:py-3 lg:py-4 w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
+                          className={`${
+                            item.id === 4 
+                              ? 'w-[45px] h-[45px] sm:w-[50px] sm:h-[50px] md:w-[52px] md:h-[52px] lg:w-[55px] lg:h-[55px] mb-3'
+                              : 'w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[47px] md:h-[47px] lg:w-[50px] lg:h-[50px] mb-3'
+                          }`}
                         />
                         {item.id === 4 ? (
                           <ShinyText text={item.title} speed={5} className="subtext3 gradient-text-white text-start" />
@@ -292,8 +319,10 @@ const Section03: React.FC = () => {
                           <ShinyText speed={5} className="subtext3 gradient-text-white text-start" text={item.title} />
                         )}
                       </div>
+                    </div>
 
-                      {/* Features List */}
+                    {/* Features List - Takes remaining space */}
+                    <div className="flex-1">
                       <ul className={`space-y-2 sm:space-y-3 subtext1 text-start`}>
                         {item.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">

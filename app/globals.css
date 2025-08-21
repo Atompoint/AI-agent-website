@@ -241,3 +241,75 @@ letter-spacing: -0.4px;
   }
 }
 
+
+/* Rotate Animation Keyframes */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Classes */
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+}
+
+.rotate-animation-slow {
+  animation: rotate 3s linear infinite;
+}
+
+.rotate-animation-fast {
+  animation: rotate 1s linear infinite;
+}
+
+/* One-time rotation (not infinite) */
+.rotate-once {
+  animation: rotate 0.5s ease-in-out;
+}
+
+/* Hover-triggered rotation */
+.rotate-on-hover:hover {
+  animation: rotate 0.5s ease-in-out;
+}
+
+/* Alternating clockwise and counter-clockwise rotation */
+@keyframes rotate-alternate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-alternate {
+  animation: rotate-alternate 7s linear infinite;
+}
+
+
+
+/* Reverse rotation */
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-reverse {
+  animation: rotate-reverse 4s linear infinite;
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import ShinyText from '@/components/ui/ShinyText';
 import Header from "../layout/Header";
 import Image from "next/image";
+import { FiCheck } from "react-icons/fi";
 import { BsStars } from "react-icons/bs";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import DownArrow from "../ui/DownArrow";
@@ -72,7 +73,7 @@ export default function HeroHeader() {
               fontSize: 'clamp(16px, 5vw, 52px)',
               lineHeight: '0.8',
               letterSpacing: '0%',
-              margin: '20px 0 20px 0',
+              margin: '25px 0 25px 0',
               padding: '0.2em 0',
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
@@ -157,16 +158,19 @@ export default function HeroHeader() {
                   key={i}
                   className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5"
                 >
-                  {/* Icon */}
-                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center">
-                    <Image 
-                      src="/assets/images/tickmark.svg" 
-                      alt="Tick" 
-                      width={24} 
-                      height={24}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+                {/* Icon with only circle rotating */}
+<div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center relative">
+  {/* Background circle with alternating rotation */}
+  <Image 
+    src="/assets/icons/onlycircle.svg" 
+    alt="Circle" 
+    width={24} 
+    height={24}
+    className="w-full h-full object-contain rotate-alternate"
+  />
+  {/* Check icon centered and stationary */}
+  <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 m-auto text-white" />
+</div>
 
                   {/* Text */}
                   <span className="subtext2  max-w-[calc(100%-2.5rem)]">
