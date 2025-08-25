@@ -46,91 +46,120 @@ export default function HeroHeader() {
     <div className="overflow-x-hidden">
       {/* Hero Section - Full Height with Background */}
       <section className="relative w-full min-h-[130vh] overflow-visible">
-        <Header />
+  {/* Background Image Container */}
+  <div
+    className="absolute inset-0 w-full overflow-x-hidden min-h-full z-0 scale-[1.5] mt-[10%]"
+    style={{
+      backgroundImage: "url('/assets/images/bgimg.webp')",
+      backgroundPosition: "calc(50% - 20px) center",
+      backgroundSize: "cover",
+    }}
+  >
+  </div>
 
-        {/* Background Image Container */}
-        <div
-          className="absolute inset-0 w-full overflow-x-hidden min-h-full z-0 scale-[1.5] mt-25"
-          style={{
-            backgroundImage: "url('/assets/images/bgimg.webp')",
-            backgroundPosition: "calc(50% - 20px) center",
-            backgroundSize: "cover",
-          }}
-        >
+  {/* Gradient Overlay */}
+  <div
+    className="absolute inset-0 w-full min-h-full z-10"
+    style={{
+      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`
+    }}
+  />
+
+  {/* Header - Fixed at top */}
+  <div className="relative z-30">
+    <Header />
+  </div>
+
+
+    
+    {/* Text Content Section */}
+    <div className="flex flex-col items-center text-center w-full mt-[8%]">
+      {/* Label */}
+      <div
+        className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
+        style={{
+          border: '1px solid #FFFFFF12',
+          backdropFilter: 'blur(3px)',
+          background: '#FFFFFF08',
+          lineHeight: 1.6,
+          letterSpacing: 0.4,
+        }}
+      >
+        Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+      </div>
+
+      {/* Main Heading */}
+      <div
+        className="relative z-10 mb-6"
+        style={{
+          fontFamily: 'Radio Grotesk',
+          fontWeight: 400,
+          fontSize: 'clamp(16px, 5vw, 52px)',
+          lineHeight: '0.8',
+          letterSpacing: '0%',
+          padding: '0.2em 0',
+          color: 'transparent',
+          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+        }}
+      >
+        <div>
+          <ShinyText text="World's First" speed={5} className="gradient-white-text" />
+          {' '}
+          <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />
+          {' '}
+          <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
         </div>
-
-        {/* Gradient Overlay */}
-        <div
-          className="absolute inset-0 mt-4 w-full min-h-full z-10"
-          style={{
-            background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`
-          }}
-        />
-
-        {/* Text Content */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center text-center px-4 pt-[28vh]">
-          {/* Label */}
-          <div
-            className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full -mt-9 px-3 py-1"
-            style={{
-              border: '1px solid #FFFFFF12',
-              backdropFilter: 'blur(3px)',
-              background: '#FFFFFF08',
-              lineHeight: 1.6,
-              letterSpacing: 0.4,
-            }}
-          >
-            Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-          </div>
-
-          <div
-            className="relative z-10"
-            style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(16px, 5vw, 52px)',
-              lineHeight: '0.8',
-              letterSpacing: '0%',
-              margin: '25px 0 25px 0',
-              padding: '0.2em 0',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
-            }}
-          >
-            <div>
-              <ShinyText text="World's First" speed={5} className="gradient-white-text" />
-              {' '}
-              <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />
-              {' '}
-              <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-            </div>
-            <div>
-              <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-            </div>
-            <div>
-              <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-            </div>
-          </div>       
-
-          {/* Subtext */}
-          <p className="subtext1 w-full sm:w-4/5 md:w-3/4 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] ">
-            Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
-          </p>
+        <div>
+          <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
         </div>
-      </section>
+        <div>
+          <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+        </div>
+      </div>       
 
-      {/* Section 2 */}
-      <section className="relative" style={{ backgroundColor: '#01000C' }}>
-        {/* Product Images on top of section */}
-        <div className="relative pt-8 w-full flex flex-col items-center z-30 px-3 md:px-8 lg:px-0">
-          {/* Main Product Image */}
-          <div className="relative w-full max-w-[320px] sm:max-w-[300px] md:max-w-[980px] lg:max-w-[960px]">
-            <div className="relative rounded-2xl overflow-hidden -mt-34 sm:-mt-41 md:-mt-34 lg:-mt-35 z-10 p-0.5 w-full">
+      {/* Subtext */}
+      <p className="subtext1 w-full sm:w-4/5 md:w-3/4 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
+        Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
+      </p>
+    </div>
+
+   {/* Main Image pinned at bottom */}
+<div className="absolute top-[45%] left-1/2 -translate-x-1/2 w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] flex justify-center items-end z-10">
+
+{/* Circle.png - Background layer */}
+<div className="absolute inset-0 z-10 flex justify-center items-end pointer-events-none">
+  <Image
+    src="/assets/images/circle2.png"
+    width={1200}
+    height={1200}
+    alt="circle background"
+    className="w-full h-auto max-w-[1400px] object-contain"
+    priority
+    quality={100}
+    unoptimized={false}
+  />
+</div>
+
+{/* Glow.png - Middle layer */}
+<div className="absolute inset-0 z-20 flex justify-center items-end">
+  <Image
+    src="/assets/images/glow.png"
+    width={1200}
+    height={900}
+    alt="glow effect"
+    className="object-contain max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]"
+    priority
+  />
+</div>
+
+{/* Main1.png - Top layer with ShineBorder ONLY around this image */}
+<div className="relative z-40 flex justify-center items-end max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]">
+<div className="relative rounded-2xl overflow-hidden -mt-34 sm:-mt-41 md:-mt-34 lg:-mt-35 z-10 p-0.5 w-full">
               <ShineBorder
                 borderWidth={2}
                 duration={23}
@@ -146,7 +175,19 @@ export default function HeroHeader() {
                 priority
               />
             </div>
-          </div>
+</div>
+
+</div>
+  
+
+  
+  
+</section>
+      {/* Section 2 */}
+      <section  style={{ backgroundColor: '#01000C' }}>
+        {/* Product Images on top of section */}
+        <div className="relative pt-8 w-full flex flex-col items-center z-30 px-3 md:px-8 lg:px-0">
+          
 
           {/* Microphone Icon - Smoothly moving between positions */}
           <div 

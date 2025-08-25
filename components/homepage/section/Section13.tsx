@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Purple from '@/public/assets/images/purple.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
-import Threads from '@/components/ui/Threads';
+
 
 interface FAQItem {
   question: string
@@ -148,13 +148,7 @@ const Section13: React.FC = () => {
             ))}
           </div>
         </div>
-        <div style={{ width: '100%', height: '600px', position: 'absolute', opacity: 0.2 }}>
-  <Threads
-    amplitude={2}
-    distance={0}
-    enableMouseInteraction={false}
-  />
-</div>
+        
         <Offer/>
       </div>
 

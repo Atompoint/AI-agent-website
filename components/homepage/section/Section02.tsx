@@ -1,7 +1,7 @@
 import React from 'react';
 import DownArrow from "@/components/ui/DownArrow";
 import ShinyText from '@/components/ui/ShinyText';
-import Threads from '@/components/ui/Threads';
+
 
 const Section02 = () => {
   const sections = [
@@ -57,16 +57,7 @@ const Section02 = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-    <div
-  className="absolute w-full opacity-20
-             h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
->
-  <Threads
-    amplitude={2}
-    distance={0}
-    enableMouseInteraction={false}
-  />
-</div>
+    
 
       {/* Glow Effects - Same positioning as lg */}
       <div className="absolute top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
