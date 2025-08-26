@@ -61,7 +61,7 @@ export default function HeroHeader() {
   <div
     className="absolute inset-0 w-full min-h-full z-10"
     style={{
-      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`,
+      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, #01000C 92%, #01000C 100%)`,
     }}
   />
 
@@ -128,47 +128,52 @@ export default function HeroHeader() {
       </p>
     </div>
 
-    {/* Images Section - Fixed position at bottom */}
-    <div className="w-full flex justify-center items-end">
-      <div className="w-full relative mr-20">
-        {/* Circle Image */}
-        <Image
+    <div className="w-full flex justify-center items-end relative">
+  {/* Circle Image */}
+  <Image
           src="/assets/images/mycircle.png"
           alt="circle background"
           width={2304}  // Increased from 1920 (20% larger)
           height={1296} // Increased from 1080 (20% larger)
-          className="w-full h-auto object-contain scale-[1.2] ml-5"
+          className="w-full h-auto object-contain scale-[1.1] "
           priority
         />
-<div className="absolute inset-0 z-10 flex justify-center items-end">
-  <Image
-    src="/assets/images/glow.png"
-    width={1200}
-    height={900}
-    alt="glow effect"
-    className="object-contain max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]"
-    priority
-  />
-</div>
-        {/* Main1 Image */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
-          <ShineBorder
-            borderWidth={2}
-            duration={23}
-            shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-            className="absolute inset-0 rounded-2xl pointer-events-none"
-          />
-          <Image
-            src="/assets/images/main1.png"
-            alt="main image"
-            width={800}
-            height={800}
-            className="w-full h-auto object-contain rounded-2xl"
-            priority
-          />
-        </div>
-      </div>
+
+  {/* Glow + Main1 Container (locked together) */}
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 scale-130 ">
+    
+    {/* Glow behind Main1 */}
+    <div className="absolute  w-full -translate-y-[24%]">
+      <Image
+        src="/assets/images/glow1.png"
+        width={1200}
+        height={900}
+        alt="glow effect"
+        className="object-contain w-full sm:max-w-[400px] md:max-w-[600px] lg:max-w-[870px]"
+        priority
+      />
     </div>
+
+    {/* Main1 Image */}
+    <div className="relative w-full "> {/* Slightly bigger */}
+      <ShineBorder
+        borderWidth={2}
+        duration={23}
+        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+        className="absolute inset-0 rounded-2xl pointer-events-none"
+      />
+      <Image
+        src="/assets/images/main1.png"
+        alt="main image"
+        width={1500}  // Increased to 1500px
+        height={1500} // Increased to 1500px
+        className="w-full h-auto object-contain rounded-2xl relative z-10 "
+        priority
+      />
+    </div>
+  </div>
+</div>
+
   </div>
 </section>
 
