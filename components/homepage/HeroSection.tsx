@@ -46,7 +46,7 @@ export default function HeroHeader() {
     <div>
       {/* Hero Section - Full Height with Background */}
      
-      <section className="relative w-full min-h-screen overflow-visible">
+      <section className="relative w-full min-h-[20vh] lg:min-h-screen overflow-visible">
   {/* Background Image */}
   <div
     className="absolute inset-0 w-full min-h-full z-0"
@@ -71,9 +71,9 @@ export default function HeroHeader() {
   </div>
 
   {/* Main Content Container */}
-  <div className="relative z-20 w-full h-full flex flex-col" style={{ minHeight: 'calc(100vh - 80px)' }}>
+  <div className="relative z-20 w-full flex flex-col justify-between " style={{ minHeight: 'calc(100vh - 80px)' }}>
     {/* Text Content */}
-    <div className="flex-1 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-10 pt-20">
+    <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-20">
       {/* Label */}
       <div
         className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
@@ -123,24 +123,33 @@ export default function HeroHeader() {
       </div>       
 
       {/* Subtext */}
-      <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8">
+      <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8 md:mb-12">
         Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
       </p>
     </div>
 
-    {/* Images Section - Positioned at bottom of background */}
-    <div className="w-full flex justify-center items-end" style={{ marginTop: 'auto' }}>
-      <div className="w-full relative">
+    {/* Images Section - Fixed position at bottom */}
+    <div className="w-full flex justify-center items-end">
+      <div className="w-full relative mr-20">
         {/* Circle Image */}
         <Image
           src="/assets/images/mycircle.png"
           alt="circle background"
-          width={1920}
-          height={1080}
-          className="w-full h-auto object-contain"
+          width={2304}  // Increased from 1920 (20% larger)
+          height={1296} // Increased from 1080 (20% larger)
+          className="w-full h-auto object-contain scale-[1.2] ml-5"
           priority
         />
-
+<div className="absolute inset-0 z-10 flex justify-center items-end">
+  <Image
+    src="/assets/images/glow.png"
+    width={1200}
+    height={900}
+    alt="glow effect"
+    className="object-contain max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]"
+    priority
+  />
+</div>
         {/* Main1 Image */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
           <ShineBorder
