@@ -43,9 +43,9 @@ export default function HeroHeader() {
   }, [micRef]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       {/* Hero Section - Full Height with Background */}
-      <section className="relative w-full min-h-[130vh] overflow-visible">
+      <section className="relative w-full min-h-[100vh] overflow-visible">
   {/* Background Image Container */}
   <div
     className="absolute inset-0 w-full overflow-x-hidden min-h-full z-0 scale-[1.5] mt-[10%]"
@@ -71,9 +71,10 @@ export default function HeroHeader() {
   </div>
 
 
+
     
     {/* Text Content Section */}
-    <div className="flex flex-col items-center text-center w-full mt-[8%]">
+    <div className="absolute flex flex-col items-center text-center w-full mt-[8%]">
       {/* Label */}
       <div
         className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
@@ -128,65 +129,47 @@ export default function HeroHeader() {
       </p>
     </div>
 
-   {/* Main Image pinned at bottom */}
-<div className="absolute top-[45%] left-1/2 -translate-x-1/2 w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] flex justify-center items-end z-10">
-
-{/* Circle.png - Background layer */}
-<div className="absolute inset-0 z-10 flex justify-center items-end pointer-events-none">
-  <Image
-    src="/assets/images/circle2.png"
-    width={1200}
-    height={1200}
-    alt="circle background"
-    className="w-full h-auto max-w-[1400px] object-contain"
-    priority
-    quality={100}
-    unoptimized={false}
-  />
-</div>
-
-{/* Glow.png - Middle layer */}
-<div className="absolute inset-0 z-20 flex justify-center items-end">
-  <Image
-    src="/assets/images/glow.png"
-    width={1200}
-    height={900}
-    alt="glow effect"
-    className="object-contain max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]"
-    priority
-  />
-</div>
-
-{/* Main1.png - Top layer with ShineBorder ONLY around this image */}
-<div className="relative z-40 flex justify-center items-end max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px]">
-<div className="relative rounded-2xl overflow-hidden -mt-34 sm:-mt-41 md:-mt-34 lg:-mt-35 z-10 p-0.5 w-full">
-              <ShineBorder
-                borderWidth={2}
-                duration={23}
-                shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-                className="absolute inset-0 rounded-2xl pointer-events-none"
-              />
-              <Image
-                src="/assets/images/main1.png"
-                width={1200}
-                height={900}
-                alt="product web image"
-                className="object-contain w-full h-auto relative z-10 sm:rounded-xl rounded-2xl"
-                priority
-              />
-            </div>
-</div>
-
-</div>
   
 
   
+  <div className="relative w-full flex justify-center items-end ">
+  {/* Circle2.png - Full width, auto height */}
+  <div className="w-full relative">
+    <Image
+      src="/assets/images/mycircle.png"
+      alt="circle background"
+      width={1920}          
+      height={1080}       
+      className="w-full h-auto object-contain mr-20"
+      priority
+    />
+
+    {/* Main1.png - Top layer, bottom aligned with circle */}
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
+      <ShineBorder
+        borderWidth={2}
+        duration={23}
+        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+        className="absolute inset-0 rounded-2xl pointer-events-none"
+      />
+      <Image
+        src="/assets/images/main1.png"
+        alt="main image"
+        width={800}
+        height={800}
+        className="w-full h-auto object-contain rounded-2xl"
+        priority
+      />
+    </div>
+  </div>
+</div>
   
 </section>
+
       {/* Section 2 */}
-      <section  style={{ backgroundColor: '#01000C' }}>
+      <section className="relative z-30 bg-[#01000C]">
         {/* Product Images on top of section */}
-        <div className="relative pt-8 w-full flex flex-col items-center z-30 px-3 md:px-8 lg:px-0">
+        <div className="relative pt-0 w-full z-40 px-3 md:px-8 lg:px-0">
           
 
           {/* Microphone Icon - Smoothly moving between positions */}
