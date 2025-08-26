@@ -45,36 +45,35 @@ export default function HeroHeader() {
   return (
     <div>
       {/* Hero Section - Full Height with Background */}
-      <section className="relative w-full min-h-[100vh] overflow-visible">
-  {/* Background Image Container */}
+     
+      <section className="relative w-full min-h-screen overflow-visible">
+  {/* Background Image */}
   <div
-    className="absolute inset-0 w-full overflow-x-hidden min-h-full z-0 scale-[1.5] mt-[10%]"
+    className="absolute inset-0 w-full min-h-full z-0"
     style={{
       backgroundImage: "url('/assets/images/bgimg.webp')",
-      backgroundPosition: "calc(50% - 20px) center",
+      backgroundPosition: "center center",
       backgroundSize: "cover",
     }}
-  >
-  </div>
+  />
 
   {/* Gradient Overlay */}
   <div
     className="absolute inset-0 w-full min-h-full z-10"
     style={{
-      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`
+      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(1,0,12,0.5) 92%, #01000C 100%)`,
     }}
   />
 
-  {/* Header - Fixed at top */}
+  {/* Header */}
   <div className="relative z-30">
     <Header />
   </div>
 
-
-
-    
-    {/* Text Content Section */}
-    <div className="absolute flex flex-col items-center text-center w-full mt-[8%]">
+  {/* Main Content Container */}
+  <div className="relative z-20 w-full h-full flex flex-col" style={{ minHeight: 'calc(100vh - 80px)' }}>
+    {/* Text Content */}
+    <div className="flex-1 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-10 pt-20">
       {/* Label */}
       <div
         className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
@@ -124,58 +123,56 @@ export default function HeroHeader() {
       </div>       
 
       {/* Subtext */}
-      <p className="subtext1 w-full sm:w-4/5 md:w-3/4 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
+      <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8">
         Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
       </p>
     </div>
 
-  
+    {/* Images Section - Positioned at bottom of background */}
+    <div className="w-full flex justify-center items-end" style={{ marginTop: 'auto' }}>
+      <div className="w-full relative">
+        {/* Circle Image */}
+        <Image
+          src="/assets/images/mycircle.png"
+          alt="circle background"
+          width={1920}
+          height={1080}
+          className="w-full h-auto object-contain"
+          priority
+        />
 
-  
-  <div className="relative w-full flex justify-center items-end ">
-  {/* Circle2.png - Full width, auto height */}
-  <div className="w-full relative">
-    <Image
-      src="/assets/images/mycircle.png"
-      alt="circle background"
-      width={1920}          
-      height={1080}       
-      className="w-full h-auto object-contain mr-20"
-      priority
-    />
-
-    {/* Main1.png - Top layer, bottom aligned with circle */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
-      <ShineBorder
-        borderWidth={2}
-        duration={23}
-        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-      />
-      <Image
-        src="/assets/images/main1.png"
-        alt="main image"
-        width={800}
-        height={800}
-        className="w-full h-auto object-contain rounded-2xl"
-        priority
-      />
+        {/* Main1 Image */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
+          <ShineBorder
+            borderWidth={2}
+            duration={23}
+            shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+            className="absolute inset-0 rounded-2xl pointer-events-none"
+          />
+          <Image
+            src="/assets/images/main1.png"
+            alt="main image"
+            width={800}
+            height={800}
+            className="w-full h-auto object-contain rounded-2xl"
+            priority
+          />
+        </div>
+      </div>
     </div>
   </div>
-</div>
-  
 </section>
 
       {/* Section 2 */}
       <section className="relative z-30 bg-[#01000C]">
         {/* Product Images on top of section */}
-        <div className="relative pt-0 w-full z-40 px-3 md:px-8 lg:px-0">
+        <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
           
 
           {/* Microphone Icon - Smoothly moving between positions */}
           <div 
             ref={setMicRef}
-            className="relative z-40 -mt-5 sm:-mt-8 md:-mt-8 lg:-mt-9 flex justify-center items-center mx-auto"
+            className="relative z-40 flex justify-center items-center mx-auto"
           >
             <div className="relative group">
               <div className="absolute inset-0 opacity-70  group-hover:opacity-100 transition-opacity duration-1000"></div>
