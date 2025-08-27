@@ -81,7 +81,7 @@ const Section05: React.FC = () => {
           </div>
           
           {/* Text - Second on mobile/tablet, first on desktop */}
-          <div className="order-2 lg:order-1 subtext1 space-y-4 flex flex-col justify-center px-0 lg:px-22">
+          <div className="order-2 lg:order-1 subtext1 space-y-4 flex flex-col text-center lg:text-start justify-center px-0 lg:px-22">
             {firstRowText.map((text, index) => (
               <p key={index}>
                 {index === 0 ? (
@@ -110,7 +110,7 @@ const Section05: React.FC = () => {
           </div>
           
           {/* Text - Second on mobile/tablet */}
-          <div className="order-2 subtext1 space-y-4 flex flex-col justify-center px-0 lg:px-19">
+          <div className="order-2 subtext1 space-y-4 flex flex-col  text-center lg:text-start justify-center px-0 lg:px-19">
             {secondRowText.map((text, index) => (
               <p key={index} >
                 {index === 1 ? (
@@ -155,7 +155,7 @@ const Section05: React.FC = () => {
       </div> 
 
       {/* Image Container with Glow Effect */}
-      <div className="relative max-w-[900px] m-auto mt-8  px-4 sm:px-0">
+      <div className="relative max-w-[900px] m-auto mt-8 px-4">
         {/* Glow Image - positioned behind main image */}
         <div className="absolute top-[0%] lg:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
         

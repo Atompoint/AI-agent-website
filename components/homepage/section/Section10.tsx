@@ -191,7 +191,7 @@ const Section10: React.FC = () => {
   ];
 
   return (
-    <div className="px-3 sm:px-4 md:px-5 lg:px-6">
+    <div className="px-4 sm:px-4 md:px-5 lg:px-6">
       <div className="max-w-6xl mx-auto">
         <div
           className="relative text-center"
@@ -223,7 +223,7 @@ const Section10: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-7 lg:gap-8 justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-15 px-1 sm:px-2 md:px-3 lg:px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-7 lg:gap-8 justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-15 md:px-3 lg:px-4">
           {comparisonData.map((column: ComparisonData, index: number) => (
             <div key={index} className="w-full max-w-full lg:max-w-[600px] mx-auto">
               <ComparisonColumn
@@ -236,7 +236,7 @@ const Section10: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-8 sm:py-10 md:py-14 lg:py-20 px-2 sm:px-4 md:px-5 lg:px-6">
+      <div className="py-8 sm:py-10 md:py-14 lg:py-20  md:px-5 lg:px-6">
         <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-24">
           {bonusData.map((bonus: BonusData, index: number) => (
             <div key={index} className="w-full">

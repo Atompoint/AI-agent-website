@@ -55,12 +55,12 @@ export default function Section07() {
   ];
 
   return (
-    <div className="w-full relative overflow-visible">
+    <div className="w-full relative overflow-visible px-4">
       {/* Background glow effect - moved outside and positioned absolutely */}
       <div className="absolute top-[10rem] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[1000px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
       
-      <div className="flex flex-col items-center justify-center px-4">
-        <div className="text-center relative mb-20 w-full max-w-6xl">
+      <div className="flex flex-col items-center justify-center ">
+        <div className="text-center relative mb-0 w-full max-w-6xl">
           <div
             className="relative text-center z-10 w-full"
             style={{
@@ -82,7 +82,14 @@ export default function Section07() {
             }}
           >
             <ShinyText
-              text="The entire setup takes less than 60 seconds. No technical skills"
+              text="The entire setup takes less than"
+              disabled={false}
+              speed={6}
+              className="gradient-white-text"
+            />
+            {' '}
+            <ShinyText
+              text="60 seconds. No technical skills"
               disabled={false}
               speed={6}
               className="gradient-white-text"
@@ -90,7 +97,14 @@ export default function Section07() {
             
             {/* Second Line - With Gradient Text */}
             <ShinyText
-              text="required. No content creation needed. No ongoing maintenance."
+              text="required. No content creation "
+              disabled={false}
+              speed={6}
+              className="gradient-white-text"
+            />
+            {' '}
+              <ShinyText
+              text="needed. No ongoing maintenance."
               disabled={false}
               speed={6}
               className="gradient-white-text"
@@ -107,17 +121,16 @@ export default function Section07() {
           </div>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto px-2 lg:px-6">
+        <div className="w-full max-w-7xl mx-auto ">
           <div
-            className="relative text-center z-10 py-16 w-full"
+            className="relative text-center z-10  w-full py-10 lg:py-20"
             style={{
               fontFamily: 'Radio Grotesk',
               fontWeight: 400,
               fontSize: 'clamp(24px, 6vw, 43px)',
               lineHeight: '0.8',
               letterSpacing: '0%',
-              margin: '50px 0 4rem 0',
-              padding: '0.2em 0',
+             
           
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',

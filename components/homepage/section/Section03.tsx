@@ -136,13 +136,13 @@ const Section03: React.FC = () => {
   ];
 
   return (
-    <div className="relative flex flex-col justify-center items-center px-3 sm:px-4 lg:px-6 overflow-hidden">
+    <div className="relative flex flex-col justify-center items-center px-4 lg:px-6 overflow-hidden">
       {/* Single Centered Glow Effect - Responsive */}
       <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[600px] sm:w-[350px] sm:h-[750px] lg:w-[400px] lg:h-[900px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[100px] sm:blur-[120px] lg:blur-[130px] -z-10" />
       
       {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex mb-6 sm:mb-8 lg:mb-10 justify-center">
-        <div className="relative w-[95%] rounded-2xl overflow-hidden">
+        <div className="relative w-[100%] rounded-2xl overflow-hidden">
           {/* Background image container with ShineBorder */}
           <div 
             className="relative bg-cover w-full py-4 sm:py-6 lg:py-7 rounded-2xl bg-center bg-no-repeat flex items-center justify-center z-10 overflow-hidden"
@@ -158,7 +158,7 @@ const Section03: React.FC = () => {
             />
             
             {/* Content Container */}
-            <div className="relative z-10 max-w-5xl w-full text-center px-2">
+            <div className="relative z-10 max-w-5xl w-full text-center ">
               {/* Main Heading */}
               <div
                 className="relative text-center z-10 py-3 sm:py-4 lg:py-6"
@@ -238,7 +238,7 @@ const Section03: React.FC = () => {
       </div>
         
       {/* Comparison Section */}
-      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl p-4 sm:p-8 lg:p-12 overflow-hidden">
+      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl  lg:p-12 overflow-hidden">
         {/* Content */}
         <div className="relative z-10">
           {/* Main headline */}

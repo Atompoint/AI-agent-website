@@ -42,7 +42,7 @@ const Section13: React.FC = () => {
   }
 
   return (
-    <div className="text-white">
+    <div className="text-white px-4">
       {/* Signature Section with Purple Background Image */}
       <div className="relative overflow-hidden rounded-[10px] mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1200px] h-[280px] sm:h-[300px] md:h-[260px] lg:h-[250px] flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
   {/* Background Image */}
@@ -54,7 +54,7 @@ const Section13: React.FC = () => {
   />
 
   {/* Content */}
-  <div className="relative z-10 w-full px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-4 lg:py-8">
+  <div className="relative z-10 w-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-4 lg:py-8">
     <div className="flex flex-col lg:flex-row items-center justify-between gap-3 md:gap-6 lg:gap-9 w-full max-w-8xl mx-auto">
       {/* Left text */}
       <div className="flex-1 flex justify-center lg:justify-end text-center lg:text-right px-0">

@@ -46,7 +46,7 @@ export default function HeroHeader() {
     <div>
       {/* Hero Section - Full Height with Background */}
      
-      <section className="relative w-full min-h-[20vh] lg:min-h-screen overflow-visible">
+      <section className="relative w-full min-h-[50vh] lg:min-h-screen overflow-visible pb-5 sm:pb-10 md:pb-13 lg:pb-20">
   {/* Background Image */}
   <div
     className="absolute inset-0 w-full min-h-full z-0"
@@ -61,7 +61,7 @@ export default function HeroHeader() {
   <div
     className="absolute inset-0 w-full min-h-full z-10"
     style={{
-      background: `linear-gradient(to bottom, transparent 0%, transparent 85%, #01000C 92%, #01000C 100%)`,
+      background: `linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.1) 70%, rgba(1,0,12,0.3) 80%, rgba(1,0,12,0.6) 90%, #01000C 100%)`,
     }}
   />
 
@@ -71,12 +71,12 @@ export default function HeroHeader() {
   </div>
 
   {/* Main Content Container */}
-  <div className="relative z-20 w-full flex flex-col justify-between " style={{ minHeight: 'calc(100vh - 80px)' }}>
+  <div className="relative z-20 w-full flex flex-col justify-between " style={{ minHeight: 'calc(55vh - 80px)' }}>
     {/* Text Content */}
-    <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-20">
+    <div className="flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-20">
       {/* Label */}
       <div
-        className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
+        className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full  mb-4 lg:mb-6"
         style={{
           border: '1px solid #FFFFFF12',
           backdropFilter: 'blur(3px)',
@@ -90,14 +90,14 @@ export default function HeroHeader() {
 
       {/* Main Heading */}
       <div
-        className="relative z-10 mb-6"
+        className="relative z-10 mb-4 lg:mb-6"
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
           fontSize: 'clamp(16px, 5vw, 52px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
-          padding: '0.2em 0',
+        
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -140,7 +140,7 @@ export default function HeroHeader() {
         />
 
   {/* Glow + Main1 Container (locked together) */}
-  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 scale-130 ">
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center scale-135 ">
     
     {/* Glow behind Main1 */}
     <div className="absolute  w-full -translate-y-[24%]">
@@ -167,7 +167,7 @@ export default function HeroHeader() {
         alt="main image"
         width={1500}  // Increased to 1500px
         height={1500} // Increased to 1500px
-        className="w-full h-auto object-contain rounded-2xl relative z-10 "
+        className="w-full h-auto object-contain rounded-md lg:rounded-2xl relative z-80 "
         priority
       />
     </div>

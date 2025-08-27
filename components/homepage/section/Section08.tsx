@@ -77,20 +77,19 @@ const Section08: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="container mx-auto px-6 ">
+      <div className="container mx-auto px-4 ">
         {/* Header */}
         
         <div className="relative text-center z-10 mb-8 sm:mb-12 lg:mb-15">
-          <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight lg:leading-[0.8] tracking-normal capitalize"
+          <div className='py-10'
             style={{
               fontFamily: 'Radio Grotesk',
               fontSize: 'clamp(24px, 6vw, 43px)',
               fontWeight: 400,
               lineHeight: '0.8',
               letterSpacing: '0%',
-              margin: '50px 0 4rem 0',
-              padding: '0.2em 0',
-             
+              
+              
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
@@ -121,7 +120,7 @@ const Section08: React.FC = () => {
           {/* Glow Effect - Responsive */}
           <div className="absolute top-[5rem]  lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] lg:blur-[100px] -z-10" />
           
-          <div className="flex justify-center max-w-7xl mx-auto relative px-2 ">
+          <div className="flex justify-center max-w-7xl mx-auto relative ">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-3 w-full">
               {features.map((feature: Feature, index: number) => (
                 <div key={index} className="flex items-center justify-center relative h-40  lg:h-44 w-full">
@@ -143,7 +142,7 @@ const Section08: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 ">
+      <div className="container mx-auto px-4 ">
       
 
   <div className="relative text-center z-10 mt-16 sm:mt-20 lg:mt-25 mb-8 sm:mb-10">

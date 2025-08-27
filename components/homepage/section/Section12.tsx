@@ -4,7 +4,7 @@ import ShinyText from '@/components/ui/ShinyText';
 
 const Section12 = () => {
   return (
-    <div className="px-3 sm:px-4 md:px-5 lg:px-6">
+    <div className="px-4 sm:px-4 md:px-5 lg:px-6">
       <div className="max-w-5xl mx-auto">
         {/* Main Title */}
         <div

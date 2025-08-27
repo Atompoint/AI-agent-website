@@ -27,7 +27,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
     <div className={`relative transition-all duration-500 ease-out transform ${
       isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-98'
     }`}>
-      <div className="grid grid-cols-2 gap-0 items-center min-h-[120px]">
+      <div className="grid grid-cols-2 gap-0 items-center min-h-[120px] px-4">
         
         {/* Left Side Content */}
         <div className={`flex ${position === 'left' ? 'justify-end pr-3 lg:pr-8' : 'justify-start pl-3 lg:pl-8'}`}>
@@ -243,7 +243,7 @@ const TimelineUI: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen px-5">
+    <div className="min-h-screen px-4">
       <Offer/>
       <div className="container mx-auto">
 

@@ -6,7 +6,7 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 
 const Section04 = () => {
   return (
-    <div className='flex flex-col items-center px-3 sm:px-6 md:px-8 lg:px-12 relative'>
+    <div className='flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 relative'>
       <div
         className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8"
         style={{
@@ -35,7 +35,7 @@ const Section04 = () => {
       </div> 
       
       {/* Subtitle - Responsive spacing and text */}
-      <div className='subtext1 text-center py-3 sm:py-4 md:py-5 mb-3 sm:mb-4 md:mb-5 px-2 sm:px-4'>
+      <div className='subtext1 text-center py-3 sm:py-4 md:py-5 mb-3 sm:mb-4 md:mb-5 '>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
       
