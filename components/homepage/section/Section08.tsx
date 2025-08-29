@@ -80,7 +80,7 @@ const Section08: React.FC = () => {
       <div className="container mx-auto px-4 ">
         {/* Header */}
         
-        <div className="relative text-center z-10 mb-8 sm:mb-12 lg:mb-15">
+        <div className="relative text-center z-10 mb-8 sm:mb-12 md:mb-12 lg:mb-15">
           <div className='py-10'
             style={{
               fontFamily: 'Radio Grotesk',
@@ -118,21 +118,21 @@ const Section08: React.FC = () => {
         {/* Features Grid - Responsive */}
         <div className="relative">
           {/* Glow Effect - Responsive */}
-          <div className="absolute top-[5rem]  lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] lg:blur-[100px] -z-10" />
+          <div className="absolute top-[5rem] md:top-[8rem] lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] md:w-[700px] lg:w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] md:blur-[85px] lg:blur-[100px] -z-10" />
           
           <div className="flex justify-center max-w-7xl mx-auto relative ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-3 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-3 w-full">
               {features.map((feature: Feature, index: number) => (
-                <div key={index} className="flex items-center justify-center relative h-40  lg:h-44 w-full">
+                <div key={index} className="flex items-center justify-center relative h-40 md:h-42 lg:h-44 w-full">
                   <img
                     src="/assets/images/rect2.png"
                     alt="background"
                     className="w-full h-full rounded-lg"
                   />
-                  <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-[calc(100%-2rem)] sm:w-68 text-sm sm:text-base font-medium drop-shadow-lg leading-5 sm:leading-6">
+                  <div className="absolute top-4 sm:top-6 md:top-5 left-4 sm:left-6 md:left-5 w-[calc(100%-2rem)] sm:w-68 md:w-[calc(100%-2.5rem)] text-sm sm:text-base md:text-base font-medium drop-shadow-lg leading-5 sm:leading-6 md:leading-6">
                     {feature.title}
                   </div>
-                  <p className="absolute top-16 sm:top-20 left-4 sm:left-6 right-4 sm:right-6 text-xs sm:text-sm text-gray-200 leading-relaxed line-clamp-3 sm:line-clamp-3">
+                  <p className="absolute top-16 sm:top-20 md:top-18 left-4 sm:left-6 md:left-5 right-4 sm:right-6 md:right-5 text-xs sm:text-sm md:text-sm text-gray-200 leading-relaxed line-clamp-3 sm:line-clamp-3 md:line-clamp-3">
                     {feature.description}
                   </p>
                 </div>
@@ -145,8 +145,8 @@ const Section08: React.FC = () => {
       <div className="container mx-auto px-4 ">
       
 
-  <div className="relative text-center z-10 mt-16 sm:mt-20 lg:mt-25 mb-8 sm:mb-10">
-    <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight lg:leading-[0.8] tracking-normal capitalize"
+  <div className="relative text-center z-10 mt-16 sm:mt-20 md:mt-18 lg:mt-25 mb-8 sm:mb-10 md:mb-9">
+    <div className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight md:leading-tight lg:leading-[0.8] tracking-normal capitalize"
       style={{
         fontFamily: 'Radio Grotesk',
         fontWeight: 400,
@@ -176,34 +176,32 @@ const Section08: React.FC = () => {
     </div>
   </div>
 
+  <div className="relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto relative">
+            {/* First row - responsive layout */}
+            {statistics.slice(0, 3).map((item: Statistic, index: number) => (
+              <div key={index} className={`bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-5 lg:p-4 h-20 sm:h-24 md:h-28 lg:h-84 backdrop-blur-sm flex flex-col justify-end ${index === 2 ? 'sm:col-span-2 md:col-span-2 lg:col-span-1' : ''}`}>
+                <p className="text-xs sm:text-sm md:text-base lg:subtext4 max-w-[270px] leading-4 sm:leading-5 md:leading-6">
+                  {item.description}
+                </p>
+              </div>
+            ))}
 
-        {/* Statistics Grid - Responsive */}
-        <div className="relative">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto relative">
-    {/* First row - 3 equal-width cards on lg, 2 cols on sm, 1 col on mobile */}
-    {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-      <div key={index} className="bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 h-84 backdrop-blur-sm flex flex-col justify-end">
-        <p className="subtext4 max-w-[270px] leading-6">
-          {item.description}
-        </p>
-      </div>
-    ))}
-
-    {/* Second row - 2 half-width cards on lg, stacked on sm/mobile */}
-    <div className="col-span-1 sm:col-span-2 lg:col-span-3 flex flex-col sm:flex-row gap-4">
-      <div className="w-full sm:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 sm:p-6 lg:p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
-        <p className="subheading leading-relaxed max-w-[400px]">
-          {statistics[3].description}
-        </p>
-      </div>
-      <div className="w-full sm:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-4 sm:p-6 lg:p-8 h-74 backdrop-blur-sm flex flex-col justify-end">
-        <p className="subheading max-w-[400px] leading-relaxed">
-          {statistics[4].description}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+            {/* Second row - 2 cards side by side */}
+            <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 md:gap-4">
+              <div className="w-full sm:w-1/2 md:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-6 lg:p-8 h-20 sm:h-24 md:h-28 lg:h-74 backdrop-blur-sm flex flex-col justify-end">
+                <p className="text-xs sm:text-sm md:text-base lg:subheading leading-4 sm:leading-5 md:leading-6 lg:leading-relaxed max-w-[400px]">
+                  {statistics[3].description}
+                </p>
+              </div>
+              <div className="w-full sm:w-1/2 md:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-6 lg:p-8 h-20 sm:h-24 md:h-28 lg:h-74 backdrop-blur-sm flex flex-col justify-end">
+                <p className="text-xs sm:text-sm md:text-base lg:subheading max-w-[400px] leading-4 sm:leading-5 md:leading-6 lg:leading-relaxed">
+                  {statistics[4].description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <DownArrow/>
     </div>

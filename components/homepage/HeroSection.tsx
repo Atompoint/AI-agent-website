@@ -44,11 +44,10 @@ export default function HeroHeader() {
 
   return (
     <div>
-      {/* Hero Section - Full Height with Background */}
+      {/* Hero Section - Full Height with Background and Overflow Hidden */}
      
-      <section className="relative w-full min-h-[50vh] lg:min-h-screen overflow-visible pb-5 sm:pb-10 md:pb-13 lg:pb-20">
-  {/* Background Image */}
-  <div
+      <section className="relative w-full min-h-[50vh] lg:h-[170vh] overflow-visible">
+      <div
     className="absolute inset-0 w-full min-h-full z-0"
     style={{
       backgroundImage: "url('/assets/images/bgimg.webp')",
@@ -57,125 +56,128 @@ export default function HeroHeader() {
     }}
   />
 
-  {/* Gradient Overlay */}
-  <div
-    className="absolute inset-0 w-full min-h-full z-10"
-    style={{
-      background: `linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.1) 70%, rgba(1,0,12,0.3) 80%, rgba(1,0,12,0.6) 90%, #01000C 100%)`,
-    }}
-  />
+{/* Gradient Overlay */}
+<div
+  className="absolute inset-0 w-full min-h-full z-10"
+  style={{
+    background: `linear-gradient(to bottom, transparent 0%, transparent 85%, #01000C 92%, #01000C 100%)`,
+  }}
+/>
 
-  {/* Header */}
-  <div className="relative z-30">
-    <Header />
+{/* Header */}
+<div className="relative z-30">
+  <Header />
+</div>
+
+{/* Main Content Container */}
+<div className="relative z-20 w-full flex flex-col justify-between h-full overflow-visible">
+
+  {/* Text Content */}
+  <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-10 lg:pt-20">
+    {/* Label */}
+    <div
+      className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
+      style={{
+        border: '1px solid #FFFFFF12',
+        backdropFilter: 'blur(3px)',
+        background: '#FFFFFF08',
+        lineHeight: 1.6,
+        letterSpacing: 0.4,
+      }}
+    >
+      Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+    </div>
+
+    {/* Main Heading */}
+    <div
+      className="relative z-10 mb-6"
+      style={{
+        fontFamily: 'Radio Grotesk',
+        fontWeight: 400,
+        fontSize: 'clamp(16px, 5vw, 52px)',
+        lineHeight: '0.8',
+        letterSpacing: '0%',
+        padding: '0.2em 0',
+        color: 'transparent',
+        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+      }}
+    >
+      <div>
+        <ShinyText text="World's First" speed={5} className="gradient-white-text" />
+        {' '}
+        <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />
+        {' '}
+        <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+      </div>
+      <div>
+        <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+      </div>
+      <div>
+        <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+      </div>
+    </div>
+
+    {/* Subtext */}
+    <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8 md:mb-12">
+      Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
+    </p>
   </div>
 
-  {/* Main Content Container */}
-  <div className="relative z-20 w-full flex flex-col justify-between " style={{ minHeight: 'calc(55vh - 80px)' }}>
-    {/* Text Content */}
-    <div className="flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-20">
-      {/* Label */}
-      <div
-        className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full  mb-4 lg:mb-6"
-        style={{
-          border: '1px solid #FFFFFF12',
-          backdropFilter: 'blur(3px)',
-          background: '#FFFFFF08',
-          lineHeight: 1.6,
-          letterSpacing: 0.4,
-        }}
-      >
-        Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-      </div>
-
-      {/* Main Heading */}
-      <div
-        className="relative z-10 mb-4 lg:mb-6"
-        style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(16px, 5vw, 52px)',
-          lineHeight: '0.8',
-          letterSpacing: '0%',
-        
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
-        }}
-      >
-        <div>
-          <ShinyText text="World's First" speed={5} className="gradient-white-text" />
-          {' '}
-          <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />
-          {' '}
-          <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-        </div>
-        <div>
-          <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-        </div>
-        <div>
-          <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-        </div>
-      </div>       
-
-      {/* Subtext */}
-      <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8 md:mb-12">
-        Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7 Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
-      </p>
-    </div>
-
-    <div className="w-full flex justify-center items-end relative">
   {/* Circle Image */}
-  <Image
-          src="/assets/images/mycircle.png"
-          alt="circle background"
-          width={2304}  // Increased from 1920 (20% larger)
-          height={1296} // Increased from 1080 (20% larger)
-          className="w-full h-auto object-contain scale-[1.1] "
-          priority
-        />
-
-  {/* Glow + Main1 Container (locked together) */}
-  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center scale-135 ">
-    
-    {/* Glow behind Main1 */}
-    <div className="absolute  w-full -translate-y-[24%]">
-      <Image
-        src="/assets/images/glow1.png"
-        width={1200}
-        height={900}
-        alt="glow effect"
-        className="object-contain w-full sm:max-w-[400px] md:max-w-[600px] lg:max-w-[870px]"
-        priority
-      />
-    </div>
-
-    {/* Main1 Image */}
-    <div className="relative w-full "> {/* Slightly bigger */}
-      <ShineBorder
-        borderWidth={2}
-        duration={23}
-        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-      />
-      <Image
-        src="/assets/images/main1.png"
-        alt="main image"
-        width={1500}  // Increased to 1500px
-        height={1500} // Increased to 1500px
-        className="w-full h-auto object-contain rounded-md lg:rounded-2xl relative z-80 "
-        priority
-      />
-    </div>
+  <div className="w-full flex justify-center relative overflow-visible">
+    <Image
+      src="https://cdn.prod.website-files.com/673c8623b53e085c22dcde7d/673c8790c213543ea74788a0_Red%20Circle%20No%20Glow.png"
+      alt="Circle"
+      width={800}
+      height={800}
+      className="w-full h-auto object-contain relative z-10"
+      priority
+    />
   </div>
 </div>
 
+{/* Main1 Image at Section Bottom */}
+<div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-20  overflow-visible pointer-events-none">
+
+  {/* Glow */}
+  <div className="absolute w-full -translate-y-[24%]">
+    <Image
+      src="/assets/images/glow1.png"
+      width={1200}
+      height={900}
+      alt="Glow"
+      className="object-contain w-full sm:max-w-[400px] md:max-w-[600px] lg:max-w-[870px]"
+      priority
+    />
   </div>
+
+  {/* Main1 Image with Shine */}
+  <div className="relative w-full">
+    <ShineBorder
+      borderWidth={2}
+      duration={23}
+      shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+      className="absolute inset-0 rounded-2xl pointer-events-none"
+    />
+    <Image
+      src="/assets/images/main1.png"
+      alt="Main1"
+      width={1500}
+      height={1500}
+      className="w-full h-auto object-contain rounded-md lg:rounded-2xl relative z-30"
+      priority
+    />
+  </div>
+</div>
+
 </section>
+
+
 
       {/* Section 2 */}
       <section className="relative z-30 bg-[#01000C]">

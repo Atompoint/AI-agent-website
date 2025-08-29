@@ -44,7 +44,7 @@ const Section12 = () => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-1 py-6 sm:py-8 md:py-9 lg:py-10">
           {/* Text Content */}
-          <div className="space-y-3 sm:space-y-3.5 md:space-y-4 w-full lg:w-100 subtext1 text-sm sm:text-base order-2 lg:order-1">
+          <div className="space-y-3 sm:space-y-3.5 md:space-y-4 w-full  subtext1 text-sm sm:text-base order-2 lg:order-1">
             <p>
               If you're on the fence, ask yourself: How much money have you already lost from visitors who left empty-handed?
             </p> 
