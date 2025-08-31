@@ -43,6 +43,7 @@ export default function HeroHeader() {
         gsap.to(circleRef.current, {
           rotation: 80,
           y: 160,
+          x: 70, // ← shift slightly left so rotation stays visually centered
           ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -56,7 +57,6 @@ export default function HeroHeader() {
       // Animate main1.png
       if (mainRef.current) {
         gsap.to(mainRef.current, {
-          y: -80,
           scale: 1.12,
           ease: 'none',
           scrollTrigger: {
@@ -68,19 +68,18 @@ export default function HeroHeader() {
         });
       }
 
-      // Animate heading blur
-      if (headingRef.current) {
-        gsap.to(headingRef.current, {
-          filter: 'blur(0px)',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top center',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-      }
+    
+      gsap.to(headingRef.current, {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+      
     }, sectionRef);
 
     return () => ctx.revert();
@@ -106,7 +105,7 @@ export default function HeroHeader() {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative w-full min-h-[50vh] lg:min-h-[180vh] overflow-hidden pb-20 sm:pb-28 md:pb-32 lg:pb-40"
+        className="relative w-full min-h-[50vh] lg:min-h-[180vh] overflow-hidden pb-0"
       >
         {/* Background */}
         <div
@@ -121,14 +120,14 @@ export default function HeroHeader() {
         {/* Circle.png */}
         <div
           ref={circleRef}
-          className="absolute left-1/2 top-[75%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[2000px] max-w-none"
+          className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[2000px] max-w-none"
         >
           <Image
             src="/assets/images/Circle.png"
             alt="circle background"
             width={2000}
             height={2000}
-            className="w-[2000px] h-auto object-none"
+            className="w-[2000px] h-auto object-none scale-[1.2]"
             priority
           />
         </div>
@@ -203,9 +202,9 @@ export default function HeroHeader() {
         {/* main1 */}
         <div
           ref={mainRef}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center will-change-transform"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center will-change-transform"
         >
-          <div className="absolute left-1/2 -translate-x-1/2 -top-10">
+          <div className="absolute left-1/2 -translate-x-1/2 -top-20">
             <Image
               src="/assets/images/glow.png"
               width={1400}
@@ -228,7 +227,7 @@ export default function HeroHeader() {
               alt="main image"
               width={900}
               height={700}
-              className="w-[85vw] max-w-[780px] h-auto object-contain rounded-md lg:rounded-2xl relative z-10"
+              className="w-[85vw] max-w-[780px] h-auto object-contain rounded-md lg:rounded-2xl relative z-10 p-0.5"
               priority
             />
           </div>
@@ -236,9 +235,9 @@ export default function HeroHeader() {
       </section>
 
       {/* Section 2 */}
-      <section className="relative z-30 bg-[#01000C]">
+      <section className="relative z-50 bg-[#01000C]">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
-          <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
+          <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto mt-0">
             <div className="relative group">
               <Image
                 src="/assets/icons/mymic.png"
