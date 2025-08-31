@@ -29,7 +29,6 @@ export default function HeroHeader() {
   const [isSticky, setIsSticky] = useState(false);
   const [micRef, setMicRef] = useState<HTMLDivElement | null>(null);
 
-  // Refs for GSAP
   const sectionRef = useRef<HTMLElement | null>(null);
   const circleRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -39,11 +38,11 @@ export default function HeroHeader() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Circle rotates 0 -> 40deg and moves down slightly
+      // Animate Circle
       if (circleRef.current) {
         gsap.to(circleRef.current, {
-          rotation: 40,
-          y: 120, // subtle downward drift
+          rotation: 80,
+          y: 160,
           ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -54,11 +53,11 @@ export default function HeroHeader() {
         });
       }
 
-      // main1 moves up a bit and scales up slightly
+      // Animate main1.png
       if (mainRef.current) {
         gsap.to(mainRef.current, {
-          y: -60,
-          scale: 1.08,
+          y: -80,
+          scale: 1.12,
           ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -69,7 +68,7 @@ export default function HeroHeader() {
         });
       }
 
-      // Heading gets a subtle blur
+      // Animate heading blur
       if (headingRef.current) {
         gsap.to(headingRef.current, {
           filter: 'blur(0px)',
@@ -109,7 +108,7 @@ export default function HeroHeader() {
         ref={sectionRef}
         className="relative w-full min-h-[50vh] lg:min-h-[180vh] overflow-hidden pb-20 sm:pb-28 md:pb-32 lg:pb-40"
       >
-        {/* Background gradient image */}
+        {/* Background */}
         <div
           className="absolute inset-0 w-full min-h-full z-0"
           style={{
@@ -119,22 +118,22 @@ export default function HeroHeader() {
           }}
         />
 
-        {/* Circle.png — transparent bg, 40% from top, centered, big enough that ~50% sits outside bottom (hidden) */}
+        {/* Circle.png */}
         <div
           ref={circleRef}
-          className="absolute left-1/2 top-[75%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[1400px] max-w-none"
+          className="absolute left-1/2 top-[75%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[2000px] max-w-none"
         >
           <Image
             src="/assets/images/Circle.png"
             alt="circle background"
-            width={1800}
-            height={1800}
-            className="w-[1800px] h-auto object-none"
+            width={2000}
+            height={2000}
+            className="w-[2000px] h-auto object-none"
             priority
           />
         </div>
 
-        {/* Gradient overlay to darken the bottom fade */}
+        {/* Gradient overlay */}
         <div
           className="absolute inset-0 w-full min-h-full z-10"
           style={{
@@ -143,12 +142,12 @@ export default function HeroHeader() {
           }}
         />
 
-        {/* Header above everything except main */}
+        {/* Header */}
         <div className="relative z-30">
           <Header />
         </div>
 
-        {/* Text Content — centered and stable */}
+        {/* Text */}
         <div
           ref={headingRef}
           className="relative z-30 flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-20 will-change-transform"
@@ -179,8 +178,6 @@ export default function HeroHeader() {
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
             }}
           >
             <div>
@@ -189,18 +186,10 @@ export default function HeroHeader() {
               <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
             </div>
             <div>
-              <ShinyText
-                text="Actually TALKS to Your Website Visitors &"
-                speed={5}
-                className="gradient-white-text"
-              />
+              <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
             </div>
             <div>
-              <ShinyText
-                text="Guides Them to Buy... While You Sleep!"
-                speed={5}
-                className="gradient-white-text"
-              />
+              <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
             </div>
           </div>
 
@@ -211,24 +200,22 @@ export default function HeroHeader() {
           </p>
         </div>
 
-        {/* main1 block pinned to bottom of section and above all layers */}
+        {/* main1 */}
         <div
           ref={mainRef}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center will-change-transform"
         >
-          {/* Glow behind Main1 */}
           <div className="absolute left-1/2 -translate-x-1/2 -top-10">
             <Image
-              src="/assets/images/glow1.png"
-              width={1200}
-              height={900}
+              src="/assets/images/glow.png"
+              width={1400}
+              height={1000}
               alt="glow effect"
-              className="w-[70vw] max-w-[680px] h-auto"
+              className="w-[75vw] max-w-[720px] h-auto"
               priority
             />
           </div>
 
-          {/* Main1 with shiny border */}
           <div className="relative">
             <ShineBorder
               borderWidth={2}
@@ -239,9 +226,9 @@ export default function HeroHeader() {
             <Image
               src="/assets/images/main1.png"
               alt="main image"
-              width={800}
-              height={600}
-              className="w-[80vw] max-w-[720px] h-auto object-contain rounded-md lg:rounded-2xl relative z-10"
+              width={900}
+              height={700}
+              className="w-[85vw] max-w-[780px] h-auto object-contain rounded-md lg:rounded-2xl relative z-10"
               priority
             />
           </div>
@@ -250,12 +237,9 @@ export default function HeroHeader() {
 
       {/* Section 2 */}
       <section className="relative z-30 bg-[#01000C]">
-        {/* Product Images on top of section */}
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
-          {/* Microphone Icon with sticky behavior */}
           <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
             <div className="relative group">
-              <div className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-1000"></div>
               <Image
                 src="/assets/icons/mymic.png"
                 alt="Voice Agent Microphone"
@@ -269,8 +253,8 @@ export default function HeroHeader() {
           </div>
         </div>
 
-        {/* Section 2 content */}
-        <div className="pt-[0rem] sm:pt-[0rem] md:pt-[0rem] lg:pt-[0rem] relative z-20">
+        {/* Features */}
+        <div className="pt-0 relative z-20">
           <div className="flex justify-center -mt-1 items-center px-4 relative z-20">
             <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
               <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] -rotate-90" />
@@ -279,7 +263,7 @@ export default function HeroHeader() {
           </div>
 
           <div className="mt-8 sm:mt-12 md:mt-14 lg:mt-18 px-4 sm:px-6 relative z-20">
-            <div className="max-w-full sm:max-w-[90%] md:max-w-[960px] lg:max-w-[960px] mx-auto grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 text-left">
+            <div className="max-w-full sm:max-w-[90%] md:max-w-[960px] lg:max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 text-left">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5">
                   <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center relative">
@@ -288,11 +272,11 @@ export default function HeroHeader() {
                       alt="Circle"
                       width={24}
                       height={24}
-                      className="w-full h-full object-contain rotate-alternate"
+                      className="w-full h-full object-contain"
                     />
                     <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 m-auto text-white" />
                   </div>
-                  <span className="subtext2 max-w-[calc(100%-2.5rem)]">{feature}</span>
+                  <span className="subtext2">{feature}</span>
                 </div>
               ))}
             </div>
