@@ -213,6 +213,14 @@ letter-spacing: -0.4px;
   font-family: 'Radio Grotesk', sans-serif;
 }
 
+@keyframes photon {
+  0% { transform: 'translate(0, 0)'; opacity: 0.25; }
+  25% { transform: 'translate(var(--tx), var(--ty))'; opacity: 0.85; }
+  50% { transform: 'translate(calc(var(--tx) * -0.6), calc(var(--ty) * 0.6))'; opacity: 0.35; }
+  75% { transform: 'translate(calc(var(--tx) * 0.4), calc(var(--ty) * -0.5))'; opacity: 0.7; }
+  100% { transform: 'translate(0, 0)'; opacity: 0.25; }
+}
+
 @keyframes float {
   0% {
     transform: translate(0, 0) scale(1);

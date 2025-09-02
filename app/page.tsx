@@ -1,4 +1,4 @@
-import HeroSection from "@/components/homepage/HeroSection"
+import HeroSection01 from "@/components/homepage/Herosection01"
 import Section01 from '@/components/homepage/section/Section01'
 import Section02 from "@/components/homepage/section/Section02";
 import Section03 from '@/components/homepage/section/Section03'
@@ -17,7 +17,7 @@ export default function Home() {
   return (
    <div className="w-full overflow-hidden">
    
-      <HeroSection/>
+      <HeroSection01/>
       <Section01/>
       <Section02/>
       <Section03/>

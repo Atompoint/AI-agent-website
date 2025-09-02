@@ -8,6 +8,7 @@ import { FiCheck } from 'react-icons/fi';
 import { BsStars } from 'react-icons/bs';
 import { ShineBorder } from '@/components/magicui/shine-border';
 import DownArrow from '../ui/DownArrow';
+import { Spotlight } from '@/components/ui/spotlight';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -43,7 +44,7 @@ export default function HeroHeader() {
         gsap.to(circleRef.current, {
           rotation: 80,
           y: 160,
-          x: 70, // ← shift slightly left so rotation stays visually centered
+         
           ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -107,30 +108,53 @@ export default function HeroHeader() {
         ref={sectionRef}
         className="relative w-full min-h-[50vh] lg:min-h-[180vh] overflow-hidden pb-0"
       >
-        {/* Background */}
-        <div
-          className="absolute inset-0 w-full min-h-full z-0"
-          style={{
-            backgroundImage: "url('/assets/images/bgimg.webp')",
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-          }}
-        />
+     {/* Background */}
+  <div className="relative z-80">
+    <Spotlight/>
+  </div>
+     <div className="absolute inset-0 w-full min-h-full z-0 bg-[#0a0014] overflow-hidden">
+     
 
+
+
+      {/* Photon Particles */}
+      {[...Array(30)].map((_, i) => {
+        const duration = 2 + Math.random() * 3; // Random duration between 2-5s
+        const delay = Math.random() * 5; // Random delay up to 5s
+        const size = 1 + Math.random() * 2; // Random size between 1-3px
+        const opacity = 0.4 + Math.random() * 0.6; // Random opacity between 0.4-1
+        
+        return (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: `${size}px`,
+              height: `${size}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animation: `photon ${duration}s linear ${delay}s infinite`,
+              opacity: opacity,
+            }}
+          />
+        );
+      })}
+    </div>
         {/* Circle.png */}
         <div
-          ref={circleRef}
-          className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[2000px] max-w-none"
-        >
-          <Image
-            src="/assets/images/Circle.png"
-            alt="circle background"
-            width={2000}
-            height={2000}
-            className="w-[2000px] h-auto object-none scale-[1.2]"
-            priority
-          />
-        </div>
+  ref={circleRef}
+  className="absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-0 z-[5] pointer-events-none w-screen"
+>
+  <Image
+    src="/assets/images/Circle2.png"
+    alt="circle background"
+    width={1800}       // original image width
+    height={1800}      // original image height
+    className="w-screen h-auto object-none"
+    priority
+  />
+</div>
+
 
         {/* Gradient overlay */}
         <div
