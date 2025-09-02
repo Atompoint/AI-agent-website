@@ -1,17 +1,14 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
-import ShinyText from '@/components/ui/ShinyText';
+"use client";
 import Header from '../layout/Header';
-import Image from 'next/image';
-import { FiCheck } from 'react-icons/fi';
-import { BsStars } from 'react-icons/bs';
-import { ShineBorder } from '@/components/magicui/shine-border';
-import DownArrow from '../ui/DownArrow';
-import { Spotlight } from '@/components/ui/spotlight';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import { Particles } from "@/components/magicui/particles";
+import LightRays from "@/components/ui/LightRays";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import ShinyText from "@/components/ui/ShinyText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,159 +101,98 @@ export default function HeroHeader() {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        ref={sectionRef}
-        className="relative w-full min-h-[50vh] lg:min-h-[180vh] overflow-hidden pb-0"
-      >
-     {/* Background */}
-  <div className="relative z-80">
-    <Spotlight/>
-  </div>
-     <div className="absolute inset-0 w-full min-h-full z-0 bg-[#0a0014] overflow-hidden">
-     
-
-
-
-      {/* Photon Particles */}
-      {[...Array(30)].map((_, i) => {
-        const duration = 2 + Math.random() * 3; // Random duration between 2-5s
-        const delay = Math.random() * 5; // Random delay up to 5s
-        const size = 1 + Math.random() * 2; // Random size between 1-3px
-        const opacity = 0.4 + Math.random() * 0.6; // Random opacity between 0.4-1
-        
-        return (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `photon ${duration}s linear ${delay}s infinite`,
-              opacity: opacity,
-            }}
-          />
-        );
-      })}
-    </div>
-        {/* Circle.png */}
-        <div
-  ref={circleRef}
-  className="absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-0 z-[5] pointer-events-none w-screen"
->
-  <Image
-    src="/assets/images/Circle2.png"
-    alt="circle background"
-    width={1800}       // original image width
-    height={1800}      // original image height
-    className="w-screen h-auto object-none"
-    priority
-  />
-</div>
-
-
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0 w-full min-h-full z-10"
-          style={{
-            background:
-              'linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.1) 70%, rgba(1,0,12,0.3) 80%, rgba(1,0,12,0.6) 90%, #01000C 100%)',
-          }}
-        />
-
-        {/* Header */}
-        <div className="relative z-30">
+      <section>
+<div className="absolute inset-0 h-full z-[10]">
+        <Particles />
+      </div>
+      <div className="relative z-30">
           <Header />
         </div>
-
-        {/* Text */}
         <div
-          ref={headingRef}
-          className="relative z-30 flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-20 will-change-transform"
+                className="relative z-30  flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-0 will-change-transform"
+              >
+                <div
+                  className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full mb-4 lg:mb-6"
+                  style={{
+                    border: '1px solid #FFFFFF12',
+                    backdropFilter: 'blur(3px)',
+                    background: '#FFFFFF08',
+                    lineHeight: 1.6,
+                    letterSpacing: 0.4,
+                  }}
+                >
+                  Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+                </div>
+
+                <div
+                  className="relative z-10 mb-4 lg:mb-6"
+                  style={{
+                    fontFamily: 'Radio Grotesk',
+                    fontWeight: 400,
+                    fontSize: 'clamp(16px, 5vw, 52px)',
+                    lineHeight: '0.8',
+                    color: 'transparent',
+                    background:
+                      'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  <div>
+                    <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
+                    <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
+                    <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+                  </div>
+                </div>
+
+                <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] lg:mb-[15%]">
+                  Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
+                  Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying
+                  Customers Instantly.
+                </p>
+              </div>
+      <div>
+      <ContainerScroll
+          titleComponent={
+            <>
+           <div
+          ref={circleRef}
+          className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none w-[2000px] max-w-none"
         >
-          <div
-            className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full mb-4 lg:mb-6"
-            style={{
-              border: '1px solid #FFFFFF12',
-              backdropFilter: 'blur(3px)',
-              background: '#FFFFFF08',
-              lineHeight: 1.6,
-              letterSpacing: 0.4,
-            }}
-          >
-            Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-          </div>
-
-          <div
-            className="relative z-10 mb-4 lg:mb-6"
-            style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(16px, 5vw, 52px)',
-              lineHeight: '0.8',
-              color: 'transparent',
-              background:
-                'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            <div>
-              <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
-              <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
-              <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-            </div>
-            <div>
-              <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-            </div>
-            <div>
-              <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-            </div>
-          </div>
-
-          <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8 md:mb-12">
-            Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
-            Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying
-            Customers Instantly.
-          </p>
+          <Image
+            src="/assets/images/Circle.png"
+            alt="circle background"
+            width={2000}
+            height={2000}
+            className="w-[2000px] h-auto object-none scale-[1.2]"
+            priority
+          />
         </div>
-
-        {/* main1 */}
-        <div
-          ref={mainRef}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center will-change-transform"
+            </>
+          }
         >
-          <div className="absolute left-1/2 -translate-x-1/2 -top-20">
-            <Image
-              src="/assets/images/glow.png"
-              width={1400}
-              height={1000}
-              alt="glow effect"
-              className="w-[75vw] max-w-[720px] h-auto"
-              priority
-            />
-          </div>
+          <img
+            src="/assets/images/main1.png"
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
 
-          <div className="relative">
-            <ShineBorder
-              borderWidth={2}
-              duration={23}
-              shineColor={['#C67DFF', '#3420C6', '#0079FF00']}
-              className="absolute inset-0 rounded-2xl pointer-events-none"
-            />
-            <Image
-              src="/assets/images/main1.png"
-              alt="main image"
-              width={900}
-              height={700}
-              className="w-[85vw] max-w-[780px] h-auto object-contain rounded-md lg:rounded-2xl relative z-10 p-0.5"
-              priority
-            />
-          </div>
-        </div>
-      </section>
+
+
+      </div>
+
+</section>
 
       {/* Section 2 */}
       <section className="relative z-50 bg-[#01000C]">

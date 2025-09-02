@@ -24,19 +24,21 @@ const Section01: React.FC = () => {
 
     // Scroll animation: rotate 60° and move slightly down
     gsap.to(circle, {
-      rotation: 60,
+      rotation: 200,
       y: 80, 
+      x:50,
       ease: "none",
       scrollTrigger: {
         trigger: circle,
         start: "top bottom",
         end: "bottom top",
-        scrub: 0.3,
+        scrub: 0.1,
       },
     });
   }, []);
 
   return (
+    <div>
     <section className="relative w-full h-[180vh] overflow-hidden bg-[#0a0014]">
       {/* Circle2.png overlay - 50% visible from bottom */}
       <div
@@ -45,7 +47,7 @@ const Section01: React.FC = () => {
         style={{
           width: "1600px",
           height: "auto",
-          transform: "translateX(-50%) translateY(50%)", // 50% below section
+          transform: "translateX(-50%) translateY(35%)", // 50% below section
         }}
       >
         <Image
@@ -96,7 +98,7 @@ const Section01: React.FC = () => {
           titleComponent={
             <>
               <div
-                className="relative z-30 flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-20 will-change-transform"
+                className="relative z-30  flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-0 will-change-transform"
               >
                 <div
                   className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full mb-4 lg:mb-6"
@@ -139,7 +141,7 @@ const Section01: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-8 md:mb-12">
+                <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] lg:mb-[15%]">
                   Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
                   Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying
                   Customers Instantly.
@@ -159,6 +161,179 @@ const Section01: React.FC = () => {
         </ContainerScroll>
       </div>
     </section>
+    <div className="absolute inset-0 h-full z-[10]">
+        <Particles />
+      </div>
+      <div className="relative z-30">
+          <Header />
+        </div>
+        <div
+                className="relative z-30  flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-0 will-change-transform"
+              >
+                <div
+                  className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full mb-4 lg:mb-6"
+                  style={{
+                    border: '1px solid #FFFFFF12',
+                    backdropFilter: 'blur(3px)',
+                    background: '#FFFFFF08',
+                    lineHeight: 1.6,
+                    letterSpacing: 0.4,
+                  }}
+                >
+                  Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+                </div>
+
+                <div
+                  className="relative z-10 mb-4 lg:mb-6"
+                  style={{
+                    fontFamily: 'Radio Grotesk',
+                    fontWeight: 400,
+                    fontSize: 'clamp(16px, 5vw, 52px)',
+                    lineHeight: '0.8',
+                    color: 'transparent',
+                    background:
+                      'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  <div>
+                    <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
+                    <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
+                    <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+                  </div>
+                </div>
+
+                <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] lg:mb-[15%]">
+                  Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
+                  Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying
+                  Customers Instantly.
+                </p>
+              </div>
+      <div>
+      <ContainerScroll
+          titleComponent={
+            <>
+              <Image
+          src="/assets/images/Circle2.png"
+          alt="circle background"
+          width={1600}
+          height={1600}
+          style={{ width: "1600px", height: "auto", objectFit: "cover" }}
+          priority
+        />
+            </>
+          }
+        >
+          <img
+            src="/assets/images/main1.png"
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
+
+
+
+      </div>
+
+<section>
+ <div className="absolute inset-0 h-full z-[10]">
+        <Particles />
+      </div>
+      <div className="relative z-30">
+          <Header />
+        </div>
+        <div
+                className="relative z-30  flex flex-col items-center text-center px-3 sm:px-6 md:px-10 pt-10 lg:pt-0 will-change-transform"
+              >
+                <div
+                  className="subtext1 h-[33px] px-3 lg:px-6 flex items-center justify-center rounded-full mb-4 lg:mb-6"
+                  style={{
+                    border: '1px solid #FFFFFF12',
+                    backdropFilter: 'blur(3px)',
+                    background: '#FFFFFF08',
+                    lineHeight: 1.6,
+                    letterSpacing: 0.4,
+                  }}
+                >
+                  Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+                </div>
+
+                <div
+                  className="relative z-10 mb-4 lg:mb-6"
+                  style={{
+                    fontFamily: 'Radio Grotesk',
+                    fontWeight: 400,
+                    fontSize: 'clamp(16px, 5vw, 52px)',
+                    lineHeight: '0.8',
+                    color: 'transparent',
+                    background:
+                      'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  <div>
+                    <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
+                    <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
+                    <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+                  </div>
+                  <div>
+                    <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+                  </div>
+                </div>
+
+                <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6] lg:mb-[15%]">
+                  Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
+                  Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying
+                  Customers Instantly.
+                </p>
+              </div>
+      <div>
+      <ContainerScroll
+          titleComponent={
+            <>
+              <Image
+          src="/assets/images/Circle2.png"
+          alt="circle background"
+          width={1600}
+          height={1600}
+          style={{ width: "1600px", height: "auto", objectFit: "cover" }}
+          priority
+        />
+            </>
+          }
+        >
+          <img
+            src="/assets/images/main1.png"
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
+
+
+
+      </div>
+
+</section>
+</div>
   );
 };
 
