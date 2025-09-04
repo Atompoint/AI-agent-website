@@ -61,8 +61,8 @@ export default function HeroHeader() {
         gsap.to(img, {
           rotation: "+=190",
           y: 20,
-          opacity:0.7,
-          scale: 0.8,
+          opacity:0.9,
+      
           force3D: true,
           duration: 1,
           scrollTrigger: {
@@ -157,123 +157,109 @@ export default function HeroHeader() {
           />
         </div>
 
-        {/* Main content flow - fade in after particles */}
-        <div className={`relative z-40 transition-opacity duration-700 ${
-          particlesLoaded ? 'opacity-100' : 'opacity-0'
-        }`}>
-          {/* Header */}
-          <div className="px-4 sm:px-6 md:px-10">
-            <Header />
-          </div>
+{/* Main content flow - fade in after particles */}
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-20">
+  {/* Header */}
+  <div className="flex-none">
+    <Header />
+  </div>
 
-          {/* Text content section */}
-          <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-10 lg:pt-20 ">
-            {/* Label */}
-            <div
-              className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1 mb-6"
-              style={{
-                border: "1px solid #FFFFFF12",
-                backdropFilter: "blur(3px)",
-                background: "#FFFFFF08",
-                lineHeight: 1.6,
-                letterSpacing: 0.4,
-              }}
-            >
-              Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-            </div>
-
-            <div
-              className="relative z-10 mb-6"
-              style={{
-                fontFamily: 'Radio Grotesk',
-                fontWeight: 400,
-                fontSize: 'clamp(16px, 5vw, 52px)',
-                lineHeight: '0.8',
-                letterSpacing: '0%',
-                padding: '0.2em 0',
-                color: 'transparent',
-                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                WebkitFontSmoothing: 'antialiased',
-                MozOsxFontSmoothing: 'grayscale',
-              }}
-            >
-              <div>
-                <ShinyText text="World's First" speed={5} className="gradient-white-text" />
-                {' '}
-                <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />
-                {' '}
-                <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-              </div>
-              <div>
-                <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-              </div>
-              <div>
-                <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-              </div>
-            </div>
-
-            {/* Subtext */}
-            <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
-              Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent Website Into A 24/7
-              Sales Machine That Answers Questions, Overcomes Objections & Converts Visitors Into Paying Customers—Instantly!
-            </p>
-          </div>
-
-          {/* Image section with background circle */}
-          <div className="relative w-full  lg:-mt-40">
-            {/* Background circle - FIXED CENTERING */}
-            <div className="w-full flex justify-center">
-  <div className="w-full max-w-[1400px] relative overflow-hidden">
+  {/* Text content - centered with responsive spacing */}
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 gap-6 sm:gap-8 lg:gap-5">
+    {/* Label */}
     <div
-      className="flex justify-center relative"
+      className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1"
       style={{
-        clipPath: "inset(0 0 30% 0)", // hides bottom 30% only
+        border: "1px solid #FFFFFF12",
+        backdropFilter: "blur(3px)",
+        background: "#FFFFFF08",
+        lineHeight: 1.6,
+        letterSpacing: 0.4,
       }}
+    >
+      Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+    </div>
+
+    {/* Gradient Heading - style preserved exactly */}
+    <div
+      className="relative z-10"
+      style={{
+        fontFamily: 'Radio Grotesk',
+        fontWeight: 400,
+        fontSize: 'clamp(16px, 5vw, 52px)',
+        lineHeight: '0.8',
+        letterSpacing: '0%',
+        padding: '0.2em 0',
+        color: 'transparent',
+        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+      }}
+    >
+      <div>
+        <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
+        <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
+        <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+      </div>
+      <div>
+        <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+      </div>
+      <div>
+        <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+      </div>
+    </div>
+
+    {/* Subtext */}
+    <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
+      Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
+      Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
+      Objections & Converts Visitors Into Paying Customers Instantly!
+    </p>
+  </div>
+
+  
+ <div className="flex-none flex justify-center lg:-mt-[12%]">
+  <div className="relative w-full max-w-6xl flex flex-col items-center">
+
+    {/* Circle image behind */}
+    <div
+      style={{ clipPath: "inset(0 0 30% 0)" }} // hides bottom 30% only
+      className="w-full flex justify-center z-0"
     >
       <Image
         ref={circleImageRef}
         src="/assets/images/Circle.png"
-        alt="circle background"
-        width={1800}
+        alt="circle"
+        width={2000}
         height={1800}
-        className="opacity-80 transition-opacity duration-300"
-        priority
-        onLoad={handleImageLoad}
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          display: "block",
-          position: "relative",
-        }}
+        className="w-[2400px] h-auto object-contain scale-none sm:scale-none md:scale-[1.1] lg:scale-[1.1]" // slightly increased size
+        draggable={false}
       />
     </div>
-  </div>
-</div>
 
-
-            {/* Responsive image container with proper spacing */}
-            <div className="relative w-full flex  justify-center px-2 sm:px-4 -mt-[55%] sm:-mt-[65%] md:-mt-[70%] lg:-mt-[75%]" >
-              <div className="relative z-20 w-full max-w-6xl">
-                <ContainerScroll>
-                <img
-          src='assets/images/main1.png'
+    {/* Main1 image in front, shifted 40% up relative to circle */}
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[80%] lg:-mt-[82%] z-10">
+      <ContainerScroll>
+        <img
+          src="/assets/images/main1.png"
           alt="hero"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto rounded-2xl object-cover h-full object-bottom"
           draggable={false}
         />
-                </ContainerScroll>
-              </div>
-            </div>
+      </ContainerScroll>
+    </div>
 
-            {/* Optional gradient overlay for better blending */}
-            <div className="relative h-10 bg-gradient-to-t from-[#01000C] to-transparent "></div>
-          </div>
-        </div>
+  </div>
+</div>
+
+</div>
+
+
       </section>
    
       {/* Section 2 */}

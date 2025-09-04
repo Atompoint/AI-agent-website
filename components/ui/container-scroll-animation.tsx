@@ -30,7 +30,7 @@ export const ContainerScroll = ({ children }: { children: React.ReactNode }) => 
 
   return (
     <div
-      className="relative p-2 md:p-20 "
+      className="relative p-2 md:p-20"
       ref={containerRef}
     >
       <div
