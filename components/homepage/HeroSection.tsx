@@ -30,12 +30,23 @@ export default function HeroHeader() {
   const [isSticky, setIsSticky] = useState(false);
   const [micRef, setMicRef] = useState<HTMLDivElement | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [particlesLoaded, setParticlesLoaded] = useState(false);
 
   const sectionRef = useRef<HTMLElement | null>(null);
   const circleRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLDivElement | null>(null);
   const circleImageRef = useRef<HTMLImageElement | null>(null);
+
+  // Preload particles immediately
+  useEffect(() => {
+    // Force particles to load first
+    const timer = setTimeout(() => {
+      setParticlesLoaded(true);
+    }, 50); // Small delay to ensure particles are rendered
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (!sectionRef.current || !circleImageRef.current) return;
@@ -48,9 +59,10 @@ export default function HeroHeader() {
        
         // Animate Circle with parallax effect
         gsap.to(img, {
-          rotation: "+=30",
-          y: 70,
-          scale: 0.7,
+          rotation: "+=190",
+          y: 20,
+          opacity:0.7,
+          scale: 0.8,
           force3D: true,
           duration: 1,
           scrollTrigger: {
@@ -96,22 +108,42 @@ export default function HeroHeader() {
     <div>
       <section 
         ref={sectionRef}
-        className="relative w-full bg-[#0a0014] overflow-hidden"
+        className="relative w-full  bg-[#0a0014] overflow-hidden"
       >
-        {/* Background layers - keep these absolute as they're decorative */}
-        <div className="absolute inset-0 z-0 ">
-          <Particles />
+        {/* PRIORITY: Particles Background - Render first with highest priority */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{ 
+            willChange: 'transform',
+            contain: 'layout style paint',
+            transform: 'translate3d(0,0,0)' // Force GPU layer
+          }}
+        >
+          <Particles
+            className="absolute inset-0 w-full h-full"
+            quantity={100}
+            ease={80}
+            color="#ffffff"
+            refresh={true}
+          />
         </div>
 
+        {/* Background gradient overlay - lower priority */}
         <div
           className="absolute inset-0 z-10"
           style={{
             background:
               "linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(1,0,12,0.1) 70%, rgba(1,0,12,0.3) 80%, rgba(1,0,12,0.6) 90%, #01000C 100%)",
+            willChange: 'auto', // Lower priority
           }}
         />
 
-        <div className="absolute inset-0 z-30 pointer-events-none overflow-hidden">
+        {/* Light rays - load after particles */}
+        <div 
+          className={`absolute inset-0 z-30 pointer-events-none overflow-hidden transition-opacity duration-500 ${
+            particlesLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <LightRays
             raysOrigin="top-left"
             raysColor="#ffffff"
@@ -125,8 +157,10 @@ export default function HeroHeader() {
           />
         </div>
 
-        {/* Main content flow */}
-        <div className="relative z-40">
+        {/* Main content flow - fade in after particles */}
+        <div className={`relative z-40 transition-opacity duration-700 ${
+          particlesLoaded ? 'opacity-100' : 'opacity-0'
+        }`}>
           {/* Header */}
           <div className="px-4 sm:px-6 md:px-10">
             <Header />
@@ -189,57 +223,61 @@ export default function HeroHeader() {
           </div>
 
           {/* Image section with background circle */}
-          <div className="relative w-full lg:-mt-30">
+          <div className="relative w-full  lg:-mt-40">
             {/* Background circle - FIXED CENTERING */}
             <div className="w-full flex justify-center">
-              <div className="w-full max-w-[1400px]">
-                <div className="flex justify-center">
-                  <Image
-                    ref={circleImageRef}
-                    src="/assets/images/Circle2.png"
-                    alt="circle background"
-                    width={1800}
-                    height={1800}
-                    className="opacity-80 transition-opacity duration-300"
-                    priority
-                    onLoad={handleImageLoad}
-                    style={{
-                      
-                    
-                      maxWidth: '100%',
-                      height: 'auto',
-                      display: 'block',
-                      position: 'relative'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
+  <div className="w-full max-w-[1400px] relative overflow-hidden">
+    <div
+      className="flex justify-center relative"
+      style={{
+        clipPath: "inset(0 0 30% 0)", // hides bottom 30% only
+      }}
+    >
+      <Image
+        ref={circleImageRef}
+        src="/assets/images/Circle.png"
+        alt="circle background"
+        width={1800}
+        height={1800}
+        className="opacity-80 transition-opacity duration-300"
+        priority
+        onLoad={handleImageLoad}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          display: "block",
+          position: "relative",
+        }}
+      />
+    </div>
+  </div>
+</div>
 
-            {/* 40% gap calculation: Circle height * 0.4 as negative margin */}
-            <div className="relative w-full flex justify-center px-4 -mt-[20%] sm:-mt-[30%]  lg:-mt-[45%]" >
-              <div className="relative z-20">
+
+            {/* Responsive image container with proper spacing */}
+            <div className="relative w-full flex  justify-center px-2 sm:px-4 -mt-[55%] sm:-mt-[65%] md:-mt-[70%] lg:-mt-[75%]" >
+              <div className="relative z-20 w-full max-w-6xl">
                 <ContainerScroll>
-                  <img
-                    src='/assets/images/main1.png'
-                    alt="hero"
-                    height={720}
-                    width={1400}
-                    className="mx-auto rounded-2xl object-cover h-full object-left-top shadow-2xl "
-                    draggable={false}
-                  />
+                <img
+          src='assets/images/main1.png'
+          alt="hero"
+          height={720}
+          width={1400}
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
+        />
                 </ContainerScroll>
               </div>
             </div>
 
             {/* Optional gradient overlay for better blending */}
-            <div className="relative h-20 bg-gradient-to-t from-[#01000C] to-transparent mt-8"></div>
+            <div className="relative h-10 bg-gradient-to-t from-[#01000C] to-transparent "></div>
           </div>
         </div>
       </section>
    
       {/* Section 2 */}
-      <section className="relative z-50 bg-[#01000C]">
+      <section className="relative z-50 bg-[#01000C] ">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
           <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
             <div className="relative group">

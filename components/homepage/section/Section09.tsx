@@ -49,7 +49,7 @@ const Section09 = () => {
             {/* Left column - text */}
             <div className="space-y-3 sm:space-y-4 md:space-y-4 subtext1 p-2 md:p-3 lg:p-2 order-2 md:order-1">
               <p >
-                As the world's first smart voice AI agent for websites, we're offering 
+                As the world's first <strong>smart voice AI</strong>  agent for websites, we're offering 
                 this exclusive founding member discount to help early adopters get 
                 maximum advantage over their competitors.
               </p>
