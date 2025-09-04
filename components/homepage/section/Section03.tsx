@@ -221,6 +221,7 @@ const Section03: React.FC = () => {
                           width={stat.centerIconSize.width}
                           height={stat.centerIconSize.height}
                           className="w-full h-full object-contain"
+                          
                         />
                       </div>
                     </div>
@@ -277,7 +278,7 @@ const Section03: React.FC = () => {
           </div>
 
           {/* Dynamic Comparison Grid with Center Lines */}
-          <div className="w-full max-w-5xl mb-12 sm:mb-16 lg:mb-20 mx-auto relative">
+          <div className="w-full max-w-5xl mb-12 sm:mb-16 lg:mb-20 px-3 mx-auto relative">
             {/* Center vertical line - Hidden on mobile */}
             <div className="hidden sm:block absolute left-1/2 top-0 w-[0.2px] h-full bg-white/10 transform -translate-x-1/2 z-20"></div>
             
@@ -301,7 +302,7 @@ const Section03: React.FC = () => {
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Fixed Header Section - Always at top */}
                     <div className="flex-shrink-0 mb-3 sm:mb-4">
-                      <div className="flex flex-col items-start">
+                      <div className="flex flex-col items-start lg:items-start">
                         <Image 
                           src={item.icon} 
                           alt={`${item.title} icon`} 
@@ -309,8 +310,8 @@ const Section03: React.FC = () => {
                           width={40} 
                           className={`${
                             item.id === 4 
-                              ? 'w-[45px] h-[45px] sm:w-[50px] sm:h-[50px] md:w-[52px] md:h-[52px] lg:w-[55px] lg:h-[55px] mb-3'
-                              : 'w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[47px] md:h-[47px] lg:w-[50px] lg:h-[50px] mb-3'
+                              ? 'w-[45px] h-[45px] sm:w-[50px] sm:h-[50px]  md:w-[52px] md:h-[52px] lg:w-[55px] lg:h-[55px] mb-3'
+                              : 'w-[40px] h-[40px] sm:w-[45px] sm:h-[45px]  md:w-[47px] md:h-[47px] lg:w-[50px] lg:h-[50px] mb-3'
                           }`}
                         />
                         {item.id === 4 ? (
