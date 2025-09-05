@@ -235,7 +235,7 @@ export default function HeroHeader() {
         alt="circle"
         width={2000}
         height={1800}
-        className="w-[2400px] h-auto object-contain scale-none sm:scale-none md:scale-[1.1] lg:scale-[1.1]" // slightly increased size
+        className="w-[1900px] h-auto object-contain scale-none sm:scale-none md:scale-[1.1] lg:scale-[1.1]" // slightly increased size
         draggable={false}
       />
     </div>
@@ -263,7 +263,7 @@ export default function HeroHeader() {
       </section>
    
       {/* Section 2 */}
-      <section className="relative z-50 bg-[#01000C] ">
+      <section className="relative z-50 bg-[#01000C] -mt-[5%]">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
           <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
             <div className="relative group">
@@ -293,7 +293,7 @@ export default function HeroHeader() {
             <div className="max-w-full sm:max-w-[90%] md:max-w-[960px] lg:max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 text-left">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5">
-                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 flex items-center justify-center relative">
+                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 flex items-center justify-center relative">
                     <Image
                       src="/assets/icons/onlycircle.svg"
                       alt="Circle"
@@ -301,7 +301,7 @@ export default function HeroHeader() {
                       height={24}
                       className="w-full h-full object-contain"
                     />
-                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 m-auto text-white" />
+                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 m-auto text-white" />
                   </div>
                   <span className="subtext2">{feature}</span>
                 </div>

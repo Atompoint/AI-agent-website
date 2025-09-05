@@ -176,7 +176,7 @@ letter-spacing: -0.4px;
 
 .num1{
  font-size: clamp(30px, 6vw, 60px);
- font-weight: 500;
+ font-weight: 600;
 }
 
 .percentage{
@@ -201,7 +201,7 @@ letter-spacing: -0.4px;
 }
 
 .gradient-white-text {
-  background: linear-gradient(95.14deg, #50525F 4.45%, #FFFFFF 29.02%, #FFFFFF 60.85%, #9698A6 95.61%);
+  background: linear-gradient(95.14deg,rgb(187, 190, 211) 4.45%, #FFFFFF 29.02%, #FFFFFF 60.85%, #9698A6 95.61%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

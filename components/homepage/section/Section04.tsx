@@ -6,7 +6,7 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 
 const Section04 = () => {
   return (
-    <div className='flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 relative'>
+    <div className='flex flex-col items-center px-3 sm:px-3 md:px-8 lg:px-12 relative'>
       <div
         className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8"
         style={{
@@ -40,7 +40,7 @@ const Section04 = () => {
       </div>
       
       {/* Image Container with Glow Effect - Responsive sizing */}
-      <div className="relative w-full max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[900px]">
+      <div className="relative w-full max-w-[900px]">
        
 
         {/* Alternative CSS Glow if image doesn't exist - Responsive sizing */}
@@ -59,7 +59,7 @@ const Section04 = () => {
                         width={1200}
                         height={900}
                         alt="product web image"
-                        className="object-contain w-full h-auto relative z-10 sm:rounded-xl rounded-2xl"
+                        className="object-contain w-full h-auto relative z-10  rounded-2xl"
                         priority
                       />
         </div>

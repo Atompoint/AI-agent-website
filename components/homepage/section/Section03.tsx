@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
@@ -17,9 +19,28 @@ interface ComparisonItem {
   features: (string | React.ReactNode)[];
 }
 
+interface StatisticItem {
+  id: number;
+  icon: string;
+  centerIcon: string;
+  alt: string;
+  centerAlt: string;
+  iconSize: { height: number; width: number };
+  centerIconSize: { width: number; height: number };
+  containerClass: string;
+  centerIconContainerClass: string;
+  textLines: string[];
+}
+
 const Section03: React.FC = () => {
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const [isUserScrolling, setIsUserScrolling] = useState<boolean>(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   // Dynamic data array for statistics cards
-  const statisticsData = [
+  const statisticsData: StatisticItem[] = [
     {
       id: 1,
       icon: '/assets/icons/onlycircle.svg',
@@ -57,9 +78,9 @@ const Section03: React.FC = () => {
       alt: 'wings',
       centerAlt: 'Wings Icon',
       iconSize: { height: 75, width: 75 },
-      centerIconSize: { width: 32, height: 32 }, // Increased from 24x24
+      centerIconSize: { width: 32, height: 32 },
       containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
-      centerIconContainerClass: 'w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12', // Increased container
+      centerIconContainerClass: 'w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12',
       textLines: [
         "You lose an average of $1,430 for every",
         "1,000 visitors who leave confused"
@@ -72,7 +93,7 @@ const Section03: React.FC = () => {
     {
       id: 1,
       title: "Traditional Live Chat",
-      icon: "assets/icons/Mask.svg",
+      icon: "/assets/icons/Mask.svg",
       bulletColor: "white",
       textColor: "white/80",
       backgroundColor: "transparent",
@@ -88,7 +109,7 @@ const Section03: React.FC = () => {
     {
       id: 2,
       title: "Text-Based Chatbots",
-      icon: "assets/icons/bot.svg",
+      icon: "/assets/icons/bot.svg",
       bulletColor: "white",
       textColor: "gray-300",
       backgroundColor: "transparent",
@@ -104,7 +125,7 @@ const Section03: React.FC = () => {
     {
       id: 3,
       title: "VoiceAgent AI",
-      icon: "assets/icons/AI.svg",
+      icon: "/assets/icons/AI.svg",
       bulletColor: "white",
       textColor: "gray-100",
       backgroundColor: "transparent",
@@ -121,7 +142,7 @@ const Section03: React.FC = () => {
     {
       id: 4,
       title: "Do Nothing (Current Situation)",
-      icon: "assets/icons/none.svg",
+      icon: "/assets/icons/none.svg",
       bulletColor: "white",
       textColor: "gray-100",
       backgroundColor: "transparent",
@@ -134,6 +155,117 @@ const Section03: React.FC = () => {
       ]
     }
   ];
+
+  // Clear existing timeouts
+  const clearTimeouts = useCallback(() => {
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = null;
+    }
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+  }, []);
+
+  // Navigate to specific slide with proper state management
+  const goToSlide = useCallback((index: number): void => {
+    const container = containerRef.current || document.getElementById('carousel-container');
+    if (container && index >= 0 && index < comparisonData.length) {
+      const cardWidth = container.clientWidth;
+      container.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setActiveSlide(index);
+    }
+  }, [comparisonData.length]);
+
+  // Handle scroll for carousel with debouncing
+  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>): void => {
+    const container = e.currentTarget;
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = container.clientWidth;
+    const newActiveSlide = Math.round(scrollLeft / cardWidth);
+    
+    // Only update if the slide actually changed
+    if (newActiveSlide !== activeSlide && newActiveSlide >= 0 && newActiveSlide < comparisonData.length) {
+      setActiveSlide(newActiveSlide);
+    }
+    
+    // Mark that user is manually scrolling
+    setIsUserScrolling(true);
+    
+    // Clear existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    // Reset user scrolling flag after delay
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 3000); // Reduced from 5000 to 3000 for better responsiveness
+  }, [activeSlide, comparisonData.length]);
+
+  // Handle dot click with proper state management
+  const handleDotClick = useCallback((index: number): void => {
+    clearTimeouts();
+    setIsUserScrolling(true);
+    goToSlide(index);
+    
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 3000);
+  }, [goToSlide, clearTimeouts]);
+
+  // Auto-scroll effect for mobile carousel
+  useEffect(() => {
+    const setupAutoScroll = () => {
+      // Clear any existing interval
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+
+      // Only run auto-scroll on small screens and when user is not manually scrolling
+      if (typeof window !== 'undefined' && window.innerWidth < 768 && !isUserScrolling) {
+        autoScrollIntervalRef.current = setInterval(() => {
+          setActiveSlide(prev => {
+            const nextSlide = (prev + 1) % comparisonData.length;
+            // Use setTimeout to ensure state update happens first
+            setTimeout(() => {
+              goToSlide(nextSlide);
+            }, 0);
+            return nextSlide;
+          });
+        }, 3000); // Increased from 3000 to 4000 for better user experience
+      }
+    };
+
+    setupAutoScroll();
+
+    // Listen for window resize
+    const handleResize = () => {
+      setupAutoScroll();
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
+
+    return () => {
+      clearTimeouts();
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
+  }, [isUserScrolling, comparisonData.length, goToSlide, clearTimeouts]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeouts();
+    };
+  }, [clearTimeouts]);
 
   return (
     <div className="relative flex flex-col justify-center items-center px-4 lg:px-6 overflow-hidden">
@@ -161,7 +293,7 @@ const Section03: React.FC = () => {
             <div className="relative z-10 max-w-5xl w-full text-center ">
               {/* Main Heading */}
               <div
-                className="relative text-center z-10 py-3 sm:py-4 lg:py-6"
+                className="relative text-center px-3 z-10 py-3 sm:py-4 lg:py-6"
                 style={{
                   fontFamily: 'Radio Grotesk',
                   fontWeight: 400,
@@ -221,7 +353,6 @@ const Section03: React.FC = () => {
                           width={stat.centerIconSize.width}
                           height={stat.centerIconSize.height}
                           className="w-full h-full object-contain"
-                          
                         />
                       </div>
                     </div>
@@ -239,7 +370,7 @@ const Section03: React.FC = () => {
       </div>
         
       {/* Comparison Section */}
-      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl  lg:p-12 overflow-hidden">
+      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl lg:p-12 overflow-hidden">
         {/* Content */}
         <div className="relative z-10">
           {/* Main headline */}
@@ -277,65 +408,68 @@ const Section03: React.FC = () => {
             </div>
           </div>
 
-          {/* Dynamic Comparison Grid with Center Lines */}
+          {/* Comparison Grid/Carousel Container */}
           <div className="w-full max-w-5xl mb-12 sm:mb-16 lg:mb-20 px-3 mx-auto relative">
-            {/* Center vertical line - Hidden on mobile */}
-            <div className="hidden sm:block absolute left-1/2 top-0 w-[0.2px] h-full bg-white/10 transform -translate-x-1/2 z-20"></div>
-            
-            {/* Center horizontal line - Hidden on mobile */}
-            <div className="hidden sm:block absolute top-1/2 left-0 w-full h-[0.2px] bg-white/10 transform -translate-y-1/2 z-20"></div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
-              {comparisonData.map((item: ComparisonItem, index: number) => (
-                <div 
-                  key={item.id}
-                  className={`
-                    ${item.backgroundColor} 
-                    rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 md:h-80 lg:h-80 relative overflow-hidden
-                  `}
-                >
-                  {/* Gradient overlay for special sections */}
-                  {item.backgroundColor.includes('gradient') && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20"></div>
-                  )}
-                  
-                  <div className="relative z-10 flex flex-col h-full">
-                    {/* Fixed Header Section - Always at top */}
-                    <div className="flex-shrink-0 mb-3 sm:mb-4">
-                      <div className="flex flex-col items-start lg:items-start">
-                        <Image 
-                          src={item.icon} 
-                          alt={`${item.title} icon`} 
-                          height={40} 
-                          width={40} 
-                          className={`${
-                            item.id === 4 
-                              ? 'w-[45px] h-[45px] sm:w-[50px] sm:h-[50px]  md:w-[52px] md:h-[52px] lg:w-[55px] lg:h-[55px] mb-3'
-                              : 'w-[40px] h-[40px] sm:w-[45px] sm:h-[45px]  md:w-[47px] md:h-[47px] lg:w-[50px] lg:h-[50px] mb-3'
-                          }`}
-                        />
-                        {item.id === 4 ? (
-                          <ShinyText text={item.title} speed={5} className="subtext3 gradient-text-white text-start" />
-                        ) : (
-                          <ShinyText speed={5} className="subtext3 gradient-text-white text-start" text={item.title} />
-                        )}
-                      </div>
-                    </div>
+            {/* Desktop/Tablet Grid (md and up) - Hidden on sm */}
+            <div className="hidden md:block">
+              {/* Center vertical line */}
+              <div className="absolute left-1/2 top-0 w-[0.2px] h-full bg-white/10 transform -translate-x-1/2 z-20"></div>
+              
+              {/* Center horizontal line */}
+              <div className="absolute top-1/2 left-0 w-full h-[0.2px] bg-white/10 transform -translate-y-1/2 z-20"></div>
+              
+              <div className="grid grid-cols-2 gap-8 lg:gap-10">
+                {comparisonData.map((item: ComparisonItem) => (
+                  <ComparisonCard key={item.id} item={item} />
+                ))}
+              </div>
+            </div>
 
-                    {/* Features List - Takes remaining space */}
-                    <div className="flex-1">
-                      <ul className={`space-y-2 sm:space-y-3 subtext1 text-start`}>
-                        {item.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <div className={`w-1 h-1 bg-${item.bulletColor} rounded-full mt-1.5 mr-2 flex-shrink-0`}></div>
-                            {typeof feature === 'string' ? <span>{feature}</span> : feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+            {/* Mobile Carousel (sm only) - Visible only on sm */}
+            <div className="block md:hidden">
+              {/* Horizontal Scroll Container */}
+              <div
+                id="carousel-container"
+                ref={containerRef}
+                className="flex overflow-x-scroll snap-x snap-mandatory"
+                style={{
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  WebkitOverflowScrolling: 'touch',
+                }}
+                onScroll={handleScroll}
+              >
+                <style jsx>{`
+                  #carousel-container::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+                {comparisonData.map((item: ComparisonItem) => (
+                  <div
+                    key={item.id}
+                    className="flex-shrink-0 w-full snap-start px-2"
+                  >
+                    <ComparisonCard item={item} isMobile={true} />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Dot Indicators - Simplified for stable animation */}
+              <div className="flex justify-center items-center mt-0 gap-3">
+                {comparisonData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleDotClick(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ease-out ${
+                      index === activeSlide
+                        ? 'bg-white scale-125 shadow-md'
+                        : 'bg-white/40 hover:bg-white/60'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                    type="button"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -398,6 +532,66 @@ const Section03: React.FC = () => {
       
       {/* Down Arrow */}
       <DownArrow/>
+    </div>
+  );
+};
+
+// Extracted ComparisonCard component for reusability
+interface ComparisonCardProps {
+  item: ComparisonItem;
+  isMobile?: boolean;
+}
+
+const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false }) => {
+  return (
+    <div 
+      className={`
+        ${item.backgroundColor} 
+        rounded-xl p-4 sm:p-6 lg:p-8 ${
+          isMobile ? 'h-80' : 'h-64 sm:h-72 md:h-80 lg:h-80'
+        } relative overflow-hidden
+      `}
+    >
+      {/* Gradient overlay for special sections */}
+      {item.backgroundColor.includes('gradient') && (
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20"></div>
+      )}
+      
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Fixed Header Section - Always at top */}
+        <div className="flex-shrink-0 mb-3 sm:mb-4">
+          <div className="flex flex-col items-start lg:items-start">
+            <Image 
+              src={item.icon} 
+              alt={`${item.title} icon`} 
+              height={40} 
+              width={40} 
+              className={`${
+                item.id === 4 
+                  ? 'w-[45px] h-[45px] sm:w-[50px] sm:h-[50px] md:w-[52px] md:h-[52px] lg:w-[55px] lg:h-[55px] mb-3'
+                  : 'w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[47px] md:h-[47px] lg:w-[50px] lg:h-[50px] mb-3'
+              }`}
+            />
+            {item.id === 4 ? (
+              <ShinyText text={item.title} speed={5} className="subtext3 gradient-text-white text-start" />
+            ) : (
+              <ShinyText speed={5} className="subtext3 gradient-text-white text-start" text={item.title} />
+            )}
+          </div>
+        </div>
+
+        {/* Features List - Takes remaining space */}
+        <div className="flex-1">
+          <ul className="space-y-2 sm:space-y-3 subtext1 text-start">
+            {item.features.map((feature, featureIndex) => (
+              <li key={featureIndex} className="flex items-start">
+                <div className="w-1 h-1 bg-white rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
+                {typeof feature === 'string' ? <span>{feature}</span> : feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
