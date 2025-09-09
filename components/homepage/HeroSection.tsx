@@ -60,8 +60,8 @@ export default function HeroHeader() {
         // Animate Circle with parallax effect
         gsap.to(img, {
           rotation: "+=190",
-          y: 20,
-          opacity:0.9,
+          y: 30,
+          opacity:0.7,
       
           force3D: true,
           duration: 1,
@@ -158,7 +158,7 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-20">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-30">
   {/* Header */}
   <div className="flex-none">
     <Header />
@@ -221,7 +221,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center lg:-mt-[12%]">
+ <div className="flex-none flex justify-center lg:-mt-[15%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
@@ -241,14 +241,15 @@ export default function HeroHeader() {
     </div>
 
     {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[80%] lg:-mt-[82%] z-10">
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[80%] lg:-mt-[85%] z-10">
       <ContainerScroll>
+     
         <img
           src="/assets/images/main1.png"
           alt="hero"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-bottom"
+          className="mx-auto rounded-2xl object-cover h-full object-bottom "
           draggable={false}
         />
       </ContainerScroll>

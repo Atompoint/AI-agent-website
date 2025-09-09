@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Questrial } from "next/font/google";
+import 'flowbite';
 
 import "./globals.css";
 

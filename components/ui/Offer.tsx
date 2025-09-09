@@ -5,7 +5,7 @@ import ShinyText from '@/components/ui/ShinyText';
 
 const Offer = () => {
   return (
-    <div className="mx-auto text-center mb-6 px-2 lg:px-12 py-4">
+    <div className="mx-auto text-center px-2 lg:px-12 pt-4">
       <div
         className="relative text-center z-10"
         style={{
@@ -14,8 +14,6 @@ const Offer = () => {
           fontSize: 'clamp(24px, 6vw, 43px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
-          margin: '0 0 -0.5rem 0',
-          padding: '0.2em 0',
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -35,9 +33,9 @@ const Offer = () => {
         </div>
       </div>
       
-      <div className='py-4 lg:py-8'>
+      <div >
         {/* CTA Button Section */}
-        <div className="mb-6 sm:mb-8">
+        <div className='py-5'>
           <div className="relative inline-block rounded-full overflow-visible">
             {/* Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#C67DFF] via-[#3420C6] to-[#0079FF] blur-sm opacity-50 scale-100"></div>
@@ -45,7 +43,7 @@ const Offer = () => {
             {/* Button Background */}
             <div className="relative rounded-full p-[2px]">
               {/* Actual Button */}
-              <button className="relative inline-flex items-center justify-center px lg:px-5 py-3 sm:py-4 lg:py-5 bg-black rounded-full transition-all duration-300 hover:scale-100">
+              <button className="relative inline-flex items-center justify-center px lg:px-5 py-3 sm:py-4 lg:py-6 cursor-pointer bg-black rounded-full transition-all duration-300 hover:scale-100">
                 <p className="GetStarted transition-all duration-300 hover:scale-104 px-4">
                   GET STARTED WITH VOICER - INSTANT ACCESS
                 </p> 
@@ -63,7 +61,7 @@ const Offer = () => {
         </div>
 
         {/* Payment Card Image */}
-        <div className="w-full h-full flex justify-center items-center -mt-3 sm:-mt-4 lg:-mt-5">
+        <div className="w-full h-full flex justify-center items-center">
           <Image 
             src="/assets/images/card.svg" 
             alt="Payment Card" 

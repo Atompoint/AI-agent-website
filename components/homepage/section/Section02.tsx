@@ -71,16 +71,16 @@ const Section02 = () => {
             <div
               key={index}
               className={`
-                relative flex flex-col lg:flex-row gap-12 
-                text-white justify-center items-center py-8 
+                relative flex flex-col lg:flex-row gap-15
+                text-white justify-center items-center py-15
                 rounded-xl
                 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}
               `}
             >
               {/* Text Section */}
-              <div className="w-full md:w-[430px] lg:w-[430px] flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="w-full md:w-[430px] lg:w-[415px] flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div 
-                  className="Heading3 mb-5 leading-tight lg:leading-[38px]"
+                  className="text-[26px] md:text-[30px] lg:text-[32px]  font-semibold mb-3 leading-tight lg:leading-[38px]"
                 >
                   <ShinyText 
                     disabled={false} 
@@ -89,7 +89,7 @@ const Section02 = () => {
                   >
                     {section.title}
                   </ShinyText>
-                </div>
+                </div> 
                 <div className="space-y-4 max-w-none md:max-w-[450px] lg:max-w-[430px]">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p 
@@ -100,14 +100,14 @@ const Section02 = () => {
                     </p>
                   ))}
                 </div>
-              </div>
+              </div> 
 
               {/* Image Section */}
               <div className="
                 w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[460px] 
                 h-48 sm:h-56 md:h-64 lg:h-[350px] 
                 rounded-[7px] bg-[#797979] 
-                flex items-center justify-center 
+                fl ex items-c enter justify-center 
                 flex-shrink-0 backdrop-blur-sm 
                 border border-gray-700/30 
                 hover:border-gray-600/50 
@@ -115,7 +115,7 @@ const Section02 = () => {
               ">
                 {/* Placeholder for image/content */}
               </div>
-            </div>
+            </div> 
           ))}
           
         </div>
@@ -127,4 +127,4 @@ const Section02 = () => {
   );
 };
 
-export default Section02;
+export default Section02;               

@@ -6,19 +6,6 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 
 const Section05: React.FC = () => {
 
-  // First row content
-  const firstRowText = [
-    "VoiceAgent AI is the world's first conversational website assistant that your visitors can actually TALK to just like they're calling your business directly.",
-    "But here's where it gets incredible...",
-    "Not only does it respond with human-like speech in real-time, it can actually NAVIGATE your website while talking to your visitors, showing them exactly what they need to see, when they need to see it."
-  ];
-
-  // Second row content
-  const secondRowText = [
-    "Imagine having your best person available 24/7, who knows every page of your website by heart, never takes a day off, never gets tired, and can handle unlimited customers simultaneously.",
-    "That's exactly what you get with VoiceAgent AI."
-  ];
-
   // Demo section
   const demoSection = {
     mainImage: "/assets/images/main1.png",
@@ -71,59 +58,58 @@ const Section05: React.FC = () => {
           </div>
         </div> 
 
-        {/* First Row - Box first on mobile, text on left for desktop */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 py-12 sm:py-16 lg:py-20">
-          {/* Box - First on mobile/tablet */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
-            <div className="bg-[#797979] rounded-[8px] h-48 sm:h-56 lg:h-60 w-full max-w-[400px] sm:max-w-[460px] flex items-center justify-center">
-             
-            </div>
-          </div>
-          
-          {/* Text - Second on mobile/tablet, first on desktop */}
-          <div className="order-2 lg:order-1 subtext1 space-y-4 flex flex-col text-center lg:text-start justify-center px-0 lg:px-22">
-            {firstRowText.map((text, index) => (
-              <p key={index}>
-                {index === 0 ? (
-                  <>
-                    <span className="text-white font-medium">VoiceAgent AI</span> is the world's first conversational website assistant that your visitors can actually <span className="text-white font-medium">TALK</span> to just like they're calling your business directly.
-                  </>
-                ) : index === 2 ? (
-                  <>
-                    Not only does it respond with human-like speech in real-time, it can actually <span className="text-white font-medium">NAVIGATE</span> your website while talking to your visitors, showing them exactly what they need to see, when they need to see it.
-                  </>
-                ) : (
-                  text
-                )}
-              </p>
-            ))}
-          </div>
-        </div>
+        <div className="flex justify-center items-center w-full py-20">
+  <div className="max-w-[921px] w-full ">
+    {/* First Row - Text left, Box right */}
+    <div className="grid md:grid-cols-2 gap-0 items-center">
+      {/* Text Left */}
+      <div className="subtext1 leading-5 pr-8">
+      <p className="text-white font-semibold ">
+  VoiceAgent AI is the world's first conversational website assistant
+  that your visitors can actually TALK to just like they're calling your
+  business directly.
+</p>
 
-        {/* Second Row - Box first on mobile, text on right for desktop */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 py-8 lg:py-5">
-          {/* Box - First on mobile/tablet */}
-          <div className="order-1 flex justify-center lg:justify-end">
-            <div className="bg-[#797979] rounded-[8px] h-48 sm:h-56 lg:h-60 w-full max-w-[400px] sm:max-w-[470px] flex items-center justify-center">
+        <p className="leading-12">
+          But here's where it gets incredible...
+        </p>
+        <p>
+          Not only does it respond with human-like speech in real-time, it can
+          actually <span>NAVIGATE </span>your website while talking to your visitors, showing
+          them exactly what they need to see, when they need to see it.
+        </p>
+      </div>
 
-            </div>
-          </div>
-          
-          {/* Text - Second on mobile/tablet */}
-          <div className="order-2 subtext1 space-y-4 flex flex-col  text-center lg:text-start justify-center px-0 lg:px-19">
-            {secondRowText.map((text, index) => (
-              <p key={index} >
-                {index === 1 ? (
-                  <>
-                    That's exactly what you get with <span className="text-white font-medium">VoiceAgent AI</span>.
-                  </>
-                ) : (
-                  text
-                )}
-              </p>
-            ))}
-          </div>
-        </div>
+      {/* Box Right */}
+      <div className="bg-[#797979] rounded-[10px] w-[460px] h-64 flex items-center justify-center">
+        
+      </div>
+    </div>
+    
+
+ {/* Second Row - Box left, Text right */}
+<div className="grid md:grid-cols-2 items-center mt-16 gap-0">
+  {/* Box Left */}
+  <div className="bg-[#797979] rounded-[10px] w-[460px] h-64 flex items-center justify-center">
+  
+  </div>
+
+  {/* Text Right */}
+  <div className="subtext1 leading-5 pl-15 ">
+    <p>
+      Imagine having your best person available 24/7, who knows every page
+      of your website by heart, never takes a day off, never gets tired, and
+      can handle unlimited customers simultaneously.
+    </p>
+    <p className="text-white font-semibold leading-10">
+      That's exactly what you get with VoiceAgent AI.
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
       </div>
 
       {/* Demo Section Header */}

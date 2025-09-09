@@ -30,7 +30,7 @@ export const ContainerScroll = ({ children }: { children: React.ReactNode }) => 
 
   return (
     <div
-      className="relative p-2 md:p-20"
+      className="relative p-2 md:p-20 xl:p-25"
       ref={containerRef}
     >
       <div
@@ -39,6 +39,7 @@ export const ContainerScroll = ({ children }: { children: React.ReactNode }) => 
           perspective: "1000px",
         }}
       >
+        
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
@@ -70,6 +71,7 @@ export const Card = ({
       className="max-w-5xl  mx-auto  w-full 
                  border-4 border-[#6C6C6C] rounded-[30px] shadow-2xl overflow-hidden"
     >
+      
       {children}
     </motion.div>
   );
