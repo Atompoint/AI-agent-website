@@ -60,7 +60,7 @@ export default function HeroHeader() {
         // Animate Circle with parallax effect
         gsap.to(img, {
           rotation: "+=190",
-          y: 30,
+          y: 20,
           opacity:0.7,
       
           force3D: true,
@@ -158,7 +158,7 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-30">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-25">
   {/* Header */}
   <div className="flex-none">
     <Header />
@@ -221,12 +221,12 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%] xl:-mt-[5%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
     <div
-      style={{ clipPath: "inset(0 0 30% 0)" }} // hides bottom 30% only
+      style={{ clipPath: "inset(0 0 40% 0)" }} // hides bottom 30% only
       className="w-full flex justify-center z-0"
     >
       <Image
@@ -235,13 +235,13 @@ export default function HeroHeader() {
         alt="circle"
         width={2000}
         height={1800}
-        className=" lg:w-[1900px] h-auto object-contain scale-none sm:scale-none md:scale-none lg:scale-[1.1]" // slightly increased size
+        className="w-full max-w-[1500px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
         draggable={false}
       />
     </div>
 
     {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[82%] lg:-mt-[80%] z-10">
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[80%] z-10">
       <ContainerScroll>
      
         <img
@@ -264,7 +264,7 @@ export default function HeroHeader() {
       </section>
    
       {/* Section 2 */}
-      <section className="relative z-50 bg-[#01000C] -mt-[5%]">
+      <section className="relative z-50 bg-[#01000C] mt-0">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
           <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
             <div className="relative group">
