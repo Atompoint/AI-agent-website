@@ -107,15 +107,15 @@ line-height: 22.8px;
 
 .Heading1{
  font-family: 'Radio Grotesk';
- font-size: clamp(24px, 2vw, 52px);
+ font-size: clamp(24px, 6vw, 52px);
  font-weight: 400;
 
 }
 .Heading2{
  font-family: 'Radio Grotesk';
 
- font-size:clamp(24px, 2vw, 43px);
- font-weight: 400;
+ font-size:clamp(24px, 6vw, 45px);
+ font-weight: 300;
 
 }
 .Heading3{
@@ -163,7 +163,7 @@ line-height: 22.8px;
 
 .subtext4{
   font-size: clamp(9px, 6vw, 15.27px);
-   font-weight: 300;
+   font-weight: 200;
    color: white;
  letter-spacing: 0.4px;
 }

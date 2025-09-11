@@ -37,7 +37,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
           {title}
         </h3>
 
-        <div className="space-y-1.5 sm:space-y-2 md:space-y-2 mb-6 sm:mb-7 md:mb-6 lg:mb-8">
+        <div className="space-y-1.5 sm:space-y-2 md:space-y-4 mb-6 sm:mb-7 md:mb-6 lg:mb-8">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2 sm:gap-2.5 md:gap-2.5">
               <div className="text-green-500 mt-0.5 sm:mt-1 md:mt-0.5 flex-shrink-0">
@@ -129,7 +129,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
 
         
         {/* Description */}
-        <div className="space-y-3 w-full md:w-full subtext1 ">
+        <div className="space-y-2 w-full md:w-full subtext1 ">
           {description.map((paragraph, index) => (
             <p key={index}>
               {paragraph}
@@ -165,16 +165,16 @@ const Section11: React.FC = () => {
       backgroundImage: "/assets/images/rec4.png",
       features: [
         "Create Up To 3 Smart Voice Agents",
-        "500 Minutes of Voice Conversations",
+        "200 Minutes of Voice Conversations",
         "Unlimited Simultaneous Conversations",
         "24/7 Automatic Website Learning",
-        "60 Second Setup",
+        "60-Second Setup",
         "Complete Brand Customization",
         "Smart Website Navigation",
         "Real-Time Analytics Dashboard",
         "Advanced Sentiment Analysis",
         "Private & Secured Conversation History",
-        "Voice to Any Website Platform",
+        "Works on Any Website Platform",
         "Natural Interruption Handling",
         "Custom Welcome Messages",
         "Instant Objection Handling",
@@ -189,13 +189,13 @@ const Section11: React.FC = () => {
         "1,000 Minutes of Voice Conversations",
         "Unlimited Simultaneous Conversations",
         "24/7 Automatic Website Learning",
-        "60 Second Setup",
+        "60-second Setup",
         "Complete Brand Customization",
         "Smart Website Navigation",
         "Real-Time Analytics Dashboard",
         "Advanced Sentiment Analysis",
         "Private & Secured Conversation History",
-        "White-Label Website Platform",
+        "Works on any Website Platform",
         "Natural Interruption Handling",
         "Custom Welcome Messages",
         "Instant Objection Handling",
@@ -205,7 +205,7 @@ const Section11: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-4 md:px-4 lg:px-6">
+    <div className="max-w-5xl mx-auto px-4 sm:px-4 md:px-5 lg:px-6">
       {/* Hero Section */}
       <HeroSection 
        

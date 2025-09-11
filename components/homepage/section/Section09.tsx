@@ -45,30 +45,30 @@ const Section09 = () => {
             </div>
           </div>
            
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-7 items-center py-4 sm:py-6 md:py-7 lg:py-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-10 items-center py-4 sm:py-6 md:py-7 lg:py-8 px-4 sm:px-6 lg:px-25">
             {/* Left column - text */}
-            <div className="space-y-3 sm:space-y-4 md:space-y-4 subtext1 p-2 md:p-3 lg:p-2 order-2 md:order-1">
-              <p >
+            <div className="space-y-3 sm:space-y-4 md:space-y-4 subtext1 p-2 md:p-3 lg:p-2 text-center lg:text-left order-2 lg:order-1">
+              <p>
                 As the world's first <strong>smart voice AI</strong>  agent for websites, we're offering 
                 this exclusive founding member discount to help early adopters get 
                 maximum advantage over their competitors.
               </p>
              
-              <p >
+              <p>
                 Right now, you're looking at the lowest barrier to entry for less than 
                 what most agencies spend on one chat software in a single month. You 
                 can jump on board with your website and watch it immediately 
                 start converting visitors into customers.
               </p>
               
-              <p >
+              <p>
                  No ongoing monthly fees. No long-term contracts. Just one simple 
                  payment and your website starts making money 24/7.
               </p>
 
               <p className="subtext1 font-semibold">But you need to act NOW.</p>
              
-              <p >
+              <p>
                  After this launch period ends, we're transitioning to a monthly 
                  subscription model. Don't let this opportunity slip away - get 
                  VoiceAgent AI at the lowest price it will ever be offered.
@@ -76,7 +76,7 @@ const Section09 = () => {
             </div>
 
             {/* Right column - box */}
-            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-[350px] w-full sm:w-[300px] md:w-[350px] lg:w-[450px] rounded-[10px] mx-auto order-1 md:order-2"></div>
+            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-[350px] w-full max-w-[400px] lg:w-[450px] rounded-[10px] mx-auto lg:mx-0 order-1 lg:order-2"></div>
           </div>
         </div>
 
@@ -90,8 +90,7 @@ const Section09 = () => {
               fontSize: 'clamp(24px, 5vw, 43px)',
               lineHeight: '1.1',
               letterSpacing: '0%',
-              margin: '0 0 0 0',
-              padding: '2rem',
+              
               textTransform: 'capitalize',
               color: 'transparent',
               background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
@@ -109,23 +108,23 @@ const Section09 = () => {
             </div> 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-0 items-center">
-            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-69 w-full sm:w-[300px] md:w-[350px] lg:w-120 rounded-[10px] mx-auto md:mx-0 order-1"></div>
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-30 xl:gap-0 items-center px-4 sm:px-6 lg:px-25">
+            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-69 w-full max-w-[400px] lg:w-120 rounded-[10px] mx-auto lg:mx-0 order-1"></div>
             
-            <div className="space-y-3 sm:space-y-4 md:space-y-4 w-full lg:w-110 order-2 px-2 md:px-3 lg:px-0">
-              <p className="subtext1 leading-relaxed ">
+            <div className="leading-5 space-y-5 w-full order-2 px-2 md:px-3 lg:px-0 text-center lg:text-left">
+              <p className="subtext1">
                 We're so confident VoiceAgent AI will transform your website into a 
                 conversion machine that we're backing it with our iron-clad 14-Day 
                 Money-Back Guarantee.
               </p>
               
-              <p className="subtext1 leading-relaxed ">
+              <p className="subtext1">
                 Install it, test it out, watch the conversations flow in. If you're not 
                 completely satisfied for ANY reason within 14 days, simply email us 
                 and we'll refund every penny. You literally cannot lose.
               </p>
               
-              <p className="subtext1 leading-relaxed ">
+              <p className="subtext1">
                 Either VoiceAgent AI pays for itself many times over by converting 
                 more visitors into customers... or you get your money back.
               </p>

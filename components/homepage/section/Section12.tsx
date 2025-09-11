@@ -27,7 +27,7 @@ const Section12 = () => {
             MozOsxFontSmoothing: 'grayscale',
           }}
         >
-          <div className="mb-1 sm:mb-2">
+          <div >
             <ShinyText text="The Only Thing Standing" speed={5} className="gradient-white-text" />  
             {' '}
             <ShinyText text="Between" speed={5} className="gradient-white-text" />  
@@ -42,7 +42,7 @@ const Section12 = () => {
         </div>  
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-1 py-6 sm:py-8 md:py-9 lg:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 py-6 sm:py-5 lg:px-15 md:py-9 lg:py-10">
           {/* Text Content */}
           <div className="space-y-3 sm:space-y-3.5 md:space-y-4 w-full  subtext1 text-sm sm:text-base order-2 lg:order-1">
             <p>
@@ -78,7 +78,7 @@ const Section12 = () => {
 
           {/* Image Placeholder */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="bg-[#797979] h-64 w-full max-w-sm sm:h-72 sm:max-w-md md:h-80 md:max-w-lg lg:h-95 lg:w-[480px] rounded-[10px]"></div>
+            <div className="bg-[#797979] h-64 w-full max-w-sm sm:h-72 sm:max-w-md md:h-80 md:max-w-lg lg:h-95 lg:w-[590px] rounded-[10px]"></div>
           </div>
         </div>
       </div>

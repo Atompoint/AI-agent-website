@@ -165,7 +165,7 @@ export default function HeroHeader() {
   </div>
 
   {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 gap-6 sm:gap-8 lg:gap-5">
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 gap-3 sm:gap-4 lg:gap-5">
     {/* Label */}
     <div
       className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1"
@@ -221,7 +221,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center lg:-mt-[15%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%] xl:-mt-[5%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
@@ -235,13 +235,13 @@ export default function HeroHeader() {
         alt="circle"
         width={2000}
         height={1800}
-        className="w-[1900px] h-auto object-contain scale-none sm:scale-none md:scale-[1.1] lg:scale-[1.1]" // slightly increased size
+        className=" lg:w-[1900px] h-auto object-contain scale-none sm:scale-none md:scale-none lg:scale-[1.1]" // slightly increased size
         draggable={false}
       />
     </div>
 
     {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[80%] lg:-mt-[85%] z-10">
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[75%] md:-mt-[82%] lg:-mt-[80%] z-10">
       <ContainerScroll>
      
         <img

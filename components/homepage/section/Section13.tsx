@@ -44,7 +44,14 @@ const Section13: React.FC = () => {
   return (
     <div className="text-white px-4">
       {/* Signature Section with Purple Background Image */}
-      <div className="relative overflow-hidden rounded-[10px] mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1200px] h-[280px] sm:h-[300px] md:h-[260px] lg:h-[250px] flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="relative overflow-hidden 
+                rounded-[8px] sm:rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[20px] 
+                mx-auto 
+                max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] 
+                h-[240px] sm:h-[260px] md:h-[280px] lg:h-[300px] xl:h-[320px] 
+                flex items-center justify-center 
+                px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8">
+  
   {/* Background Image */}
   <Image 
     src={Purple}
@@ -54,53 +61,82 @@ const Section13: React.FC = () => {
   />
 
   {/* Content */}
-  <div className="relative z-10 w-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-4 lg:py-8">
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-3 md:gap-6 lg:gap-9 w-full max-w-8xl mx-auto">
+  <div className="relative z-10 w-full 
+                  px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 
+                  py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8">
+    
+    <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row 
+                    items-center justify-between 
+                    gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 
+                    w-full max-w-8xl mx-auto">
+      
       {/* Left text */}
-      <div className="flex-1 flex justify-center lg:justify-end text-center lg:text-right px-0">
-        <div>
+      <div className="flex-1 flex justify-center md:justify-end 
+                      text-center md:text-right 
+                      px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 
+                      order-1 md:order-1">
+        <div className="max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[300px]">
           <ShinyText
             text="Mikey Formby"
             disabled={false}
             speed={6}
             className="Heading1 gradient-white-text leading-[0.8]"
+           
           />
         </div>
       </div>
 
       {/* Center box */}
-      <div className="w-38 h-30 md:w-48 md:h-28 lg:w-90 lg:h-50 bg-gray-300 rounded-[8px] sm:rounded-[10px] md:rounded-xl lg:rounded-2xl p-2 sm:p-3 md:p-5 lg:p-8 flex-shrink-0 flex items-center justify-center">
+      <div className="w-24 h-20 
+                      sm:w-28 sm:h-24 
+                      md:w-36 md:h-28 
+                      lg:w-44 lg:h-36 
+                      xl:w-52 xl:h-44 
+                      bg-gray-300 
+                      rounded-[6px] sm:rounded-[8px] md:rounded-[10px] lg:rounded-xl xl:rounded-2xl 
+                      p-1 sm:p-2 md:p-3 lg:p-4 xl:p-6 
+                      flex-shrink-0 flex items-center justify-center
+                      order-2 md:order-2
+                      shadow-md">
         {/* Add content here */}
       </div>
 
       {/* Right text */}
-      <div className="flex-1 flex justify-center lg:justify-start text-center lg:text-left px-0 sm:px-1 md:px-2 lg:px-4">
-        <h2 className="max-w-[160px] sm:max-w-[180px] md:max-w-[240px] lg:max-w-[300px] leading-[0.9] ">
-          <ShinyText
-            text="See You On"
-            disabled={false}
-            speed={6}
-            className="Heading1 gradient-white-text block"
-          />
-          <ShinyText
-            text="The Inside"
-            disabled={false}
-            speed={6}
-            className="Heading1 gradient-white-text"
-          />
-        </h2>
+      <div className="flex-1 flex justify-center md:justify-start 
+                      text-center md:text-left 
+                      px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4
+                      order-3 md:order-3">
+        <div className="max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[300px]">
+          <h2 className="leading-[0.9]">
+            <ShinyText
+              text="See You On"
+              disabled={false}
+              speed={6}
+              className="Heading1 gradient-white-text block"
+             
+            />
+            <ShinyText
+              text="The Inside!"
+              disabled={false}
+              speed={6}
+              className="Heading1 gradient-white-text"
+              
+            />
+          </h2>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+
       {/* FAQ Section */}
-      <div className="py-8 sm:py-12 md:py-14 lg:py-16 px-3 sm:px-4 md:px-5 lg:px-6 relative">
+      <div className="py-8 sm:py-12 md:py-14 lg:py-20 px-3 sm:px-4 md:px-5 lg:px-6 relative">
         {/* Background Glow Effect */}
         <div className="absolute top-[6rem] left-[6rem] sm:top-[8rem] sm:left-[8rem] md:top-[9rem] md:left-[10rem] lg:top-[10rem] lg:left-[12rem] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[650px] md:h-[500px] lg:w-[800px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[80px] sm:blur-[100px] md:blur-[120px] lg:blur-[150px] -z-10" />
         
         <div className="max-w-4xl mx-auto">
-          <h2 className="m-auto mb-6 sm:mb-8 md:mb-9 lg:mb-10 leading-tight text-center ">
+          <h2 className="m-auto mb-6 sm:mb-8 md:mb-9 lg:mb-5 leading-tight text-center ">
             <ShinyText
               text="Frequently Asked Questions"
               disabled={false}

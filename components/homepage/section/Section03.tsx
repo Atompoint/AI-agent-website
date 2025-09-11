@@ -294,7 +294,7 @@ const Section03: React.FC = () => {
                         />
                       </div>
                     </div>
-                    <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight">
+                    <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-4 lg:px-0 sm:px-3 md:px-3 xl:px-0">
                       {stat.textLines[0]}               
                       <br />
                       {stat.textLines[1]}
@@ -359,44 +359,51 @@ const Section03: React.FC = () => {
 
             {/* Mobile Carousel */}
             <div className="block md:hidden">
-              <div id="default-carousel" className="relative w-full" data-carousel="slide">
-                <div className="relative h-70 overflow-hidden rounded-lg ">
+              <div id="default-carousel" className="relative w-full pb-12" data-carousel="slide">
+                {/* Carousel container with dynamic height */}
+                <div className="relative overflow-hidden rounded-lg min-h-[320px]">
                   {comparisonData.map((item, index) => (
                     <div
                       key={item.id}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${
+                      className={`w-full transition-all duration-700 ease-in-out transform ${
                         index === activeSlide 
-                          ? 'opacity-100 translate-x-0' 
-                          : index < activeSlide 
-                            ? 'opacity-0 -translate-x-full' 
-                            : 'opacity-0 translate-x-full'
+                          ? 'opacity-100 translate-x-0 relative' 
+                          : 'opacity-0 absolute inset-0 pointer-events-none'
                       }`}
                       data-carousel-item
+                      style={{
+                        transform: index === activeSlide 
+                          ? 'translateX(0)' 
+                          : index < activeSlide 
+                            ? 'translateX(-100%)' 
+                            : 'translateX(100%)'
+                      }}
                     >
-                      <div className="flex items-center justify-center h-full px-4">
+                      <div className="flex items-start justify-center w-full px-4 py-2">
                         <ComparisonCard item={item} isMobile={true} />
                       </div>
                     </div>
                   ))}
                 </div>
-                
-                <div className="flex justify-center py-5 space-x-3">
-                  {comparisonData.map((_, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      className={`w-2 h-2 rounded-full transition-all duration-500 ease-out ${
-                        index === activeSlide
-                          ? 'bg-white scale-125 shadow-lg'
-                          : 'bg-white/40 hover:bg-white/60 hover:scale-110'
-                      }`}
-                      aria-current={index === activeSlide ? 'true' : 'false'}
-                      aria-label={`Slide ${index + 1}`}
-                      data-carousel-slide-to={index}
-                      onClick={() => handleDotClick(index)}
-                    />
-                  ))}
-                </div>
+              </div>
+              
+              {/* Dots navigation - Outside and fixed */}
+              <div className="flex justify-center pb-5 space-x-3">
+                {comparisonData.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={`w-2 h-2 rounded-full transition-all duration-500 ease-out ${
+                      index === activeSlide
+                        ? 'bg-white scale-125 shadow-lg'
+                        : 'bg-white/40 hover:bg-white/60 hover:scale-110'
+                    }`}
+                    aria-current={index === activeSlide ? 'true' : 'false'}
+                    aria-label={`Slide ${index + 1}`}
+                    data-carousel-slide-to={index}
+                    onClick={() => handleDotClick(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -443,7 +450,7 @@ const Section03: React.FC = () => {
               <div> <ShinyText text="agent on your website " speed={5} className="gradient-white-text" /></div>
               <div className="flex ml-2">
                 <ShinyText text="24/7!" speed={5} className="gradient-white-text" />
-                <BsStars className="text-white text-[30px] lg:text-[30px] ml-5  -rotate-90"/>
+                <BsStars className="text-white text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] lg:ml-5 ml-4  -rotate-90"/>
               </div>
             </div>
           </div>
@@ -470,8 +477,8 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false 
       <div 
         className={`
           rounded-xl p-4 sm:p-6 lg:p-8 ${
-            isMobile ? 'h-80' : 'h-auto'
-          } relative overflow-hidden w-full max-w-md bg-transparent
+            isMobile ? 'w-full' : 'h-auto'
+          } relative overflow-hidden max-w-md bg-transparent
         `}
       >
         <div className="relative z-10 flex flex-col h-full">

@@ -61,7 +61,7 @@ export default function Section07() {
       
       <div className="flex flex-col items-center justify-center ">
         <div className="text-center relative mb-0 w-full max-w-6xl">
-          <div
+          <div 
             className="relative text-center z-10 w-full"
             style={{
               fontFamily: 'Radio Grotesk',
@@ -123,15 +123,13 @@ export default function Section07() {
 
         <div className="w-full max-w-7xl mx-auto ">
           <div
-            className="relative text-center z-10  w-full py-10 lg:py-20"
+            className="relative text-center z-10  w-full pt-10 lg:pt-35"
             style={{
               fontFamily: 'Radio Grotesk',
               fontWeight: 400,
               fontSize: 'clamp(24px, 6vw, 43px)',
               lineHeight: '0.8',
               letterSpacing: '0%',
-             
-          
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
@@ -142,34 +140,34 @@ export default function Section07() {
             }}
           >
             <div>
-              <ShinyText text="Turn your silent website" speed={5} className="gradient-white-text" />
+              <ShinyText text="Turn your Silent Website" speed={5} className="gradient-white-text" />
               {' '}
-              <ShinyText text="into a 24/7" speed={5} className="gradient-white-text" />
+              <ShinyText text="Into a 24/7" speed={5} className="gradient-white-text" />
             </div>
             <div >
               <ShinyText text="Money-Making" speed={5} className="gradient-mask-text" />
               {' '}
-              <ShinyText text="Machine that" speed={5} className="gradient-white-text" />
+              <ShinyText text="Machine That" speed={5} className="gradient-white-text" />
               {' '}
-              <ShinyText text="talks!" speed={5} className="gradient-mask-text" />
+              <ShinyText text="Talks!" speed={5} className="gradient-mask-text" />
             </div>
           </div>
 
           {/* Features Grid - 3 columns, 4 rows with responsive design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full mt-15 ">
             {features.map((feature, index) => (
-              <div key={index} className="flex flex-col space-y-4 w-full">
+              <div key={index} className="flex flex-col space-y-4 pb-5 w-full">
                 {/* Placeholder area for video/image */}
-                <div className="bg-[#1D1D1D] rounded-[10px] aspect-video flex items-center justify-center w-full">
+                <div className="bg-[#1D1D1D] rounded-[8px] aspect-video flex items-center justify-center w-full">
                 </div>
                 
-                <div className="w-full py-5">
+                <div className="w-[90%] py-3">
                   <div style={{ wordSpacing: '3px' }} className="font-medium  text-[16px] lg:text-[22.5px] leading-5 lg:leading-7 w-full">
                     {feature.title}
                   </div>
                   
                   {/* Description */}
-                  <p className="py-2 lg:py-5 subtext1 leading-4 w-full">
+                  <p className="py-2 lg:py-5 subtext1 leading-4  w-full">
                     {feature.description}
                   </p>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import DownArrow from '../../ui/DownArrow';
-import Image from 'next/image'
+
 import ShinyText from '@/components/ui/ShinyText';
 import { ShineBorder } from "@/components/magicui/shine-border";  
 
@@ -56,13 +56,8 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
   };
 
   return (
-    <div className="relative max-w-[600px] rounded-lg overflow-hidden">
-      <Image
-        src="/assets/images/rect3.png"
-        alt={`${title} Background`}
-        fill
-        priority
-      />
+    <div className="relative w-full h-full min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[550px] rounded-lg overflow-hidden mx-auto">
+      
       <ShineBorder
         borderWidth={2}
         duration={23}
@@ -70,18 +65,18 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
         className="absolute inset-0 rounded-2xl pointer-events-none"
       />
 
-      <div className="relative flex flex-col p-4 sm:p-6 md:p-7 lg:p-10 lg:pr-25">
-        <h3 className="subtext3 mb-3 sm:mb-4 md:mb-4 lg:mb-6">
+      <div className="relative flex flex-col p-4 sm:p-6 md:p-6 lg:p-10 h-full">
+        <h3 className="subtext3 mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-center md:text-left">
           {title}
         </h3>
 
-        <div className="space-y-2 sm:space-y-2.5 md:space-y-2.5">
+        <div className="space-y-2 sm:space-y-2.5 md:space-y-2 flex-1">
           {items.map((item: string, index: number) => (
-            <div key={index} className="flex items-start gap-2 sm:gap-2.5 md:gap-2.5">
+            <div key={index} className="flex items-start gap-2 sm:gap-2.5 md:gap-2">
               <div className={`${iconColor} flex-shrink-0 mt-0.5`}>
                 {renderIcon()}
               </div>
-              <span className="subtext1 text-sm sm:text-base md:text-base">{item}</span>
+              <span className="subtext1 text-sm sm:text-base md:text-sm lg:text-base">{item}</span>
             </div>
           ))}
         </div>
@@ -93,20 +88,21 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
 // Reusable BonusSection component - always shows image on right
 const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
   const content = (
-    <div className="space-y-3 sm:space-y-4 md:space-y-4 flex flex-col justify-center p-4 sm:p-6 md:p-7 lg:p-10 items-center w-full lg:w-130">
+    <div className="space-y-3 sm:space-y-4 md:space-y-3 flex flex-col justify-center p-4 sm:p-6 md:p-5 lg:p-10 items-center w-full lg:w-130">
       {description.map((paragraph: string, index: number) => (
-        <p key={index} className="subtext1 text-sm sm:text-base md:text-base">
+        <p key={index} className="subtext1 text-sm sm:text-base md:text-sm lg:text-base">
           {paragraph}
         </p>
       ))}
     </div>
   );
 
-  const image = <div className="bg-[#797979] h-48 w-full sm:h-56 sm:w-80 md:h-60 md:w-88 lg:h-84 lg:w-110 rounded-[7px]"></div>;
+  const image = <div className="bg-[#797979] h-48 w-full sm:h-56 sm:w-80 md:h-52 md:w-72 lg:h-84 lg:w-110 rounded-[7px]"></div>;
+
 
   return (
     <div className="w-full">
-      <div className=" text-center mb-6 sm:mb-8 md:mb-9 lg:mb-12 px-2 leading-[1.1]">
+      <div className="text-center mb-6 sm:mb-8 md:mb-7 lg:mb-12 px-2 leading-[1.1]">
         <ShinyText
           text={title}
           disabled={false}
@@ -115,11 +111,11 @@ const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
         />
       </div>
       
-      <div className="flex flex-col md:flex-col lg:flex-row items-center gap-4 sm:gap-6 md:gap-7 lg:gap-18 w-full">
-        <div className="w-full md:w-full lg:w-1/2">
+      <div className="flex flex-col md:flex-row lg:flex-row items-center gap-4 sm:gap-6 md:gap-5 lg:gap-18 w-full">
+        <div className="w-full md:w-1/2 lg:w-1/2">
           {content}
         </div>
-        <div className="w-full md:w-full lg:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 lg:w-1/2 flex justify-center">
           {image}
         </div>
       </div>
@@ -191,7 +187,7 @@ const Section10: React.FC = () => {
   ];
 
   return (
-    <div className="px-4 sm:px-4 md:px-5 lg:px-6">
+    <div className="px-4 sm:px-4 md:px-4 lg:px-6">
       <div className="max-w-6xl mx-auto">
         <div
           className="relative text-center"
@@ -201,8 +197,7 @@ const Section10: React.FC = () => {
             fontSize: 'clamp(24px, 4vw, 43px)',
             lineHeight: '0.9',
             letterSpacing: '0%',
-            margin: '0 0 0 0',
-            padding: '0',
+           
          
             color: 'transparent',
             background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
@@ -223,9 +218,9 @@ const Section10: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-8 justify-center mt-6 sm:mt-8 md:mt-9 lg:mt-15 md:px-3 lg:px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-6 sm:mt-8 md:mt-8 lg:mt-15 gap-4 md:gap-6 lg:gap-5 md:px-2 lg:px-15">
           {comparisonData.map((column: ComparisonData, index: number) => (
-            <div key={index} className="w-full max-w-full md:max-w-[600px] lg:max-w-[600px] mx-auto">
+            <div key={index} className='w-full md:w-full'>
               <ComparisonColumn
                 title={column.title}
                 items={column.items}
@@ -236,8 +231,8 @@ const Section10: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-8 sm:py-10 md:py-12 lg:py-20  md:px-5 lg:px-6">
-        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16 md:space-y-18 lg:space-y-24">
+      <div className="py-8 sm:py-10 md:py-10 lg:py-20 md:px-4 lg:px-6">
+        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16 md:space-y-14 lg:space-y-24">
           {bonusData.map((bonus: BonusData, index: number) => (
             <div key={index} className="w-full">
               <BonusSection

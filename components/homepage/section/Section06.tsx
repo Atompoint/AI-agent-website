@@ -27,7 +27,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
     <div className={`relative transition-all duration-500 ease-out transform ${
       isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-98'
     }`}>
-      <div className="grid grid-cols-2 gap-0 items-center min-h-[120px] px-4">
+      <div className="grid grid-cols-2 gap-0 items-center min-h-[110px] px-4">
         
         {/* Left Side Content */}
         <div className={`flex ${position === 'left' ? 'justify-end pr-3 lg:pr-8' : 'justify-start pl-3 lg:pl-8'}`}>
@@ -106,7 +106,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 lg:w-55 py-2 leading-[1.5] transition-all ${
+                      <h3 className={`subtextpt2 w-32 lg:w-66 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -126,14 +126,26 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
 
 const ThermometerLine: React.FC<{ progress: number }> = ({ progress }) => {
   return (
-    <div className="absolute left-1/2 top-0 h-full w-px bg-gray-600 transform -translate-x-1/2 z-0">
-      {/* Filled progress line with gradient */}
+    <div className="absolute left-1/2 top-0 h-full transform -translate-x-1/2 z-0">
+      {/* Background gray line with sharp edges */}
       <div 
-        className="absolute top-0 left-0 w-full transition-all duration-300 ease-out"
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px bg-gray-600 transition-all duration-300 ease-out"
+        style={{
+          height: '100%',
+          borderRadius: '0',
+          clipPath: 'none',
+        }}
+      />
+      
+      {/* Filled progress line with gradient and sharp edges */}
+      <div 
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px transition-all duration-300 ease-out"
         style={{
           height: `${Math.min(progress, 100)}%`,
           background: 'linear-gradient(to bottom, #BF84F9, #DEBFFF)',
-          boxShadow: '0 0 8px rgba(191, 132, 249, 0.5)'
+          boxShadow: '0 0 8px rgba(191, 132, 249, 0.5)',
+          borderRadius: '0',
+          clipPath: 'none',
         }}
       />
     </div>
@@ -248,16 +260,14 @@ const TimelineUI: React.FC = () => {
       <div className="container mx-auto">
 
         <div
-  className="relative text-center z-10 py-25"
+  className="relative text-center z-10 py-30"
   style={{
     fontFamily: 'Radio Grotesk',
     fontWeight: 400,
     fontSize: 'clamp(24px, 6vw, 43px)',
     lineHeight: '0.8',
     letterSpacing: '0%',
-    margin: '20px 0 5rem 0',
-    padding: '0.2em 0',
-    
+   
     color: 'transparent',
     background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
     WebkitBackgroundClip: 'text',
@@ -270,7 +280,7 @@ const TimelineUI: React.FC = () => {
 <div >
               <ShinyText text="Here's How This" speed={5} className="gradient-white-text" />
            {' '}
-              <ShinyText text={`"Set It and Forget It"`}  speed={5} className=" gradient-mask-text" />
+              <ShinyText text={`"Set It & Forget It"`}  speed={5} className=" gradient-mask-text" />
               {' '}
               <ShinyText text="System" speed={5} className="gradient-white-text" />
             </div>
@@ -284,7 +294,7 @@ const TimelineUI: React.FC = () => {
         <div className="max-w-6xl mx-auto py-10">
           <div ref={containerRef} className="relative">
             {/* Timeline Steps */}
-            <div className="relative z-10 space-y-8">
+            <div className="relative z-10 space-y-5">
               {steps.map((step, index) => (
                 <div
                   key={index}

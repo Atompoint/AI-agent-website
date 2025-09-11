@@ -6,7 +6,7 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 
 const Section04 = () => {
   return (
-    <div className='flex flex-col items-center px-3 sm:px-3 md:px-8 lg:px-12 relative'>
+    <div className='flex flex-col items-center px-3 sm:px-3 md:px-5 lg:px-12 relative'>
       <div
         className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8"
         style={{

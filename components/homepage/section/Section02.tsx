@@ -2,10 +2,10 @@ import React from 'react';
 import DownArrow from "@/components/ui/DownArrow";
 import ShinyText from '@/components/ui/ShinyText';
 
-
+ 
 const Section02 = () => {
   const sections = [
-    {
+    { 
       title: (
         <>
           <span>67</span>
@@ -15,10 +15,10 @@ const Section02 = () => {
       ),
       description: [
         "Every single day, qualified prospects land on your website ready to buy. But within seconds, they're confused, frustrated, and clicking the back button. They can't find the information they need. ",
-        "They don't know where to go next. So they leave... and buy from your competitor instead. While you sleep, eat, and live your life, potential customers are abandoning your website every few minutes. That's money walking out the door 24/7."
+         "They don't know where to go next. So they leave... and buy from your competitor instead. While you sleep, eat, and live your life, potential customers are abandoning your website every few minutes. That's money walking out the door 24/7."
       ]
     },
-    {
+    { 
       title: <span>While You Sleep, Your Competitors Are Stealing Your Customers.</span>,
       description: [
         "It's 2 AM and someone visits your website ready to make a purchase. They have one simple question. But there's nobody there to answer it. So they leave and find a competitor who CAN help them right now. ",
@@ -28,10 +28,10 @@ const Section02 = () => {
     {
       title: <span>Live Chat Tools Are Bleeding Your Business Dry... And They Don't Even Work</span>,
       description: [
-        "You're paying $200+ per month for live chat software that forces your visitors into frustrating typing marathons. They ask a question, wait for a response, then type another message trying to clarify. ",
+         "You're paying $200+ per month for live chat software that forces your visitors into frustrating typing marathons. They ask a question, wait for a response, then type another message trying to clarify. ",
         "Back and forth, back and forth. They're going in circles, getting more confused with each exchange. They can't explain what they really need through text. Meanwhile, you're paying premium prices for a 'solution' that creates more friction than it solves. Your visitors give up mid-conversation and leave to find a competitor who actually makes it easy to get help."
       ]
-    },
+    }, 
     {
       title: <span>Building A Customer Service Team Costs A Fortune... And You Need Multiple People For Round-The-Clock Coverage</span>,
       description: [
@@ -44,7 +44,7 @@ const Section02 = () => {
       description: [
         "You sign up excited, thinking you'll be up and running in minutes. Instead, you spend hours uploading documents, training the AI, writing FAQs, configuring settings. Days turn into weeks",
         "You're pulling your hair out trying to make it work while your website continues bleeding visitors. By the time it's 'ready,' you've wasted 40+ hours!"
-      ]
+      ] 
     },
     {
       title: <span>Every Unanswered Question Is A Lost Sale... And You're Losing Dozens Daily</span>,
@@ -57,46 +57,46 @@ const Section02 = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-    
+     
 
       {/* Glow Effects - Same positioning as lg */}
       <div className="absolute top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4  lg:px-8">
         <div className="max-w-7xl mx-auto">
           
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`
+               className={`
                 relative flex flex-col lg:flex-row gap-15
-                text-white justify-center items-center py-15
+                text-white justify-center items-center py-5 lg:py-15
                 rounded-xl
                 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}
               `}
             >
               {/* Text Section */}
-              <div className="w-full md:w-[430px] lg:w-[415px] flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="w-full md:max-w-[500px] lg:w-[415px] flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div 
                   className="text-[26px] md:text-[30px] lg:text-[32px]  font-semibold mb-3 leading-tight lg:leading-[38px]"
                 >
                   <ShinyText 
-                    disabled={false} 
+                     disabled={false} 
                     speed={6}
                     className="inline-block"
                   >
                     {section.title}
                   </ShinyText>
                 </div> 
-                <div className="space-y-4 max-w-none md:max-w-[450px] lg:max-w-[430px]">
+                <div className="space-y-4 max-w-none md:max-w-[500px] lg:max-w-[430px]">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p 
                       key={paragraphIndex} 
                       className="subtext1 leading-relaxed"
                     >
-                      {paragraph}
+                       {paragraph}
                     </p>
                   ))}
                 </div>
@@ -106,10 +106,10 @@ const Section02 = () => {
               <div className="
                 w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[460px] 
                 h-48 sm:h-56 md:h-64 lg:h-[350px] 
-                rounded-[7px] bg-[#797979] 
+                rounded-[7px] bg-[#797979]  
                 fl ex items-c enter justify-center 
                 flex-shrink-0 backdrop-blur-sm 
-                border border-gray-700/30 
+                 border border-gray-700/30 
                 hover:border-gray-600/50 
                 transition-colors duration-300
               ">
@@ -118,8 +118,8 @@ const Section02 = () => {
             </div> 
           ))}
           
-        </div>
-      </div>
+        </div> 
+      </div> 
       
       {/* Down Arrow */}
       <DownArrow />
@@ -127,4 +127,4 @@ const Section02 = () => {
   );
 };
 
-export default Section02;               
+export default Section02;                 
