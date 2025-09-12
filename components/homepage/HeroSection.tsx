@@ -158,14 +158,14 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-20">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-15">
   {/* Header */}
   <div className="flex-none">
     <Header />
   </div>
 
   {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-40 gap-3 sm:gap-4 lg:gap-5">
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-8">
     {/* Label */}
     <div
       className="subtextt  flex items-center justify-center rounded-full px-4 py-1"
@@ -186,10 +186,9 @@ export default function HeroHeader() {
       style={{
         fontFamily: 'Radio Grotesk',
         fontWeight: 400,
-        fontSize: 'clamp(16px, 5vw, 52px)',
-        lineHeight: '0.8',
+        fontSize: '64px',
+        lineHeight: '1',
         letterSpacing: '0%',
-        padding: '0.2em 0',
         color: 'transparent',
         background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
         WebkitBackgroundClip: 'text',
@@ -213,7 +212,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Subtext */}
-    <p className="subtextb w-full  leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
+    <p className="subtextb w-[80%]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] ">
       Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
       Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
       Objections & Converts Visitors Into Paying Customers Instantly!

@@ -26,7 +26,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   }
 
   return (
-    <div className={`relative inline-block pb-3 ${className}`}>
+    <div className={`relative inline-block pb-2 ${className}`}>
       {/* Base text */}
       <div className="text-[#b5b5b5a4]">
         {content}
@@ -34,7 +34,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
       
       {/* Animated shine overlay */}
       <div
-        className="absolute inset-0 text-white pb-3"
+        className="absolute inset-0 text-white pb-2"
         style={{
           background: "linear-gradient(120deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%)",
           backgroundSize: "200% 100%",
