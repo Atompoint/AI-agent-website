@@ -1,7 +1,7 @@
 'use client';
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
+import LightRays from '@/components/ui/LightRays';
 import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
 import Gradient from "@/public/assets/images/grad2.png"
@@ -97,10 +97,10 @@ const Section03: React.FC = () => {
       textColor: "white/80",
       backgroundColor: "transparent",
       features: [
-        "Requires hiring expensive staff ($3,000+ per month)",
+        "Requires hiring <span class=\"font-bold\">expensive staff</span> ($3,000+ per month)",
         "Limited to business hours only",
-        "Agents need training and management",
-        "Slow response times frustrate customers",
+        "Agents <span class=\"font-bold\">need training </span>and management",
+        "Slow response times<span class=\"font-bold\"> frustrate customers</span> ",
         "Can only handle a few conversations at a time"
       ]
     },
@@ -112,11 +112,11 @@ const Section03: React.FC = () => {
       textColor: "gray-300",
       backgroundColor: "transparent",
       features: [
-        "Customers hate typing long questions",
-        "Often misunderstand complex queries",
+        "Customers <span class=\"font-bold \">hate typing</span>  long questions",
+        "<span class=\"font-bold \">Often misunderstand</span> complex queries",
         "Robotic, impersonal interactions",
-        "Can't guide users around your website",
-        "High abandonment rates"
+        "<span class=\"font-bold \">Can't guide </span>users around your website",
+        "<span class=\"font-bold \">High abandonment</span> rates"
       ]
     },
     {
@@ -127,12 +127,12 @@ const Section03: React.FC = () => {
       textColor: "gray-100",
       backgroundColor: "transparent",
       features: [
-        "ONE-TIME payment (not monthly fees)",
-        "Works 24/7/365 automatically",
-        "Handles simultaneous conversations",
-        "Natural voice interactions customers love",
-        "Actually navigates your website while talking",
-        "Setup in under 60 seconds"
+        "<span class=\"font-bold\">ONE-TIME payment</span> (not monthly fees)",
+        "Works <span class=\"font-bold\">24/7/365 </span>automatically",
+        "<span class=\"font-bold\">Handles simultaneous</span> conversations",
+        "Natural voice interactions <span class=\"font-bold\">customers love</span> ",
+        "<span class=\"font-bold\">Actually navigates</span> your website while talking",
+        "Setup in under <span class=\"font-bold\">60 seconds</span>"
       ]
     },
     {
@@ -143,10 +143,10 @@ const Section03: React.FC = () => {
       textColor: "gray-100",
       backgroundColor: "transparent",
       features: [
-        "67% of visitors leave without buying",
+        "67% of visitors<span class=\"font-bold\"> leave without buying</span> ",
         "No way to overcome objections",
-        "Missing sales 24/7",
-        "Competitors who adapt will crush you"
+        "<span class=\"font-bold\">Missing sales </span>24/7",
+        "Competitors who adapt <span class=\"font-bold\">will crush you</span> "
       ]
     }
   ];
@@ -221,91 +221,104 @@ const Section03: React.FC = () => {
       
       {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex mb-6 sm:mb-8 lg:mb-10 justify-center">
-        <div className="relative w-full max-w-6xl rounded-2xl overflow-hidden">
-          <div 
-            className="relative bg-cover w-full py-4 sm:py-6 lg:py-7 rounded-2xl bg-center bg-no-repeat flex items-center justify-center z-10 overflow-hidden"
-            style={{
-              backgroundImage: "url('/assets/images/spotlight.png')",
-            }}
-          >
-            <ShineBorder
-              borderWidth={2}
-              duration={15}
-              shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-            />
-            
-            <div className="relative z-10 max-w-5xl w-full text-center ">
-              <div
-                className="relative text-center px-3 z-10 py-3 sm:py-4 lg:py-6"
-                style={{
-                  fontFamily: 'Radio Grotesk',
-                  fontWeight: 400,
-                  fontSize: 'clamp(24px, 6vw, 43px)',
-                  lineHeight: '0.8',
-                  letterSpacing: '0%',
-                  margin: '0 0 -0.5rem 0',
-                  padding: '0.2em 0',
-                  color: 'transparent',
-                  background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale',
-                }}
-              >
-                <div>
-                  <ShinyText text="Stop" speed={5} className="gradient-white-text" />
-                  {' '}
-                  <ShinyText text="Losing Money" speed={5} className="gradient-mask-text" />
-                  {' '}
-                  <ShinyText text="Every Single" speed={5} className="gradient-white-text" />
-                </div>
-                <div>
-                  <ShinyText text="Day Your Website" speed={5} className="gradient-white-text" />  
-                  {' '}
-                  <ShinyText text="Stays Silent!" speed={5} className="gradient-white-text" />  
-                </div>
-              </div>
-       
-              <p className="subtext1 mt-3 sm:mt-4 lg:mt-5 mb-6 sm:mb-8 lg:mb-10">
-                The statistics are brutal!
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-9 mx-auto max-w-4xl lg:max-w-5xl">
-                {statisticsData.map((stat) => (
-                  <div key={stat.id} className="flex flex-col items-center text-center">
-                    <div className={`${stat.containerClass} flex items-center justify-center relative`}>
-                      <Image 
-                        src={stat.icon} 
-                        alt={stat.alt} 
-                        height={stat.iconSize.height} 
-                        width={stat.iconSize.width}
-                        className="w-full h-full object-contain rotate-alternate"
-                      />
-                      
-                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${stat.centerIconContainerClass} flex items-center justify-center`}>
-                        <Image
-                          src={stat.centerIcon}
-                          alt={stat.centerAlt}
-                          width={stat.centerIconSize.width}
-                          height={stat.centerIconSize.height}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                    <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-4 lg:px-0 sm:px-3 md:px-3 xl:px-0">
-                      {stat.textLines[0]}               
-                      <br />
-                      {stat.textLines[1]}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <div className="relative w-full max-w-7xl bg-[#060012] rounded-2xl overflow-hidden">
+    <div className="relative w-full py-4 sm:py-6 lg:py-7 rounded-2xl flex flex-col items-center justify-center z-10 overflow-hidden">
+      
+      {/* Light rays container */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-64 sm:h-80 lg:h-96 z-0 pointer-events-none">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#480596"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="w-full h-full"
+        />
+      </div>
+
+      {/* Shine border */}
+      <ShineBorder
+        borderWidth={1}
+        duration={15}
+        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
+      />
+
+      {/* Centered content */}
+      <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
+        <div
+          className="relative text-center px-3 py-3 sm:py-4 lg:py-5"
+          style={{
+            fontFamily: 'Radio Grotesk',
+            fontWeight: 400,
+            fontSize: 'clamp(24px, 6vw, 43px)',
+            lineHeight: '0.8',
+            letterSpacing: '0%',
+            color: 'transparent',
+            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+          }}
+        >
+          <div>
+            <ShinyText text="Stop" speed={5} className="gradient-white-text" />
+            {' '}
+            <ShinyText text="Losing Money" speed={5} className="gradient-mask-text" />
+            {' '}
+            <ShinyText text="Every Single" speed={5} className="gradient-white-text" />
+          </div>
+          <div>
+            <ShinyText text="Day Your Website" speed={5} className="gradient-white-text" />
+            {' '}
+            <ShinyText text="Stays Silent!" speed={5} className="gradient-white-text" />
           </div>
         </div>
+
+        <p className="subtext1  mb-6 sm:mb-8 lg:mb-10">
+          The statistics are brutal!
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto">
+          {statisticsData.map((stat) => (
+            <div key={stat.id} className="flex flex-col items-center text-center">
+              <div className={`${stat.containerClass} flex items-center justify-center relative`}>
+                <Image 
+                  src={stat.icon} 
+                  alt={stat.alt} 
+                  height={stat.iconSize.height} 
+                  width={stat.iconSize.width}
+                  className="w-full h-full object-contain rotate-alternate"
+                />
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${stat.centerIconContainerClass} flex items-center justify-center`}>
+                  <Image
+                    src={stat.centerIcon}
+                    alt={stat.centerAlt}
+                    width={stat.centerIconSize.width}
+                    height={stat.centerIconSize.height}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-4 lg:px-0 sm:px-3 md:px-3 lg:px-0 xl:px-0">
+                {stat.textLines[0]}               
+                <br />
+                {stat.textLines[1]}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+    </div>
+  </div>
+</div>
+
         
       {/* Comparison Section */}
       <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl lg:p-12 overflow-hidden">
@@ -502,7 +515,7 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false 
               {item.features.map((feature, featureIndex) => (
                 <li key={featureIndex} className="flex items-start">
                   <div className="w-1 h-1 bg-white rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
-                  {typeof feature === 'string' ? <span>{feature}</span> : feature}
+                  {typeof feature === 'string' ? <span dangerouslySetInnerHTML={{ __html: feature }} /> : feature}
                 </li>
               ))}
             </ul>

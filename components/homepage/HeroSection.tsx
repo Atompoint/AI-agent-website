@@ -158,17 +158,17 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-25">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-20">
   {/* Header */}
   <div className="flex-none">
     <Header />
   </div>
 
   {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 gap-3 sm:gap-4 lg:gap-5">
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-40 gap-3 sm:gap-4 lg:gap-5">
     {/* Label */}
     <div
-      className="subtext1 h-[33px] w-[86%] sm:w-[80%] md:w-[90%] lg:w-[498px] max-w-[480px] flex items-center justify-center rounded-full px-3 py-1"
+      className="subtextt  flex items-center justify-center rounded-full px-4 py-1"
       style={{
         border: "1px solid #FFFFFF12",
         backdropFilter: "blur(3px)",
@@ -213,7 +213,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Subtext */}
-    <p className="subtext1 w-full px-5 lg:w-[760px] leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
+    <p className="subtextb w-full  leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
       Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
       Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
       Objections & Converts Visitors Into Paying Customers Instantly!
@@ -221,7 +221,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[12%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}

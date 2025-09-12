@@ -16,7 +16,7 @@ const Header = () => {
        <Image src={Logo} alt="Logo"  height={90} width={90}/>
       </div>
       {/* Shimmer Button */}
-      <div className="relative w-[90px] h-[26px] rounded-full overflow-hidden">
+      <div className="relative w-[92px] h-[28px] rounded-full overflow-hidden">
         {/* Actual Button */}
         <button className="flex items-center justify-center w-full h-full  z-10 relative rounded-full">
           

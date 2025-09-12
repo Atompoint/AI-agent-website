@@ -1,362 +1,145 @@
 'use client';
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { useInView, IntersectionOptions } from 'react-intersection-observer';
-import DownArrow from '../../ui/DownArrow';
-import Offer from '@/components/ui/Offer';
-import { ShineBorder } from "@/components/magicui/shine-border";
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import HorizontalStepper from '@/components/Stepper';
 import ShinyText from '@/components/ui/ShinyText';
-import Image from 'next/image';
-
-interface Step {
-  number: string;
-  stepText: string;
-  title: string;
-  iconSrc: string;
-  centerIconSrc: string; // New property for the centered icon
-  iconAlt: string;
-  centerIconAlt: string; // New property for the centered icon alt
-  textColor: string;
-}
-
-interface AnimationVariants {
-  hidden: any;
-  visible: any;
-}
+import Offer from '@/components/ui/Offer';
+import DownArrow from '../../ui/DownArrow';
 
 export default function App(): React.JSX.Element {
-  const steps: Step[] = [
+  const [stepsCompleted, setStepsCompleted] = useState(false);
+
+  const steps = [
     {
-      number: '01',
-      stepText: 'STEP 1',
-      title: 'Enter Your Domain Name And Click Add',
-      iconSrc: '/assets/icons/onlycircle.svg',
-      centerIconSrc: '/assets/icons/globe1.svg',
-      iconAlt: 'Circle Background',
-      centerIconAlt: 'Globe Icon',
-      textColor: 'text-white',
+      label: 'Step 1',
+      description: 'Enter Your Domain Name And Click Add',
+      icon: '/assets/icons/globe1.svg',
     },
     {
-      number: '02',
-      stepText: 'STEP 2',
-      title: 'Copy And Paste The Code On Your Website',
-      iconSrc: '/assets/icons/onlycircle.svg',
-      centerIconSrc: '/assets/icons/braces1.svg',
-      iconAlt: 'Circle Background',
-      centerIconAlt: 'Code Icon',
-      textColor: 'text-white',
+      label: 'Step 2',
+      description: 'Copy And Paste The Code On Your Website',
+      icon: '/assets/icons/braces1.svg',
     },
     {
-      number: '03',
-      stepText: 'STEP 3',
-      title: "Hit The Call Button & Test It Out. You're Done",
-      iconSrc: '/assets/icons/onlycircle.svg',
-      centerIconSrc: '/assets/icons/call1.svg',
-      iconAlt: 'Circle Background',
-      centerIconAlt: 'Call Icon',
-      textColor: 'text-white',
+      label: 'Step 3',
+      description: "Hit The Call Button & Test It Out. You're Done",
+      icon: '/assets/icons/call1.svg',
     },
   ];
 
-  // Enhanced intersection observer for smooth bidirectional animations
-  const observerOptions: IntersectionOptions = {
-    threshold: [0.1, 0.3, 0.5], // Multiple thresholds for smoother transitions
-    rootMargin: '100px 0px -50px 0px', // Larger margin for earlier/later triggers
-  };
-
-  const [ref1, inView1] = useInView(observerOptions);
-  const [ref2, inView2] = useInView(observerOptions);
-  const [ref3, inView3] = useInView(observerOptions);
-
-  const refs: ((node?: Element | null) => void)[] = [ref1, ref2, ref3];
-  const inViews: boolean[] = [inView1, inView2, inView3];
-
-  // Smooth bidirectional animation variants
-  const containerVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 50, // Start from 50px below
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        staggerChildren: 0.1,
-        staggerDirection: -1, // Reverse stagger when hiding
-      }
-    },
-    visible: {
-      opacity: 1,
-      y: 0, // Move to original position
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      }
-    }
-  };
-
-  const numberVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-      scale: 0.7,
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      }
-    }
-  };
-
-  const cardVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      x: 80,
-      scale: 0.9,
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        type: "spring",
-        stiffness: 80,
-        damping: 12,
-      }
-    }
-  };
-
-  const iconVariants: Variants = {
-    hidden: {
-      scale: 0,
-      rotate: -90,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }
-    },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.34, 1.56, 0.64, 1],
-        type: "spring",
-        stiffness: 120,
-        damping: 10,
-      }
-    }
-  };
-
-  const textVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 15,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const lineVariants: Variants = {
-    hidden: {
-      height: 0,
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    },
-    visible: {
-      height: '100%',
-      transition: {
-        duration: 0.8,
-        delay: 0.2,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+  const handleStepperComplete = () => {
+    console.log('All steps completed!');
+    setStepsCompleted(true);
   };
 
   return (
-    <div className="relative">
-      <div
-        className="relative text-center z-10"
-        style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(24px, 6vw, 43px)',
-          lineHeight: '0.8',
-          letterSpacing: '0%',
-        
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
-        }}
-      >
-        <div>
-          <ShinyText text="All It Takes Is 3 Simple" speed={5} className='gradient-white-text'/>
-        </div>
-        <div>
-          <ShinyText text="Steps and " speed={5} className='gradient-white-text'/>
-          {' '}
-          <ShinyText text="You're Done" speed={5} className='gradient-mask-text'/>
-        </div>
+    <div className="relative min-h-screen">
+      {/* Background gradient effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-br from-[#5A27B1]/20 to-[#9F7AEA]/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-tl from-[#C67DFF]/15 to-[#3420C6]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto mb-20 mt-14 lg:mt-25 xl:mt-30 px-4 lg:px-3 xl:px-4">
-        {/* Glow effect for heading */}
-        <div className="absolute -top-5 left-[55%] -translate-x-1/2 w-[300px] h-[600px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[150px] -z-10"></div>
-        
-        <div className="max-w-[330px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[450px] xl:max-w-[600px] mx-auto">
-          <div className="space-y-2 sm:space-y-2.5 md:space-y-3 lg:space-y-3 relative">
-            {steps.map((step: Step, index: number) => {
-              const ref = refs[index];
-              const inView = inViews[index];
-
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  className="flex items-start gap-3 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 text-left relative"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                >
-                  {/* Timeline number with animated line */}
-                  <div className="relative flex flex-col items-center min-w-[60px] sm:min-w-[70px] md:min-w-[75px] lg:min-w-[80px] xl:min-w-[90px]">
-                    {/* Step Number */}
-                    <motion.div
-                      variants={numberVariants}
-                      className="z-10 num1"
-                    >
-                      <ShinyText text={step.number} disabled={false} speed={6} />
-                    </motion.div>
-
-                    {/* Vertical Line */}
-                    {index !== steps.length - 1 && (
-                      <div className="relative w-full justify-center flex">
-                        <div className="relative h-[100px] sm:h-[110px] md:h-[120px] lg:h-[125px] w-[1px]">
-                          {/* Background gray line */}
-                          <div className="bg-gray-500 absolute inset-0 w-full" />
-
-                          {/* Animated white fill */}
-                          <motion.div
-                            variants={lineVariants}
-                            animate={inViews[index + 1] ? "visible" : "hidden"}
-                            className="bg-white absolute top-0 left-0 w-[2px]"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Step Card */}
-                  <motion.div
-                    variants={cardVariants}
-                    className="flex items-center gap-2 sm:gap-3 md:gap-3.5 lg:gap-4 xl:gap-5 backdrop-blur-sm border border-[#FFFFFF12] rounded-[10px] sm:rounded-[11px] md:rounded-[12px] lg:rounded-[13px] xl:rounded-[14px] px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-2.5 sm:py-3 md:py-3.5 lg:py-4 xl:py-4.5 flex-1 w-full transition-colors duration-200"
-                    style={{ backgroundColor: '#FFFFFF08' }}
-                    whileHover={{
-                      scale: 1.02,
-                      transition: { duration: 0.2 }
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {/* Icon Container with Circle Background and Centered Icon */}
-                    <motion.div
-                      variants={iconVariants}
-                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-13 lg:h-13 xl:w-14 xl:h-14 flex items-center justify-center relative"
-                    >
-                      {/* Rotating Circle Background */}
-                      <Image
-                        src={step.iconSrc}
-                        alt={step.iconAlt}
-                        width={40}
-                        height={40}
-                        className="w-full h-full object-contain rotate-alternate"
-                        priority={index === 0}
-                      />
-                      
-                      {/* Centered Static Icon - Larger for first step */}
-                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center ${
-                        index === 0 
-                          ? 'w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-9 lg:mt-1 mt-0.5 md:mt-1 lg:h-9' 
-                          : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8'
-                      }`}>
-                        <Image
-                          src={step.centerIconSrc}
-                          alt={step.centerIconAlt}
-                          width={index === 0 ? 32 : 16}
-                          height={index === 0 ? 32 : 16}
-                          className={`object-contain w-full h-full`}
-                          priority={index === 0}
-                        />
-                      </div>
-                    </motion.div>
-
-                    <div className="flex-1 min-w-0">
-                      {/* Step badge */}
-                      <motion.div
-                        variants={textVariants}
-                        className="relative inline-block w-fit rounded-full overflow-hidden mb-1 sm:mb-1.5 md:mb-2 lg:mb-2 xl:mb-2.5"
-                      >
-                        <div className="rounded-full px-2 sm:px-3 md:px-3.5 lg:px-4 xl:px-5 py-0.5 sm:py-0.5 md:py-0.5 lg:py-1 xl:py-1.5 subtextpt2 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base relative z-10">
-                          {step.stepText}
-                        </div>
-                        <ShineBorder
-                          borderWidth={1}
-                          duration={6}
-                          shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-                          className="absolute inset-0 rounded-full pointer-events-none"
-                        />
-                      </motion.div>
-
-                      {/* Step title */}
-                      <motion.div
-                        variants={textVariants}
-                        className={`${step.textColor} subtext2 leading-tight sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-xs sm:text-sm md:text-base lg:text-base xl:text-lg`}
-                      >
-                        {step.title}
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
+      {/* Main content */}
+      <div className="relative z-10">
+        {/* Heading */}
+        <motion.div
+          className="relative text-center pt-16 pb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div
+            className="relative"
+            style={{
+              fontFamily: 'Radio Grotesk',
+              fontWeight: 400,
+              fontSize: 'clamp(24px, 6vw, 43px)',
+              lineHeight: '0.9',
+              letterSpacing: '0%',
+              color: 'transparent',
+              background:
+                'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            {/* Glow effect for heading */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-[300px] h-[150px] rounded-full bg-gradient-to-r from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] -z-10"></div>
+            
+            <div className="mb-2">
+              <ShinyText
+                text="All It Takes Is 3 Simple"
+                speed={5}
+                className="gradient-white-text"
+              />
+            </div>
+            <div>
+              <ShinyText
+                text="Steps and "
+                speed={5}
+                className="gradient-white-text"
+              />{' '}
+              <ShinyText
+                text="You're Done"
+                speed={5}
+                className="gradient-mask-text"
+              />
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
 
-      <Offer />
-      <DownArrow />
+        {/* Horizontal Stepper Container */}
+        <motion.div
+          className="relative container mx-auto px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          {/* Stepper wrapper with enhanced styling */}
+          <div className="relative">
+            {/* Additional glow effects around stepper */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] max-w-5xl rounded-full bg-gradient-to-r from-[#5A27B1]/10 via-[#9F7AEA]/5 to-[#C67DFF]/10 blur-[120px] -z-10"></div>
+            
+            <HorizontalStepper 
+              steps={steps}
+              onComplete={handleStepperComplete}
+              stepDuration={3000} // 3 seconds between steps for better viewing
+            />
+          </div>
+        </motion.div>
+
+        {/* Completion celebration */}
+        {stepsCompleted && (
+          <motion.div
+            className="text-center mt-8 mb-12"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              duration: 0.6, 
+              type: "spring",
+              stiffness: 100,
+              damping: 15 
+            }}
+          >
+           
+          </motion.div>
+        )}
+
+        {/* CTA & Arrow - with enhanced spacing */}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <div className="mt-20 mb-16">
+            <Offer />
+          </div>
+          <DownArrow />
+        </motion.div>
+      </div>
     </div>
   );
 }

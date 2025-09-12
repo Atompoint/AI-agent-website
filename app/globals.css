@@ -107,7 +107,7 @@ line-height: 22.8px;
 
 .Heading1{
  font-family: 'Radio Grotesk';
- font-size: clamp(24px, 6vw, 52px);
+ font-size: clamp(28px, 6vw, 60px);
  font-weight: 400;
 
 }
@@ -134,16 +134,38 @@ line-height: 22.8px;
 .border-class{
    border: '1px solid #FFFFFF12',
 }
+.subtextt{
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.6px;
 
+}
+.subtextb{
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.6px;
+
+}
+
+
+.subtextc{
+  font-size: 34px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.6px;
+
+}
 .subtext1{
-  font-size: clamp(11px, 2vw, 13.1px);
+  font-size: clamp(13px, 2vw, 16px);
    font-weight: 200;
    color: white;
    letter-spacing: 0.6px;
 
 }
 .subtextpt2 {
-  font-size: clamp(9px, 2vw, 13.1px);
+  font-size: clamp(9px, 2vw, 16px);
   font-weight: 600;
   color: white;
 
@@ -155,14 +177,14 @@ line-height: 22.8px;
 
 }
 .subtext3{
-  font-size: clamp(15px, 2vw, 16.25px);
+  font-size: clamp(15px, 3vw, 20px);
    font-weight: 600;
    color: white;
 
 }
 
 .subtext4{
-  font-size: clamp(9px, 6vw, 15.27px);
+  font-size: clamp(9px, 4vw, 15.27px);
    font-weight: 200;
    color: white;
  letter-spacing: 0.4px;

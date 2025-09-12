@@ -167,7 +167,7 @@ export default function Section07() {
                   </div>
                   
                   {/* Description */}
-                  <p className="py-2 lg:py-5 subtext1 leading-4  w-full">
+                  <p className="py-2 lg:py-5 subtext1 leading-5  w-full">
                     {feature.description}
                   </p>
                 </div>
