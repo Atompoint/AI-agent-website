@@ -4,7 +4,7 @@ import ShinyText from '@/components/ui/ShinyText';
 import Image from 'next/image';
 import Offer from '@/components/ui/Offer';
 import DownArrow from '@/components/ui/DownArrow';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 interface Step {
   number: string;
@@ -63,20 +63,20 @@ const ThreeStepsComponent = () => {
     return () => clearTimeout(timer);
   }, [currentStep, steps.length]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
     }
   };
 
-  const stepperLineVariants = {
+  const stepperLineVariants: Variants = {
     hidden: { width: '0%' },
     visible: { 
       width: '100%',
-      transition: { duration: 0.8, ease: "easeInOut" }
+      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }
     }
   };
 
@@ -481,7 +481,7 @@ const ThreeStepsComponent = () => {
                           className="absolute inset-0 bg-gradient-to-b from-white to-purple-400 origin-top"
                           initial={{ height: '0%' }}
                           animate={currentStep > index ? { height: '100%' } : { height: '0%' }}
-                          transition={{ duration: 0.8, ease: "easeInOut" }}
+                          transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
                         />
                       </div>
                     </div>
