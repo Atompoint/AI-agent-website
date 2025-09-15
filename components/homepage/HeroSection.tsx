@@ -158,7 +158,7 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-15">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-10">
   {/* Header */}
   <div className="flex-none">
     <Header />
@@ -227,7 +227,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[20%] xl:-mt-[14%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[17%] xl:-mt-[14%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
