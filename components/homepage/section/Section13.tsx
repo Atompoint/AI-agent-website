@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Purple from '@/public/assets/images/purple.png'
+import MikeImage from '@/public/assets/images/mike.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
 
@@ -74,8 +75,8 @@ const Section13: React.FC = () => {
       <div className="flex-1 flex justify-center md:justify-end 
                       text-center md:text-right 
                       px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 
-                      order-1 md:order-1">
-        <div className="max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[300px]">
+                      order-1 md:order-1 w-full max-w-[200px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[390px] xl:max-w-[400px]">
+        <div className="w-full">
           <ShinyText
             text="Mikey Formby"
             disabled={false}
@@ -87,19 +88,25 @@ const Section13: React.FC = () => {
       </div>
 
       {/* Center box */}
-      <div className="w-24 h-20 
-                      sm:w-28 sm:h-24 
-                      md:w-36 md:h-28 
-                      lg:w-44 lg:h-36 
-                      xl:w-52 xl:h-44 
-                      bg-gray-300 
-                      rounded-[6px] sm:rounded-[8px] md:rounded-[10px] lg:rounded-xl xl:rounded-2xl 
-                      p-1 sm:p-2 md:p-3 lg:p-4 xl:p-6 
-                      flex-shrink-0 flex items-center justify-center
-                      order-2 md:order-2
-                      shadow-md">
-        {/* Add content here */}
-      </div>
+      <div
+  className="relative
+             w-48 h-32
+             sm:w-56 sm:h-36
+             md:w-64 md:h-40
+             lg:w-72 lg:h-44
+             xl:w-80 xl:h-48
+             order-2 md:order-2"
+>
+  <Image
+    src={MikeImage}
+    alt="Mike Formby"
+    fill
+    className="object-contain"
+    sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 20rem"
+  />
+</div>
+
+
 
       {/* Right text */}
       <div className="flex-1 flex justify-center md:justify-start 

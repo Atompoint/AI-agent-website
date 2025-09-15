@@ -55,7 +55,7 @@ const Section04 = () => {
                         className="absolute inset-0 rounded-2xl pointer-events-none"
                       />
                       <Image
-                        src="/assets/images/main1.png"
+                        src="/assets/images/mainimage.png"
                         width={1200}
                         height={900}
                         alt="product web image"

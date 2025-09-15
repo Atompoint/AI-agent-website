@@ -11,20 +11,10 @@ interface ComparisonColumnProps {
   isPositive: boolean;
 }
 
-interface BonusSectionProps {
-  title: string;
-  description: string[];
-}
-
 interface ComparisonData {
   title: string;
   items: string[];
   isPositive: boolean;
-}
-
-interface BonusData {
-  title: string;
-  description: string[];
 }
 
 // Single reusable ComparisonColumn component
@@ -85,44 +75,6 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
   );
 };
 
-// Reusable BonusSection component - always shows image on right
-const BonusSection: React.FC<BonusSectionProps> = ({ title, description }) => {
-  const content = (
-    <div className="space-y-3 sm:space-y-4 md:space-y-3 flex flex-col justify-center p-4 sm:p-6 md:p-5 lg:p-10 items-center w-full lg:w-130">
-      {description.map((paragraph: string, index: number) => (
-        <p key={index} className="subtext1 text-sm sm:text-base md:text-sm lg:text-base">
-          {paragraph}
-        </p>
-      ))}
-    </div>
-  );
-
-  const image = <div className="bg-[#797979] h-48 w-full sm:h-56 sm:w-80 md:h-52 md:w-72 lg:h-84 lg:w-110 rounded-[7px]"></div>;
-
-
-  return (
-    <div className="w-full">
-      <div className="text-center mb-6 sm:mb-8 md:mb-7 lg:mb-12 px-2 leading-[1.1]">
-        <ShinyText
-          text={title}
-          disabled={false}
-          speed={6}
-          className="Heading2"
-        />
-      </div>
-      
-      <div className="flex flex-col md:flex-row lg:flex-row items-center gap-4 sm:gap-6 md:gap-5 lg:gap-18 w-full">
-        <div className="w-full md:w-1/2 lg:w-1/2">
-          {content}
-        </div>
-        <div className="w-full md:w-1/2 lg:w-1/2 flex justify-center">
-          {image}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Section10: React.FC = () => {
   const withoutVoiceAI: string[] = [
     "Constantly losing visitors who can't find answers",
@@ -164,25 +116,6 @@ const Section10: React.FC = () => {
       title: "With Voice AI (Easy Way)",
       items: withVoiceAI,
       isPositive: true
-    }
-  ];
-
-  const bonusData: BonusData[] = [
-    {
-      title: "Exclusive Bonus 1: Name Here",
-      description: [
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
-      ]
-    },
-    {
-      title: "Exclusive Bonus 2: Name Here",
-      description: [
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus.",
-        "Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus. Text About this bonus."
-      ]
     }
   ];
 
@@ -231,20 +164,9 @@ const Section10: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-8 sm:py-10 md:py-10 lg:py-20 md:px-4 lg:px-6">
-        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16 md:space-y-14 lg:space-y-24">
-          {bonusData.map((bonus: BonusData, index: number) => (
-            <div key={index} className="w-full">
-              <BonusSection
-                title={bonus.title}
-                description={bonus.description}
-              />
-            </div>
-          ))}
-        </div>
+      <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16">
+        <DownArrow/>
       </div>
-
-      <DownArrow/>
     </div>
   );
 };

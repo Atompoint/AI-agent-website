@@ -167,18 +167,25 @@ export default function HeroHeader() {
   {/* Text content - centered with responsive spacing */}
   <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-8">
     {/* Label */}
-    <div
-      className="subtextt  flex items-center justify-center rounded-full px-4 py-1"
-      style={{
-        border: "1px solid #FFFFFF12",
-        backdropFilter: "blur(3px)",
-        background: "#FFFFFF08",
-        lineHeight: 1.6,
-        letterSpacing: 0.4,
-      }}
-    >
-      Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-    </div>
+    <div className="relative flex items-center justify-center w-[600px]">
+  <img
+    src="/assets/images/rect5.png"
+    alt="Background"
+    className="w-full h-auto"
+  />
+
+  <div
+    className="absolute inset-0 flex items-center justify-center text-center text-white px-4"
+    style={{
+      lineHeight: 1.6,
+      letterSpacing: 0.4,
+    }}
+  >
+    Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+  </div>
+</div>
+
+
 
     {/* Gradient Heading - style preserved exactly */}
     <div
@@ -212,7 +219,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Subtext */}
-    <p className="subtextb w-[80%]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] ">
+    <p className="subtextb w-[80%]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-0">
       Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
       Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
       Objections & Converts Visitors Into Paying Customers Instantly!
@@ -220,7 +227,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[12%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[20%] xl:-mt-[14%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}

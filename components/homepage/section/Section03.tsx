@@ -4,9 +4,10 @@ import Image from "next/image";
 import LightRays from '@/components/ui/LightRays';
 import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
-import Gradient from "@/public/assets/images/grad2.png"
+import { FaArrowRightLong } from "react-icons/fa6";
+import Gradient from "@/public/assets/images/gradient.png"
 import { BsStars } from "react-icons/bs";
-import { ShineBorder } from "@/components/magicui/shine-border";  
+
 
 interface ComparisonItem {
   id: number;
@@ -97,10 +98,10 @@ const Section03: React.FC = () => {
       textColor: "white/80",
       backgroundColor: "transparent",
       features: [
-        "Requires hiring <span class=\"font-bold\">expensive staff</span> ($3,000+ per month)",
+        "Requires hiring expensive staff ($3,000+ per month)",
         "Limited to business hours only",
-        "Agents <span class=\"font-bold\">need training </span>and management",
-        "Slow response times<span class=\"font-bold\"> frustrate customers</span> ",
+        "Agents need training and management",
+        "Slow response times frustrate customers",
         "Can only handle a few conversations at a time"
       ]
     },
@@ -112,11 +113,11 @@ const Section03: React.FC = () => {
       textColor: "gray-300",
       backgroundColor: "transparent",
       features: [
-        "Customers <span class=\"font-bold \">hate typing</span>  long questions",
-        "<span class=\"font-bold \">Often misunderstand</span> complex queries",
+        "Customers hate typing long questions",
+        "Often misunderstand complex queries",
         "Robotic, impersonal interactions",
-        "<span class=\"font-bold \">Can't guide </span>users around your website",
-        "<span class=\"font-bold \">High abandonment</span> rates"
+        "Can't guide users around your website",
+        "High abandonment rates"
       ]
     },
     {
@@ -127,28 +128,15 @@ const Section03: React.FC = () => {
       textColor: "gray-100",
       backgroundColor: "transparent",
       features: [
-        "<span class=\"font-bold\">ONE-TIME payment</span> (not monthly fees)",
-        "Works <span class=\"font-bold\">24/7/365 </span>automatically",
-        "<span class=\"font-bold\">Handles simultaneous</span> conversations",
-        "Natural voice interactions <span class=\"font-bold\">customers love</span> ",
-        "<span class=\"font-bold\">Actually navigates</span> your website while talking",
-        "Setup in under <span class=\"font-bold\">60 seconds</span>"
+        "ONE-TIME payment (not monthly fees)",
+        "Works 24/7/365 automatically",
+        "Handles simultaneous conversations",
+        "Natural voice interactions customers love",
+        "Actually navigates your website while talking",
+        "Setup in under 60 seconds"
       ]
     },
-    {
-      id: 4,
-      title: "Do Nothing (Current Situation)",
-      icon: "/assets/icons/none2.svg",
-      bulletColor: "white",
-      textColor: "gray-100",
-      backgroundColor: "transparent",
-      features: [
-        "67% of visitors<span class=\"font-bold\"> leave without buying</span> ",
-        "No way to overcome objections",
-        "<span class=\"font-bold\">Missing sales </span>24/7",
-        "Competitors who adapt <span class=\"font-bold\">will crush you</span> "
-      ]
-    }
+   
   ];
 
   // Clear existing timeouts
@@ -215,14 +203,14 @@ const Section03: React.FC = () => {
   }, [clearTimeouts]);
 
   return (
-    <div className="relative flex flex-col justify-center items-center px-4 lg:px-6 overflow-hidden">
+    <div className="relative flex flex-col justify-center items-center overflow-hidden">
       {/* Single Centered Glow Effect - Responsive */}
       <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[600px] sm:w-[350px] sm:h-[750px] lg:w-[400px] lg:h-[900px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[100px] sm:blur-[120px] lg:blur-[130px] -z-10" />
       
       {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex mb-6 sm:mb-8 lg:mb-10 justify-center">
-  <div className="relative w-full max-w-7xl bg-[#060012] rounded-2xl overflow-hidden">
-    <div className="relative w-full py-4 sm:py-6 lg:py-7 rounded-2xl flex flex-col items-center justify-center z-10 overflow-hidden">
+  <div className="relative w-full  bg-[#060012] rounded-2xl overflow-hidden">
+    <div className="relative w-full py-4 sm:py-6 lg:py-7  flex flex-col items-center justify-center z-10 overflow-hidden">
       
       {/* Light rays container */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-64 sm:h-80 lg:h-96 z-0 pointer-events-none">
@@ -240,12 +228,7 @@ const Section03: React.FC = () => {
         />
       </div>
 
-      {/* Shine border */}
-      <ShineBorder
-        borderWidth={1}
-        duration={15}
-        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-      />
+     
 
       {/* Centered content */}
       <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
@@ -321,7 +304,7 @@ const Section03: React.FC = () => {
 
         
       {/* Comparison Section */}
-      <div className="relative w-full max-w-6xl mx-auto bg-transparent rounded-3xl lg:p-12 overflow-hidden">
+      <div className="relative w-full max-w-7xl mx-auto bg-transparent rounded-3xl lg:p-12 overflow-hidden">
         <div className="relative z-10">
           <div className="text-center mb-6 sm:mb-8 lg:mb-10 py-2 sm:py-3">
             <div
@@ -357,13 +340,10 @@ const Section03: React.FC = () => {
           </div>
 
           {/* Comparison Grid/Carousel Container */}
-          <div className="w-full max-w-5xl px-3 mx-auto relative">
-            {/* Desktop Grid (md and up) */}
+          <div className="w-full max-w-6xl px-3 mx-auto relative">
+            {/* Desktop Grid (md and up) - Single Row Layout */}
             <div className="hidden md:block">
-              <div className="absolute left-1/2 top-0 w-[0.2px] h-full bg-white/10 transform -translate-x-1/2 z-20"></div>
-              <div className="absolute top-1/2 left-0 w-full h-[0.2px] bg-white/10 transform -translate-y-1/2 z-20"></div>
-              
-              <div className="grid grid-cols-2 gap-8 lg:gap-10">
+              <div className="grid grid-cols-3 gap-4 lg:gap-6 xl:gap-8">
                 {comparisonData.map((item: ComparisonItem) => (
                   <ComparisonCard key={item.id} item={item} />
                 ))}
@@ -400,23 +380,16 @@ const Section03: React.FC = () => {
                 </div>
               </div>
               
-              {/* Dots navigation - Outside and fixed */}
-              <div className="flex justify-center pb-5 space-x-3">
-                {comparisonData.map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={`w-2 h-2 rounded-full transition-all duration-500 ease-out ${
-                      index === activeSlide
-                        ? 'bg-white scale-125 shadow-lg'
-                        : 'bg-white/40 hover:bg-white/60 hover:scale-110'
-                    }`}
-                    aria-current={index === activeSlide ? 'true' : 'false'}
-                    aria-label={`Slide ${index + 1}`}
-                    data-carousel-slide-to={index}
-                    onClick={() => handleDotClick(index)}
-                  />
-                ))}
+              {/* Arrow navigation - Outside and fixed */}
+              <div className="flex justify-center pb-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                  aria-label="Next slide"
+                  onClick={() => handleDotClick((activeSlide + 1) % comparisonData.length)}
+                >
+                  <FaArrowRightLong className="text-white text-lg" />
+                </button>
               </div>
             </div>
           </div>
@@ -425,7 +398,7 @@ const Section03: React.FC = () => {
       
       {/* Final CTA Section */}
       <div 
-        className="relative w-full max-w-6xl mx-auto rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full  p-6 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${Gradient.src})`
         }}
@@ -489,9 +462,9 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false 
     <div className={`flex ${!isMobile ? 'justify-center items-start' : ''} h-full`}>
       <div 
         className={`
-          rounded-xl p-4 sm:p-6 lg:p-8 ${
-            isMobile ? 'w-full' : 'h-auto'
-          } relative overflow-hidden max-w-md bg-transparent
+          rounded-xl p-4 ${
+            isMobile ? 'w-full' : 'w-full h-auto'
+          } relative overflow-hidden bg-transparent
         `}
       >
         <div className="relative z-10 flex flex-col h-full">
@@ -514,8 +487,8 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false 
             <ul className="space-y-2 sm:space-y-3 subtext1 text-start">
               {item.features.map((feature, featureIndex) => (
                 <li key={featureIndex} className="flex items-start">
-                  <div className="w-1 h-1 bg-white rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
-                  {typeof feature === 'string' ? <span dangerouslySetInnerHTML={{ __html: feature }} /> : feature}
+                  <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>

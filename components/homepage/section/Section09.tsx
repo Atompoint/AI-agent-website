@@ -50,33 +50,39 @@ const Section09 = () => {
             <div className="space-y-3 sm:space-y-4 md:space-y-4 subtext1 p-2 md:p-3 lg:p-2 text-center lg:text-left order-2 lg:order-1">
               <p>
                 As the world's first <strong>smart voice AI</strong>  agent for websites, we're offering 
-                this exclusive founding member discount to help early adopters get 
+                this exclusive <strong>founding member discount</strong> to help early adopters get 
                 maximum advantage over their competitors.
               </p>
              
               <p>
                 Right now, you're looking at the lowest barrier to entry for less than 
-                what most agencies spend on one chat software in a single month. You 
+                what most agencies spend on one chat <strong>software</strong> in a single month. You 
                 can jump on board with your website and watch it immediately 
-                start converting visitors into customers.
+                start converting <strong>visitors into customers</strong>.
               </p>
               
               <p>
                  No ongoing monthly fees. No long-term contracts. Just one simple 
-                 payment and your website starts making money 24/7.
+                 <strong> payment</strong> and your website starts making <strong>money</strong> 24/7.
               </p>
 
               <p className="subtext1 font-semibold">But you need to act NOW.</p>
              
               <p>
-                 After this launch period ends, we're transitioning to a monthly 
-                 subscription model. Don't let this opportunity slip away - get 
-                 VoiceAgent AI at the lowest price it will ever be offered.
+                 After this launch period <strong>ends</strong>, we're transitioning to a monthly 
+                 subscription <strong>model</strong>. Don't let this opportunity slip away - get 
+                 <strong> VoiceAgent AI</strong> at the lowest price it will ever be offered.
               </p>
             </div>
 
-            {/* Right column - box */}
-            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-[350px] w-full max-w-[400px] lg:w-[450px] rounded-[10px] mx-auto lg:mx-0 order-1 lg:order-2"></div>
+            {/* Right column - image */}
+            <div className="order-1 lg:order-2 mx-auto lg:mx-0">
+              <img 
+                src="/assets/images/section09/pt1.png" 
+                alt="Limited Time Pricing Offer"
+                className="h-[200px] sm:h-[250px] md:h-[280px] lg:h-[350px] w-full max-w-[400px] lg:w-[450px] object-contain rounded-[10px]"
+              />
+            </div>
           </div>
         </div>
 
@@ -109,18 +115,24 @@ const Section09 = () => {
           </div>
 
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-30 xl:gap-0 items-center px-4 sm:px-6 lg:px-25">
-            <div className="bg-[#797979] h-[200px] sm:h-[250px] md:h-[280px] lg:h-69 w-full max-w-[400px] lg:w-120 rounded-[10px] mx-auto lg:mx-0 order-1"></div>
+            <div className="order-1 mx-auto lg:mx-0">
+              <img 
+                src="/assets/images/section09/pt2.png" 
+                alt="14-Day Money Back Guarantee"
+                className="h-[200px] sm:h-[250px] md:h-[280px] lg:h-69 w-full max-w-[400px] lg:w-120 object-contain rounded-[10px]"
+              />
+            </div>
             
             <div className="leading-5 space-y-5 w-full order-2 px-2 md:px-3 lg:px-0 text-center lg:text-left">
               <p className="subtext1">
-                We're so confident VoiceAgent AI will transform your website into a 
-                conversion machine that we're backing it with our iron-clad 14-Day 
-                Money-Back Guarantee.
+                We're so confident VoiceAgent AI will <strong>transform your website</strong> into a 
+                <strong> conversion machine that we're backing it with our iron-clad 14-Day 
+                Money-Back Guarantee</strong>.
               </p>
               
               <p className="subtext1">
-                Install it, test it out, watch the conversations flow in. If you're not 
-                completely satisfied for ANY reason within 14 days, simply email us 
+                Install it, <strong>test it out</strong>, watch the conversations flow in. If you're not 
+                completely satisfied for any reason within 14 days, simply email us 
                 and we'll refund every penny. You literally cannot lose.
               </p>
               

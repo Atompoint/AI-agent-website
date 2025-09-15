@@ -60,8 +60,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
           ))}
         </div>
 
-        {/* Pricing Area Placeholder */}
-        <div className="bg-[#46464657] h-32 sm:h-36 md:h-32 lg:h-40 rounded-[10px]"></div>
+        
       </div>
     </div>
   );
@@ -112,28 +111,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
       {/* Hero Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-12 justify-center items-center pt-12 sm:pt-16 md:pt-14 lg:pt-20 relative z-10">
         {/* Hero Image */}
-        <div 
-          className=" 
-            bg-[#797979] rounded-[8px] mx-auto md:mx-0 
-            sm:max-w-[350px] md:max-w-[320px] md:max-h-[540px] lg:max-w-[870px] lg:h-[410px]
-            aspect-[4/3] w-full
-          "
-        >
-          <div className="rounded-[8px] overflow-hidden">
-            {/* Placeholder for actual image */}
-            <div className="bg-[#797979] flex items-center justify-center h-full">
-              <span ></span>
-            </div>
-          </div>
+        <div className="mx-auto md:mx-0">
+          <Image
+            src="/assets/images/sales.png"
+            alt="24/7 Sales Machine"
+            width={870}
+            height={410}
+            className="object-contain rounded-[8px] w-full h-auto max-w-[350px] sm:max-w-[400px] md:max-w-[320px] lg:max-w-[870px]"
+          />
         </div>
 
         
         {/* Description */}
         <div className="space-y-2 w-full md:w-full subtext1 ">
           {description.map((paragraph, index) => (
-            <p key={index}>
-              {paragraph}
-            </p>
+            <p 
+              key={index}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+              className="[&_strong]:text-white [&_strong]:font-medium"
+            />
           ))}
         </div>
       </div>
@@ -147,14 +143,14 @@ const Section11: React.FC = () => {
   const heroContent: HeroContent = {
     
     description: [
-      "Every minute you hesitate, your competitors are stealing your customers. While you're thinking about it, qualified buyers are leaving your website to purchase from someone else.",
-      "This is your moment. Transform your silent website into an active sales machine that never stops working.",
-      "The deal is insane:",
-      "For the lowest price ever offered, you get up to 10 Smart AI Voice Agents working 24/7 across all your websites. Converting visitors while you sleep, vacation, or focus on scaling your business.",
-      "This pricing disappears forever after launch.",
-      "Why keep bleeding money when you could be capturing every sale instead?",
-      "Your website will either make you money or cost you money. There's no middle ground.",
-      "Stop letting competitors win. Start converting today."
+      "Every minute you <strong>hesitate</strong>, your competitors are <strong>stealing</strong> your customers. While you're thinking about it, qualified buyers are <strong>leaving</strong> your website to purchase from someone else.",
+      "This is your <strong>moment</strong>. Transform your silent website into an <strong>active sales machine</strong> that never stops working.",
+      "The deal is <strong>insane</strong>:",
+      "For the <strong>lowest price</strong> ever offered, you get up to <strong>10 Smart AI Voice Agents</strong> working 24/7 across all your websites. Converting visitors while you sleep, vacation, or focus on scaling your business.",
+      "This pricing <strong>disappears forever</strong> after launch.",
+      "Why keep <strong>bleeding money</strong> when you could be capturing every sale instead?",
+      "Your website will either <strong>make you money</strong> or cost you money. There's no middle ground.",
+      "Stop letting <strong>competitors win</strong>. Start converting today."
     ]
   };
 

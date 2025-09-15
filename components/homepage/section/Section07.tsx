@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import DownArrow from '../../ui/DownArrow';
 import ShinyText from '@/components/ui/ShinyText';
 
@@ -7,50 +8,62 @@ export default function Section07() {
     {
       title: "Real Voice Conversations That Replace Frustrating Text Chat",
       description: "Your visitors can actually talk to your website like they're calling your business - no more typing back and forth or waiting for responses.",
+      icon: "/assets/icons/mic1.svg"
     },
     {
       title: "Automatically Learns Your Entire Website Without Training", 
       description: "The moment you install it, your AI instantly memorizes every product, service, and page on your site with zero setup work from you.",
+      icon: "/assets/icons/brain.svg"
     },
     {
       title: "60-Second Setup With Just One Line of Code",
       description: "Simply copy and paste one line of code and your website instantly becomes interactive - no technical skills or complicated configuration required.",
+      icon: "/assets/icons/code.svg"
     },
     {
       title: "Handles Conversations Simultaneously 24/7",
       description: "While human agents can only help one person at a time, your AI talks to hundreds of visitors at once without ever taking a break.",
+      icon: "/assets/icons/time.svg"
     },
     {
       title: "Smart Website Navigation That Guides Visitors to Buy",
       description: "Your AI doesn't just answer questions - it actually walks visitors through your pages and escorts them directly to your checkout.",
+      icon: "/assets/icons/hamburger.svg"
     },
     {
       title: "Complete Analytics Dashboard To Track Every Conversation",
       description: "See exactly what visitors are asking, which conversations lead to sales, and how much money your AI is making you in real-time.",
+      icon: "/assets/icons/stats.svg"
     },
     {
       title: "Fully Customizable Voice and Personality",
       description: "Choose your AI's voice, personality, colors, and greetings to perfectly match your brand and make visitors feel at home.",
+      icon: "/assets/icons/setting.svg"
     },
     {
       title: "Natural Interruption Handling Just Like Real Conversations",
       description: "Visitors can interrupt your AI anytime to ask follow-up questions or change topics, creating fluid conversations that feel completely natural.",
+      icon: "/assets/icons/setting.svg"
     },
     {
       title: "Works Perfectly On Any Website Platform",
       description: "Whether you use WordPress, Shopify, Webflow, Clickfunnels, GoHighLevel or custom code, your voice AI works flawlessly without breaking anything on your existing site.",
+      icon: "/assets/icons/tick.svg"
     },
     {
       title: "Real-Time Objection Handling That Closes More Sales",
       description: "Your AI recognizes hesitation and objections, then responds with the perfect counter-arguments to turn skeptics into buyers instantly.",
+      icon: "/assets/icons/search.svg"
     },
     {
       title: "Match Your Brand Colors and Style Perfectly",
       description: "Customize the voice button and interface to blend seamlessly with your website design so it looks like it was always part of your site.",
+      icon: "/assets/icons/colorp.svg"
     },
     {
       title: "Set Custom Welcome Messages That Match Your Business",
       description: "Create personalized greetings that introduce your AI exactly how you want, setting the perfect tone for every visitor interaction.",
+      icon: "/assets/icons/hand.svg"
     }
   ];
 
@@ -154,11 +167,20 @@ export default function Section07() {
           </div>
 
           {/* Features Grid - 3 columns, 4 rows with responsive design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full mt-15 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 px-8 w-full mt-30 ">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col space-y-4 pb-5 w-full">
-                {/* Placeholder area for video/image */}
-                <div className="bg-[#1D1D1D] rounded-[8px] aspect-video flex items-center justify-center w-full">
+                {/* Icon container */}
+                <div className="flex  w-full">
+                  <div className="w-9 h-9 flex items-center justify-center">
+                    <Image 
+                      src={feature.icon} 
+                      alt={`${feature.title} icon`} 
+                      width={96} 
+                      height={96}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
                 
                 <div className="w-[90%] py-3">

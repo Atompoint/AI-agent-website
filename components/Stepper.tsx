@@ -1,301 +1,142 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  ReactNode,
-  HTMLAttributes,
-} from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import "@/components/Stepper.css";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import ShinyText from "@/components/ui/ShinyText";
+import Offer from "@/components/ui/Offer";
+import DownArrow from "@/components/ui/DownArrow";
 
-interface StepData {
-  label: string;
-  description: string;
-  icon: string;
+interface Step {
+  number: string;
+  stepText: string;
+  title: string;
+  iconSrc: string;         // onlycircle background
+  centerIconSrc: string;   // centered icon
+  iconAlt: string;
+  centerIconAlt: string;
+  textColor: string;
 }
 
-interface HorizontalStepperProps extends HTMLAttributes<HTMLDivElement> {
-  steps: StepData[];
-  onComplete?: () => void;
-  stepDuration?: number; // Duration in milliseconds between steps
-}
+const steps: Step[] = [
+  {
+    number: "01",
+    stepText: "STEP",
+    title: "Enter Your Domain Name And Click Add",
+    iconSrc: "/assets/icons/onlycircle.svg",
+    centerIconSrc: "/assets/icons/globe1.svg",
+    iconAlt: "Circle Background",
+    centerIconAlt: "Globe Icon",
+    textColor: "text-white",
+  },
+  {
+    number: "02",
+    stepText: "STEP",
+    title: "Copy And Paste The Code On Your Website",
+    iconSrc: "/assets/icons/onlycircle.svg",
+    centerIconSrc: "/assets/icons/braces1.svg",
+    iconAlt: "Circle Background",
+    centerIconAlt: "Code Icon",
+    textColor: "text-white",
+  },
+  {
+    number: "03",
+    stepText: "STEP",
+    title: "Hit The Call Button & Test It Out. You're Done",
+    iconSrc: "/assets/icons/onlycircle.svg",
+    centerIconSrc: "/assets/icons/call1.svg",
+    iconAlt: "Circle Background",
+    centerIconAlt: "Call Icon",
+    textColor: "text-white",
+  },
+];
 
-export default function HorizontalStepper({
-  steps,
-  onComplete,
-  stepDuration = 2000,
-  className = "",
-  ...rest
-}: HorizontalStepperProps) {
+export default function ThreeStepsComponent() {
   const [activeStep, setActiveStep] = useState(0);
-  const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-advance steps
-  useEffect(() => {
-    if (activeStep < steps.length) {
-      timeoutRef.current = setTimeout(() => {
-        setActiveStep(prev => {
-          const next = prev + 1;
-          setCompletedSteps(prevCompleted => new Set([...prevCompleted, prev]));
-          
-          // If this is the last step, mark it as completed too and call onComplete
-          if (next === steps.length) {
-            setTimeout(() => {
-              setCompletedSteps(prevCompleted => new Set([...prevCompleted, next - 1]));
-              onComplete?.();
-            }, 100);
-          }
-          
-          return next;
-        });
-      }, stepDuration);
-    }
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [activeStep, steps.length, onComplete, stepDuration]);
-
-  // Restart animation when scrolled into view
+  // Trigger animation when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveStep(0);
-            setCompletedSteps(new Set());
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let stepIndex = 0;
+          const interval = setInterval(() => {
+            setActiveStep((prev) => {
+              if (prev < steps.length - 1) return prev + 1;
+              clearInterval(interval);
+              return prev;
+            });
+            stepIndex++;
+          }, 1000);
+        }
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
-  const getStepStatus = (stepIndex: number) => {
-    if (completedSteps.has(stepIndex)) return 'completed';
-    if (stepIndex === activeStep) return 'active';
-    return 'inactive';
-  };
-
   return (
-    <div 
-      ref={containerRef} 
-      className={`horizontal-stepper-container ${className}`}
-      {...rest}
-    >
-      {/* Step indicators and connectors */}
-      <div className="step-indicators-row">
+    <section ref={containerRef} className="py-16 px-4">
+      {/* Heading + Offer + DownArrow */}
+      <div className="text-center mb-12">
+        <ShinyText text="How It Works" className="text-4xl font-bold text-white" />
+        <Offer />
+        <DownArrow />
+      </div>
+
+      <div className="relative flex justify-between max-w-5xl mx-auto">
+        {/* Connector Lines */}
+        {steps.slice(0, -1).map((_, i) => (
+          <div
+            key={i}
+            className="absolute top-[38px] flex items-center"
+            style={{
+              left: `calc(${(i / (steps.length - 1)) * 100}% + 60px)`,
+              width: `calc(${(1 / (steps.length - 1)) * 100}% - 120px)`,
+            }}
+          >
+            {/* background gray line */}
+            <div className="w-full h-[3px] bg-gray-600 absolute"></div>
+            {/* animated purple fill */}
+            <motion.div
+              className="h-[3px] bg-purple-500 absolute"
+              initial={{ width: 0 }}
+              animate={{ width: activeStep > i ? "100%" : "0%" }}
+              transition={{ duration: 1, ease: "linear" }}
+            />
+          </div>
+        ))}
+
         {steps.map((step, index) => (
-          <React.Fragment key={index}>
-            {/* Step Circle */}
-            <div className="step-circle-wrapper">
-              <motion.div
-                className="step-circle"
-                animate={{
-                  borderColor: getStepStatus(index) === 'inactive' 
-                    ? '#374151' 
-                    : '#5227FF',
-                  backgroundColor: getStepStatus(index) === 'inactive' 
-                    ? '#1F2937' 
-                    : '#5227FF'
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <AnimatePresence mode="wait">
-                  {getStepStatus(index) === 'completed' ? (
-                    <CheckIcon key="check" />
-                  ) : getStepStatus(index) === 'active' ? (
-                    <ActiveDot key="dot" />
-                  ) : (
-                    <StepNumber key="number" number={index + 1} />
-                  )}
-                </AnimatePresence>
-              </motion.div>
+          <div key={index} className="flex flex-col items-center w-[200px] text-center">
+            {/* Number + STEP */}
+            <div className="flex flex-col items-center mb-2">
+              <span className="text-xs tracking-widest text-gray-300">{step.stepText}</span>
+              <span className="relative z-10 text-3xl font-bold text-white bg-black px-2">
+                {step.number}
+              </span>
             </div>
 
-            {/* Connector line (not after last step) */}
-            {index < steps.length - 1 && (
-              <StepConnector isActive={activeStep > index} />
-            )}
-          </React.Fragment>
+            {/* Icon with onlycircle background */}
+            <div className="relative w-16 h-16 mb-4">
+              <Image src={step.iconSrc} alt={step.iconAlt} fill className="object-contain" />
+              <Image
+                src={step.centerIconSrc}
+                alt={step.centerIconAlt}
+                width={28}
+                height={28}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              />
+            </div>
+
+            {/* Title */}
+            <p className="text-sm text-gray-300 leading-snug max-w-[180px]">
+              {step.title}
+            </p>
+          </div>
         ))}
       </div>
-
-      {/* Step content - each appears under its respective circle */}
-      <div className="step-contents-row">
-        {steps.map((step, index) => (
-          <StepContent
-            key={index}
-            step={step}
-            index={index}
-            isVisible={activeStep > index || index === activeStep}
-            isActive={index === activeStep}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-interface StepContentProps {
-  step: StepData;
-  index: number;
-  isVisible: boolean;
-  isActive: boolean;
-}
-
-function StepContent({ step, index, isVisible, isActive }: StepContentProps) {
-  return (
-    <motion.div
-      className="step-content"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: isVisible ? 1 : 0,
-        y: isVisible ? 0 : 20
-      }}
-      transition={{
-        duration: 0.5,
-        delay: isActive ? 0.3 : 0
-      }}
-    >
-      {/* Icon */}
-      <motion.div
-        initial={{ scale: 0, rotate: -90 }}
-        animate={{
-          scale: isVisible ? 1 : 0,
-          rotate: isVisible ? 0 : -90
-        }}
-        transition={{
-          duration: 0.4,
-          delay: isActive ? 0.5 : 0
-        }}
-        className="step-icon-wrapper"
-      >
-        <div className="step-icon">
-          {/* Default emoji icons - replace with actual images in your implementation */}
-          <span className="step-icon-emoji">
-            {index === 0 ? '🌐' : index === 1 ? '⚡' : '📞'}
-          </span>
-        </div>
-      </motion.div>
-
-      {/* Label */}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isVisible ? 1 : 0
-        }}
-        transition={{
-          duration: 0.3,
-          delay: isActive ? 0.7 : 0
-        }}
-        className="step-label"
-      >
-        {step.label}
-      </motion.span>
-
-      {/* Description */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isVisible ? 1 : 0
-        }}
-        transition={{
-          duration: 0.3,
-          delay: isActive ? 0.9 : 0
-        }}
-        className="step-description"
-      >
-        {step.description}
-      </motion.p>
-    </motion.div>
-  );
-}
-
-interface StepConnectorProps {
-  isActive: boolean;
-}
-
-function StepConnector({ isActive }: StepConnectorProps) {
-  return (
-    <div className="step-connector">
-      <motion.div
-        className="step-connector-fill"
-        initial={{ width: '0%' }}
-        animate={{
-          width: isActive ? '100%' : '0%'
-        }}
-        transition={{ duration: 0.5, delay: isActive ? 0.2 : 0 }}
-      />
-    </div>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <motion.svg
-      initial={{ scale: 0, rotate: -180 }}
-      animate={{ scale: 1, rotate: 0 }}
-      exit={{ scale: 0, rotate: 180 }}
-      transition={{ duration: 0.3 }}
-      className="check-icon"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={3}
-      viewBox="0 0 24 24"
-    >
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M5 13l4 4L19 7"
-      />
-    </motion.svg>
-  );
-}
-
-function ActiveDot() {
-  return (
-    <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
-      className="active-dot"
-      transition={{ duration: 0.2 }}
-    />
-  );
-}
-
-interface StepNumberProps {
-  number: number;
-}
-
-function StepNumber({ number }: StepNumberProps) {
-  return (
-    <motion.span
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
-      className="step-number"
-      transition={{ duration: 0.2 }}
-    >
-      {number}
-    </motion.span>
+    </section>
   );
 }

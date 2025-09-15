@@ -1,15 +1,28 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import Image from "next/image";
 import DownArrow from '../../ui/DownArrow';
 import ShinyText from '@/components/ui/ShinyText';
 import { ShineBorder } from "@/components/magicui/shine-border";
  
 const Section05: React.FC = () => {
+  const [isVideo1Playing, setIsVideo1Playing] = useState(false);
+  const [isVideo2Playing, setIsVideo2Playing] = useState(false);
 
   // Demo section
   const demoSection = {
     mainImage: "/assets/images/main1.png",
-    playIcon: "/assets/images/play.png"
+    playIcon: "/assets/images/play.png",
+    playIcon1: "/assets/icons/play1.svg"
+    
+  };
+
+  const handleVideo1Play = () => {
+    setIsVideo1Playing(true);
+  };
+
+  const handleVideo2Play = () => {
+    setIsVideo2Playing(true);
   };
 
   return (
@@ -60,7 +73,7 @@ const Section05: React.FC = () => {
 
         <div className="flex justify-center items-center w-full py-12 sm:py-16 lg:py-20">
           <div className="max-w-[921px] w-full">
-            {/* First Row - Text left, Box right */}
+            {/* First Row - Text left, Video right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-0 items-center">
               {/* Text Left */}
               <div className="subtext1 leading-5 lg:pr-8 text-center lg:text-left order-2 lg:order-1">
@@ -80,18 +93,73 @@ const Section05: React.FC = () => {
                 </p>
               </div>
 
-              {/* Box Right */}
-              <div className="bg-[#797979] rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center order-1 lg:order-2">
-                
+              {/* Video Right */}
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
+                <video
+                  className="w-full h-full object-cover rounded-[10px]"
+                  src="/assets/videos/web1.mp4"
+                  controls={isVideo1Playing}
+                  muted
+                  playsInline
+                  onPlay={handleVideo1Play}
+                />
+                {!isVideo1Playing && (
+                  <div className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+                       onClick={() => {
+                         const video = document.querySelector('video[src="/assets/videos/web1.mp4"]') as HTMLVideoElement;
+                         if (video) {
+                           video.play();
+                           setIsVideo1Playing(true);
+                         }
+                       }}>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-black/30 rounded-full blur-sm transform scale-110"></div>
+                      <Image
+                        src={demoSection.playIcon1}
+                        width={60}
+                        height={60}
+                        alt="play button"
+                        className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             
-
-            {/* Second Row - Box left, Text right */}
+            {/* Second Row - Video left, Text right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 items-center mt-12 sm:mt-14 lg:mt-16 gap-6 lg:gap-0">
-              {/* Box Left  */}
-              <div className="bg-[#797979] rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center order-1">
-              
+              {/* Video Left */}
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center relative overflow-hidden order-1">
+                <video
+                  className="w-full h-full object-cover rounded-[10px]"
+                  src="/assets/videos/web2.mp4"
+                  controls={isVideo2Playing}
+                  muted
+                  playsInline
+                  onPlay={handleVideo2Play}
+                />
+                {!isVideo2Playing && (
+                  <div className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+                       onClick={() => {
+                         const video = document.querySelector('video[src="/assets/videos/web2.mp4"]') as HTMLVideoElement;
+                         if (video) {
+                           video.play();
+                           setIsVideo2Playing(true);
+                         }
+                       }}>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-black/30 rounded-full blur-sm transform scale-110"></div>
+                      <Image
+                        src={demoSection.playIcon1}
+                        width={60}
+                        height={60}
+                        alt="play button"
+                        className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
              
               {/* Text Right */}

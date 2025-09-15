@@ -1,76 +1,88 @@
 import React, { JSX } from 'react'
+import Image from "next/image";
 import DownArrow from '../../ui/DownArrow';
 import ShinyText from '@/components/ui/ShinyText';
 
 interface Feature {
   title: string;
   description: string;
+  icon: string;
 }
 
 interface Statistic {
   description: string | JSX.Element;
+  imagePath: string;
 }
 
 const Section08: React.FC = () => {
   const statistics: Statistic[] = [
     {
-      
-      description: "71% of people use voice assistants to research products before buying (Harvard Business Review)"
+      description: "71% of people use voice assistants to research products before buying (Harvard Business Review)",
+      imagePath: "/assets/images/section08/1.png"
     },
     {
-    
-      description: "Voice AI market growing at 29.6% annually projected to hit $21.7 billion by 2030"
+      description: "Voice AI market growing at 29.6% annually projected to hit $21.7 billion by 2030",
+      imagePath: "/assets/images/section08/2.png"
     },
     {
-  
-      description: "Businesses using AI-driven voice technology report 47% faster purchase completion"
+      description: "Businesses using AI-driven voice technology report 47% faster purchase completion",
+      imagePath: "/assets/images/section08/3.png"
     },
     {
-      
-      description: "80% of businesses plan to implement voice AI by 2026"
+      description: "80% of businesses plan to implement voice AI by 2026",
+      imagePath: "/assets/images/section08/4.png"
     },
     {
-   
-      description: <span>Live chat alone increases conversions by 12-20% <strong>imagine what VOICE can do</strong></span>
+      description: <span>Live chat alone increases conversions by 12-20% <strong>imagine what VOICE can do</strong></span>,
+      imagePath: "/assets/images/section08/5.png"
     }
   ];
 
   const features: Feature[] = [
     {
       title: "Answer Last-Minute Questions That Prevent Sales",
-      description: "Visitors can quickly ask about shipping, returns, compatibility, instead of leaving to find answers elsewhere."
+      description: "Visitors can quickly ask about shipping, returns, compatibility, instead of leaving to find answers elsewhere.",
+      icon: "/assets/icons/qmark2.svg"
     },
     {
       title: "Qualify Leads Who Are Ready to Engage",
-      description: "Your AI gathers visitor information through voice then directs them to your booking page or contact form."
+      description: "Your AI gathers visitor information through voice then directs them to your booking page or contact form.",
+      icon: "/assets/icons/voice.svg"
     },
     {
       title: "Turn Product Pages Into Personal Shopping Experiences",
-      description: "Visitors can ask: \"Which size should I get?\" or \"How does this compare?\" just like talking to a sales associate."
+      description: "Visitors can ask: \"Which size should I get?\" or \"How does this compare?\" just like talking to a sales associate.",
+      icon: "/assets/icons/bag.svg"
     },
     {
       title: "Handle Peak Traffic Without Hiring Extra Staff",
-      description: "Unlimited visitors get instant voice answers while your competitors' chat boxes crash or have long wait times."
+      description: "Unlimited visitors get instant voice answers while your competitors' chat boxes crash or have long wait times.",
+      icon: "/assets/icons/gb.svg"
     },
     {
       title: "Help Serious Buyers Get the Information They Need",
-      description: "Visitors get detailed explanations to their specific questions that push them over the buying line."
+      description: "Visitors get detailed explanations to their specific questions that push them over the buying line.",
+      icon: "/assets/icons/shake.svg"
     },
     {
       title: "Capture Information From Motivated Prospects",
-      description: "Your AI guides engaged visitors to contact forms or lead capture pages after answering their questions."
+      description: "Your AI guides engaged visitors to contact forms or lead capture pages after answering their questions.",
+      icon: "/assets/icons/cycle.svg"
     },
     {
       title: "Make Complex Products Easy to Understand",
-      description: "Visitors can simply ask: \"How does this work?\" or \"Is this right for my situation?\" and get clear answers."
+      description: "Visitors can simply ask: \"How does this work?\" or \"Is this right for my situation?\" and get clear answers.",
+      icon: "/assets/icons/verified.svg"
     },
     {
       title: "Make Mobile Shopping Easier Than Ever Before",
-      description: "Mobile visitors click once and speak their questions instead of typing on small keyboards or forms."
+      description: "Mobile visitors click once and speak their questions instead of typing on small keyboards or forms.",
+      icon: "/assets/icons/phone.svg"
     },
     {
       title: "Help Visitors Choose the Right Pricing Plan",
-      description: "Visitors describe their needs so your AI can recommend the perfect option and guide them to sign up."
+      description: "Visitors describe their needs so your AI can recommend the perfect option and guide them to sign up.",
+      icon: "/assets/icons/dollar1.svg"
     }
   ];
 
@@ -117,20 +129,36 @@ const Section08: React.FC = () => {
           {/* Glow Effect - Responsive */}
           <div className="absolute top-[5rem] md:top-[8rem] lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] md:w-[700px] lg:w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] md:blur-[85px] lg:blur-[100px] -z-10" />
           
-          <div className="flex justify-center max-w-5xl mx-auto relative ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-3 w-full">
+          <div className="flex justify-center max-w-6xl mx-auto relative ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-15 w-full">
               {features.map((feature: Feature, index: number) => (
-                <div key={index} className="flex items-center justify-center relative h-40 md:h-42 lg:h-44 w-full">
-                  <img
-                    src="/assets/images/rect2.png"
-                    alt="background"
-                    className="w-full h-full rounded-lg"
-                  />
-                  <div className="absolute top-4 sm:top-6 md:top-5 w-[80%] px-1 left-4 sm:left-6 md:left-5 right-4 sm:right-6 md:right-5">
-                    <div className="text-sm sm:text-base md:text-base font-medium drop-shadow-lg leading-5 sm:leading-6 md:leading-6 mb-3">
+                <div key={index} className="rounded-lg p-4 sm:p-5 md:p-6 h-40 md:h-42 lg:h-44 w-full relative">
+                  {/* Icon with circle background */}
+                  <div className="flex-shrink-0 w-18 h-18 flex items-center justify-center relative mb-3">
+                    <Image
+                      src="/assets/icons/onlycircle.svg"
+                      alt="Circle"
+                      width={24}
+                      height={24}
+                      className="w-full h-full object-contain rotate-alternate"
+                    />
+                    <div className="absolute inset-0 w-8 h-8 m-auto flex items-center justify-center">
+                      <Image
+                        src={feature.icon}
+                        alt={`${feature.title} icon`}
+                        width={16}
+                        height={16}
+                        className="w-full h-full object-contain text-white"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="w-full">
+                    <div className="text-sm sm:text-base md:text-base font-medium drop-shadow-lg leading-5 sm:leading-6 md:leading-6 mb-3 text-white">
                       {feature.title}
                     </div>
-                    <p className="subtext1  line-clamp-3 sm:line-clamp-3 md:line-clamp-3">
+                    <p className="subtext1 line-clamp-3 sm:line-clamp-3 md:line-clamp-3">
                       {feature.description}
                     </p>
                   </div>
@@ -172,33 +200,58 @@ const Section08: React.FC = () => {
       </div>
     </div>
   </div>
-
+  
   <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto relative">
-            {/* First row - responsive layout */}
-            {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-              <div key={index} className={`bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-5 lg:p-5 h-20 sm:h-24 md:h-28 lg:h-90 backdrop-blur-sm flex flex-col justify-end ${index === 2 ? 'sm:col-span-2 md:col-span-2 lg:col-span-1' : ''}`}>
-                <p className="subtext4 max-w-[300px] leading-4 sm:leading-5 md:leading-6">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-
-            {/* Second row - 2 cards side by side */}
-            <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 md:gap-4">
-              <div className="w-full sm:w-1/2 md:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-6 lg:p-6 h-20 sm:h-24 md:h-28 lg:h-80 backdrop-blur-sm flex flex-col justify-end">
-                <p className="subtext4 leading-4 sm:leading-5 md:leading-6 lg:leading-relaxed max-w-[400px]">
-                  {statistics[3].description}
-                </p>
-              </div>
-              <div className="w-full sm:w-1/2 md:w-1/2 bg-[#0D0B1B] border border-white/5 rounded-[10px] p-3 sm:p-4 md:p-6 lg:p-6 h-20 sm:h-24 md:h-28 lg:h-80 backdrop-blur-sm flex flex-col justify-end">
-                <p className="subtext4 max-w-[400px] leading-5">
-                  {statistics[4].description}
-                </p>
-              </div>
-            </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto relative">
+      {/* First row - responsive layout */}
+      {statistics.slice(0, 3).map((item: Statistic, index: number) => (
+        <div key={index} className={`relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-90 flex flex-col justify-end ${index === 2 ? 'sm:col-span-2 md:col-span-2 lg:col-span-1' : ''}`}>
+          <Image
+            src={item.imagePath}
+            alt={`Statistics card background ${index + 1}`}
+            fill
+            className="object-cover"
+          />
+          <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-5">
+            <p className="subtext4 max-w-[300px] leading-4 sm:leading-5 md:leading-6">
+              {item.description}
+            </p>
           </div>
         </div>
+      ))}
+
+      {/* Second row - 2 cards side by side */}
+      <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 md:gap-4">
+        <div className="w-full sm:w-1/2 md:w-1/2 relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-80 flex flex-col justify-end">
+          <Image
+            src={statistics[3].imagePath}
+            alt="Statistics card background 4"
+            fill
+            className="object-cover"
+          />
+          <div className="relative z-10 p-3 sm:p-4 md:p-6 lg:p-6">
+            <p className="subtext4 leading-4 sm:leading-5 md:leading-6 lg:leading-relaxed max-w-[400px]">
+              {statistics[3].description}
+            </p>
+          </div>
+        </div>
+        <div className="w-full sm:w-1/2 md:w-1/2 relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-80 flex flex-col justify-end">
+          <Image
+            src={statistics[4].imagePath}
+            alt="Statistics card background 5"
+            fill
+            className="object-cover"
+          />
+          <div className="relative z-10 p-3 sm:p-4 md:p-6 lg:p-6">
+            <p className="subtext4 max-w-[400px] leading-5">
+              {statistics[4].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
       </div>
       <DownArrow/>
     </div>

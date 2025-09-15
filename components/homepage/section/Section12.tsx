@@ -1,6 +1,7 @@
 import React from 'react'
 import DownArrow from '../../ui/DownArrow'
 import ShinyText from '@/components/ui/ShinyText';
+import Image from 'next/image'
 
 const Section12 = () => {
   return (
@@ -76,9 +77,18 @@ const Section12 = () => {
             </p>
           </div>
 
-          {/* Image Placeholder */}
+          {/* Image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="bg-[#797979] h-64 w-full max-w-sm sm:h-72 sm:max-w-md md:h-80 md:max-w-lg lg:h-95 lg:w-[590px] rounded-[10px]"></div>
+            <div className="relative h-64 w-full max-w-sm sm:h-72 sm:max-w-md md:h-80 md:max-w-lg lg:h-95 lg:w-[590px] rounded-[10px] overflow-hidden">
+              <Image
+                src="/assets/images/fence.png"
+                alt="24/7 Sales Machine"
+                fill
+                className="object-contain rounded-[10px]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 590px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
