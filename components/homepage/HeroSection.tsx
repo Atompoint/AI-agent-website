@@ -177,7 +177,7 @@ export default function HeroHeader() {
     />
 
     <div
-      className="absolute inset-0 flex items-center justify-center text-center px-0 subtextt"
+      className="absolute inset-0 flex items-center justify-center text-center px-4 subtextt"
       style={{
         lineHeight: 1.6,
         letterSpacing: 0.4,
