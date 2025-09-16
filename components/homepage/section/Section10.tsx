@@ -151,7 +151,7 @@ const Section10: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-6 sm:mt-8 md:mt-8 lg:mt-15 gap-4 md:gap-6 lg:gap-5 md:px-2 lg:px-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-6 sm:mt-8 md:mt-8 lg:mt-15 gap-4 md:gap-6 lg:gap-5 md:px-2 lg:px-10">
           {comparisonData.map((column: ComparisonData, index: number) => (
             <div key={index} className='w-full md:w-full'>
               <ComparisonColumn

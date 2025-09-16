@@ -13,14 +13,14 @@ const Header = () => {
       {/* Logo */}
       <div>
         
-       <Image src={Logo} alt="Logo"  height={94} width={94}/>
+       <Image src={Logo} alt="Logo"  height={24} width={100}/>
       </div>
       {/* Shimmer Button */}
-      <div className="relative w-[118px] h-[38px]  rounded-full overflow-hidden">
+      <div className="relative w-[133px] h-[45px]  rounded-full overflow-hidden">
         {/* Actual Button */}
         <button className="flex items-center  justify-center w-full h-full  z-10 relative rounded-full">
           
-          <div style={{fontSize: 13,
+          <div style={{fontSize: 14.23,
 
 letterSpacing: 1,
 

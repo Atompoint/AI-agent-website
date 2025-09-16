@@ -165,25 +165,30 @@ export default function HeroHeader() {
   </div>
 
   {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-8">
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5">
     {/* Label */}
-    <div className="relative flex items-center justify-center w-[600px]">
-  <img
-    src="/assets/images/rect5.png"
-    alt="Background"
-    className="w-full h-auto"
-  />
+   
+    <div className="relative w-full max-w-[550px] mx-auto">
+  <div className="relative w-full">
+    <img
+      src="/assets/images/rect5.png"
+      alt="Background"
+      className="w-full h-auto block"
+    />
 
-  <div
-    className="absolute inset-0 flex items-center justify-center text-center text-white px-4"
-    style={{
-      lineHeight: 1.6,
-      letterSpacing: 0.4,
-    }}
-  >
-    Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+    <div
+      className="absolute inset-0 flex items-center justify-center text-center px-0 subtextt"
+      style={{
+        lineHeight: 1.6,
+        letterSpacing: 0.4,
+      }}
+    >
+      Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+    </div>
   </div>
 </div>
+
+   
 
 
 
@@ -193,7 +198,7 @@ export default function HeroHeader() {
       style={{
         fontFamily: 'Radio Grotesk',
         fontWeight: 400,
-        fontSize: '64px',
+        fontSize: 'clamp(35px, 4vw, 64px)',
         lineHeight: '1',
         letterSpacing: '0%',
         color: 'transparent',
@@ -219,7 +224,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Subtext */}
-    <p className="subtextb w-[80%]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-0">
+    <p className="subtextb max-w-[800px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-0">
       Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
       Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
       Objections & Converts Visitors Into Paying Customers Instantly!
@@ -227,12 +232,12 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[17%] xl:-mt-[14%]">
+ <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%] xl:-mt-[8%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
     <div
-      style={{ clipPath: "inset(0 0 40% 0)" }} // hides bottom 30% only
+      style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
       className="w-full flex justify-center z-0"
     >
       <Image
@@ -247,7 +252,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[80%] z-10">
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[75%] z-10">
       <ContainerScroll>
      
         <img

@@ -37,7 +37,7 @@ const Section05: React.FC = () => {
           style={{
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
-            fontSize: 'clamp(18px, 4vw, 35px)',
+            fontSize: 'clamp(18px, 4vw, 42px)',
             lineHeight: '0.9',
             letterSpacing: '0%',
             margin: '0 0 -0.5rem 0',

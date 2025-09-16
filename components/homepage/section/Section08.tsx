@@ -134,7 +134,7 @@ const Section08: React.FC = () => {
               {features.map((feature: Feature, index: number) => (
                 <div key={index} className="rounded-lg p-4 sm:p-5 md:p-6 h-40 md:h-42 lg:h-44 w-full relative">
                   {/* Icon with circle background */}
-                  <div className="flex-shrink-0 w-18 h-18 flex items-center justify-center relative mb-3">
+                  <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center relative mb-3">
                     <Image
                       src="/assets/icons/onlycircle.svg"
                       alt="Circle"

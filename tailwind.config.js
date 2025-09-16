@@ -7,11 +7,12 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-    },
+        sm: "640px",
+        md: "768px",
+        lg: "1366px",  // <-- moved up
+        xl: "1536px",  // optional: push xl further if you want
+      },
+  
     extend: {
       fontFamily: {
         radio: ['"Radio Grotesk"', 'sans-serif'],

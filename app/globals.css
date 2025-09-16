@@ -134,15 +134,17 @@ line-height: 22.8px;
 .border-class{
    border: '1px solid #FFFFFF12',
 }
-.subtextt{
-  font-size: 16px;
+.subtextt {
+  font-size: clamp(11px, 2.8vw, 16px);
   font-weight: 400;
   color: white;
   letter-spacing: 0.6px;
-
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
 .subtextb{
-  font-size: 18px;
+  font-size: clamp(11px, 2.8vw,16px);
   font-weight: 300;
   color: white;
   letter-spacing: 0.6px;
@@ -179,7 +181,7 @@ line-height: 22.8px;
 .subtext3{
   font-size: clamp(15px, 3vw, 20px);
    font-weight: 600;
-   color: white;
+   color: rgba(255, 255, 255, 0.9);
 
 }
 
@@ -212,6 +214,30 @@ letter-spacing: -0.4px;
   font-size: clamp(30px, 6vw, 60px);
   font-weight: 800;
 }
+/* Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
   -webkit-background-clip: text;

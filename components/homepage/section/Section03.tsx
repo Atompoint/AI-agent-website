@@ -8,136 +8,11 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Gradient from "@/public/assets/images/gradient.png"
 import { BsStars } from "react-icons/bs";
 
-
-interface ComparisonItem {
-  id: number;
-  title: string;
-  subtitle?: string;
-  icon: string;
-  bulletColor: string;
-  textColor: string;
-  backgroundColor: string;
-  features: (string | React.ReactNode)[];
-}
-
-interface StatisticItem {
-  id: number;
-  icon: string;
-  centerIcon: string;
-  alt: string;
-  centerAlt: string;
-  iconSize: { height: number; width: number };
-  centerIconSize: { width: number; height: number };
-  containerClass: string;
-  centerIconContainerClass: string;
-  textLines: string[];
-}
-
 const Section03: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isUserScrolling, setIsUserScrolling] = useState<boolean>(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Dynamic data array for statistics cards
-  const statisticsData: StatisticItem[] = [
-    {
-      id: 1,
-      icon: '/assets/icons/onlycircle.svg',
-      centerIcon: '/assets/icons/qmark.svg',
-      alt: 'question mark',
-      centerAlt: 'Question Mark Icon',
-      iconSize: { height: 75, width: 75 },
-      centerIconSize: { width: 24, height: 24 },
-      containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
-      centerIconContainerClass: 'w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10',
-      textLines: [
-        "67% of website visitors abandon sites",
-        "when they can't get immediate answers"
-      ]
-    },
-    {
-      id: 2,
-      icon: '/assets/icons/onlycircle.svg',
-      centerIcon: '/assets/icons/anxious.svg',
-      alt: 'anxious face',
-      centerAlt: 'Anxious Face Icon',
-      iconSize: { height: 75, width: 75 },
-      centerIconSize: { width: 24, height: 24 },
-      containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
-      centerIconContainerClass: 'w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10',
-      textLines: [
-        "79% say they won't return to a",
-        "website after a bad user experience"
-      ]
-    },
-    {
-      id: 3,
-      icon: '/assets/icons/onlycircle.svg',
-      centerIcon: '/assets/icons/wing.svg',
-      alt: 'wings',
-      centerAlt: 'Wings Icon',
-      iconSize: { height: 75, width: 75 },
-      centerIconSize: { width: 32, height: 32 },
-      containerClass: 'w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2',
-      centerIconContainerClass: 'w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12',
-      textLines: [
-        "You lose an average of $1,430 for every",
-        "1,000 visitors who leave confused"
-      ]
-    }
-  ];
-
-  // Dynamic data array for comparison sections
-  const comparisonData: ComparisonItem[] = [
-    {
-      id: 1,
-      title: "Traditional Live Chat",
-      icon: "/assets/icons/Mask.svg",
-      bulletColor: "white",
-      textColor: "white/80",
-      backgroundColor: "transparent",
-      features: [
-        "Requires hiring expensive staff ($3,000+ per month)",
-        "Limited to business hours only",
-        "Agents need training and management",
-        "Slow response times frustrate customers",
-        "Can only handle a few conversations at a time"
-      ]
-    },
-    {
-      id: 2,
-      title: "Text-Based Chatbots",
-      icon: "/assets/icons/bot.svg",
-      bulletColor: "white",
-      textColor: "gray-300",
-      backgroundColor: "transparent",
-      features: [
-        "Customers hate typing long questions",
-        "Often misunderstand complex queries",
-        "Robotic, impersonal interactions",
-        "Can't guide users around your website",
-        "High abandonment rates"
-      ]
-    },
-    {
-      id: 3,
-      title: "VoiceAgent AI",
-      icon: "/assets/icons/AI.svg",
-      bulletColor: "white",
-      textColor: "gray-100",
-      backgroundColor: "transparent",
-      features: [
-        "ONE-TIME payment (not monthly fees)",
-        "Works 24/7/365 automatically",
-        "Handles simultaneous conversations",
-        "Natural voice interactions customers love",
-        "Actually navigates your website while talking",
-        "Setup in under 60 seconds"
-      ]
-    },
-   
-  ];
 
   // Clear existing timeouts
   const clearTimeouts = useCallback(() => {
@@ -172,7 +47,7 @@ const Section03: React.FC = () => {
       if (typeof window !== 'undefined' && window.innerWidth < 768 && !isUserScrolling) {
         autoScrollIntervalRef.current = setInterval(() => {
           setActiveSlide(prev => {
-            return (prev + 1) % comparisonData.length;
+            return (prev + 1) % 4; // 4 comparison cards
           });
         }, 3000);
       }
@@ -194,7 +69,7 @@ const Section03: React.FC = () => {
         window.removeEventListener('resize', handleResize);
       }
     };
-  }, [isUserScrolling, comparisonData.length, clearTimeouts]);
+  }, [isUserScrolling, clearTimeouts]);
 
   useEffect(() => {
     return () => {
@@ -203,110 +78,160 @@ const Section03: React.FC = () => {
   }, [clearTimeouts]);
 
   return (
-    <div className="relative flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative flex flex-col justify-center items-center overflow-hidden pt-0 -mt-4">
       {/* Single Centered Glow Effect - Responsive */}
       <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[600px] sm:w-[350px] sm:h-[750px] lg:w-[400px] lg:h-[900px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[100px] sm:blur-[120px] lg:blur-[130px] -z-10" />
       
       {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex mb-6 sm:mb-8 lg:mb-10 justify-center">
-  <div className="relative w-full  bg-[#060012] rounded-2xl overflow-hidden">
-    <div className="relative w-full py-4 sm:py-6 lg:py-7  flex flex-col items-center justify-center z-10 overflow-hidden">
-      
-      {/* Light rays container */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-64 sm:h-80 lg:h-96 z-0 pointer-events-none">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#480596"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="w-full h-full"
-        />
-      </div>
+        <div className="relative w-full bg-[#060012] rounded-2xl overflow-hidden">
+          <div className="relative w-full py-4 sm:py-6 lg:py-7 flex flex-col items-center justify-center z-10 overflow-hidden">
+            
+            {/* Light rays container */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-64 sm:h-80 lg:h-96 z-0 pointer-events-none">
+              <LightRays
+                raysOrigin="top-center"
+                raysColor="#480596"
+                raysSpeed={1.5}
+                lightSpread={0.8}
+                rayLength={1.2}
+                followMouse={true}
+                mouseInfluence={0.1}
+                noiseAmount={0.1}
+                distortion={0.05}
+                className="w-full h-full"
+              />
+            </div>
 
-     
-
-      {/* Centered content */}
-      <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
-        <div
-          className="relative text-center px-3 py-3 sm:py-4 lg:py-5"
-          style={{
-            fontFamily: 'Radio Grotesk',
-            fontWeight: 400,
-            fontSize: 'clamp(24px, 6vw, 43px)',
-            lineHeight: '0.8',
-            letterSpacing: '0%',
-            color: 'transparent',
-            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
-          }}
-        >
-          <div>
-            <ShinyText text="Stop" speed={5} className="gradient-white-text" />
-            {' '}
-            <ShinyText text="Losing Money" speed={5} className="gradient-mask-text" />
-            {' '}
-            <ShinyText text="Every Single" speed={5} className="gradient-white-text" />
-          </div>
-          <div>
-            <ShinyText text="Day Your Website" speed={5} className="gradient-white-text" />
-            {' '}
-            <ShinyText text="Stays Silent!" speed={5} className="gradient-white-text" />
-          </div>
-        </div>
-
-        <p className="subtext1  mb-6 sm:mb-8 lg:mb-10">
-          The statistics are brutal!
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto">
-          {statisticsData.map((stat) => (
-            <div key={stat.id} className="flex flex-col items-center text-center">
-              <div className={`${stat.containerClass} flex items-center justify-center relative`}>
-                <Image 
-                  src={stat.icon} 
-                  alt={stat.alt} 
-                  height={stat.iconSize.height} 
-                  width={stat.iconSize.width}
-                  className="w-full h-full object-contain rotate-alternate"
-                />
-                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${stat.centerIconContainerClass} flex items-center justify-center`}>
-                  <Image
-                    src={stat.centerIcon}
-                    alt={stat.centerAlt}
-                    width={stat.centerIconSize.width}
-                    height={stat.centerIconSize.height}
-                    className="w-full h-full object-contain"
-                  />
+            {/* Centered content */}
+            <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
+              <div
+                className="relative text-center px-3 py-3 sm:py-4 lg:py-5"
+                style={{
+                  fontFamily: 'Radio Grotesk',
+                  fontWeight: 400,
+                  fontSize: 'clamp(24px, 6vw, 43px)',
+                  lineHeight: '0.8',
+                  letterSpacing: '0%',
+                  color: 'transparent',
+                  background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                }}
+              >
+                <div>
+                  <ShinyText text="Stop" speed={5} className="gradient-white-text" />
+                  {' '}
+                  <ShinyText text="Losing Money" speed={5} className="gradient-mask-text" />
+                  {' '}
+                  <ShinyText text="Every Single" speed={5} className="gradient-white-text" />
+                </div>
+                <div>
+                  <ShinyText text="Day Your Website" speed={5} className="gradient-white-text" />
+                  {' '}
+                  <ShinyText text="Stays Silent!" speed={5} className="gradient-white-text" />
                 </div>
               </div>
-              <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-4 lg:px-0 sm:px-3 md:px-3 lg:px-0 xl:px-0">
-                {stat.textLines[0]}               
-                <br />
-                {stat.textLines[1]}
+
+              <p className="subtext1 mb-6 sm:mb-8 lg:mb-10">
+                The statistics are brutal!
+              </p>
+
+              {/* Statistics Cards - Hardcoded */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto">
+                {/* Stat 1 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2 flex items-center justify-center relative">
+                    <Image 
+                      src="/assets/icons/onlycircle.svg" 
+                      alt="question mark" 
+                      height={75} 
+                      width={75}
+                      className="w-full h-full object-contain rotate-alternate"
+                    />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 flex items-center justify-center">
+                      <Image
+                        src="/assets/icons/qmark.svg"
+                        alt="Question Mark Icon"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-8">
+                    67% of website visitors abandon sites               
+                    <br />
+                    when they can't get immediate answers
+                  </div>
+                </div>
+
+                {/* Stat 2 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2 flex items-center justify-center relative">
+                    <Image 
+                      src="/assets/icons/onlycircle.svg" 
+                      alt="anxious face" 
+                      height={75} 
+                      width={75}
+                      className="w-full h-full object-contain rotate-alternate"
+                    />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 flex items-center justify-center">
+                      <Image
+                        src="/assets/icons/anxious.svg"
+                        alt="Anxious Face Icon"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-8">
+                    79% say they won't return to a               
+                    <br />
+                    website after a bad user experience
+                  </div>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2 flex items-center justify-center relative">
+                    <Image 
+                      src="/assets/icons/onlycircle.svg" 
+                      alt="wings" 
+                      height={75} 
+                      width={75}
+                      className="w-full h-full object-contain rotate-alternate"
+                    />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center">
+                      <Image
+                        src="/assets/icons/wing.svg"
+                        alt="Wings Icon"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="subtext3 mb-4 sm:mb-6 py-2 sm:py-4 leading-tight px-8">
+                    You lose an average of $1,430 for every               
+                    <br />
+                    1,000 visitors who leave confused
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-
-    </div>
-  </div>
-</div>
-
         
       {/* Comparison Section */}
-      <div className="relative w-full max-w-7xl mx-auto bg-transparent rounded-3xl lg:p-12 overflow-hidden">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="relative z-10">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-10 py-2 sm:py-3">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div
               className="relative text-center z-10 py-3 sm:py-4 lg:py-6"
               style={{
@@ -340,55 +265,660 @@ const Section03: React.FC = () => {
           </div>
 
           {/* Comparison Grid/Carousel Container */}
-          <div className="w-full max-w-6xl px-3 mx-auto relative">
-            {/* Desktop Grid (md and up) - Single Row Layout */}
+          <div className="w-full mx-auto relative">
+            {/* Desktop Grid (md and up) - 2 Row Layout */}
             <div className="hidden md:block">
-              <div className="grid grid-cols-3 gap-4 lg:gap-6 xl:gap-8">
-                {comparisonData.map((item: ComparisonItem) => (
-                  <ComparisonCard key={item.id} item={item} />
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-0">
+                {/* Card 1: Traditional Live Chat */}
+                <div className="h-full flex justify-center">
+                  <div className="w-full max-w-8xl mx-auto">
+                    <div className="relative w-full h-auto flex justify-center">
+                      {/* Background div for styling */}
+                      <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                          {/* Header Section */}
+                          <div className="flex-shrink-0 mb-4">
+                            <div className="flex flex-col items-start">
+                              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                <div className="relative w-full h-full">
+                                  <Image 
+                                    src="/assets/icons/Mask.svg" 
+                                    alt="Traditional Live Chat icon" 
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 40px, 56px"
+                                  />
+                                </div>
+                              </div>
+                              <ShinyText 
+                                text="Traditional Live Chat" 
+                                speed={5} 
+                                className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                              />
+                            </div>
+                          </div>
+
+                          {/* Features Section */}
+                          <div className="flex-1 max-h-[60%] overflow-hidden">
+                            <ul className="space-y-2 sm:space-y-3">
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Requires hiring expensive staff ($3,000+ per month)
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Limited to business hours only
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Agents need training and management
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Slow response times frustrate customers
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Can only handle a few conversations at a time
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2: Text-Based Chatbots */}
+                <div className="h-full flex justify-center">
+                  <div className="w-full max-w-8xl mx-auto">
+                    <div className="relative w-full h-auto flex justify-center">
+                      {/* Background div for styling */}
+                      <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                          {/* Header Section */}
+                          <div className="flex-shrink-0 mb-4">
+                            <div className="flex flex-col items-start">
+                              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                <div className="relative w-full h-full">
+                                  <Image 
+                                    src="/assets/icons/bot.svg" 
+                                    alt="Text-Based Chatbots icon" 
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 40px, 56px"
+                                  />
+                                </div>
+                              </div>
+                              <ShinyText 
+                                text="Text-Based Chatbots" 
+                                speed={5} 
+                                className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                              />
+                            </div>
+                          </div>
+
+                          {/* Features Section */}
+                          <div className="flex-1 max-h-[60%] overflow-hidden">
+                            <ul className="space-y-2 sm:space-y-3">
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Customers hate typing long questions
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Often misunderstand complex queries
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Robotic, impersonal interactions
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Can't guide users around your website
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  High abandonment rates
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3: VoiceAgent AI */}
+                <div className="h-full flex justify-center">
+                  <div className="w-full max-w-8xl mx-auto">
+                    <div className="relative w-full h-auto flex justify-center">
+                      {/* Background div for styling */}
+                      <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                          {/* Header Section */}
+                          <div className="flex-shrink-0 mb-4">
+                            <div className="flex flex-col items-start">
+                              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                <div className="relative w-full h-full">
+                                  <Image 
+                                    src="/assets/icons/AI.svg" 
+                                    alt="VoiceAgent AI icon" 
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 40px, 56px"
+                                  />
+                                </div>
+                              </div>
+                              <ShinyText 
+                                text="VoiceAgent AI" 
+                                speed={5} 
+                                className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                              />
+                            </div>
+                          </div>
+
+                          {/* Features Section */}
+                          <div className="flex-1 max-h-[60%] overflow-hidden">
+                            <ul className="space-y-2 sm:space-y-3">
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  ONE-TIME payment (not monthly fees)
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Works 24/7/365 automatically
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Handles simultaneous conversations
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Natural voice interactions customers love
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Actually navigates your website while talking
+                                </p>
+                              </li>
+                              <li className="flex items-start group">
+                                <div className="flex-shrink-0 mt-1 mr-2">
+                                  <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                </div>
+                                <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                  Setup in under 60 seconds
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Second Row - Do Nothing Card */}
+              <div className="flex justify-center mt-8 lg:mt-12">
+                <div className="w-full max-w-2xl h-full flex justify-center">
+                  <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+                    <ShinyText 
+                      text="Do Nothing (Current Situation)" 
+                      speed={5} 
+                      className="Heading2 mb-4 text-center leading-tight" 
+                    />
+                    
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+                      <div className="flex items-start">
+                        <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                        <span className="text-white/90 subtextpt2 leading-relaxed">57% of visitors leave without buying</span>
+                      </div>
+                      <div className="flex items-start">
+                        <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                        <span className="text-white/90 subtextpt2 leading-relaxed">No way to overcome objections</span>
+                      </div>
+                      <div className="flex items-start">
+                        <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                        <span className="text-white/90 subtextpt2 leading-relaxed">Missing sales 24/7</span>
+                      </div>
+                      <div className="flex items-start">
+                        <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                        <span className="text-white/90 subtextpt2 leading-relaxed">Competitors who adapt will crush you</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Mobile Carousel */}
             <div className="block md:hidden">
-              <div id="default-carousel" className="relative w-full pb-12" data-carousel="slide">
+              <div id="default-carousel" className="relative w-full pb-16" data-carousel="slide">
                 {/* Carousel container with dynamic height */}
-                <div className="relative overflow-hidden rounded-lg min-h-[320px]">
-                  {comparisonData.map((item, index) => (
-                    <div
-                      key={item.id}
-                      className={`w-full transition-all duration-700 ease-in-out transform ${
-                        index === activeSlide 
-                          ? 'opacity-100 translate-x-0 relative' 
-                          : 'opacity-0 absolute inset-0 pointer-events-none'
-                      }`}
-                      data-carousel-item
-                      style={{
-                        transform: index === activeSlide 
-                          ? 'translateX(0)' 
-                          : index < activeSlide 
-                            ? 'translateX(-100%)' 
-                            : 'translateX(100%)'
-                      }}
-                    >
-                      <div className="flex items-start justify-center w-full px-4 py-2">
-                        <ComparisonCard item={item} isMobile={true} />
+                <div className="relative overflow-visible min-h-[600px]">
+                  {/* Slide 1: Traditional Live Chat */}
+                  <div
+                    className={`w-full transition-all duration-500 ease-in-out transform ${
+                      0 === activeSlide 
+                        ? 'opacity-100 translate-x-0 relative' 
+                        : 'opacity-0 absolute inset-0 pointer-events-none'
+                    }`}
+                    data-carousel-item
+                    style={{
+                      transform: 0 === activeSlide 
+                        ? 'translateX(0)' 
+                        : 0 < activeSlide 
+                          ? 'translateX(-100%)' 
+                          : 'translateX(100%)',
+                      padding: '0 1rem'
+                    }}
+                  >
+                    <div className="w-full h-full flex justify-center">
+                      <div className="w-full max-w-8xl mx-auto">
+                        <div className="relative w-full h-auto flex justify-center">
+                          {/* Background div for styling */}
+                          <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                            {/* Content overlay */}
+                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                              {/* Header Section */}
+                              <div className="flex-shrink-0 mb-4">
+                                <div className="flex flex-col items-start">
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                    <div className="relative w-full h-full">
+                                      <Image 
+                                        src="/assets/icons/Mask.svg" 
+                                        alt="Traditional Live Chat icon" 
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 40px, 56px"
+                                      />
+                                    </div>
+                                  </div>
+                                  <ShinyText 
+                                    text="Traditional Live Chat" 
+                                    speed={5} 
+                                    className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                                  />
+                                </div>
+                              </div>
+
+                              {/* Features Section */}
+                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                                <ul className="space-y-2 sm:space-y-3">
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Requires hiring expensive staff ($3,000+ per month)
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Limited to business hours only
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Agents need training and management
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Slow response times frustrate customers
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Can only handle a few conversations at a time
+                                    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Slide 2: Text-Based Chatbots */}
+                  <div
+                    className={`w-full transition-all duration-500 ease-in-out transform ${
+                      1 === activeSlide 
+                        ? 'opacity-100 translate-x-0 relative' 
+                        : 'opacity-0 absolute inset-0 pointer-events-none'
+                    }`}
+                    data-carousel-item
+                    style={{
+                      transform: 1 === activeSlide 
+                        ? 'translateX(0)' 
+                        : 1 < activeSlide 
+                          ? 'translateX(-100%)' 
+                          : 'translateX(100%)',
+                      padding: '0 1rem'
+                    }}
+                  >
+                    <div className="w-full h-full flex justify-center">
+                      <div className="w-full max-w-8xl mx-auto">
+                        <div className="relative w-full h-auto flex justify-center">
+                          {/* Background div for styling */}
+                          <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                            {/* Content overlay */}
+                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                              {/* Header Section */}
+                              <div className="flex-shrink-0 mb-4">
+                                <div className="flex flex-col items-start">
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                    <div className="relative w-full h-full">
+                                      <Image 
+                                        src="/assets/icons/bot.svg" 
+                                        alt="Text-Based Chatbots icon" 
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 40px, 56px"
+                                      />
+                                    </div>
+                                  </div>
+                                  <ShinyText 
+                                    text="Text-Based Chatbots" 
+                                    speed={5} 
+                                    className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                                  />
+                                </div>
+                              </div>
+
+                              {/* Features Section */}
+                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                                <ul className="space-y-2 sm:space-y-3">
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Customers hate typing long questions
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Often misunderstand complex queries
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Robotic, impersonal interactions
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Can't guide users around your website
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      High abandonment rates
+                                    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 3: VoiceAgent AI */}
+                  <div
+                    className={`w-full transition-all duration-500 ease-in-out transform ${
+                      2 === activeSlide 
+                        ? 'opacity-100 translate-x-0 relative' 
+                        : 'opacity-0 absolute inset-0 pointer-events-none'
+                    }`}
+                    data-carousel-item
+                    style={{
+                      transform: 2 === activeSlide 
+                        ? 'translateX(0)' 
+                        : 2 < activeSlide 
+                          ? 'translateX(-100%)' 
+                          : 'translateX(100%)',
+                      padding: '0 1rem'
+                    }}
+                  >
+                    <div className="w-full h-full flex justify-center">
+                      <div className="w-full max-w-8xl mx-auto">
+                        <div className="relative w-full h-auto flex justify-center">
+                          {/* Background div for styling */}
+                          <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl">
+                            {/* Content overlay */}
+                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                              {/* Header Section */}
+                              <div className="flex-shrink-0 mb-4">
+                                <div className="flex flex-col items-start">
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
+                                    <div className="relative w-full h-full">
+                                      <Image 
+                                        src="/assets/icons/AI.svg" 
+                                        alt="VoiceAgent AI icon" 
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 40px, 56px"
+                                      />
+                                    </div>
+                                  </div>
+                                  <ShinyText 
+                                    text="VoiceAgent AI" 
+                                    speed={5} 
+                                    className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 text-start leading-tight" 
+                                  />
+                                </div>
+                              </div>
+
+                              {/* Features Section */}
+                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                                <ul className="space-y-2 sm:space-y-3">
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      ONE-TIME payment (not monthly fees)
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Works 24/7/365 automatically
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Handles simultaneous conversations
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Natural voice interactions customers love
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Actually navigates your website while talking
+                                    </p>
+                                  </li>
+                                  <li className="flex items-start group">
+                                    <div className="flex-shrink-0 mt-1 mr-2">
+                                      <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
+                                    </div>
+                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                      Setup in under 60 seconds
+                                    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 4: Do Nothing */}
+                  <div
+                    className={`w-full transition-all duration-500 ease-in-out transform ${
+                      3 === activeSlide 
+                        ? 'opacity-100 translate-x-0 relative' 
+                        : 'opacity-0 absolute inset-0 pointer-events-none'
+                    }`}
+                    data-carousel-item
+                    style={{
+                      transform: 3 === activeSlide 
+                        ? 'translateX(0)' 
+                        : 3 < activeSlide 
+                          ? 'translateX(-100%)' 
+                          : 'translateX(100%)',
+                      padding: '0 1rem'
+                    }}
+                  >
+                    <div className="w-full h-full flex justify-center">
+                      <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+                        <ShinyText 
+                          text="Do Nothing (Current Situation)" 
+                          speed={5} 
+                          className="Heading2 mb-4 text-center leading-tight" 
+                        />
+                        
+                        <div className="grid grid-cols-1 gap-x-3 gap-y-2">
+                          <div className="flex items-start">
+                            <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                            <span className="text-white/90 subtextpt2 leading-relaxed">57% of visitors leave without buying</span>
+                          </div>
+                          <div className="flex items-start">
+                            <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                            <span className="text-white/90 subtextpt2 leading-relaxed">No way to overcome objections</span>
+                          </div>
+                          <div className="flex items-start">
+                            <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                            <span className="text-white/90 subtextpt2 leading-relaxed">Missing sales 24/7</span>
+                          </div>
+                          <div className="flex items-start">
+                            <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                            <span className="text-white/90 subtextpt2 leading-relaxed">Competitors who adapt will crush you</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              {/* Arrow navigation - Outside and fixed */}
-              <div className="flex justify-center pb-5">
+              {/* Arrow navigation */}
+              <div className="flex justify-center mt-6">
                 <button
                   type="button"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
                   aria-label="Next slide"
-                  onClick={() => handleDotClick((activeSlide + 1) % comparisonData.length)}
+                  onClick={() => handleDotClick((activeSlide + 1) % 4)}
                 >
-                  <FaArrowRightLong className="text-white text-lg" />
+                  <FaArrowRightLong className="text-white text-xl" />
                 </button>
               </div>
             </div>
@@ -398,7 +928,7 @@ const Section03: React.FC = () => {
       
       {/* Final CTA Section */}
       <div 
-        className="relative w-full  p-6 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full p-6 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${Gradient.src})`
         }}
@@ -412,7 +942,6 @@ const Section03: React.FC = () => {
               fontSize: 'clamp(20px, 5vw, 43px)',
               lineHeight: '0.8',
               letterSpacing: '0%',
-         
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
@@ -436,7 +965,7 @@ const Section03: React.FC = () => {
               <div> <ShinyText text="agent on your website " speed={5} className="gradient-white-text" /></div>
               <div className="flex ml-2">
                 <ShinyText text="24/7!" speed={5} className="gradient-white-text" />
-                <BsStars className="text-white text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] lg:ml-5 ml-4  -rotate-90"/>
+                <BsStars className="text-white text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] lg:ml-5 ml-4 -rotate-90"/>
               </div>
             </div>
           </div>
@@ -448,53 +977,6 @@ const Section03: React.FC = () => {
       </div>
       
       <DownArrow/>
-    </div>
-  );
-};
-
-interface ComparisonCardProps {
-  item: ComparisonItem;
-  isMobile?: boolean;
-}
-
-const ComparisonCard: React.FC<ComparisonCardProps> = ({ item, isMobile = false }) => {
-  return (
-    <div className={`flex ${!isMobile ? 'justify-center items-start' : ''} h-full`}>
-      <div 
-        className={`
-          rounded-xl p-4 ${
-            isMobile ? 'w-full' : 'w-full h-auto'
-          } relative overflow-hidden bg-transparent
-        `}
-      >
-        <div className="relative z-10 flex flex-col h-full">
-          <div className="flex-shrink-0 mb-3 sm:mb-4">
-            <div className="flex flex-col items-start">
-              <div className="w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[57px] md:h-[57px] lg:w-[60px] lg:h-[60px] mb-3 flex items-center justify-center">
-                <Image 
-                  src={item.icon} 
-                  alt={`${item.title} icon`} 
-                  height={60} 
-                  width={60} 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <ShinyText text={item.title} speed={5} className="subtext3 gradient-text-white text-start" />
-            </div>
-          </div>
-
-          <div className="flex-1">
-            <ul className="space-y-2 sm:space-y-3 subtext1 text-start">
-              {item.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-start">
-                  <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
