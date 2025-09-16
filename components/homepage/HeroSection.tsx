@@ -168,7 +168,7 @@ export default function HeroHeader() {
   <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5">
     {/* Label */}
    
-    <div className="relative w-full max-w-[550px] mx-auto">
+    <div className="relative w-full max-w-[595px] mx-auto">
   <div className="relative w-full">
     <img
       src="/assets/images/rect5.png"
