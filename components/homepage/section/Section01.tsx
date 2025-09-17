@@ -29,7 +29,7 @@ const ThreeStepsComponent = () => {
       stepText: 'STEP',
       title: 'Enter Your Domain Name And Click Add',
       iconSrc: '/assets/icons/onlycircle.svg',
-      centerIconSrc: '/assets/icons/globe1.svg',
+      centerIconSrc: '/assets/icons/globe.svg',
       iconAlt: 'Circle Background',
       centerIconAlt: 'Globe Icon',
       textColor: 'text-white',
@@ -105,7 +105,11 @@ const ThreeStepsComponent = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+      transition: { 
+        duration: 0.4, 
+        ease: [0.4, 0, 0.2, 1],
+        delay: 0.2
+      }
     }
   };
 
@@ -113,7 +117,11 @@ const ThreeStepsComponent = () => {
     hidden: { width: '0%' },
     visible: { 
       width: '100%',
-      transition: { duration: 1.5, ease: [0.6, -0.05, 0.01, 0.99] }
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1],
+        delay: 0.1
+      }
     }
   };
 
@@ -121,17 +129,27 @@ const ThreeStepsComponent = () => {
     hidden: { height: '0%' },
     visible: { 
       height: '100%',
-      transition: { duration: 1.5, ease: [0.6, -0.05, 0.01, 0.99] }
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1],
+        delay: 0.1
+      }
     }
   };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4 sm:p-8 overflow-hidden" ref={componentRef}>
-      {/* Glow Effect */}
+      {/* Updated Glow Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-radial-gradient(circle at center, rgba(90, 39, 177, 0.15) 0%, rgba(31, 11, 70, 0) 60%)">
+        <div 
+          className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[933px] h-[527px]"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(90, 39, 177, 0.15) 0%, rgba(31, 11, 70, 0) 60%)'
+          }}
+        >
         </div>
       </div>
+      
       <div className="max-w-6xl w-full relative z-0">
         {/* Header */}
         <div
@@ -183,13 +201,13 @@ const ThreeStepsComponent = () => {
                           {/* Step Number Section */}
                           <div className="flex flex-col items-center mb-8">
                             {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.5em] opacity-60">
+                            <div className="text-white text-xs ml-3 font-semibold mb-1 tracking-[0.3em]  text-center w-full flex justify-center">
                               {step.stepText}
                             </div>
                             
                             {/* Step Number */}
                             <div 
-                              className="text-6xl md:text-7xl font-semibold "
+                              className="text-5xl md:text-6xl font-semibold text-center"
                              
                             >
                               <ShinyText text={step.number} disabled={false} speed={6} />
@@ -238,7 +256,7 @@ const ThreeStepsComponent = () => {
                       <div 
                         className="absolute"
                         style={{
-                          top: '60px',
+                          top: '50px',
                           left: '70%',
                           width: '180px',
                           height: '1px',
@@ -246,7 +264,7 @@ const ThreeStepsComponent = () => {
                         }}
                       >
                         {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-gray-600"></div>
+                        <div className="absolute inset-0 bg-white/40"></div>
                         
                         {/* Progress line - fills with white */}
                         <motion.div
@@ -263,6 +281,7 @@ const ThreeStepsComponent = () => {
               ))}
             </div>
           </div>
+{/* xl screen*/}
 
           {/* Tablet Layout */}
           <div className="hidden md:block lg:hidden">
@@ -284,13 +303,13 @@ const ThreeStepsComponent = () => {
                           {/* Step Number Section */}
                           <div className="flex flex-col items-center mb-6">
                             {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60">
+                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
                               {step.stepText}
                             </div>
                             
                             {/* Step Number */}
                             <div 
-                              className="text-5xl font-semibold mb-4"
+                              className="text-5xl font-semibold mb-4 text-center"
                               
                             >
                               <ShinyText text={step.number} disabled={false} speed={6} />
@@ -384,13 +403,13 @@ const ThreeStepsComponent = () => {
                           {/* Step Number Section */}
                           <div className="flex flex-col items-center mb-6">
                             {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60">
+                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
                               {step.stepText}
                             </div>
                             
                             {/* Step Number */}
                             <div 
-                              className="text-5xl font-semibold mb-4"
+                              className="text-5xl font-semibold mb-4 text-center"
                             
                             >
                               <ShinyText text={step.number} disabled={false} speed={6} />
@@ -482,16 +501,15 @@ const ThreeStepsComponent = () => {
                           className="flex flex-col items-center w-full"
                         >
                           {/* Step Number Section */}
-                          <div className="flex flex-col items-center mb-6">
+                          <div className="flex flex-col items-center justify-center h-full mb-6">
                             {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60">
+                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
                               {step.stepText}
                             </div>
                             
                             {/* Step Number */}
                             <div 
-                              className="text-5xl font-semibold mb-4"
-                             
+                              className="text-5xl font-semibold mb-4 text-center"
                             >
                               <ShinyText text={step.number} disabled={false} speed={6} />
                             </div>

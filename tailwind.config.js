@@ -9,8 +9,8 @@ module.exports = {
     screens: {
         sm: "640px",
         md: "768px",
-        lg: "1366px",  // <-- moved up
-        xl: "1536px",  // optional: push xl further if you want
+        lg: "1366px",  
+        xl: "1536px",  
       },
   
     extend: {

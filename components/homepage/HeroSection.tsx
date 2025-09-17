@@ -168,7 +168,7 @@ export default function HeroHeader() {
   <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5">
     {/* Label */}
    
-    <div className="relative w-full max-w-[595px] mx-auto">
+    <div className="relative w-full max-w-[600px] mx-auto">
   <div className="relative w-full">
     <img
       src="/assets/images/rect5.png"
@@ -252,7 +252,7 @@ export default function HeroHeader() {
     </div>
 
     {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[75%] z-10">
+    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[78%] z-10">
       <ContainerScroll>
      
         <img
@@ -284,7 +284,7 @@ export default function HeroHeader() {
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
+                className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
                   isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'
                 }`}
               />
@@ -302,10 +302,10 @@ export default function HeroHeader() {
           </div>
 
           <div className="mt-8 sm:mt-12 md:mt-14 lg:mt-18 px-4 sm:px-6 relative z-20">
-            <div className="max-w-full sm:max-w-[90%] md:max-w-[960px] lg:max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 text-left">
+            <div className="max-w-full sm:max-w-[90%] md:max-w-[560px] lg:max-w-[960px] xl:max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 text-left">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5">
-                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 flex items-center justify-center relative">
+                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex items-center justify-center relative">
                     <Image
                       src="/assets/icons/onlycircle.svg"
                       alt="Circle"
@@ -313,7 +313,7 @@ export default function HeroHeader() {
                       height={24}
                       className="w-full h-full object-contain"
                     />
-                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 m-auto text-white" />
+                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 xl:w-6 xl:h-6 m-auto text-white" />
                   </div>
                   <span className="subtext2">{feature}</span>
                 </div>
