@@ -5,20 +5,17 @@ import Image from 'next/image'
 
 const Section12 = () => {
   return (
-    <div className="px-4 sm:px-4 md:px-5 lg:px-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className="w-full">
         {/* Main Title */}
         <div
-          className="relative text-center z-10 mb-6 sm:mb-8 md:mb-9 lg:mb-10"
+          className="relative text-center z-10 mb-4 sm:mb-8 md:mb-9 lg:mb-10"
           style={{
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
-            fontSize: 'clamp(18px, 4vw, 43px)',
+            fontSize: 'clamp(25px, 4vw, 43px)',
             lineHeight: '0.8',
-            letterSpacing: '0%',
-            margin: '0 0 1.5rem 0',
-            padding: '0 0',
-          
+            letterSpacing: '0%',  
             color: 'transparent',
             background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
             WebkitBackgroundClip: 'text',
@@ -43,9 +40,9 @@ const Section12 = () => {
         </div>  
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 py-6 sm:py-5 lg:px-15 md:py-9 lg:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-0 sm:py-10 md:py-12 lg:py-16">
           {/* Text Content */}
-          <div className="space-y-3 sm:space-y-3.5 md:space-y-4 w-full  subtext1 text-sm sm:text-base order-2 lg:order-1">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 w-full subtext1 text-base sm:text-lg md:text-xl order-2 lg:order-1">
             <p>
               If you're on the fence, ask yourself: How much money have you already lost from visitors who left empty-handed?
             </p> 
@@ -78,14 +75,14 @@ const Section12 = () => {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="relative h-64 w-full max-w-sm sm:h-72 sm:max-w-md md:h-80 md:max-w-lg lg:h-95 lg:w-[590px] rounded-[10px] overflow-hidden">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full">
+            <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[420px] xl:h-[480px] 2xl:h-[520px] rounded-[12px] overflow-hidden">
               <Image
                 src="/assets/images/fence.png"
                 alt="24/7 Sales Machine"
                 fill
-                className="object-contain rounded-[10px]"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 590px"
+                className="object-contain rounded-[12px]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 60vw"
                 priority
               />
             </div>

@@ -11,7 +11,7 @@ const Offer = () => {
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
-          fontSize: 'clamp(24px, 6vw, 43px)',
+          fontSize: 'clamp(25px, 6vw, 43px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
           color: 'transparent',

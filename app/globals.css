@@ -144,7 +144,7 @@ line-height: 22.8px;
 }
 
 .subtextb{
-  font-size: clamp(11px, 2.8vw,16px);
+  font-size: clamp(10px, 2.8vw,18px);
   font-weight: 300;
   color: white;
   letter-spacing: 0.6px;
@@ -167,7 +167,7 @@ line-height: 22.8px;
 
 }
 .subtextpt2 {
-  font-size: clamp(9px, 2vw, 16px);
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 600;
   color: white;
 

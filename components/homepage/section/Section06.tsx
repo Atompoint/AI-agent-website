@@ -27,14 +27,42 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
     <div className={`relative transition-all duration-500 ease-out transform ${
       isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-98'
     }`}>
-      <div className="grid grid-cols-2 gap-0 items-center min-h-[110px] px-4">
+      <div className="grid grid-cols-2 gap-0 items-center min-h-[110px] 2xl:min-h-[140px] px-4">
         
         {/* Left Side Content */}
         <div className={`flex ${position === 'left' ? 'justify-end pr-3 lg:pr-8' : 'justify-start pl-3 lg:pl-8'}`}>
           {position === 'left' && (
-            <div className="max-w-[340px] text-right">
-              <div className="flex flex-col items-end gap-4">
-                <div className="flex items-start justify-end gap-1 sm:gap-2">
+            <div className="max-w-[340px] 2xl:max-w-none text-right">
+              <div className="flex flex-col items-end sm:gap-4">
+                {/* Mobile View - Icon, Step Number, and Title */}
+                <div className="sm:hidden w-full">
+                  <div className="flex flex-col items-end">
+                    <div className="flex flex-col items-end mb-1">
+                      <div className="num2 text-sm text-gray-400">
+                        {step.padStart(2, '0')}
+                      </div>
+                      {imageUrl && (
+                        <img 
+                          src={imageUrl} 
+                          alt={`Step ${step} icon`}
+                          className={`w-6 h-6 mt-4 object-contain transition-all ${
+                            isActive ? 'opacity-100' : 'opacity-60'
+                          }`}
+                          style={{ filter: 'brightness(0) invert(1)' }}
+                        />
+                      )}
+                    </div>
+                    <div className="text-right w-full">
+                      <h3 className={`subtextpt2 py-1 leading-[1.5] transition-all ${
+                        isActive ? 'text-white' : 'text-gray-400'
+                      }`}>
+                        {title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="hidden sm:flex items-start justify-end gap-1 sm:gap-2 w-full">
                   <div className='flex flex-col items-right justify-end content-end'>
                     <div className="num2 transition-all">
                       <ShinyText
@@ -45,7 +73,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 lg:w-55 py-2 leading-[1.5] transition-all ${
+                      <h3 className={`subtextpt2 w-32 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -58,7 +86,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-8 h-8 md:w-12 md:h-12 lg:w-12 lg:h-12 object-contain transition-all ${
+                        className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 2xl:w-14 2xl:h-14 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                         style={{ filter: 'brightness(0) invert(1)' }}
@@ -81,15 +109,43 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
         {/* Right Side Content */}
         <div className={`flex ${position === 'right' ? 'justify-start pl-3 lg:pl-8' : 'justify-end pl-3 lg:pr-8'}`}>
           {position === 'right' && (
-            <div className="max-w-[340px] text-left">
-              <div className="flex flex-col items-start gap-4">
-                <div className="flex items-start justify-start gap-2 sm:gap-3 md:gap-5">
-                  <div className="p-1 mt-2 lg:mt-4 transition-all">
+            <div className="max-w-[340px] 2xl:max-w-none text-left">
+              <div className="flex flex-col items-start sm:gap-4">
+                {/* Mobile View - Icon, Step Number, and Title */}
+                <div className="sm:hidden w-full">
+                  <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-start mb-1">
+                      <div className="num2 text-sm text-gray-400">
+                        {step.padStart(2, '0')}
+                      </div>
+                      {imageUrl && (
+                        <img 
+                          src={imageUrl} 
+                          alt={`Step ${step} icon`}
+                          className={`w-6 h-6 mt-4 object-contain transition-all ${
+                            isActive ? 'opacity-100' : 'opacity-60'
+                          }`}
+                          style={{ filter: 'brightness(0) invert(1)' }}
+                        />
+                      )}
+                    </div>
+                    <div className="text-left w-full">
+                      <h3 className={`subtextpt2 py-1 leading-[1.5] transition-all ${
+                        isActive ? 'text-white' : 'text-gray-400'
+                      }`}>
+                        {title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="hidden sm:flex items-start justify-start gap-2 sm:gap-3 md:gap-5 w-full">
+                  <div className="p-1 mt-2 lg:mt-4 2xl:mt-12 transition-all">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-8 h-8 lg:w-12 lg:h-12 object-contain transition-all ${
+                        className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 2xl:w-14 2xl:h-14 object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                         style={{ filter: 'brightness(0) invert(1)' }}
@@ -106,7 +162,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 lg:w-66 py-1 leading-[1.3]  transition-all ${
+                      <h3 className={`subtextpt2 w-32 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -260,11 +316,11 @@ const TimelineUI: React.FC = () => {
       <div className="container mx-auto">
 
         <div
-  className="relative text-center z-10 py-30"
+  className="relative text-center z-10 py-12 md:py-30"
   style={{
     fontFamily: 'Radio Grotesk',
     fontWeight: 400,
-    fontSize: 'clamp(24px, 6vw, 43px)',
+    fontSize: 'clamp(25px, 6vw, 43px)',
     lineHeight: '0.8',
     letterSpacing: '0%',
    
@@ -291,10 +347,10 @@ const TimelineUI: React.FC = () => {
             </div>
 </div>
         {/* Timeline Container */}
-        <div className="max-w-6xl mx-auto py-10">
+        <div className="max-w-6xl mx-auto ">
           <div ref={containerRef} className="relative">
             {/* Timeline Steps */}
-            <div className="relative z-10 space-y-5">
+            <div className="relative z-10 space-y-9 2xl:space-y-15">
               {steps.map((step, index) => (
                 <div
                   key={index}

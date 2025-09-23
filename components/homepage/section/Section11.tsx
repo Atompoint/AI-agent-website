@@ -69,7 +69,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
 // Reusable Hero Section component
 const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
   return (
-    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative px-2 sm:px-4">
+    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative px-2 sm:px-4 w-full">
       {/* Background Glow Effect */}
       <div className="absolute top-[20rem] sm:top-[25rem] md:top-[28rem] lg:top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[550px] md:h-[420px] lg:w-[800px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[60px] sm:blur-[80px] md:blur-[85px] lg:blur-[120px] -z-10" />
       
@@ -79,7 +79,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
-          fontSize: 'clamp(18px, 4vw, 43px)',
+          fontSize: 'clamp(25px, 4vw, 43px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
           margin: '0 0 -0.25rem 0',
@@ -109,21 +109,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
       </div>
     
       {/* Hero Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-12 justify-center items-center pt-12 sm:pt-16 md:pt-14 lg:pt-20 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 justify-center items-center pt-12 sm:pt-16 md:pt-14 lg:pt-20 relative z-10 w-full">
         {/* Hero Image */}
-        <div className="mx-auto md:mx-0">
+        <div className="mx-auto md:mx-0 w-full">
           <Image
             src="/assets/images/sales.png"
             alt="24/7 Sales Machine"
             width={870}
             height={410}
-            className="object-contain rounded-[8px] w-full h-auto max-w-[350px] sm:max-w-[400px] md:max-w-[320px] lg:max-w-[870px]"
+            className="object-contain rounded-[8px] w-full h-auto max-w-[400px] sm:max-w-[500px] md:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] 2xl:max-w-[850px]"
           />
         </div>
-
         
         {/* Description */}
-        <div className="space-y-2 w-full md:w-full subtext1 ">
+        <div className="space-y-3 sm:space-y-4 w-full subtext1 text-base sm:text-lg md:text-xl">
           {description.map((paragraph, index) => (
             <p 
               key={index}
@@ -201,7 +200,7 @@ const Section11: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-4 md:px-5 lg:px-6">
+    <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
       {/* Hero Section */}
       <HeroSection 
        
@@ -214,7 +213,7 @@ const Section11: React.FC = () => {
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
-          fontSize: 'clamp(18px, 4vw, 43px)',
+          fontSize: 'clamp(25px, 4vw, 43px)',
           lineHeight: '0.8',
           letterSpacing: '0%',
           margin: '0 0 2rem 0',

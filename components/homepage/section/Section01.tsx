@@ -71,44 +71,49 @@ const ThreeStepsComponent = () => {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of the component is visible
-        rootMargin: '0px 0px -100px 0px' // Trigger a bit before it's fully visible
+        threshold: 0.1, // Lower threshold for small screens
+        rootMargin: '0px 0px -50px 0px' // Smaller margin for small screens
       }
     );
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+    const currentRef = componentRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, []); // Remove isInView dependency to allow re-triggering
+  }, []);
 
   // Auto-progress through steps when in view
   useEffect(() => {
     if (!isInView) return;
 
+    const isSmallScreen = window.innerWidth < 640; // sm breakpoint
+    const stepDelay = isSmallScreen ? 800 : 1000; // Faster animation on small screens
+    const initialDelay = currentStep === -1 ? 0 : stepDelay;
+
     const timer = setTimeout(() => {
       if (currentStep < steps.length - 1) {
         setCurrentStep(prev => prev + 1);
       }
-    }, currentStep === -1 ? 0 : 1500); // Start immediately, then 1.5s intervals
+    }, initialDelay);
 
     return () => clearTimeout(timer);
   }, [currentStep, steps.length, isInView]);
 
   const containerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: { 
-        duration: 0.4, 
-        ease: [0.4, 0, 0.2, 1],
-        delay: 0.2
+        duration: 0.5, 
+        ease: [0.25, 0.1, 0.25, 1],
+        delay: 0.1
       }
     }
   };
@@ -118,9 +123,9 @@ const ThreeStepsComponent = () => {
     visible: { 
       width: '100%',
       transition: { 
-        duration: 0.8, 
-        ease: [0.4, 0, 0.2, 1],
-        delay: 0.1
+        duration: 0.6, 
+        ease: [0.25, 0.1, 0.25, 1],
+        delay: 0
       }
     }
   };
@@ -130,15 +135,15 @@ const ThreeStepsComponent = () => {
     visible: { 
       height: '100%',
       transition: { 
-        duration: 0.8, 
-        ease: [0.4, 0, 0.2, 1],
-        delay: 0.1
+        duration: 0.6, 
+        ease: [0.25, 0.1, 0.25, 1],
+        delay: 0
       }
     }
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center p-4 sm:p-8 overflow-hidden" ref={componentRef}>
+    <div className="relative min-h-screen flex items-center justify-center pt-4 px-4 sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
       {/* Updated Glow Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div 
@@ -157,7 +162,7 @@ const ThreeStepsComponent = () => {
           style={{
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
-            fontSize: 'clamp(20px, 5vw, 43px)',
+            fontSize: 'clamp(25px, 5vw, 43px)',
             lineHeight: '0.9',
             letterSpacing: '0%',
             color: 'transparent',
@@ -180,9 +185,9 @@ const ThreeStepsComponent = () => {
         </div>
 
         {/* Horizontal Stepper */}
-        <div className="max-w-[800px] mx-auto">
+        <div className="max-w-[800px] 2xl:max-w-[1100px] mx-auto">
           {/* Desktop Layout */}
-          <div className="hidden lg:block py-10">
+          <div className="hidden lg:block 2xl:hidden py-10">
             <div className="relative flex items-start justify-between mb-12">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
@@ -282,7 +287,105 @@ const ThreeStepsComponent = () => {
             </div>
           </div>
 {/* xl screen*/}
+<div className="hidden 2xl:block py-10">
+            <div className="relative flex items-start justify-between mb-12">
+              {steps.map((step, index) => (
+                <React.Fragment key={index}>
+                  {/* Step Column with Relative Wrapper - Always maintains space */}
+                  <div className="relative flex flex-col items-center" style={{ minWidth: '200px', maxWidth: '240px', minHeight: '300px' }}>
+                    <AnimatePresence mode="wait">
+                      {currentStep >= index && (
+                        <motion.div
+                          key={`step-${index}-${animationKey}`}
+                          variants={containerVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="hidden"
+                          className="flex flex-col items-center w-full"
+                        >
+                          {/* Step Number Section */}
+                          <div className="flex flex-col items-center mb-8">
+                            {/* Step Label */}
+                            <div className="text-white text-xs ml-3 font-semibold mb-1 tracking-[0.3em]  text-center w-full flex justify-center">
+                              {step.stepText}
+                            </div>
+                            
+                            {/* Step Number */}
+                            <div 
+                              className="text-5xl md:text-6xl font-semibold text-center"
+                             
+                            >
+                              <ShinyText text={step.number} disabled={false} speed={6} />
+                            </div>
+                          </div>
 
+                          {/* Icon Container */}
+                          <div className="relative w-16 h-16 md:w-20 md:h-20 mb-6 flex items-center justify-center">
+                            {/* Rotating Circle Background */}
+                            <Image
+                              src={step.iconSrc}
+                              alt={step.iconAlt}
+                              width={80}
+                              height={80}
+                              className="w-full h-full object-contain rotate-alternate"
+                              priority={index === 0}
+                            />
+                            
+                            {/* Centered Static Icon */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                              <Image
+                                src={step.centerIconSrc}
+                                alt={step.centerIconAlt}
+                                width={40}
+                                height={40}
+                                className="object-contain w-full h-full"
+                                priority={index === 0}
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Step Title */}
+                          <div 
+                          style={{ fontSize: 'clamp(13px, 5vw, 18.5px)' }}
+                            className={`${step.textColor} font-semibold leading-relaxed text-center w-full px-4`}
+                           
+                          >
+                            {step.title}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Absolutely Positioned Connector Line */}
+                    {index < steps.length - 1 && (
+                      <div 
+                        className="absolute"
+                        style={{
+                          top: '50px',
+                          left: '70%',
+                          width: '330px',
+                          height: '1px',
+                          zIndex: 1
+                        }}
+                      >
+                        {/* Background line - always visible as gray */}
+                        <div className="absolute inset-0 bg-white/40"></div>
+                        
+                        {/* Progress line - fills with white */}
+                        <motion.div
+                          key={`desktop-line-${index}-${animationKey}`}
+                          className="absolute inset-0 bg-white origin-left"
+                          variants={stepperLineVariants}
+                          initial="hidden"
+                          animate={currentStep > index ? "visible" : "hidden"}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
           {/* Tablet Layout */}
           <div className="hidden md:block lg:hidden">
             <div className="relative flex items-start justify-between mb-12 px-4">
@@ -365,7 +468,7 @@ const ThreeStepsComponent = () => {
                         }}
                       >
                         {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-gray-600"></div>
+                        <div className="absolute inset-0 bg-white/40"></div>
                         
                         {/* Progress line - fills with white */}
                         <motion.div
@@ -465,7 +568,7 @@ const ThreeStepsComponent = () => {
                         }}
                       >
                         {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-gray-600"></div>
+                        <div className="absolute inset-0 bg-white/40"></div>
                         
                         {/* Progress line - fills with white */}
                         <motion.div
@@ -485,11 +588,11 @@ const ThreeStepsComponent = () => {
 
           {/* Mobile Layout - Vertical Stack */}
           <div className="block md:hidden">
-            <div className="flex flex-col items-center space-y-8 mb-12">
+            <div className="flex flex-col items-center space-y-4 sm:space-y-6 mt-3 sm:mt-5 mb-8 sm:mb-12 px-2">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
                   {/* Step Column - Always maintains space */}
-                  <div className="relative flex flex-col items-center w-full max-w-xs" style={{ minHeight: '200px' }}>
+                  <div className="relative w-full max-w-[280px] sm:max-w-xs" style={{ minHeight: '180px' }}>
                     <AnimatePresence mode="wait">
                       {currentStep >= index && (
                         <motion.div
@@ -498,25 +601,23 @@ const ThreeStepsComponent = () => {
                           initial="hidden"
                           animate="visible"
                           exit="hidden"
-                          className="flex flex-col items-center w-full"
+                          className="flex flex-col items-center w-full h-full"
                         >
                           {/* Step Number Section */}
-                          <div className="flex flex-col items-center justify-center h-full mb-6">
+                          <div className="flex flex-col items-center justify-center h-full mb-0">
                             {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
+                            <div className="text-white text-[11px] sm:text-xs font-medium mb-1 sm:mb-2 tracking-[0.15em] opacity-60 text-center">
                               {step.stepText}
                             </div>
                             
                             {/* Step Number */}
-                            <div 
-                              className="text-5xl font-semibold mb-4 text-center"
-                            >
+                            <div className="text-4xl sm:text-5xl font-semibold mb-3 sm:mb-4 text-center">
                               <ShinyText text={step.number} disabled={false} speed={6} />
                             </div>
                           </div>
 
                           {/* Icon Container */}
-                          <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+                          <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
                             {/* Rotating Circle Background */}
                             <Image
                               src={step.iconSrc}
@@ -525,10 +626,11 @@ const ThreeStepsComponent = () => {
                               height={64}
                               className="w-full h-full object-contain animate-spin-slow"
                               priority={index === 0}
+                              sizes="(max-width: 640px) 56px, 64px"
                             />
                             
                             {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center">
                               <Image
                                 src={step.centerIconSrc}
                                 alt={step.centerIconAlt}
@@ -542,7 +644,7 @@ const ThreeStepsComponent = () => {
                           
                           {/* Step Title */}
                           <div 
-                            className={`${step.textColor} text-sm leading-relaxed text-center w-full px-4`}
+                            className={`${step.textColor} text-[13px] sm:text-sm leading-relaxed text-center w-full px-2 sm:px-4`}
                             style={{ fontFamily: 'Radio Grotesk' }}
                           >
                             {step.title}
@@ -555,9 +657,9 @@ const ThreeStepsComponent = () => {
                   {/* Vertical Connector Line for Mobile */}
                   {index < steps.length - 1 && (
                     <div className="flex justify-center w-full">
-                      <div className="relative w-px h-12">
+                      <div className="relative w-px h-12 sm:h-16">
                         {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-gray-600"></div>
+                        <div className="absolute inset-0 bg-white/40"></div>
                         
                         {/* Progress line - fills with white */}
                         <motion.div

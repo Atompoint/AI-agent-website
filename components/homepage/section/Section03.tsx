@@ -555,7 +555,7 @@ const Section03: React.FC = () => {
             <div className="block md:hidden">
               <div id="default-carousel" className="relative w-full pb-16" data-carousel="slide">
                 {/* Carousel container with dynamic height */}
-                <div className="relative overflow-visible min-h-[600px]">
+                <div className="relative overflow-visible h-[calc(100vh-12rem)]">
                   {/* Slide 1: Traditional Live Chat */}
                   <div
                     className={`w-full transition-all duration-500 ease-in-out transform ${
@@ -574,12 +574,12 @@ const Section03: React.FC = () => {
                     }}
                   >
                     <div className="w-full h-full flex justify-center">
-                      <div className="w-full max-w-8xl mx-auto">
+                      <div className="w-full max-w-9xl mx-auto">
                         <div className="relative w-full h-auto flex justify-center">
                           {/* Background div for styling */}
-                          <div className="w-full max-w-[1200px] border border-white/20 min-h-[600px] rounded-xl bg-[#01000C]">
+                          <div className="w-full max-w-[1300px] border border-white/20 rounded-[12px] bg-[#01000C] py-6 px-6">
                             {/* Content overlay */}
-                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                            <div className="flex flex-col justify-start">
                               {/* Header Section */}
                               <div className="flex-shrink-0 mb-4">
                                 <div className="flex flex-col items-start">
@@ -603,7 +603,7 @@ const Section03: React.FC = () => {
                               </div>
 
                               {/* Features Section */}
-                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                              <div className="flex-1">
                                 <ul className="space-y-2 sm:space-y-3">
                                   <li className="flex items-start group">
                                     <div className="flex-shrink-0 mt-1 mr-2">
@@ -675,9 +675,9 @@ const Section03: React.FC = () => {
                       <div className="w-full max-w-8xl mx-auto">
                         <div className="relative w-full h-auto flex justify-center">
                           {/* Background div for styling */}
-                          <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl border border-white/20 bg-[#01000C]">
+                          <div className="w-full max-w-[1200px] border border-white/20 rounded-[12px] bg-[#01000C] py-6 px-6">
                             {/* Content overlay */}
-                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                            <div className="flex flex-col justify-start">
                               {/* Header Section */}
                               <div className="flex-shrink-0 mb-4">
                                 <div className="flex flex-col items-start">
@@ -701,7 +701,7 @@ const Section03: React.FC = () => {
                               </div>
 
                               {/* Features Section */}
-                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                              <div className="flex-1">
                                 <ul className="space-y-2 sm:space-y-3">
                                   <li className="flex items-start group">
                                     <div className="flex-shrink-0 mt-1 mr-2">
@@ -769,13 +769,13 @@ const Section03: React.FC = () => {
                       padding: '0 1rem'
                     }}
                   >
-                    <div className="w-full h-full flex justify-center">
+                                      <div className="w-full h-full flex justify-center">
                       <div className="w-full max-w-8xl mx-auto">
                         <div className="relative w-full h-auto flex justify-center">
                           {/* Background div for styling */}
-                          <div className="w-full max-w-[1200px] min-h-[600px] rounded-xl border border-white/20 bg-[#01000C]">
+                          <div className="w-full max-w-[1200px] rounded-[12px] bg-[linear-gradient(135deg,_rgba(31,11,70,0.17)_5%,_rgba(222,191,255,0.17)_29%,_rgba(90,39,177,0.17)_58%,_rgba(191,132,249,0.17)_92%)] border border-[#BF84F9] py-6 px-6">
                             {/* Content overlay */}
-                            <div className="absolute inset-0 flex flex-col justify-start overflow-hidden p-6">
+                            <div className="flex flex-col justify-start">
                               {/* Header Section */}
                               <div className="flex-shrink-0 mb-4">
                                 <div className="flex flex-col items-start">
@@ -799,7 +799,7 @@ const Section03: React.FC = () => {
                               </div>
 
                               {/* Features Section */}
-                              <div className="flex-1 max-h-[60%] overflow-hidden">
+                              <div className="flex-1">
                                 <ul className="space-y-2 sm:space-y-3">
                                   <li className="flex items-start group">
                                     <div className="flex-shrink-0 mt-1 mr-2">
@@ -876,7 +876,7 @@ const Section03: React.FC = () => {
                     }}
                   >
                     <div className="w-full h-full flex justify-center">
-                      <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+                      <div className="w-full max-w-6xl mt-10 mx-auto flex flex-col items-center">
                         <ShinyText 
                           text="Do Nothing (Current Situation)" 
                           speed={5} 
@@ -907,16 +907,21 @@ const Section03: React.FC = () => {
                 </div>
               </div>
               
-              {/* Arrow navigation */}
-              <div className="flex justify-center mt-6">
-                <button
-                  type="button"
-                  className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
-                  aria-label="Next slide"
-                  onClick={() => handleDotClick((activeSlide + 1) % 4)}
-                >
-                  <FaArrowRightLong className="text-white text-xl" />
-                </button>
+              {/* Dot navigation */}
+              <div className="flex justify-center mt-6 space-x-3">
+                {[0, 1, 2, 3].map((index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === activeSlide 
+                        ? 'bg-white/100 scale-125' 
+                        : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                    onClick={() => handleDotClick(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>

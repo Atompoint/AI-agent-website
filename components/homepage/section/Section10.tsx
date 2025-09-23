@@ -127,7 +127,7 @@ const Section10: React.FC = () => {
           style={{
             fontFamily: 'Radio Grotesk',
             fontWeight: 400,
-            fontSize: 'clamp(24px, 4vw, 43px)',
+            fontSize: 'clamp(25px, 4vw, 43px)',
             lineHeight: '0.9',
             letterSpacing: '0%',
            
@@ -139,7 +139,7 @@ const Section10: React.FC = () => {
             backgroundClip: 'text'
           }}
         >
-          <div className="mb-1 sm:mb-2 md:mb-2">
+          <div >
             <ShinyText text="Two Paths Forward: " speed={5} className="gradient-white-text" />
             {' '}
             <ShinyText text="Stay Silent & Lose" speed={5} className="gradient-white-text" />

@@ -30,7 +30,7 @@ const Section05: React.FC = () => {
       {/* Background Glow Effect */}
       <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
        
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 2xl:px-8 relative z-10">
         {/* Header */}
         <div
           className="relative text-center z-10 mt-8"
@@ -71,12 +71,12 @@ const Section05: React.FC = () => {
            </div>
         </div> 
 
-        <div className="flex justify-center items-center w-full py-12 sm:py-16 lg:py-20">
-          <div className="max-w-[921px] w-full">
+        <div className="flex justify-center items-center w-full pt-12 sm:pt-16 lg:pt-20 2xl:pt-24">
+          <div className="max-w-[921px] 2xl:max-w-[1200px] w-full">
             {/* First Row - Text left, Video right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-0 items-center">
               {/* Text Left */}
-              <div className="subtext1 leading-5 lg:pr-8 text-center lg:text-left order-2 lg:order-1">
+              <div className="subtext1 leading-5 max-w-[460px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pr-8 2xl:pr-12 text-center lg:text-left order-2 lg:order-1">
                 <p className="text-white font-semibold">
                   VoiceAgent AI is the world's first conversational website assistant
                   that your visitors can actually TALK to just like they're calling your
@@ -94,7 +94,7 @@ const Section05: React.FC = () => {
               </div>
 
               {/* Video Right */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] 2xl:w-[550px] h-48 sm:h-56 lg:h-64 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
                 <video
                   className="w-full h-full object-cover rounded-[10px]"
                   src="/assets/videos/web1.mp4"
@@ -130,7 +130,7 @@ const Section05: React.FC = () => {
             {/* Second Row - Video left, Text right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 items-center mt-12 sm:mt-14 lg:mt-16 gap-6 lg:gap-0">
               {/* Video Left */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] h-48 sm:h-56 lg:h-64 flex items-center justify-center relative overflow-hidden order-1">
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] 2xl:w-[550px] h-48 sm:h-56 lg:h-64 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1">
                 <video
                   className="w-full h-full object-cover rounded-[10px]"
                   src="/assets/videos/web2.mp4"
@@ -163,13 +163,13 @@ const Section05: React.FC = () => {
               </div>
              
               {/* Text Right */}
-              <div className="subtext1 leading-5 lg:pl-15 text-center lg:text-left order-2">
+              <div className="subtext1 leading-5 2xl:leading-7 lg:pl-15 2xl:pl-12 2xl:text-lg text-center lg:text-left order-2">
                 <p>
                   Imagine having your best person available 24/7, who knows every page
                   of your website by heart, never takes a day off, never gets tired, and
                   can handle unlimited customers simultaneously.
                 </p>
-                <p className="text-white font-semibold leading-10">
+                <p className="text-white font-semibold leading-5 py-5">
                   That's exactly what you get with VoiceAgent AI.
                 </p>
               </div>
@@ -182,16 +182,13 @@ const Section05: React.FC = () => {
 
       {/* Demo Section Header */}
       <div
-        className="relative text-center z-10"
+        className="relative text-center z-10 pt-8 sm:pt-16 lg:pt-20 2xl:pt-24"
         style={{
           fontFamily: 'Radio Grotesk',
           fontWeight: 400,
-          fontSize: 'clamp(24px, 6vw, 43px)',
+          fontSize: 'clamp(25px, 6vw, 43px)',
           lineHeight: '0.8' ,
           letterSpacing: '0%',
-          margin: '30px 0 -0.5rem 0',
-          padding: '0.2em 0',
-         
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
           WebkitBackgroundClip: 'text',
@@ -209,7 +206,7 @@ const Section05: React.FC = () => {
       </div>  
 
       {/* Image Container with Glow Effect */}
-      <div className="relative max-w-[900px] m-auto mt-8 px-4">
+      <div className="relative max-w-[900px] 2xl:max-w-[1100px] m-auto mt-8 2xl:mt-12 px-4">
         {/* Glow Image - positioned behind main image */}
         <div className="absolute top-[0%] lg:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
         
@@ -223,8 +220,8 @@ const Section05: React.FC = () => {
           />
           <Image
             src="/assets/images/main1.png"
-            width={1200}
-            height={900}
+            width={1400}
+            height={1050}
             alt="product web image"
             className="object-contain w-full h-auto relative z-10 rounded-2xl"
             priority

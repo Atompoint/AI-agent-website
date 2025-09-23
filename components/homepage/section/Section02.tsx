@@ -94,23 +94,23 @@ const Section02 = () => {
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4  lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        <div className="w-full">
           
           {sections.map((section, index) => (
             <div
               key={index}
                className={`
-                relative flex flex-col lg:flex-row gap-15
-                text-white justify-center items-center pb-5 lg:pb-15
+                relative flex flex-col lg:flex-row gap-15 2xl:gap-30
+                text-white justify-center items-center pb-15 lg:pb-15
                 rounded-xl
                 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}
               `}
             >
               {/* Text Section */}
-              <div className="w-full md:max-w-[500px] lg:w-[415px] flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="w-full md:max-w-[500px] lg:w-[500px] xl:w-[550px] 2xl:w-[600px] flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div 
-                  className="text-[26px] md:text-[30px] lg:text-[32px]  font-semibold mb-3 leading-tight lg:leading-[38px]"
+                  className="text-[22px] md:text-[30px] lg:text-[34px] xl:text-[38px] 2xl:text-[42px] font-semibold mb-4 leading-tight lg:leading-[1.2]"
                 >
                   <ShinyText 
                      disabled={false} 
@@ -120,7 +120,7 @@ const Section02 = () => {
                     {section.title}
                   </ShinyText>
                 </div> 
-                <div className="space-y-4 max-w-none md:max-w-[500px] lg:max-w-[430px]">
+                <div className="relative w-full max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] 6xl:max-w-[650px]">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p 
                       key={paragraphIndex} 
@@ -154,7 +154,7 @@ const Section02 = () => {
           
         </div> 
       </div> 
-      
+    
       {/* Down Arrow */}
       <DownArrow />
     </div>

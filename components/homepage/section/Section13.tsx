@@ -45,20 +45,21 @@ const Section13: React.FC = () => {
   return (
     <div className="text-white px-4">
       {/* Signature Section with Purple Background Image */}
-      <div className="relative overflow-hidden 
-                rounded-[8px] sm:rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[20px] 
-                mx-auto 
-                max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] 
-                h-[240px] sm:h-[260px] md:h-[280px] lg:h-[300px] xl:h-[320px] 
-                flex items-center justify-center 
-                px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8">
-  
+      <div
+  className="relative overflow-hidden 
+             rounded-[8px] sm:rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[20px] 
+             mx-auto 
+             max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-7xl
+             flex items-center justify-center 
+             px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 
+             min-h-[240px] sm:min-h-[260px] md:min-h-[280px] lg:min-h-[300px] xl:min-h-[320px] h-auto"
+>
   {/* Background Image */}
   <Image 
     src={Purple}
-    alt='purple gradient background' 
+    alt="purple gradient background" 
     fill
-    className='absolute inset-0 w-full h-full object-cover opacity-75'
+    className="absolute inset-0 w-full h-full object-cover opacity-75"
   />
 
   {/* Content */}
@@ -82,31 +83,28 @@ const Section13: React.FC = () => {
             disabled={false}
             speed={6}
             className="Heading1 gradient-white-text leading-[0.8]"
-           
           />
         </div>
       </div>
 
-      {/* Center box */}
+      {/* Center box (Image) */}
       <div
-  className="relative
-             w-48 h-32
-             sm:w-56 sm:h-36
-             md:w-64 md:h-40
-             lg:w-72 lg:h-44
-             xl:w-80 xl:h-48
-             order-2 md:order-2"
->
-  <Image
-    src={MikeImage}
-    alt="Mike Formby"
-    fill
-    className="object-contain"
-    sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 20rem"
-  />
-</div>
-
-
+        className="relative
+                   w-48 h-32
+                   sm:w-56 sm:h-36
+                   md:w-64 md:h-40
+                   lg:w-72 lg:h-44
+                   xl:w-80 xl:h-48
+                   order-2 md:order-2"
+      >
+        <Image
+          src={MikeImage}
+          alt="Mike Formby"
+          fill
+          className="object-contain"
+          sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 20rem"
+        />
+      </div>
 
       {/* Right text */}
       <div className="flex-1 flex justify-center md:justify-start 
@@ -120,14 +118,12 @@ const Section13: React.FC = () => {
               disabled={false}
               speed={6}
               className="Heading1 gradient-white-text block"
-             
             />
             <ShinyText
               text="The Inside!"
               disabled={false}
               speed={6}
               className="Heading1 gradient-white-text"
-              
             />
           </h2>
         </div>
@@ -137,12 +133,13 @@ const Section13: React.FC = () => {
 </div>
 
 
+
       {/* FAQ Section */}
       <div className="py-8 sm:py-12 md:py-14 lg:py-20 px-3 sm:px-4 md:px-5 lg:px-6 relative">
         {/* Background Glow Effect */}
         <div className="absolute top-[6rem] left-[6rem] sm:top-[8rem] sm:left-[8rem] md:top-[9rem] md:left-[10rem] lg:top-[10rem] lg:left-[12rem] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[650px] md:h-[500px] lg:w-[800px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 via-purple-300/15 to-transparent blur-[80px] sm:blur-[100px] md:blur-[120px] lg:blur-[150px] -z-10" />
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl 2xl:max-w-6xl mx-auto">
           <h2 className="m-auto mb-6 sm:mb-8 md:mb-9 lg:mb-5 leading-tight text-center ">
             <ShinyText
               text="Frequently Asked Questions"
@@ -152,7 +149,7 @@ const Section13: React.FC = () => {
             />
           </h2>
           
-          <div className="space-y-2 w-full sm:w-full md:w-130 lg:w-150 m-auto mb-12 sm:mb-16 md:mb-18 lg:mb-20">
+          <div className="space-y-2 2xl:space-y-3 w-full sm:w-full md:w-130 lg:w-150 2xl:w-200 m-auto mb-12 sm:mb-16 md:mb-18 lg:mb-20 ">
             {faqData.map((faq: FAQItem, index: number) => (
               <div key={index} style={{ backgroundColor: 'rgba(33, 34, 38, 0.25)' }} className="border border-gray-900 rounded-[7px] transition-all duration-200">
                 <button
@@ -195,10 +192,10 @@ const Section13: React.FC = () => {
         <Offer/>
       </div>
 
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
         {/* Copyright Text */}
         <div>
-          <p className="m-auto subtext1 leading-relaxed text-center max-w-4xl ">
+          <p className="m-auto subtext1 leading-relaxed text-center max-w-4xl 2xl:max-w-7xl">
             © 2025 <span className="font-medium text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
             strictly prohibited without the express written consent of <span className="font-medium text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 

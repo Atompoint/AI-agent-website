@@ -68,12 +68,12 @@ export default function Section07() {
   ];
 
   return (
-    <div className="w-full relative overflow-visible px-4">
+    <div className="w-full relative overflow-visible px-4 sm:px-6">
       {/* Background glow effect - moved outside and positioned absolutely */}
       <div className="absolute top-[10rem] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[1000px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
       
-      <div className="flex flex-col items-center justify-center ">
-        <div className="text-center relative mb-0 w-full max-w-6xl">
+      <div className="flex flex-col items-center justify-center w-full">
+        <div className="text-center relative mb-0 w-full max-w-6xl px-4 sm:px-6">
           <div 
             className="relative text-center z-10 w-full"
             style={{
@@ -134,13 +134,13 @@ export default function Section07() {
           </div>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto ">
-          <div
-            className="relative text-center z-10  w-full pt-10 lg:pt-35"
+        <div className="w-full  mx-auto px-2 sm:px-4">
+        <div
+            className="relative text-center z-10  w-full pt-10 lg:pt-15"
             style={{
               fontFamily: 'Radio Grotesk',
               fontWeight: 400,
-              fontSize: 'clamp(24px, 6vw, 43px)',
+              fontSize: 'clamp(25px, 6vw, 43px)',
               lineHeight: '0.8',
               letterSpacing: '0%',
               color: 'transparent',
@@ -166,30 +166,32 @@ export default function Section07() {
             </div>
           </div>
 
+
           {/* Features Grid - 3 columns, 4 rows with responsive design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 px-8 w-full mt-30 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 xl:gap-15 2xl:gap-20 w-full mt-12 sm:mt-16 lg:mt-30 px-2 sm:px-4 lg:px-6">
             {features.map((feature, index) => (
-              <div key={index} className="flex flex-col space-y-4 pb-5 w-full">
+              <div key={index} className="flex flex-col space-y-3 sm:space-y-4 pb-5 w-full items-center sm:items-start text-center sm:text-left">
                 {/* Icon container */}
-                <div className="flex  w-full">
-                  <div className="w-9 h-9 flex items-center justify-center">
+                <div className="flex w-full justify-center sm:justify-start">
+                  <div className="w-10 h-10 sm:w-9 sm:h-9 2xl:w-11 2xl:h-11 flex items-center justify-center">
                     <Image 
                       src={feature.icon} 
-                      alt={`${feature.title} icon`} 
+                      alt="" 
                       width={96} 
                       height={96}
                       className="w-full h-full object-contain"
+                      aria-hidden="true"
                     />
                   </div>
                 </div>
                 
-                <div className="w-[90%] py-3">
-                  <div style={{ wordSpacing: '3px' }} className="font-medium  text-[16px] lg:text-[22.5px] leading-5 lg:leading-7 w-full">
+                <div className="w-full py-2 sm:py-3">
+                  <h3 className="font-medium text-[15px] sm:text-[16px] lg:text-[20px] 2xl:text-[22.5px] leading-tight sm:leading-5 lg:leading-7 w-full">
                     {feature.title}
-                  </div>
+                  </h3>
                   
                   {/* Description */}
-                  <p className="py-2 lg:py-5 subtext1 leading-5  w-full">
+                  <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] leading-5 text-gray-300 w-full">
                     {feature.description}
                   </p>
                 </div>

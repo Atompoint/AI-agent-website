@@ -158,35 +158,46 @@ export default function HeroHeader() {
         </div>
 
 {/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-10 sm:gap-12 md:gap-18 lg:gap-10">
+<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-6 sm:gap-8 md:gap-8 lg:gap-10">
   {/* Header */}
   <div className="flex-none">
     <Header />
   </div>
 
   {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5">
+  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5 2xl:gap-7">
     {/* Label */}
    
-    <div className="relative w-full max-w-[600px] mx-auto">
-  <div className="relative w-full">
-    <img
-      src="/assets/images/rect5.png"
-      alt="Background"
-      className="w-full h-auto block"
-    />
-
     <div
-      className="absolute inset-0 flex items-center justify-center text-center px-4 subtextt"
-      style={{
-        lineHeight: 1.6,
-        letterSpacing: 0.4,
-      }}
-    >
-      Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-    </div>
+    className="
+      relative inline-flex
+      text-center 
+      px-2 py-2
+      sm:px-3 sm:py-2
+      md:px-4 md:py-2
+      2xl:px-4 2xl:py-2
+      text-[clamp(10px,2vw,18px)] 
+      leading-[1.3] tracking-[0.4px] 
+      break-words hyphens-auto
+      border-1 border-[#BF84F9]
+      rounded-[32px]
+      font-medium
+      transition-all duration-300
+      hover:shadow-[0_0_15px_rgba(191,132,249,0.5)]
+      shadow-[0_0_10px_rgba(191,132,249,0.3)]
+    "
+    style={{
+      background: `linear-gradient(135deg, 
+        rgba(31,11,70,0.24) 5%, 
+        rgba(222,191,255,0.24) 29%, 
+        rgba(90,39,177,0.24) 58%, 
+        rgba(191,132,249,0.24) 92%)`,
+      boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
+    }}
+  >
+    Tired of Watching 67% of Your Website Visitors Leave Without Buying?
   </div>
-</div>
+
 
    
 
@@ -198,8 +209,9 @@ export default function HeroHeader() {
       style={{
         fontFamily: 'Radio Grotesk',
         fontWeight: 400,
-        fontSize: 'clamp(35px, 4vw, 64px)',
-        lineHeight: '1',
+        fontSize: 'clamp(18px, 4vw, 71px)',
+        lineHeight: 'clamp(20px, 4vw, 76px)',
+        
         letterSpacing: '0%',
         color: 'transparent',
         background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
@@ -214,17 +226,16 @@ export default function HeroHeader() {
         <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
         <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
         <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-      </div>
-      <div>
+      
+      
         <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-      </div>
-      <div>
+      
         <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
       </div>
     </div>
 
     {/* Subtext */}
-    <p className="subtextb max-w-[800px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-0">
+    <p className="subtextb max-w-[900px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-3">
       Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
       Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
       Objections & Converts Visitors Into Paying Customers Instantly!
@@ -232,7 +243,7 @@ export default function HeroHeader() {
   </div>
 
   
- <div className="flex-none flex justify-center  mt-0 md:-mt-[10%] lg:-mt-[15%] xl:-mt-[8%]">
+ <div className="flex-none flex justify-center  -mt-[8%] sm:-mt-[8%] md:-mt-[13%] lg:-mt-[15%] xl:-mt-[13%]">
   <div className="relative w-full max-w-6xl flex flex-col items-center">
 
     {/* Circle image behind */}
@@ -246,7 +257,7 @@ export default function HeroHeader() {
         alt="circle"
         width={2000}
         height={1800}
-        className="w-full max-w-[1500px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
+        className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
         draggable={false}
       />
     </div>
@@ -277,14 +288,14 @@ export default function HeroHeader() {
       {/* Section 2 */}
       <section className="relative z-50 bg-[#01000C] mt-0">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
-          <div ref={setMicRef} className="relative z-40 flex justify-center items-center mx-auto">
+          <div ref={setMicRef} className="relative z-40 shadow-md  flex justify-center items-center mx-auto">
             <div className="relative group">
               <Image
                 src="/assets/icons/mymic.png"
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
+                className={`w-[70px] h-[70px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
                   isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'
                 }`}
               />
@@ -301,21 +312,23 @@ export default function HeroHeader() {
             </div>
           </div>
 
-          <div className="mt-8 sm:mt-12 md:mt-14 lg:mt-18 px-4 sm:px-6 relative z-20">
-            <div className="max-w-full sm:max-w-[90%] md:max-w-[560px] lg:max-w-[960px] xl:max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 text-left">
+          <div className="mt-8 sm:mt-12 md:mt-10 lg:mt-12 px-4 sm:px-6 relative z-20">
+            <div className="max-w-full mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-left">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5">
-                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex items-center justify-center relative">
+                <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5 md:py-2 lg:py-2.5">
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 flex items-center justify-center relative">
                     <Image
                       src="/assets/icons/onlycircle.svg"
                       alt="Circle"
-                      width={24}
-                      height={24}
+                      width={36}
+                      height={36}
                       className="w-full h-full object-contain"
                     />
-                    <FiCheck className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 xl:w-6 xl:h-6 m-auto text-white" />
+                    <FiCheck className="absolute inset-0 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5 m-auto text-white" />
                   </div>
-                  <span className="subtext2">{feature}</span>
+                  <span className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[15px] xl:text-[16px] leading-tight font-medium text-white/90">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>

@@ -6,7 +6,8 @@ export const ContainerScroll = ({ children }: { children: React.ReactNode }) => 
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"] // Better scroll detection
+     offset: ["start end", "start 50px"]
+ // Better scroll detection
   });
   const [isMobile, setIsMobile] = React.useState(false);
   const [screenWidth, setScreenWidth] = React.useState(1366);
@@ -30,7 +31,7 @@ export const ContainerScroll = ({ children }: { children: React.ReactNode }) => 
     // Responsive scale based on screen width
     if (screenWidth <= 1024) return [0.9, 1];
     if (screenWidth <= 1366) return [1.05, 1];
-    if (screenWidth <= 1920) return [1.1, 1];
+    if (screenWidth <= 1920) return [1, 1.3];
     return [1.15, 1]; // For very large screens
   };
 

@@ -1,4 +1,4 @@
-import React, { JSX } from 'react'
+import React from 'react'
 import Image from "next/image";
 import DownArrow from '../../ui/DownArrow';
 import ShinyText from '@/components/ui/ShinyText';
@@ -10,7 +10,7 @@ interface Feature {
 }
 
 interface Statistic {
-  description: string | JSX.Element;
+  description: string | React.JSX.Element;
   imagePath: string;
 }
 
@@ -87,11 +87,10 @@ const Section08: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent">
-      <div className="container mx-auto px-4 ">
+    <div className="bg-transparent">
+      <div className="mx-auto px-4 sm:px-6">
         {/* Header */}
-        
-        <div className="relative text-center z-10 mb-8 sm:mb-12 md:mb-12 lg:mb-15">
+        <div className="relative text-center z-10 mb-8 sm:mb-12 md:mb-12 lg:mb-15 2xl:mb-0">
           <div 
             style={{
               fontFamily: 'Radio Grotesk',
@@ -120,21 +119,18 @@ const Section08: React.FC = () => {
             </div>
           </div>
         </div>
-
-        
-     
          
         {/* Features Grid - Fixed Overlapping */}
         <div className="relative ">
           {/* Glow Effect - Responsive */}
           <div className="absolute top-[5rem] md:top-[8rem] lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] md:w-[700px] lg:w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] md:blur-[85px] lg:blur-[100px] -z-10" />
           
-          <div className="flex justify-center max-w-6xl mx-auto relative ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-15 w-full">
+          <div className="flex justify-center max-w-6xl 2xl:max-w-7xl mx-auto relative ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 md:gap-4 lg:gap-15 w-full">
               {features.map((feature: Feature, index: number) => (
-                <div key={index} className="rounded-lg p-4 sm:p-5 md:p-6 h-40 md:h-42 lg:h-44 w-full relative">
+                <div key={index} className="rounded-lg p-4 sm:p-5 md:p-6 mt-6 sm:mt-10 h-auto min-h-[160px] sm:h-40 md:h-42 lg:h-44 w-full relative">
                   {/* Icon with circle background */}
-                  <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center relative mb-3">
+                  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center relative mb-3 mx-auto sm:mx-0">
                     <Image
                       src="/assets/icons/onlycircle.svg"
                       alt="Circle"
@@ -154,11 +150,11 @@ const Section08: React.FC = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className="w-full">
-                    <div className="text-sm sm:text-base md:text-base font-medium drop-shadow-lg leading-5 sm:leading-6 md:leading-6 mb-3 text-white">
+                  <div className="w-full text-center sm:text-left">
+                    <h3 className="text-sm sm:text-base md:text-base font-medium drop-shadow-lg leading-5 sm:leading-6 md:leading-6 mb-2 sm:mb-3 text-white">
                       {feature.title}
-                    </div>
-                    <p className="subtext1 line-clamp-3 sm:line-clamp-3 md:line-clamp-3">
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-300 leading-5 line-clamp-3">
                       {feature.description}
                     </p>
                   </div>
@@ -169,88 +165,92 @@ const Section08: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 ">
-      
-
-  <div className="relative text-center z-10 mt-16 sm:mt-20 md:mt-18 lg:mt-30 mb-10">
-    <div className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight md:leading-tight lg:leading-[0.8] tracking-normal capitalize"
-      style={{
-        fontFamily: 'Radio Grotesk',
-        fontWeight: 400,
-        fontSize: 'clamp(24px, 6vw, 43px)',
-        lineHeight: '0.8',
-        letterSpacing: '0%',
-
-          color: 'transparent',
-        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        WebkitFontSmoothing: 'antialiased',
-        MozOsxFontSmoothing: 'grayscale',
-      }}
-    >
-      <div >
-        <ShinyText text="The Numbers Don't Lie" speed={5} className="gradient-white-text" />
-      </div>
-      <div>
-        <ShinyText text="Voice AI Is " speed={5} className="gradient-white-text " />
-        {' '}
-        <ShinyText text="Dominating" speed={5} className="gradient-mask-text " />
-      </div>
-    </div>
-  </div>
+      <div className="mx-auto px-4">
+        {/* Fixed padding section - corrected invalid py-18 class */}
+        <div className="relative text-center z-10 py-12 sm:py-16 md:py-16 lg:py-20 2xl:py-24 mt-10">
+          <div 
+            className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight md:leading-tight lg:leading-[0.8] tracking-normal capitalize"
+            style={{
+              fontFamily: 'Radio Grotesk',
+              fontWeight: 400,
+              fontSize: 'clamp(25px, 6vw, 43px)',
+              lineHeight: '0.8',
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+            }}
+          >
+            <div >
+              <ShinyText text="The Numbers Don't Lie" speed={5} className="gradient-white-text" />
+            </div>
+            <div>
+              <ShinyText text="Voice AI Is " speed={5} className="gradient-white-text " />
+              {' '}
+              <ShinyText text="Dominating" speed={5} className="gradient-mask-text " />
+            </div>
+          </div>
+        </div>
   
-  <div className="relative">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto relative">
-      {/* First row - responsive layout */}
-      {statistics.slice(0, 3).map((item: Statistic, index: number) => (
-        <div key={index} className={`relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-90 flex flex-col justify-end ${index === 2 ? 'sm:col-span-2 md:col-span-2 lg:col-span-1' : ''}`}>
-          <Image
-            src={item.imagePath}
-            alt={`Statistics card background ${index + 1}`}
-            fill
-            className="object-cover"
-          />
-          <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-5">
-            <p className="subtext4 max-w-[300px] leading-4 sm:leading-5 md:leading-6">
-              {item.description}
-            </p>
-          </div>
-        </div>
-      ))}
+        <div className="relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto relative">
+            {/* First row - responsive layout */}
+            {statistics.slice(0, 3).map((item: Statistic, index: number) => (
+              <div 
+                key={index} 
+                className={`relative overflow-hidden rounded-[10px] h-40 sm:h-40 md:h-65 lg:h-90 flex flex-col justify-end ${
+                  index === 2 ? 'sm:col-span-2 md:col-span-2 lg:col-span-1' : ''
+                }`}
+              >
+                <Image
+                  src={item.imagePath}
+                  alt={`Statistics card background ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="relative z-10 p-4 sm:p-4 md:p-5 lg:p-5">
+                  <p className="text-xs sm:text-sm text-white font-medium leading-5 max-w-[300px] mx-auto sm:mx-0">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
 
-      {/* Second row - 2 cards side by side */}
-      <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 md:gap-4">
-        <div className="w-full sm:w-1/2 md:w-1/2 relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-80 flex flex-col justify-end">
-          <Image
-            src={statistics[3].imagePath}
-            alt="Statistics card background 4"
-            fill
-            className="object-cover"
-          />
-          <div className="relative z-10 p-3 sm:p-4 md:p-6 lg:p-6">
-            <p className="subtext4 leading-4 sm:leading-5 md:leading-6 lg:leading-relaxed max-w-[400px]">
-              {statistics[3].description}
-            </p>
+            {/* Second row - 2 cards side by side */}
+            <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row gap-4 sm:gap-4 md:gap-4 mt-4 sm:mt-0">
+              <div className="w-full sm:w-1/2 relative overflow-hidden rounded-[10px] h-40 sm:h-40 md:h-65 lg:h-90 flex flex-col justify-end">
+                <Image
+                  src={statistics[3].imagePath}
+                  alt="Statistics card background 4"
+                  fill
+                  className="object-cover"
+                />
+                <div className="relative z-10 p-4 sm:p-4 md:p-6 lg:p-6">
+                  <p className="text-xs sm:text-sm text-white font-medium leading-5 max-w-[400px] mx-auto sm:mx-0">
+                    {statistics[3].description}
+                  </p>
+                </div>
+              </div>
+              <div className="w-full sm:w-1/2 md:w-1/2 relative overflow-hidden rounded-[10px] h-40 sm:h-40 md:h-65 lg:h-90 flex flex-col justify-end">
+                <Image
+                  src={statistics[4].imagePath}
+                  alt="Statistics card background 5"
+                  fill
+                  className="object-cover"
+                />
+                <div className="relative z-10 p-4 sm:p-4 md:p-6 lg:p-6">
+                  <p className="text-xs sm:text-sm text-white font-medium leading-5 max-w-[400px] mx-auto sm:mx-0">
+                    {statistics[4].description}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="w-full sm:w-1/2 md:w-1/2 relative overflow-hidden rounded-[10px] h-20 sm:h-24 md:h-28 lg:h-80 flex flex-col justify-end">
-          <Image
-            src={statistics[4].imagePath}
-            alt="Statistics card background 5"
-            fill
-            className="object-cover"
-          />
-          <div className="relative z-10 p-3 sm:p-4 md:p-6 lg:p-6">
-            <p className="subtext4 max-w-[400px] leading-5">
-              {statistics[4].description}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
       </div>
       <DownArrow/>
