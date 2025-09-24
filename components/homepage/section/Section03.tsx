@@ -271,19 +271,19 @@ const Section03: React.FC = () => {
           <div className="w-full mx-auto relative">
             {/* Desktop Grid (md and up) - Cards 1-3 in flex layout */}
             <div className="hidden md:block">
-              <div className="flex justify-center gap-6 lg:gap-5 mb-12">
+              <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 lg:gap-5 mb-12 max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Card 1: Traditional Live Chat */}
-                <div className="flex-shrink-0 w-full max-w-[400px] h-[400px]">
+                <div className="flex-1 flex flex-col min-w-0 max-w-[400px] w-full h-auto">
                   <div className="relative w-full h-full">
                     {/* Background div for styling */}
-                    <div className="w-full h-full border border-white/20 bg-[#01000C]" style={{ borderRadius: '12px' }}>
+                    <div className="w-full h-full border border-white/20 bg-[#01000C] rounded-[12px] flex flex-col" style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)' }}>
                       {/* Content overlay */}
-                      <div className="flex flex-col justify-between h-full overflow-hidden p-6">
+                      <div className="flex flex-col h-full p-4 sm:p-5 md:p-6">
                         {/* Header Section */}
-                        <div className="flex-shrink-0 mb-4">
+                        <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                           <div className="flex flex-col items-start">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                              <div className="relative w-full h-full">
+                              <div className="relative w-full h-full flex flex-col">
                                 <Image 
                                   src="/assets/icons/Mask.svg" 
                                   alt="Traditional Live Chat icon" 
@@ -302,13 +302,13 @@ const Section03: React.FC = () => {
                         </div>
 
                         {/* Features Section */}
-                        <div className="flex-1 flex flex-col justify-start">
+                        <div className="flex-1 flex flex-col justify-start mt-2">
                           <ul className="space-y-2 sm:space-y-3">
                             <li className="flex items-start group">
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Requires hiring expensive staff ($3,000+ per month)
                               </p>
                             </li>
@@ -316,7 +316,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Limited to business hours only
                               </p>
                             </li>
@@ -324,7 +324,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Agents need training and management
                               </p>
                             </li>
@@ -332,7 +332,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Slow response times frustrate customers
                               </p>
                             </li>
@@ -340,7 +340,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Can only handle a few conversations at a time
                               </p>
                             </li>
@@ -352,17 +352,17 @@ const Section03: React.FC = () => {
                 </div>
 
                 {/* Card 2: Text-Based Chatbots */}
-                <div className="flex-shrink-0 w-full max-w-[400px] h-[400px]">
+                <div className="flex-1 flex flex-col min-w-0 max-w-[400px] w-full h-auto">
                   <div className="relative w-full h-full">
                     {/* Background div for styling */}
-                    <div className="w-full h-full border border-white/20 bg-[#01000C]" style={{ borderRadius: '12px' }}>
+                    <div className="w-full h-full border border-white/20 bg-[#01000C] rounded-[12px] flex flex-col" style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)' }}>
                       {/* Content overlay */}
-                      <div className="flex flex-col justify-between h-full overflow-hidden p-6">
+                      <div className="flex flex-col h-full p-4 sm:p-5 md:p-6">
                         {/* Header Section */}
-                        <div className="flex-shrink-0 mb-4">
+                        <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                           <div className="flex flex-col items-start">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                              <div className="relative w-full h-full">
+                              <div className="relative w-full h-full flex flex-col">
                                 <Image 
                                   src="/assets/icons/bot.svg" 
                                   alt="Text-Based Chatbots icon" 
@@ -381,13 +381,13 @@ const Section03: React.FC = () => {
                         </div>
 
                         {/* Features Section */}
-                        <div className="flex-1 flex flex-col justify-start">
+                        <div className="flex-1 flex flex-col justify-start mt-2">
                           <ul className="space-y-2 sm:space-y-3">
                             <li className="flex items-start group">
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Customers hate typing long questions
                               </p>
                             </li>
@@ -395,7 +395,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Often misunderstand complex queries
                               </p>
                             </li>
@@ -403,7 +403,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Robotic, impersonal interactions
                               </p>
                             </li>
@@ -411,7 +411,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Can't guide users around your website
                               </p>
                             </li>
@@ -419,7 +419,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 High abandonment rates
                               </p>
                             </li>
@@ -431,17 +431,17 @@ const Section03: React.FC = () => {
                 </div>
 
                 {/* Card 3: VoiceAgent AI */}
-                <div className="flex-shrink-0 w-full max-w-[400px] h-[400px]">
+                <div className="flex-1 flex flex-col min-w-0 max-w-[400px] w-full h-auto">
                   <div className="relative w-full h-full">
                     {/* Background div for styling */}
-                    <div className="w-full h-full rounded-[12px] bg-[linear-gradient(135deg,_rgba(31,11,70,0.17)_5%,_rgba(222,191,255,0.17)_29%,_rgba(90,39,177,0.17)_58%,_rgba(191,132,249,0.17)_92%)] border border-[#BF84F9]">
+                    <div className="w-full h-full rounded-[12px] bg-[linear-gradient(135deg,_rgba(31,11,70,0.17)_5%,_rgba(222,191,255,0.17)_29%,_rgba(90,39,177,0.17)_58%,_rgba(191,132,249,0.17)_92%)] border border-[#BF84F9] flex flex-col" style={{ boxShadow: '0 4px 20px rgba(191, 132, 249, 0.2)' }}>
                       {/* Content overlay */}
-                      <div className="flex flex-col justify-between h-full overflow-hidden p-6">
+                      <div className="flex flex-col h-full p-4 sm:p-5 md:p-6">
                         {/* Header Section */}
-                        <div className="flex-shrink-0 mb-4">
+                        <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                           <div className="flex flex-col items-start">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                              <div className="relative w-full h-full">
+                              <div className="relative w-full h-full flex flex-col">
                                 <Image 
                                   src="/assets/icons/AI.svg" 
                                   alt="VoiceAgent AI icon" 
@@ -460,13 +460,13 @@ const Section03: React.FC = () => {
                         </div>
 
                         {/* Features Section */}
-                        <div className="flex-1 flex flex-col justify-start">
+                        <div className="flex-1 flex flex-col justify-start mt-2">
                           <ul className="space-y-2 sm:space-y-3">
                             <li className="flex items-start group">
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 ONE-TIME payment (not monthly fees)
                               </p>
                             </li>
@@ -474,7 +474,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Works 24/7/365 automatically
                               </p>
                             </li>
@@ -482,7 +482,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Handles simultaneous conversations
                               </p>
                             </li>
@@ -490,7 +490,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Natural voice interactions customers love
                               </p>
                             </li>
@@ -498,7 +498,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Actually navigates your website while talking
                               </p>
                             </li>
@@ -506,7 +506,7 @@ const Section03: React.FC = () => {
                               <div className="flex-shrink-0 mt-1 mr-2">
                                 <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                               </div>
-                              <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                 Setup in under 60 seconds
                               </p>
                             </li>
@@ -519,8 +519,8 @@ const Section03: React.FC = () => {
               </div>
 
               {/* Do Nothing Card - Separate Section */}
-              <div className="flex justify-center">
-                <div className="w-full max-w-2xl">
+              <div className="flex justify-center mt-8 md:mt-12 lg:mt-16 w-full">
+                <div className="w-full max-w-3xl px-4 sm:px-6">
                   <div className="w-full flex flex-col items-center">
                     <ShinyText 
                       text="Do Nothing (Current Situation)" 
@@ -528,7 +528,7 @@ const Section03: React.FC = () => {
                       className="Heading2 mb-4 text-center leading-tight" 
                     />
                     
-                    <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-4">
                       <div className="flex items-start">
                         <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
                         <span className="text-white/90 subtextpt2 leading-relaxed">57% of visitors leave without buying</span>
@@ -555,7 +555,7 @@ const Section03: React.FC = () => {
             <div className="block md:hidden">
               <div id="default-carousel" className="relative w-full pb-16" data-carousel="slide">
                 {/* Carousel container with dynamic height */}
-                <div className="relative overflow-visible h-[calc(100vh-12rem)]">
+                <div className="relative overflow-visible h-auto">
                   {/* Slide 1: Traditional Live Chat */}
                   <div
                     className={`w-full transition-all duration-500 ease-in-out transform ${
@@ -573,18 +573,18 @@ const Section03: React.FC = () => {
                       padding: '0 1rem'
                     }}
                   >
-                    <div className="w-full h-full flex justify-center">
-                      <div className="w-full max-w-9xl mx-auto">
-                        <div className="relative w-full h-auto flex justify-center">
+                    <div className="w-full h-full flex justify-center px-2 md:px-0">
+                      <div className="w-full max-w-md mx-auto">
+                        <div className="relative w-full h-auto flex justify-center overflow-visible">
                           {/* Background div for styling */}
-                          <div className="w-full max-w-[1300px] border border-white/20 rounded-[12px] bg-[#01000C] py-6 px-6">
+                          <div className="w-full max-w-[1300px] border border-white/20 rounded-[12px] bg-[#01000C] py-5 px-5 sm:py-6 sm:px-6">
                             {/* Content overlay */}
                             <div className="flex flex-col justify-start">
                               {/* Header Section */}
-                              <div className="flex-shrink-0 mb-4">
+                              <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                                 <div className="flex flex-col items-start">
                                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                                    <div className="relative w-full h-full">
+                                    <div className="relative w-full h-full flex flex-col">
                                       <Image 
                                         src="/assets/icons/Mask.svg" 
                                         alt="Traditional Live Chat icon" 
@@ -609,7 +609,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Requires hiring expensive staff ($3,000+ per month)
                                     </p>
                                   </li>
@@ -617,7 +617,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Limited to business hours only
                                     </p>
                                   </li>
@@ -625,7 +625,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Agents need training and management
                                     </p>
                                   </li>
@@ -633,7 +633,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Slow response times frustrate customers
                                     </p>
                                   </li>
@@ -641,7 +641,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Can only handle a few conversations at a time
                                     </p>
                                   </li>
@@ -673,16 +673,16 @@ const Section03: React.FC = () => {
                   >
                     <div className="w-full h-full flex justify-center">
                       <div className="w-full max-w-8xl mx-auto">
-                        <div className="relative w-full h-auto flex justify-center">
+                        <div className="relative w-full h-auto flex justify-center overflow-visible">
                           {/* Background div for styling */}
                           <div className="w-full max-w-[1200px] border border-white/20 rounded-[12px] bg-[#01000C] py-6 px-6">
                             {/* Content overlay */}
                             <div className="flex flex-col justify-start">
                               {/* Header Section */}
-                              <div className="flex-shrink-0 mb-4">
+                              <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                                 <div className="flex flex-col items-start">
                                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                                    <div className="relative w-full h-full">
+                                    <div className="relative w-full h-full flex flex-col">
                                       <Image 
                                         src="/assets/icons/bot.svg" 
                                         alt="Text-Based Chatbots icon" 
@@ -707,7 +707,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Customers hate typing long questions
                                     </p>
                                   </li>
@@ -715,7 +715,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Often misunderstand complex queries
                                     </p>
                                   </li>
@@ -723,7 +723,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Robotic, impersonal interactions
                                     </p>
                                   </li>
@@ -731,7 +731,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Can't guide users around your website
                                     </p>
                                   </li>
@@ -739,7 +739,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       High abandonment rates
                                     </p>
                                   </li>
@@ -771,16 +771,16 @@ const Section03: React.FC = () => {
                   >
                                       <div className="w-full h-full flex justify-center">
                       <div className="w-full max-w-8xl mx-auto">
-                        <div className="relative w-full h-auto flex justify-center">
+                        <div className="relative w-full h-auto flex justify-center overflow-visible">
                           {/* Background div for styling */}
                           <div className="w-full max-w-[1200px] rounded-[12px] bg-[linear-gradient(135deg,_rgba(31,11,70,0.17)_5%,_rgba(222,191,255,0.17)_29%,_rgba(90,39,177,0.17)_58%,_rgba(191,132,249,0.17)_92%)] border border-[#BF84F9] py-6 px-6">
                             {/* Content overlay */}
                             <div className="flex flex-col justify-start">
                               {/* Header Section */}
-                              <div className="flex-shrink-0 mb-4">
+                              <div className="flex-shrink-0 mb-4 md:mb-5 lg:mb-6">
                                 <div className="flex flex-col items-start">
                                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-3 flex items-center justify-center">
-                                    <div className="relative w-full h-full">
+                                    <div className="relative w-full h-full flex flex-col">
                                       <Image 
                                         src="/assets/icons/AI.svg" 
                                         alt="VoiceAgent AI icon" 
@@ -805,7 +805,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       ONE-TIME payment (not monthly fees)
                                     </p>
                                   </li>
@@ -813,7 +813,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Works 24/7/365 automatically
                                     </p>
                                   </li>
@@ -821,7 +821,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Handles simultaneous conversations
                                     </p>
                                   </li>
@@ -829,7 +829,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Natural voice interactions customers love
                                     </p>
                                   </li>
@@ -837,7 +837,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Actually navigates your website while talking
                                     </p>
                                   </li>
@@ -845,7 +845,7 @@ const Section03: React.FC = () => {
                                     <div className="flex-shrink-0 mt-1 mr-2">
                                       <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
                                     </div>
-                                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed break-words">
                                       Setup in under 60 seconds
                                     </p>
                                   </li>

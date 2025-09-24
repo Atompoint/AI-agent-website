@@ -32,7 +32,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
         {/* Left Side Content */}
         <div className={`flex ${position === 'left' ? 'justify-end pr-3 lg:pr-8' : 'justify-start pl-3 lg:pl-8'}`}>
           {position === 'left' && (
-            <div className="max-w-[340px] 2xl:max-w-none text-right">
+            <div className="max-w-[340px] md:max-w-[460px] 2xl:max-w-none text-right">
               <div className="flex flex-col items-end sm:gap-4">
                 {/* Mobile View - Icon, Step Number, and Title */}
                 <div className="sm:hidden w-full">
@@ -73,7 +73,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
+                      <h3 className={`subtextpt2 w-34  md:w-50 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -162,7 +162,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
+                      <h3 className={`subtextpt2 w-32 md:w-50 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}

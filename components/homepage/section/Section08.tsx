@@ -126,7 +126,7 @@ const Section08: React.FC = () => {
           <div className="absolute top-[5rem] md:top-[8rem] lg:top-[10rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-[600px] md:w-[700px] lg:w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 via-purple-300/10 to-transparent blur-[50px] sm:blur-[75px] md:blur-[85px] lg:blur-[100px] -z-10" />
           
           <div className="flex justify-center max-w-6xl 2xl:max-w-7xl mx-auto relative ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 md:gap-4 lg:gap-15 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 md:gap-12 lg:gap-15 w-full">
               {features.map((feature: Feature, index: number) => (
                 <div key={index} className="rounded-lg p-4 sm:p-5 md:p-6 mt-6 sm:mt-10 h-auto min-h-[160px] sm:h-40 md:h-42 lg:h-44 w-full relative">
                   {/* Icon with circle background */}
@@ -210,7 +210,7 @@ const Section08: React.FC = () => {
                   src={item.imagePath}
                   alt={`Statistics card background ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
                 <div className="relative z-10 p-4 sm:p-4 md:p-5 lg:p-5">
                   <p className="text-xs sm:text-sm text-white font-medium leading-5 max-w-[300px] mx-auto sm:mx-0">

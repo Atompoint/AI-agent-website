@@ -163,7 +163,7 @@ const Section05: React.FC = () => {
               </div>
              
               {/* Text Right */}
-              <div className="subtext1 leading-5 2xl:leading-7 lg:pl-15 2xl:pl-12 2xl:text-lg text-center lg:text-left order-2">
+              <div className="subtext1 leading-5 max-w-[460px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pl-8 2xl:pl-12 text-center lg:text-left order-2 lg:order-2">
                 <p>
                   Imagine having your best person available 24/7, who knows every page
                   of your website by heart, never takes a day off, never gets tired, and

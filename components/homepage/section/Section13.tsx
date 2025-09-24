@@ -49,7 +49,7 @@ const Section13: React.FC = () => {
   className="relative overflow-hidden 
              rounded-[8px] sm:rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[20px] 
              mx-auto 
-             max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-7xl
+             max-w-[280px] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-7xl
              flex items-center justify-center 
              px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 
              min-h-[240px] sm:min-h-[260px] md:min-h-[280px] lg:min-h-[300px] xl:min-h-[320px] h-auto"
@@ -63,73 +63,46 @@ const Section13: React.FC = () => {
   />
 
   {/* Content */}
-  <div className="relative z-10 w-full 
-                  px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 
-                  py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8">
-    
-    <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row 
-                    items-center justify-between 
-                    gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 
-                    w-full max-w-8xl mx-auto">
-      
-      {/* Left text */}
-      <div className="flex-1 flex justify-center md:justify-end 
-                      text-center md:text-right 
-                      px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 
-                      order-1 md:order-1 w-full max-w-[200px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[390px] xl:max-w-[400px]">
-        <div className="w-full">
+  <div className="w-full px-4 py-4">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 w-full max-w-6xl mx-auto">
+      {/* Right text - Top on mobile, right on desktop */}
+      <div className="order-1 sm:order-3 flex-1 w-full sm:w-auto text-center sm:text-left">
+        <h1 className="text-[clamp(25px,6vw,52px)] font-semibold">
           <ShinyText
-            text="Mikey Formby"
+            text="See You On The Inside!"
             disabled={false}
             speed={6}
-            className="Heading1 gradient-white-text leading-[0.8]"
+            className="gradient-white-text leading-[1.1] md:leading-[1.1]"
           />
-        </div>
+        </h1>
       </div>
 
       {/* Center box (Image) */}
-      <div
-        className="relative
-                   w-48 h-32
-                   sm:w-56 sm:h-36
-                   md:w-64 md:h-40
-                   lg:w-72 lg:h-44
-                   xl:w-80 xl:h-48
-                   order-2 md:order-2"
-      >
+      <div className="order-2 sm:order-2 relative w-[200px] overflow-hidden h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] flex-shrink-0">
         <Image
           src={MikeImage}
           alt="Mike Formby"
           fill
           className="object-contain"
-          sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 20rem"
+          priority
+          sizes="(max-width: 640px) 200px, (max-width: 768px) 250px, 300px"
         />
       </div>
 
-      {/* Right text */}
-      <div className="flex-1 flex justify-center md:justify-start 
-                      text-center md:text-left 
-                      px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4
-                      order-3 md:order-3">
-        <div className="max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[300px]">
-          <h2 className="leading-[0.9]">
-            <ShinyText
-              text="See You On"
-              disabled={false}
-              speed={6}
-              className="Heading1 gradient-white-text block"
-            />
-            <ShinyText
-              text="The Inside!"
-              disabled={false}
-              speed={6}
-              className="Heading1 gradient-white-text"
-            />
-          </h2>
-        </div>
+      {/* Left text - Bottom on mobile, left on desktop */}
+      <div className="order-3 sm:order-1 flex-1 w-full sm:w-auto text-center sm:text-right">
+        <h1 className="text-[clamp(25px,6vw,52px)] font-semibold">
+          <ShinyText
+            text="Mikey Formby"
+            disabled={false}
+            speed={6}
+            className="gradient-white-text leading-[1.1]"
+          />
+        </h1>
       </div>
     </div>
   </div>
+
 </div>
 
 
