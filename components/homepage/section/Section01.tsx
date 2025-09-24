@@ -387,7 +387,7 @@ const ThreeStepsComponent = () => {
             </div>
           </div>
           {/* Tablet Layout */}
-          <div className="hidden md:block lg:hidden">
+          <div className="hidden sm:hidden md:block xl:hidden lg:hidden">
             <div className="relative flex items-start justify-between mb-12 px-4">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
@@ -462,7 +462,7 @@ const ThreeStepsComponent = () => {
                         style={{
                           top: '50px',
                           left: '70%',
-                          width: '130px',
+                          width: '175px',
                           height: '1px',
                           zIndex: 1
                         }}
@@ -486,108 +486,10 @@ const ThreeStepsComponent = () => {
             </div>
           </div>
           
-          {/* Small Tablet Layout */}
-          <div className="hidden sm:block md:hidden lg:hidden">
-            <div className="relative flex items-start justify-between mb-12 px-4">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  {/* Step Column with Relative Wrapper - Always maintains space */}
-                  <div className="relative flex flex-col items-center" style={{ minWidth: '160px', maxWidth: '200px', minHeight: '250px' }}>
-                    <AnimatePresence mode="wait">
-                      {currentStep >= index && (
-                        <motion.div
-                          key={`step-${index}-${animationKey}`}
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          className="flex flex-col items-center w-full"
-                        >
-                          {/* Step Number Section */}
-                          <div className="flex flex-col items-center mb-6">
-                            {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
-                              {step.stepText}
-                            </div>
-                            
-                            {/* Step Number */}
-                            <div 
-                              className="text-5xl font-semibold mb-4 text-center"
-                            
-                            >
-                              <ShinyText text={step.number} disabled={false} speed={6} />
-                            </div>
-                          </div>
-
-                          {/* Icon Container */}
-                          <div className="relative w-14 h-14 mb-4 flex items-center justify-center">
-                            {/* Rotating Circle Background */}
-                            <Image
-                              src={step.iconSrc}
-                              alt={step.iconAlt}
-                              width={56}
-                              height={56}
-                              className="w-full h-full object-contain animate-spin-slow"
-                              priority={index === 0}
-                            />
-                            
-                            {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center">
-                              <Image
-                                src={step.centerIconSrc}
-                                alt={step.centerIconAlt}
-                                width={28}
-                                height={28}
-                                className="object-contain w-full h-full"
-                                priority={index === 0}
-                              />
-                            </div>
-                          </div>
-                          
-                          {/* Step Title */}
-                          <div 
-                            className={`${step.textColor} text-xs leading-relaxed text-center w-full px-1`}
-                            style={{ fontFamily: 'Radio Grotesk' }}
-                          >
-                            {step.title}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Absolutely Positioned Connector Line */}
-                    {index < steps.length - 1 && (
-                      <div 
-                        className="absolute"
-                        style={{
-                          top: '50px',
-                          left: '70%',
-                          width: '130px',
-                          height: '1px',
-                          zIndex: 1
-                        }}
-                      >
-                        {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-white/40"></div>
-                        
-                        {/* Progress line - fills with white */}
-                        <motion.div
-                          key={`small-tablet-line-${index}-${animationKey}`}
-                          className="absolute inset-0 bg-white origin-left"
-                          variants={stepperLineVariants}
-                          initial="hidden"
-                          animate={currentStep > index ? "visible" : "hidden"}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
+        
 
           {/* Mobile Layout - Vertical Stack */}
-          <div className="block md:hidden">
+          <div className="block sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">
             <div className="flex flex-col items-center space-y-4 sm:space-y-6 mt-3 sm:mt-5 mb-8 sm:mb-12 px-2">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
