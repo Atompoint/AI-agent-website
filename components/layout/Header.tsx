@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="w-full h-auto flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 md:py-6 relative z-10 mx-auto max-w-[1440px]">
+    <header className="w-full h-auto flex justify-between items-center px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-16 py-4 sm:py-5 md:py-6 relative z-10 mx-auto">
       {/* Logo */}
       <div className="w-20 sm:w-24 md:w-28 lg:w-32">
         <Image 
