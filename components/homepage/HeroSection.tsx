@@ -168,40 +168,15 @@ export default function HeroHeader() {
   <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5 2xl:gap-7">
     {/* Label */}
    
-    <div
-    className="
-      relative inline-flex
-      text-center 
-      px-2 py-2
-      sm:px-3 sm:py-2
-      md:px-4 md:py-2
-      2xl:px-4 2xl:py-2
-      text-[clamp(10px,2vw,18px)] 
-      leading-[1.3] tracking-[0.4px] 
-      break-words hyphens-auto
-      border-1 border-[#BF84F9]
-      rounded-[32px]
-      font-medium
-      transition-all duration-300
-      hover:shadow-[0_0_15px_rgba(191,132,249,0.5)]
-      shadow-[0_0_10px_rgba(191,132,249,0.3)]
-    "
+    <h2
+    className="relative inline-flex text-center px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 2xl:px-4 2xl:py-2 text-[clamp(10px,2vw,18px)] leading-[1.3] tracking-[0.4px] break-words hyphens-auto border-1 border-[#BF84F9] rounded-[32px] font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(191,132,249,0.5)] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
     style={{
-      background: `linear-gradient(135deg, 
-        rgba(31,11,70,0.24) 5%, 
-        rgba(222,191,255,0.24) 29%, 
-        rgba(90,39,177,0.24) 58%, 
-        rgba(191,132,249,0.24) 92%)`,
+      background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
       boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
     }}
   >
     Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-  </div>
-
-
-   
-
-
+  </h2>
 
     {/* Gradient Heading - style preserved exactly */}
     <div
@@ -226,10 +201,7 @@ export default function HeroHeader() {
         <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
         <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
         <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-      
-      
         <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-      
         <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
       </div>
     </div>
