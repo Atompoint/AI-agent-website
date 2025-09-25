@@ -56,13 +56,13 @@ export default function HeroHeader() {
 
     const startAnimation = () => {
       ctx = gsap.context(() => {
-       
+
         // Animate Circle with parallax effect
         gsap.to(img, {
           rotation: "+=190",
           y: 20,
-          opacity:0.7,
-      
+          opacity: 0.7,
+
           force3D: true,
           duration: 1,
           scrollTrigger: {
@@ -106,14 +106,14 @@ export default function HeroHeader() {
 
   return (
     <div>
-      <section 
+      <section
         ref={sectionRef}
         className="relative w-full  bg-[#0a0014] overflow-hidden"
       >
         {/* PRIORITY: Particles Background - Render first with highest priority */}
-        <div 
+        <div
           className="absolute inset-0 z-0"
-          style={{ 
+          style={{
             willChange: 'transform',
             contain: 'layout style paint',
             transform: 'translate3d(0,0,0)' // Force GPU layer
@@ -139,10 +139,9 @@ export default function HeroHeader() {
         />
 
         {/* Light rays - load after particles */}
-        <div 
-          className={`absolute inset-0 z-30 pointer-events-none overflow-hidden transition-opacity duration-500 ${
-            particlesLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`absolute inset-0 z-30 pointer-events-none overflow-hidden transition-opacity duration-500 ${particlesLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <LightRays
             raysOrigin="top-left"
@@ -157,106 +156,111 @@ export default function HeroHeader() {
           />
         </div>
 
-{/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-6 sm:gap-8 md:gap-8 lg:gap-10">
-  {/* Header */}
-  <div className="flex-none">
-    <Header />
-  </div>
+        {/* Main content flow - fade in after particles */}
+        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-6 sm:gap-8 md:gap-8 lg:gap-10">
+          {/* Header */}
+          <div className="flex-none">
+            <Header />
+          </div>
 
-  {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5 2xl:gap-7">
-    {/* Label */}
-   
-    <h2
-    className="relative inline-flex text-center px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 2xl:px-4 2xl:py-2 text-[clamp(10px,2vw,18px)] leading-[1.3] tracking-[0.4px] break-words hyphens-auto border-1 border-[#BF84F9] rounded-[32px] font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(191,132,249,0.5)] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
-    style={{
-      background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
-      boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
-    }}
-  >
-    Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-  </h2>
+          {/* Text content - centered with responsive spacing */}
+          <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5 2xl:gap-7">
+            {/* Label */}
+            <h2
+              className="relative px-4 lg:px-12 h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
+              style={{
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontSize: 'clamp(20px, 8vw, 20px)',
+                fontWeight: 300,
+                lineHeight: '1.1',
+                letterSpacing: '0%',
+                textTransform: 'capitalize',
+                textAlign: 'center',
+                background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
+                boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
+              }}
+            >
+              Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+            </h2>
 
-    {/* Gradient Heading - style preserved exactly */}
-    <div
-      className="relative z-10"
-      style={{
-        fontFamily: 'Radio Grotesk',
-        fontWeight: 400,
-        fontSize: 'clamp(18px, 4vw, 71px)',
-        lineHeight: 'clamp(20px, 4vw, 76px)',
-        
-        letterSpacing: '0%',
-        color: 'transparent',
-        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        WebkitFontSmoothing: 'antialiased',
-        MozOsxFontSmoothing: 'grayscale',
-      }}
-    >
-      <div>
-        <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
-        <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
-        <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-        <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-        <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-      </div>
-    </div>
+            {/* Gradient Heading - style preserved exactly */}
+            <h1
+              className="relative z-10"
+              style={{
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontWeight: 900,
+                fontSize: 'clamp(18px, 4vw, 71px)',
+                lineHeight: 'clamp(20px, 4vw, 76px)',
+                letterSpacing: '0%',
+                color: 'transparent',
+                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+              }}
+            >
+              <div>
+                <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
+                <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
+                <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
+                <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
+                <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+              </div>
+              </h1>
 
-    {/* Subtext */}
-    <p className="subtextb max-w-[900px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-3">
-      Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
-      Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
-      Objections & Converts Visitors Into Paying Customers Instantly!
-    </p>
-  </div>
+            {/* Subtext */}
+            <p className="subtextb max-w-[900px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-3">
+              Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
+              Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
+              Objections & Converts Visitors Into Paying Customers Instantly!
+            </p>
+          </div>
 
-  
- <div className="flex-none flex justify-center  -mt-[8%] sm:-mt-[8%] md:-mt-[13%] lg:-mt-[15%] xl:-mt-[13%]">
-  <div className="relative w-full max-w-6xl flex flex-col items-center">
 
-    {/* Circle image behind */}
-    <div
-      style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
-      className="w-full flex justify-center z-0"
-    >
-      <Image
-        ref={circleImageRef}
-        src="/assets/images/Circle.png"
-        alt="circle"
-        width={2000}
-        height={1800}
-        className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
-        draggable={false}
-      />
-    </div>
+          <div className="flex-none flex justify-center  -mt-[8%] sm:-mt-[8%] md:-mt-[13%] lg:-mt-[15%] xl:-mt-[13%]">
+            <div className="relative w-full max-w-6xl flex flex-col items-center">
 
-    {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[78%] z-10">
-      <ContainerScroll>
-     
-        <img
-          src="/assets/images/main1.png"
-          alt="hero"
-          height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-bottom "
-          draggable={false}
-        />
-      </ContainerScroll>
-    </div>
+              {/* Circle image behind */}
+              <div
+                style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
+                className="w-full flex justify-center z-0"
+              >
+                <Image
+                  ref={circleImageRef}
+                  src="/assets/images/Circle.png"
+                  alt="circle"
+                  width={2000}
+                  height={1800}
+                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
+                  draggable={false}
+                />
+              </div>
 
-  </div>
-</div>
+              {/* Main1 image in front, shifted 40% up relative to circle */}
+              <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[78%] z-10">
+                <ContainerScroll>
 
-</div>
+                  <img
+                    src="/assets/images/main1.png"
+                    alt="hero"
+                    height={720}
+                    width={1400}
+                    className="mx-auto rounded-2xl object-cover h-full object-bottom "
+                    draggable={false}
+                  />
+                </ContainerScroll>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
 
 
       </section>
-   
+
       {/* Section 2 */}
       <section className="relative z-50 bg-[#01000C] mt-0">
         <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
@@ -267,9 +271,8 @@ export default function HeroHeader() {
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[70px] h-[70px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
-                  isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'
-                }`}
+                className={`w-[70px] h-[70px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'
+                  }`}
               />
             </div>
           </div>
