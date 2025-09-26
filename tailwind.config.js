@@ -15,7 +15,7 @@ module.exports = {
   
     extend: {
       fontFamily: {
-        radio: ['"Radio Grotesk"', 'sans-serif'],
+        
         manrope: ['var(--font-manrope)', 'Manrope', 'system-ui', 'sans-serif'],
         logo: ['var(--font-questrial)', 'sans-serif'],
       },

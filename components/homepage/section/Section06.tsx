@@ -321,7 +321,7 @@ const TimelineUI: React.FC = () => {
     fontFamily: 'Radio Grotesk',
     fontWeight: 400,
     fontSize: 'clamp(25px, 6vw, 43px)',
-    lineHeight: '0.8',
+    lineHeight: '1.1',
     letterSpacing: '0%',
    
     color: 'transparent',

@@ -111,7 +111,7 @@ const Section03: React.FC = () => {
               <div
                 className="relative text-center px-3 py-3 sm:py-4 lg:py-5"
                 style={{
-                  fontFamily: 'Radio Grotesk',
+                 
                   fontWeight: 400,
                   fontSize: 'clamp(24px, 6vw, 43px)',
                   lineHeight: '0.8',

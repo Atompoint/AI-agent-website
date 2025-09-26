@@ -168,18 +168,23 @@ const Section13: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
         {/* Copyright Text */}
         <div>
-          <p className="m-auto subtext1 leading-relaxed text-center max-w-4xl 2xl:max-w-7xl">
-            © 2025 <span className="font-medium text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
+          <p 
+          style={{fontSize:'clamp(10px, 2vw, 20px)',
+           lineHeight:'1.4',
+   color: 'white',
+   letterSpacing: '0.6px'}}
+          className="m-auto font-normal  text-center max-w-3xl sm:max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl text-white/80">
+            © 2025 <span className="font-semibold text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
-            strictly prohibited without the express written consent of <span className="font-medium text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 
+            strictly prohibited without the express written consent of <span className="font-semibold text-white">Voice AI</span>. Any unauthorized use may result in legal action. The trademarks and 
             service name displayed on this website are the property of Voice AI and cannot be used without permission. By using this website, you agree 
             to comply with all applicable laws and our Terms of Use and Privacy Policy. For any inquiries or permissions, please contact us at
           </p>
         </div>
 
         {/* Copyright Notice */}
-        <div className="text-center py-6 sm:py-8 md:py-9 lg:py-10">
-          <p className="subtextpt2">
+        <div className="text-center py-6 sm:py-8 md:py-9 xl:py-10 lg:py-10 2xl:py-15">
+          <p style={{fontSize:'clamp(10px, 2vw, 18px)'}} className='font-bold'>
             Copyright © 2025 Voice AI
           </p>
         </div>

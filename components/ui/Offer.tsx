@@ -9,10 +9,10 @@ const Offer = () => {
       <div
         className="relative text-center z-10"
         style={{
-          fontFamily: 'Radio Grotesk',
+          fontFamily: 'Basis Grotesque Pro, sans-serif',
           fontWeight: 400,
-          fontSize: 'clamp(25px, 6vw, 43px)',
-          lineHeight: '0.8',
+          fontSize: 'clamp(25px, 6vw, 60px)',
+          lineHeight: '1',
           letterSpacing: '0%',
           color: 'transparent',
           background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
@@ -27,9 +27,8 @@ const Offer = () => {
           <ShinyText text="Limited Time Offer" speed={5} className="gradient-white-text" />
         </div>
         <div>
-          <ShinyText text="Only A One time" speed={5} className="gradient-mask-text" />
-          {' '}
-          <ShinyText text="Investment Today!" speed={5} className="gradient-mask-text" />
+          <ShinyText text="Only A One time Investment Today!" speed={5} className="gradient-mask-text" />
+         
         </div>
       </div>
       
@@ -43,8 +42,16 @@ const Offer = () => {
             {/* Button Background */}
             <div className="relative rounded-full p-[2px]">
               {/* Actual Button */}
-              <button className="relative inline-flex items-center justify-center px lg:px-5 py-3 sm:py-4 lg:py-6 cursor-pointer bg-black rounded-full transition-all duration-300 hover:scale-100">
-                <p className="GetStarted transition-all duration-300 hover:scale-104 px-4">
+              <button className="relative inline-flex 2xl:w-[818px] 2xl:h-[116px] w-[280px] items-center justify-center  cursor-pointer bg-black rounded-full transition-all duration-300 hover:scale-100">
+                <p 
+                style={{
+                  fontSize: 'clamp(10px, 2vw, 24.4px)',
+                  letterSpacing: '0.4px',
+                  fontWeight:'800',
+                  letterSpacing: '-0.4px',
+                  }}
+                
+                className="transition-all duration-300 hover:scale-104 ">
                   GET STARTED WITH VOICER - INSTANT ACCESS
                 </p> 
               </button>

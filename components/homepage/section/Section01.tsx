@@ -160,7 +160,7 @@ const ThreeStepsComponent = () => {
         <div
           className="relative text-center z-10 mb-8 sm:mb-16"
           style={{
-            fontFamily: 'Radio Grotesk',
+            
             fontWeight: 400,
             fontSize: 'clamp(25px, 5vw, 43px)',
             lineHeight: '0.9',

@@ -182,7 +182,7 @@ export default function HeroHeader() {
     <div
       className="relative z-10"
       style={{
-        fontFamily: 'Radio Grotesk',
+      
         fontWeight: 400,
         fontSize: 'clamp(18px, 4vw, 71px)',
         lineHeight: 'clamp(20px, 4vw, 76px)',

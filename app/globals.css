@@ -1,13 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@font-face {
-  font-family: 'Radio Grotesk';
-  src: url('/fonts/radio-grotesk/RadioGrotesk-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 @custom-variant dark (&:is(.dark *));
 @theme inline {
@@ -106,26 +100,26 @@ line-height: 22.8px;
 }
 
 .Heading1{
- font-family: 'Radio Grotesk';
+
  font-size: clamp(25px, 6vw, 60px);
  font-weight: 400;
 
 }
 .Heading2{
- font-family: 'Radio Grotesk';
+
 
  font-size:clamp(24px, 6vw, 45px);
  font-weight: 300;
 
 }
 .Heading3{
- font-family: 'Radio Grotesk';
+ 
  font-size:clamp(20px, 2vw, 60px);
  font-weight: 400;
 
 }
 .Heading4{
- font-family: 'Radio Grotesk';
+
  font-size: clamp(13.5px, 2vw, 22.5px);
  font-weight: 200;
  line-height: 26px;
@@ -191,12 +185,7 @@ line-height: 22.8px;
    color: white;
  letter-spacing: 0.4px;
 }
-.GetStarted{
-font-size: clamp(10px, 2vw, 24.4px);
-letter-spacing: 0.4px;
-font-weight:800 ;
-letter-spacing: -0.4px;
-}
+
 
 .num1{
  font-size: clamp(30px, 6vw, 60px);
@@ -257,9 +246,6 @@ letter-spacing: -0.4px;
   -webkit-text-fill-color: transparent;
 }
 
-.font-radio {
-  font-family: 'Radio Grotesk', sans-serif;
-}
 
 @keyframes photon {
   0% { transform: 'translate(0, 0)'; opacity: 0.25; }
