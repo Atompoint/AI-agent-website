@@ -62,7 +62,6 @@ export default function HeroHeader() {
           rotation: "+=190",
           y: 20,
           opacity: 0.7,
-
           force3D: true,
           duration: 1,
           scrollTrigger: {
@@ -109,7 +108,7 @@ export default function HeroHeader() {
       {/* Section 1 */}
       <section
         ref={sectionRef}
-        className="relative w-full  bg-[#0a0014] overflow-hidden"
+        className="relative w-full bg-[#0a0014] overflow-hidden"
       >
         {/* PRIORITY: Particles Background - Render first with highest priority */}
         <div
@@ -166,7 +165,7 @@ export default function HeroHeader() {
           </div>
 
           {/* Hero Heading & Content */}
-          <div className="max-w-7xl lg:gap-4 flex flex-col items-center justify-center flex-1 text-center mx-auto mt-[5%] lg:mt-[3%] 2xl:mt-[6%]">
+          <div className="max-w-8xl lg:gap-4 flex flex-col items-center justify-center flex-1 text-center mx-auto mt-[5%] lg:mt-[3%] 2xl:mt-[6%]">
             {/* Label */}
             <h2
               className="relative max-w-[85%] md:max-w-[100%] px-4 py-2 sm:px-6 lg:px-6 h-auto min-h-[40px] sm:min-h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
@@ -187,28 +186,58 @@ export default function HeroHeader() {
 
             {/* Heading */}
             <h1
-              className="relative z-10 px-2 md:px-0 mt-[5%] md:mt-[1%] 2xl:mt-[2%]"
+              className="relative z-10 px-2 md:px-0 mt-[5%] md:mt-[1%] 2xl:mb-[0.5%] 2xl:max-w-[70%] hidden md:block"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
                 fontWeight: 800,
                 fontSize: 'clamp(25px, 6vw, 55px)',
-                lineHeight: '1.1',
+                lineHeight: '1.22',
                 letterSpacing: '0%',
                 color: 'transparent',
                 background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-               
               }}
             >
               <div>
-                <ShinyText text="World's First Smart Voice AI Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+                <ShinyText text="World's First" speed={5} className="gradient-white-text inline-block"/>
+                {' '}
+                <ShinyText text="Smart Voice AI " speed={5} className="gradient-mask-text inline-block"/>
+                {' '}
+                <ShinyText text="Agent That " speed={5} className="gradient-white-text inline-block"/>
+                {' '}
+                <ShinyText text="Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text inline-block"/>
+              </div>
+            </h1>
+            
+           {/* Heading */}
+           <h1
+              className="relative z-10 px-2 mt-[5%] mb-[3%] md:hidden"
+              style={{
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontWeight: 800,
+                fontSize: 'clamp(25px, 6vw, 55px)',
+                lineHeight: '1.2',
+                letterSpacing: '0%',
+                color: 'transparent',
+                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              <div className="inline-block">
+                <ShinyText text="World's First" speed={5} className="gradient-white-text inline-block"/>
+                {' '}
+                <ShinyText text="Smart Voice AI " speed={5} className="gradient-mask-text inline-block"/>
+                {' '}
+                <ShinyText text="Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text inline-block"/>
               </div>
             </h1>
 
             {/* Subtext */}
-            <p className="w-[90%] md:w-[80%] " style={{
+            <p className="w-[90%] md:w-[68%] 2xl:w-[53%]" style={{
               fontFamily: 'Basis Grotesque Pro, sans-serif',
               fontWeight: 300,
               fontSize: 'clamp(16px, 5vw, 20px)',
@@ -279,7 +308,7 @@ export default function HeroHeader() {
               />
               <div className="mt-0 inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
                 <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] 2xl:text-[20px] -rotate-90" />
-                <span className="2xl:text-[20px] 2xl:font-semibold">GIVE IT A TRY!</span>
+                <span className="2xl:text-[20px]">GIVE IT A TRY!</span>
               </div>
             </div>
           </div>

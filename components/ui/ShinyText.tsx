@@ -19,14 +19,14 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   
   if (disabled) {
     return (
-      <div className={`text-[#b5b5b5a4] inline-block ${className}`}>
+      <div className={`text-[#b5b5b5a4] ${className}`}>
         {content}
       </div>
     );
   }
 
   return (
-    <div className={`relative inline-block pb-3 ${className}`}>
+    <div className={`relative ${className}`}>
       {/* Base text */}
       <div className="text-[#b5b5b5a4]">
         {content}
@@ -34,7 +34,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
       
       {/* Animated shine overlay */}
       <div
-        className="absolute inset-0 text-white pb-3"
+        className="absolute inset-0 text-white"
         style={{
           background: "linear-gradient(120deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%)",
           backgroundSize: "200% 100%",
@@ -42,7 +42,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
           backgroundClip: "text",
           color: "transparent",
           animation: `shine ${speed}s linear infinite`,
-        }}
+        }}  
       >
         {content}
       </div>
