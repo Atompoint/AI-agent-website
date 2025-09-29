@@ -93,24 +93,23 @@ const Section08: React.FC = () => {
         <div className="relative text-center z-10 mb-8 sm:mb-12 md:mb-12 lg:mb-15 2xl:mb-0">
           <div 
             style={{
-              fontFamily: 'Radio Grotesk',
-              fontSize: 'clamp(24px, 6vw, 43px)',
-              fontWeight: 400,
-              lineHeight: '0.8',
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
               letterSpacing: '0%',
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
             }}
           >
             <div>
-              <ShinyText text="Just a Few of the Ways" speed={5} className="gradient-white-text" />
-           {' '}
-              <ShinyText text="VoiceAgent" speed={5} className="gradient-white-text" />
+              <ShinyText text="Just a Few of the Ways VoiceAgent" speed={5} className="gradient-white-text" />
+
             </div>
             <div >
               <ShinyText text="AI Turns Visitors Into " speed={5} className="gradient-white-text inline" />
@@ -171,18 +170,18 @@ const Section08: React.FC = () => {
           <div 
             className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[43px] font-normal leading-tight sm:leading-tight md:leading-tight lg:leading-[0.8] tracking-normal capitalize"
             style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(25px, 6vw, 43px)',
-              lineHeight: '0.8',
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
               letterSpacing: '0%',
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
             }}
           >
             <div >

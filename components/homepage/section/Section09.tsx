@@ -16,26 +16,23 @@ const Section09 = () => {
           <div
             className="relative text-center z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16 2xl:mb-20"
             style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(24px, 5vw, 43px)',
-              lineHeight: '0.9',
-              letterSpacing: '0%',
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
               
-              textTransform: 'capitalize',
+              letterSpacing: '0%',
               color: 'transparent',
               background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
             }}
           >
             <div>
-              <ShinyText text="I Hate to Be the Bearer of " speed={5} className="gradient-white-text" />
-              {' '}
-              <ShinyText text="Bad News, But" speed={5} className="gradient-white-text" />
+              <ShinyText text="I Hate to Be the Bearer of Bad News, But" speed={5} className="gradient-white-text" />
+             
             </div>
             <div>
               <ShinyText text="This" speed={5} className="gradient-white-text" />  
@@ -94,17 +91,18 @@ const Section09 = () => {
           <div
             className="relative text-center z-10 py-8 sm:py-10 md:py-12 lg:py-16 2xl:py-20"
             style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(24px, 5vw, 43px)',
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
               lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
               letterSpacing: '0%',
-              textTransform: 'capitalize',
               color: 'transparent',
-              background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
               WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
             }}
           >
             <div>

@@ -55,7 +55,6 @@ const ThreeStepsComponent = () => {
       textColor: 'text-white',
     },
   ];
-
   // Intersection Observer to detect when component comes into viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -143,7 +142,7 @@ const ThreeStepsComponent = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center pt-4 px-4 sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
+    <div className="relative min-h-screen flex items-center justify-center sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
       {/* Updated Glow Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div
@@ -161,16 +160,18 @@ const ThreeStepsComponent = () => {
           className="relative z-10 px-2 md:px-0 mt-[5%] md:mb-[3%] text-center md:w-[60%] mx-auto"
           style={{
             fontFamily: 'Basis Grotesque Pro, sans-serif',
-            fontWeight: 800,
-            fontSize: 'clamp(25px, 6vw, 43px)',
+            fontWeight: 700,
+            fontSize: 'clamp(22px, 3vw, 60px)',
             lineHeight: '1.1',
+            margin: '0 0 0 0',
+            padding: '0 0',
             letterSpacing: '0%',
             color: 'transparent',
             background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-
+  
           }}
         >
           <div>
@@ -184,14 +185,14 @@ const ThreeStepsComponent = () => {
 
         {/* Horizontal Stepper */}
         <div className="mx-auto">
-          <div className="py-10">
-            <div className="relative flex flex-col lg:flex-row items-center lg:items-start justify-between mb-0 md:mb-12 gap-8 lg:gap-30">
+          <div className="py-20 sm:py-15 md:py-20">
+            <div className="relative flex flex-col lg:flex-row items-center lg:items-start justify-between  gap-8 lg:gap-30">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
                   {/* Step Column with Relative Wrapper */}
                   <div
                     className="relative flex flex-col items-center w-full max-w-[280px] lg:max-w-none"
-                    style={{ minHeight: '300px' }}
+                    
                   >
                     <AnimatePresence mode="wait">
                       {currentStep >= index && (
@@ -322,4 +323,4 @@ const ThreeStepsComponent = () => {
   );
 };
 
-export default ThreeStepsComponent;
+export default ThreeStepsComponent;          <DownArrow />

@@ -7,15 +7,16 @@ module.exports = {
   ],
   theme: {
     screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1366px",  
-        xl: "1536px",  
+      sm: { min: "426px", max: "767px" }, 
+      md: { min: "768px", max: "1365px" }, 
+      lg: { min: "1366px", max: "1535px" }, 
+      xl: { min: "1536px", max: "1919px" }, 
+      "2xl": { min: "1920px" },             
       },
   
     extend: {
       fontFamily: {
-        radio: ['"Radio Grotesk"', 'sans-serif'],
+        
         manrope: ['var(--font-manrope)', 'Manrope', 'system-ui', 'sans-serif'],
         logo: ['var(--font-questrial)', 'sans-serif'],
       },

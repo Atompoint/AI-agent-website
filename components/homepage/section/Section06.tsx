@@ -318,19 +318,19 @@ const TimelineUI: React.FC = () => {
         <div
   className="relative text-center z-10 py-12 md:py-30"
   style={{
-    fontFamily: 'Radio Grotesk',
-    fontWeight: 400,
-    fontSize: 'clamp(25px, 6vw, 43px)',
-    lineHeight: '0.8',
-    letterSpacing: '0%',
-   
-    color: 'transparent',
-    background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-    WebkitBackgroundClip: 'text',
-    backgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    WebkitFontSmoothing: 'antialiased',
-    MozOsxFontSmoothing: 'grayscale',
+    fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+    
   }}
 >
 <div >

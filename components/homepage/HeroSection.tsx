@@ -315,7 +315,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Features Section */}
-        <div className="relative z-20 py-8 sm:py-14 md:py-16 lg:py-20 flex justify-center">
+        <div className="relative z-20 pt-8 sm:pt-14 md:pt-16 lg:pt-20 flex justify-center">
           <div className="w-full max-w-7xl 2xl:max-w-8xl px-4 sm:px-6 lg:px-8">
             <div className="flex justify-center">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-8 md:gap-x-20 gap-y-6 md:gap-y-12 max-w-6xl 2xl:max-w-7xl">

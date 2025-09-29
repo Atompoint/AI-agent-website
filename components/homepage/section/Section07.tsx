@@ -73,60 +73,37 @@ export default function Section07() {
       <div className="absolute top-[10rem] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[1000px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-25 blur-[200px] rotate-[-40deg] -z-10" />
       
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="text-center relative mb-0 w-full max-w-6xl px-4 sm:px-6">
+        <div className="text-center relative mb-0 w-full max-w-[1600px] px-4 sm:px-6">
           <div 
-            className="relative text-center z-10 w-full"
-            style={{
-              fontFamily: 'Radio Grotesk',
-            fontWeight: 400,
-            fontSize:'clamp(20px, 6vw, 37px)',
-            lineHeight: '0.8',
-            letterSpacing: '0%',
-            margin: '0 0 -0.5rem 0',
-            padding: '0.2em 0',
          
-            color: 'transparent',
-            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
+            style={{
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 52px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+    
             }}
           >
             <ShinyText
-              text="The entire setup takes less than"
+              text="The entire setup takes less than 60 seconds. No technical skills required. No content creation needed. No ongoing maintenance."
               disabled={false}
               speed={6}
               className="gradient-white-text"
             />
-            {' '}
-            <ShinyText
-              text="60 seconds. No technical skills"
-              disabled={false}
-              speed={6}
-              className="gradient-white-text"
-            />
-            
-            {/* Second Line - With Gradient Text */}
-            <ShinyText
-              text="required. No content creation "
-              disabled={false}
-              speed={6}
-              className="gradient-white-text"
-            />
-            {' '}
-              <ShinyText
-              text="needed. No ongoing maintenance."
-              disabled={false}
-              speed={6}
-              className="gradient-white-text"
-            />
+           
           </div>
 
           {/* Gradient line - centered and constrained */}
-          <div className="flex justify-center w-full mt-4">
-            <div className="w-full max-w-[600px] h-[4.3px] 
+          <div className="flex justify-center w-full m-4">
+            <div className="w-full max-w-[900px] h-[7px] 
               bg-gradient-to-r 
               from-transparent via-purple-300 to-transparent 
               bg-[length:100%_100%] bg-no-repeat">
@@ -136,26 +113,27 @@ export default function Section07() {
 
         <div className="w-full  mx-auto px-2 sm:px-4">
         <div
-            className="relative text-center z-10  w-full pt-10 lg:pt-15"
+            className="relative text-center z-10  w-full py-10 lg:py-25 2xl:py-30"
             style={{
-              fontFamily: 'Radio Grotesk',
-              fontWeight: 400,
-              fontSize: 'clamp(25px, 6vw, 43px)',
-              lineHeight: '0.8',
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
+             
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(25px, 3vw, 60px)',
+                lineHeight: '1.1',
+                margin: '0 0 0 0',
+                
+                letterSpacing: '0%',
+                color: 'transparent',
+                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+      
+              
             }}
           >
             <div>
-              <ShinyText text="Turn your Silent Website" speed={5} className="gradient-white-text" />
-              {' '}
-              <ShinyText text="Into a 24/7" speed={5} className="gradient-white-text" />
+              <ShinyText text="Turn your Silent Website Into a 24/7" speed={5} className="gradient-white-text" />
             </div>
             <div >
               <ShinyText text="Money-Making" speed={5} className="gradient-mask-text" />
@@ -168,12 +146,12 @@ export default function Section07() {
 
 
           {/* Features Grid - 3 columns, 4 rows with responsive design */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 xl:gap-15 2xl:gap-20 w-full mt-12 sm:mt-16 lg:mt-30 px-2 sm:px-4 lg:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 xl:gap-15 2xl:gap-20 w-full  px-2 sm:px-4 lg:px-6">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col space-y-3 sm:space-y-4 pb-5 w-full items-center sm:items-start text-center sm:text-left">
                 {/* Icon container */}
                 <div className="flex w-full justify-center sm:justify-start">
-                  <div className="w-10 h-10 sm:w-9 sm:h-9 2xl:w-11 2xl:h-11 flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-9 sm:h-9 xl:w-[34px] xl:h-[34px] 2xl:w-[53px] 2xl:h-[53px] flex items-center justify-center">
                     <Image 
                       src={feature.icon} 
                       alt="" 
@@ -186,7 +164,10 @@ export default function Section07() {
                 </div>
                 
                 <div className="w-full py-2 sm:py-3">
-                  <h3 className="font-medium text-[15px] sm:text-[16px] lg:text-[20px] 2xl:text-[22.5px] leading-tight sm:leading-5 lg:leading-7 w-full">
+                  <h3 style={{
+                    fontSize: 'clamp(15px, 2vw, 22.5px)',
+                  }}
+                  className="font-medium leading-tight sm:leading-5 lg:leading-7 w-full">
                     {feature.title}
                   </h3>
                   

@@ -77,27 +77,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
       <div
         className="relative text-center z-10"
         style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(25px, 4vw, 43px)',
-          lineHeight: '0.8',
-          letterSpacing: '0%',
-          margin: '0 0 -0.25rem 0',
-          padding: '0.2em 0',
-         
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
+          fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
         }}
       >
         <div>
-          <ShinyText text="Now Is the Time to" speed={5} className="gradient-white-text" /> 
-          {' '}
-          <ShinyText text="Turn Your" speed={5} className="gradient-white-text" />   
+          <ShinyText text="Now Is the Time to Turn Your" speed={5} className="gradient-white-text" /> 
+         
         </div>
         <div>
           <ShinyText text="Website Into a" speed={5} className="gradient-white-text" />  
@@ -211,27 +207,23 @@ const Section11: React.FC = () => {
       <div
         className="relative text-center z-10"
         style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(25px, 4vw, 43px)',
-          lineHeight: '0.8',
-          letterSpacing: '0%',
-          margin: '0 0 2rem 0',
-          padding: '0.2em 0',
-        
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
+          fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
         }}
       >
         <div >
-          <ShinyText text="Here's What You Get" speed={5} className="gradient-white-text" />  
-          {' '}
-          <ShinyText text="Access to" speed={5} className="gradient-white-text" />  
+          <ShinyText text="Here's What You Get Access to" speed={5} className="gradient-white-text" />  
+         
         </div>
         <div>
           <ShinyText text="Immediately" speed={5} className="gradient-mask-text" />  

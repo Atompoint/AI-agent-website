@@ -10,21 +10,22 @@ const Section04 = () => {
       <div
         className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8"
         style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(20px, 5vw, 43px)',
-          lineHeight: '0.8',
-          letterSpacing: '0%',
-          margin: '0 0 -0.5rem 0',
-          padding: '0.2em 0',
+      
+            fontFamily: 'Basis Grotesque Pro, sans-serif',
+            fontWeight: 700,
+            fontSize: 'clamp(25px, 3vw, 60px)',
+            lineHeight: '1.2',
+            margin: '0 0 5px 0',
+            
+            letterSpacing: '0%',
+            color: 'transparent',
+            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+  
          
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
+        
         }}
       >
         <div>
@@ -35,7 +36,16 @@ const Section04 = () => {
       </div> 
       
       {/* Subtitle - Responsive spacing and text */}
-      <div className='subtext1 text-center py-3 sm:py-4 md:py-5 mb-3 sm:mb-4 md:mb-5 '>
+      <div 
+      style={{
+        fontSize: 'clamp(13px, 2.73vw - 19px, 23px)',
+        fontWeight: 300,
+        color: 'white',
+        
+      }}
+      
+      
+      className='text-center mt-5 mb-20 '>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
       
@@ -47,22 +57,17 @@ const Section04 = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[150px] sm:w-[350px] sm:h-[250px] md:w-[500px] md:h-[350px] lg:w-[600px] lg:h-[400px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 sm:opacity-25 md:opacity-30 blur-[50px] sm:blur-[75px] md:blur-[100px] -z-10" />
         
         {/* Main Image with Shine Border - Responsive border and padding */}
-        <div className="relative rounded-2xl overflow-hidden z-10 p-0.5 w-full">
-        <ShineBorder
-                        borderWidth={2}
-                        duration={23}
-                        shineColor={["#C67DFF", "#3420C6", "#0079FF00"]}
-                        className="absolute inset-0 rounded-2xl pointer-events-none"
-                      />
-                      <Image
-                        src="/assets/images/mainimage.png"
-                        width={1200}
-                        height={900}
-                        alt="product web image"
-                        className="object-contain w-full h-auto relative z-10  rounded-2xl"
-                        priority
-                      />
+        <div className="relative w-full flex justify-center">
+          <Image
+            src="/assets/images/mainimage.png"
+            width={1200}
+            height={900}
+            alt="product web image"
+            className="object-contain h-auto w-full 2xl:w-[1295px] 2xl:h-[745px] relative z-10 rounded-2xl"
+            priority
+          />
         </div>
+
       </div>
       
       {/* Down Arrow - Responsive spacing */}
