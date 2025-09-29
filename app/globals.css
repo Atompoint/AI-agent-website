@@ -99,6 +99,7 @@ line-height: 22.8px;
 
 }
 
+
 .Heading1{
 
  font-size: clamp(25px, 6vw, 60px);
@@ -125,65 +126,17 @@ line-height: 22.8px;
  line-height: 26px;
 }
 
+
 .border-class{
    border: '1px solid #FFFFFF12',
 }
-.subtextt {
-  font-size: clamp(11px, 2.8vw, 16px);
-  font-weight: 400;
-  color: white;
-  letter-spacing: 0.6px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.subtextb{
-  font-size: clamp(10px, 2.8vw,18px);
-  font-weight: 300;
-  color: white;
-  letter-spacing: 0.6px;
-
-}
 
 
-.subtextc{
-  font-size: 34px;
-  font-weight: 900;
-  color: white;
-  letter-spacing: 0.6px;
-
-}
-.subtext1{
-  font-size: clamp(13px, 2vw, 16px);
-   font-weight: 200;
-   color: white;
-   letter-spacing: 0.6px;
-
-}
-.subtextpt2 {
-  font-size: clamp(14px, 2vw, 16px);
-  font-weight: 600;
-  color: white;
-
-}
-.subtext2{
-  font-size: clamp(10px, 2vw, 16px);
-  font-weight: 600;
-  color: white;
-
-}
-.subtext3{
-  font-size: clamp(15px, 3vw, 20px);
-   font-weight: 600;
-   color: rgba(255, 255, 255, 0.9);
-
-}
-
-.subtext4{
-  font-size: clamp(9px, 4vw, 15.27px);
-   font-weight: 200;
-   color: white;
- letter-spacing: 0.4px;
+.GetStarted{
+font-size: clamp(10px, 2vw, 24.4px);
+letter-spacing: 0.4px;
+font-weight:800 ;
+letter-spacing: -0.4px;
 }
 
 
@@ -242,7 +195,6 @@ line-height: 22.8px;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
   -webkit-text-fill-color: transparent;
 }
 
