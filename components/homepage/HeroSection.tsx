@@ -16,14 +16,14 @@ import ShinyText from "@/components/ui/ShinyText";
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-  'Available 24/7',
-  'Instant Voice Conversations',
-  'Smart Visitor Guidance',
-  'One-Click Installation',
-  'Complete Brand Matching',
-  'Unlimited Customers',
-  'Works On Any Website',
-  'Automatic Website Learning',
+  'Available\n24/7',
+  'Instant Voice\nConversations',
+  'Smart Visitor\nGuidance',
+  'One-Click\nInstallation',
+  'Complete Brand\nMatching',
+  'Unlimited\nCustomers',
+  'Works On Any\nWebsite',
+  'Automatic Website\nLearning',
 ];
 
 export default function HeroHeader() {
@@ -56,13 +56,13 @@ export default function HeroHeader() {
 
     const startAnimation = () => {
       ctx = gsap.context(() => {
-       
+
         // Animate Circle with parallax effect
         gsap.to(img, {
           rotation: "+=190",
           y: 20,
-          opacity:0.7,
-      
+          opacity: 0.7,
+
           force3D: true,
           duration: 1,
           scrollTrigger: {
@@ -106,14 +106,15 @@ export default function HeroHeader() {
 
   return (
     <div>
-      <section 
+      {/* Section 1 */}
+      <section
         ref={sectionRef}
         className="relative w-full  bg-[#0a0014] overflow-hidden"
       >
         {/* PRIORITY: Particles Background - Render first with highest priority */}
-        <div 
+        <div
           className="absolute inset-0 z-0"
-          style={{ 
+          style={{
             willChange: 'transform',
             contain: 'layout style paint',
             transform: 'translate3d(0,0,0)' // Force GPU layer
@@ -139,10 +140,9 @@ export default function HeroHeader() {
         />
 
         {/* Light rays - load after particles */}
-        <div 
-          className={`absolute inset-0 z-30 pointer-events-none overflow-hidden transition-opacity duration-500 ${
-            particlesLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`absolute inset-0 z-30 pointer-events-none overflow-hidden transition-opacity duration-500 ${particlesLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <LightRays
             raysOrigin="top-left"
@@ -157,155 +157,161 @@ export default function HeroHeader() {
           />
         </div>
 
-{/* Main content flow - fade in after particles */}
-<div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-6 sm:gap-8 md:gap-8 lg:gap-10">
-  {/* Header */}
-  <div className="flex-none">
-    <Header />
-  </div>
+        {/* Main content flow - fade in after particles */}
+        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-6 sm:gap-8 md:gap-8 lg:gap-10">
 
-  {/* Text content - centered with responsive spacing */}
-  <div className="flex flex-col items-center justify-center flex-1 text-center px-4 sm:px-6 md:px-10 lg:px-20 gap-3 sm:gap-4 lg:gap-5 2xl:gap-7">
-    {/* Label */}
-   
-    <h2
-    className="relative inline-flex text-center px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 2xl:px-4 2xl:py-2 text-[clamp(10px,2vw,18px)] leading-[1.3] tracking-[0.4px] break-words hyphens-auto border-1 border-[#BF84F9] rounded-[32px] font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(191,132,249,0.5)] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
-    style={{
-      background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
-      boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
-    }}
-  >
-    Tired of Watching 67% of Your Website Visitors Leave Without Buying?
-  </h2>
+          {/* Header */}
+          <div className="flex-none">
+            <Header />
+          </div>
 
-    {/* Gradient Heading - style preserved exactly */}
-    <div
-      className="relative z-10"
-      style={{
-      
-        fontWeight: 400,
-        fontSize: 'clamp(18px, 4vw, 71px)',
-        lineHeight: 'clamp(20px, 4vw, 76px)',
-        
-        letterSpacing: '0%',
-        color: 'transparent',
-        background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        WebkitFontSmoothing: 'antialiased',
-        MozOsxFontSmoothing: 'grayscale',
-      }}
-    >
-      <div>
-        <ShinyText text="World's First" speed={5} className="gradient-white-text" />{' '}
-        <ShinyText text="Smart Voice AI" speed={5} className="gradient-mask-text" />{' '}
-        <ShinyText text="Agent That" speed={5} className="gradient-white-text" />
-        <ShinyText text="Actually TALKS to Your Website Visitors &" speed={5} className="gradient-white-text" />
-        <ShinyText text="Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
-      </div>
-    </div>
+          {/* Hero Heading & Content */}
+          <div className="max-w-7xl lg:gap-4 flex flex-col items-center justify-center flex-1 text-center mx-auto mt-[5%] lg:mt-[3%] 2xl:mt-[6%]">
+            {/* Label */}
+            <h2
+              className="relative max-w-[85%] md:max-w-[100%] px-4 py-2 sm:px-6 lg:px-6 h-auto min-h-[40px] sm:min-h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px] shadow-[0_0_10px_rgba(191,132,249,0.3)]"
+              style={{
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontSize: 'clamp(14px, 4vw, 20px)',
+                fontWeight: 300,
+                lineHeight: '1.2',
+                letterSpacing: '0%',
+                textTransform: 'capitalize',
+                textAlign: 'center',
+                background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
+                boxShadow: '0 0 10px rgba(191, 132, 249, 0.5), 0 0 20px rgba(191, 132, 249, 0.2)'
+              }}
+            >
+              Tired of Watching 67% of Your Website Visitors Leave Without Buying?
+            </h2>
 
-    {/* Subtext */}
-    <p className="subtextb max-w-[900px]  leading-[1.4] sm:leading-[1.5] md:leading-[1.6] px-3">
-      Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
-      Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
-      Objections & Converts Visitors Into Paying Customers Instantly!
-    </p>
-  </div>
+            {/* Heading */}
+            <h1
+              className="relative z-10 px-2 md:px-0 mt-[5%] md:mt-[1%] 2xl:mt-[2%]"
+              style={{
+                fontFamily: 'Basis Grotesque Pro, sans-serif',
+                fontWeight: 800,
+                fontSize: 'clamp(25px, 6vw, 55px)',
+                lineHeight: '1.1',
+                letterSpacing: '0%',
+                color: 'transparent',
+                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+               
+              }}
+            >
+              <div>
+                <ShinyText text="World's First Smart Voice AI Agent That Actually TALKS to Your Website Visitors & Guides Them to Buy... While You Sleep!" speed={5} className="gradient-white-text" />
+              </div>
+            </h1>
 
-  
- <div className="flex-none flex justify-center  -mt-[8%] sm:-mt-[8%] md:-mt-[13%] lg:-mt-[15%] xl:-mt-[13%]">
-  <div className="relative w-full max-w-6xl flex flex-col items-center">
+            {/* Subtext */}
+            <p className="w-[90%] md:w-[80%] " style={{
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 300,
+              fontSize: 'clamp(16px, 5vw, 20px)',
+              lineHeight: '1.4',
+              letterSpacing: '0%',
+              color: '#FFFFFF'
+            }}>
+              Just Paste One Line of Code & Watch This Revolutionary AI Turn Your Silent
+              Website Into A 24/7 Sales Machine That Answers Questions, Overcomes
+              Objections & Converts Visitors Into Paying Customers Instantly!
+            </p>
+          </div>
 
-    {/* Circle image behind */}
-    <div
-      style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
-      className="w-full flex justify-center z-0"
-    >
-      <Image
-        ref={circleImageRef}
-        src="/assets/images/Circle.png"
-        alt="circle"
-        width={2000}
-        height={1800}
-        className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
-        draggable={false}
-      />
-    </div>
+          {/* Image With Circle Background */}
+          <div className="flex-none flex justify-center -mt-[10%] md:-mt-[13%] lg:mt-[-10%] 2xl:mt-[-7%]">
+            <div className="relative w-full max-w-6xl flex flex-col items-center">
+              {/* Circle image behind */}
+              <div
+                style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
+                className="w-full flex justify-center z-0"
+              >
+                <Image
+                  ref={circleImageRef}
+                  src="/assets/images/Circle.png"
+                  alt="circle"
+                  width={2000}
+                  height={1800}
+                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
+                  draggable={false}
+                />
+              </div>
 
-    {/* Main1 image in front, shifted 40% up relative to circle */}
-    <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[78%] z-10">
-      <ContainerScroll>
-     
-        <img
-          src="/assets/images/main1.png"
-          alt="hero"
-          height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-bottom "
-          draggable={false}
-        />
-      </ContainerScroll>
-    </div>
+              {/* Main1 image in front, shifted 40% up relative to circle */}
+              <div className="w-full flex justify-center -mt-[75%] sm:-mt-[80%] md:-mt-[75%] lg:-mt-[75%] xl:-mt-[78%] z-10">
+                <ContainerScroll>
 
-  </div>
-</div>
+                  <img
+                    src="/assets/images/main1.png"
+                    alt="hero"
+                    height={720}
+                    width={1400}
+                    className="mx-auto rounded-2xl object-cover h-full object-bottom "
+                    draggable={false}
+                  />
+                </ContainerScroll>
+              </div>
 
-</div>
+            </div>
+          </div>
 
-
+        </div>
       </section>
-   
+
       {/* Section 2 */}
-      <section className="relative z-50 bg-[#01000C] mt-0">
-        <div className="relative w-full z-40 px-3 md:px-8 lg:px-0">
-          <div ref={setMicRef} className="relative z-40 shadow-md  flex justify-center items-center mx-auto">
-            <div className="relative group">
+      <section className="relative z-50 ">
+
+        {/* MIC Image */}
+        <div className="relative w-full z-40 px-2 md:px-8 lg:px-4 mx-auto flex flex-col items-center justify-center">
+          <div ref={setMicRef} className="relative z-40 shadow-md flex justify-center items-center w-full">
+            {/* MIC Image */}
+            <div className="relative group flex flex-col items-center">
               <Image
                 src="/assets/icons/mymic.png"
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[70px] h-[70px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${
-                  isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'
-                }`}
+                className={`w-[100px] h-[100px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] 2xl:w-[170px] 2xl:h-[170px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'}`}
               />
+              <div className="mt-0 inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
+                <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] 2xl:text-[20px] -rotate-90" />
+                <span className="2xl:text-[20px] 2xl:font-semibold">GIVE IT A TRY!</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Features */}
-        <div className="pt-0 relative z-20">
-          <div className="flex justify-center -mt-1 items-center px-4 relative z-20">
-            <div className="inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
-              <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] -rotate-90" />
-              <span className="subtextpt2">GIVE IT A TRY!</span>
-            </div>
-          </div>
-
-          <div className="mt-8 sm:mt-12 md:mt-10 lg:mt-12 px-4 sm:px-6 relative z-20">
-            <div className="max-w-full mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-left">
-              {features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-2 sm:gap-3 justify-start flex-nowrap py-1.5 md:py-2 lg:py-2.5">
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 flex items-center justify-center relative">
-                    <Image
-                      src="/assets/icons/onlycircle.svg"
-                      alt="Circle"
-                      width={36}
-                      height={36}
-                      className="w-full h-full object-contain"
-                    />
-                    <FiCheck className="absolute inset-0 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5 m-auto text-white" />
+        {/* Features Section */}
+        <div className="relative z-20 pt-8 sm:pt-14 md:pt-16 lg:pt-20 flex justify-center">
+          <div className="w-full max-w-7xl 2xl:max-w-8xl px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-8 md:gap-x-20 gap-y-6 md:gap-y-12 max-w-6xl 2xl:max-w-7xl">
+                {features.map((feature, i) => (
+                  <div key={i} className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 group">
+                    <div className="flex-shrink-0 mt-0.5 sm:mt-1">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 2xl:w-10 2xl:h-10 rounded-full flex items-center justify-center relative">
+                        <Image
+                          src="/assets/icons/onlycircle.svg"
+                          alt="Checkmark"
+                          width={36}
+                          height={36}
+                          className="w-full h-full object-contain"
+                        />
+                        <FiCheck className="absolute w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 text-white" />
+                      </div>
+                    </div>
+                    <span className="text-sm sm:text-base md:text-lg 2xl:text-xl font-semibold text-white/90 group-hover:text-white transition-colors whitespace-pre-line leading-tight">
+                      {feature}
+                    </span>
                   </div>
-                  <span className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[15px] xl:text-[16px] leading-tight font-medium text-white/90">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-
-            <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14">
+            <div className="mt-12 sm:mt-16 text-center">
               <DownArrow />
             </div>
           </div>

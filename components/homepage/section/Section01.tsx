@@ -55,7 +55,6 @@ const ThreeStepsComponent = () => {
       textColor: 'text-white',
     },
   ];
-
   // Intersection Observer to detect when component comes into viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -107,11 +106,11 @@ const ThreeStepsComponent = () => {
 
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.5, 
+      transition: {
+        duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1],
         delay: 0.1
       }
@@ -120,10 +119,10 @@ const ThreeStepsComponent = () => {
 
   const stepperLineVariants: Variants = {
     hidden: { width: '0%' },
-    visible: { 
+    visible: {
       width: '100%',
-      transition: { 
-        duration: 0.6, 
+      transition: {
+        duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
         delay: 0
       }
@@ -132,10 +131,10 @@ const ThreeStepsComponent = () => {
 
   const verticalLineVariants: Variants = {
     hidden: { height: '0%' },
-    visible: { 
+    visible: {
       height: '100%',
-      transition: { 
-        duration: 0.6, 
+      transition: {
+        duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
         delay: 0
       }
@@ -143,10 +142,10 @@ const ThreeStepsComponent = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center pt-4 px-4 sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
+    <div className="relative min-h-screen flex items-center justify-center sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
       {/* Updated Glow Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div 
+        <div
           className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[933px] h-[527px]"
           style={{
             background: 'radial-gradient(circle at center, rgba(90, 39, 177, 0.15) 0%, rgba(31, 11, 70, 0) 60%)'
@@ -154,45 +153,48 @@ const ThreeStepsComponent = () => {
         >
         </div>
       </div>
-      
-      <div className="max-w-6xl w-full relative z-0">
-        {/* Header */}
-        <div
-          className="relative text-center z-10 mb-8 sm:mb-16"
+
+      <div className="max-w-7xl w-full relative z-0">
+        {/* Heading */}
+        <h1
+          className="relative z-10 text-center mx-auto "
           style={{
-            
-            fontWeight: 400,
-            fontSize: 'clamp(25px, 5vw, 43px)',
-            lineHeight: '0.9',
+            fontFamily: 'Basis Grotesque Pro, sans-serif',
+            fontWeight: 700,
+            fontSize: 'clamp(22px, 3vw, 60px)',
+            lineHeight: '1.1',
+            margin: '0 0 0 0',
+            padding: '0 0',
             letterSpacing: '0%',
             color: 'transparent',
             background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
+  
           }}
         >
           <div>
-            <ShinyText text="All It Takes Is 3 Simple" speed={5} className='gradient-white-text'/>
+            <ShinyText text="All It Takes Is 3 Simple" speed={5} className="gradient-white-text" />
           </div>
           <div>
-            <ShinyText text="Steps and " speed={5} className='gradient-white-text'/>
-            {' '}
-            <ShinyText text="You're Done" speed={5} className='gradient-mask-text'/>
+          <ShinyText text="Steps and" speed={5} className="gradient-white-text" />
+          {' '}
+            <ShinyText text="You're Done" speed={5} className="gradient-mask-text" />
           </div>
-        </div>
+        </h1>
 
         {/* Horizontal Stepper */}
-        <div className="max-w-[800px] 2xl:max-w-[1100px] mx-auto">
-          {/* Desktop Layout */}
-          <div className="hidden lg:block 2xl:hidden py-10">
-            <div className="relative flex items-start justify-between mb-12">
+        <div className="mx-auto">
+          <div className="py-20 sm:py-15 md:py-20">
+            <div className="relative flex flex-col lg:flex-row items-center lg:items-start justify-between  gap-8 lg:gap-30">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
-                  {/* Step Column with Relative Wrapper - Always maintains space */}
-                  <div className="relative flex flex-col items-center" style={{ minWidth: '200px', maxWidth: '240px', minHeight: '300px' }}>
+                  {/* Step Column with Relative Wrapper */}
+                  <div
+                    className="relative flex flex-col items-center w-full max-w-[280px] lg:max-w-none"
+                    
+                  >
                     <AnimatePresence mode="wait">
                       {currentStep >= index && (
                         <motion.div
@@ -204,23 +206,35 @@ const ThreeStepsComponent = () => {
                           className="flex flex-col items-center w-full"
                         >
                           {/* Step Number Section */}
-                          <div className="flex flex-col items-center mb-8">
+                          <div className="flex flex-col items-center mb-4 sm:mb-8">
                             {/* Step Label */}
-                            <div className="text-white text-xs ml-3 font-semibold mb-1 tracking-[0.3em]  text-center w-full flex justify-center">
+                            <div
+                              style={{
+                                fontFamily: 'Manrope',
+                                fontWeight: 700,
+                                fontSize: 'clamp(12px, 3vw, 16px)',
+                                lineHeight: '140%',
+                                letterSpacing: '0.34em',
+                                color: 'white',
+                                marginBottom: '0.25rem',
+                                textAlign: 'center',
+                                width: '100%',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                              }}
+                            >
                               {step.stepText}
                             </div>
-                            
+
                             {/* Step Number */}
-                            <div 
-                              className="text-5xl md:text-6xl font-semibold text-center"
-                             
-                            >
+                            <div className="text-6xl md:text-6xl font-semibold text-center">
                               <ShinyText text={step.number} disabled={false} speed={6} />
                             </div>
                           </div>
 
                           {/* Icon Container */}
-                          <div className="relative w-16 h-16 md:w-20 md:h-20 mb-6 flex items-center justify-center">
+                          <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mb-4 sm:mb-6 flex items-center justify-center">
                             {/* Rotating Circle Background */}
                             <Image
                               src={step.iconSrc}
@@ -230,9 +244,9 @@ const ThreeStepsComponent = () => {
                               className="w-full h-full object-contain rotate-alternate"
                               priority={index === 0}
                             />
-                            
+
                             {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center">
                               <Image
                                 src={step.centerIconSrc}
                                 alt={step.centerIconAlt}
@@ -243,12 +257,21 @@ const ThreeStepsComponent = () => {
                               />
                             </div>
                           </div>
-                          
+
                           {/* Step Title */}
-                          <div 
-                          style={{ fontSize: 'clamp(13px, 5vw, 18.5px)' }}
-                            className={`${step.textColor} font-semibold leading-relaxed text-center w-full px-4`}
-                           
+                          <div
+                            style={{
+                              fontFamily: 'Manrope',
+                              fontWeight: 700,
+                              fontSize: 'clamp(14px, 4vw, 18px)',
+                              lineHeight: '140%',
+                              letterSpacing: '0%',
+                              textTransform: 'capitalize',
+                              textAlign: 'center',
+                              width: '70%',
+                              padding: '0 0.5rem'
+                            }}
+                            className={`${step.textColor} md:w-full`}
                           >
                             {step.title}
                           </div>
@@ -256,335 +279,49 @@ const ThreeStepsComponent = () => {
                       )}
                     </AnimatePresence>
 
-                    {/* Absolutely Positioned Connector Line */}
+                    {/* Connector Line - Only show between items on desktop */}
                     {index < steps.length - 1 && (
-                      <div 
-                        className="absolute"
+                      <div className="hidden lg:block absolute"
                         style={{
-                          top: '50px',
-                          left: '70%',
-                          width: '180px',
+                          top: '55px',
+                          left: '75%',
+                          width: '280px',
                           height: '1px',
                           zIndex: 1
                         }}
                       >
-                        {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-white/40"></div>
-                        
-                        {/* Progress line - fills with white */}
                         <motion.div
                           key={`desktop-line-${index}-${animationKey}`}
-                          className="absolute inset-0 bg-white origin-left"
+                          className="absolute inset-0 bg-white/30 origin-left"
                           variants={stepperLineVariants}
                           initial="hidden"
                           animate={currentStep > index ? "visible" : "hidden"}
                         />
                       </div>
                     )}
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-{/* xl screen*/}
-<div className="hidden 2xl:block py-10">
-            <div className="relative flex items-start justify-between mb-12">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  {/* Step Column with Relative Wrapper - Always maintains space */}
-                  <div className="relative flex flex-col items-center" style={{ minWidth: '200px', maxWidth: '240px', minHeight: '300px' }}>
-                    <AnimatePresence mode="wait">
-                      {currentStep >= index && (
-                        <motion.div
-                          key={`step-${index}-${animationKey}`}
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          className="flex flex-col items-center w-full"
-                        >
-                          {/* Step Number Section */}
-                          <div className="flex flex-col items-center mb-8">
-                            {/* Step Label */}
-                            <div className="text-white text-xs ml-3 font-semibold mb-1 tracking-[0.3em]  text-center w-full flex justify-center">
-                              {step.stepText}
-                            </div>
-                            
-                            {/* Step Number */}
-                            <div 
-                              className="text-5xl md:text-6xl font-semibold text-center"
-                             
-                            >
-                              <ShinyText text={step.number} disabled={false} speed={6} />
-                            </div>
-                          </div>
 
-                          {/* Icon Container */}
-                          <div className="relative w-16 h-16 md:w-20 md:h-20 mb-6 flex items-center justify-center">
-                            {/* Rotating Circle Background */}
-                            <Image
-                              src={step.iconSrc}
-                              alt={step.iconAlt}
-                              width={80}
-                              height={80}
-                              className="w-full h-full object-contain rotate-alternate"
-                              priority={index === 0}
-                            />
-                            
-                            {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                              <Image
-                                src={step.centerIconSrc}
-                                alt={step.centerIconAlt}
-                                width={40}
-                                height={40}
-                                className="object-contain w-full h-full"
-                                priority={index === 0}
-                              />
-                            </div>
-                          </div>
-                          
-                          {/* Step Title */}
-                          <div 
-                          style={{ fontSize: 'clamp(13px, 5vw, 18.5px)' }}
-                            className={`${step.textColor} font-semibold leading-relaxed text-center w-full px-4`}
-                           
-                          >
-                            {step.title}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Absolutely Positioned Connector Line */}
+                    {/* Mobile Connector - Show between items on mobile */}
                     {index < steps.length - 1 && (
-                      <div 
-                        className="absolute"
-                        style={{
-                          top: '50px',
-                          left: '70%',
-                          width: '330px',
-                          height: '1px',
-                          zIndex: 1
-                        }}
-                      >
-                        {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-white/40"></div>
-                        
-                        {/* Progress line - fills with white */}
+                      <div className="lg:hidden w-px h-22 mb-[-0.5%] bg-white/0 my-6 mx-auto relative">
                         <motion.div
-                          key={`desktop-line-${index}-${animationKey}`}
-                          className="absolute inset-0 bg-white origin-left"
-                          variants={stepperLineVariants}
-                          initial="hidden"
-                          animate={currentStep > index ? "visible" : "hidden"}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          {/* Tablet Layout */}
-          <div className="hidden sm:hidden md:block xl:hidden lg:hidden">
-            <div className="relative flex items-start justify-between mb-12 px-4">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  {/* Step Column with Relative Wrapper - Always maintains space */}
-                  <div className="relative flex flex-col items-center" style={{ minWidth: '160px', maxWidth: '200px', minHeight: '250px' }}>
-                    <AnimatePresence mode="wait">
-                      {currentStep >= index && (
-                        <motion.div
-                          key={`step-${index}-${animationKey}`}
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          className="flex flex-col items-center w-full"
-                        >
-                          {/* Step Number Section */}
-                          <div className="flex flex-col items-center mb-6">
-                            {/* Step Label */}
-                            <div className="text-white text-xs font-medium mb-2 tracking-[0.2em] opacity-60 text-center">
-                              {step.stepText}
-                            </div>
-                            
-                            {/* Step Number */}
-                            <div 
-                              className="text-5xl font-semibold mb-4 text-center"
-                              
-                            >
-                              <ShinyText text={step.number} disabled={false} speed={6} />
-                            </div>
-                          </div>
-
-                          {/* Icon Container */}
-                          <div className="relative w-14 h-14 mb-4 flex items-center justify-center">
-                            {/* Rotating Circle Background */}
-                            <Image
-                              src={step.iconSrc}
-                              alt={step.iconAlt}
-                              width={56}
-                              height={56}
-                              className="w-full h-full object-contain animate-spin-slow"
-                              priority={index === 0}
-                            />
-                            
-                            {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center">
-                              <Image
-                                src={step.centerIconSrc}
-                                alt={step.centerIconAlt}
-                                width={28}
-                                height={28}
-                                className="object-contain w-full h-full"
-                                priority={index === 0}
-                              />
-                            </div>
-                          </div>
-                          
-                          {/* Step Title */}
-                          <div 
-                            className={`${step.textColor} text-xs leading-relaxed text-center w-full px-1`}
-                            style={{ fontFamily: 'Radio Grotesk' }}
-                          >
-                            {step.title}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Absolutely Positioned Connector Line */}
-                    {index < steps.length - 1 && (
-                      <div 
-                        className="absolute"
-                        style={{
-                          top: '50px',
-                          left: '70%',
-                          width: '175px',
-                          height: '1px',
-                          zIndex: 1
-                        }}
-                      >
-                        {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-white/40"></div>
-                        
-                        {/* Progress line - fills with white */}
-                        <motion.div
-                          key={`tablet-line-${index}-${animationKey}`}
-                          className="absolute inset-0 bg-white origin-left"
-                          variants={stepperLineVariants}
-                          initial="hidden"
-                          animate={currentStep > index ? "visible" : "hidden"}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          
-        
-
-          {/* Mobile Layout - Vertical Stack */}
-          <div className="block sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">
-            <div className="flex flex-col items-center space-y-4 sm:space-y-6 mt-3 sm:mt-5 mb-8 sm:mb-12 px-2">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  {/* Step Column - Always maintains space */}
-                  <div className="relative w-full max-w-[280px] sm:max-w-xs" style={{ minHeight: '180px' }}>
-                    <AnimatePresence mode="wait">
-                      {currentStep >= index && (
-                        <motion.div
-                          key={`step-${index}-${animationKey}`}
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          className="flex flex-col items-center w-full h-full"
-                        >
-                          {/* Step Number Section */}
-                          <div className="flex flex-col items-center justify-center h-full mb-0">
-                            {/* Step Label */}
-                            <div className="text-white text-[11px] sm:text-xs font-medium mb-1 sm:mb-2 tracking-[0.15em] opacity-60 text-center">
-                              {step.stepText}
-                            </div>
-                            
-                            {/* Step Number */}
-                            <div className="text-4xl sm:text-5xl font-semibold mb-3 sm:mb-4 text-center">
-                              <ShinyText text={step.number} disabled={false} speed={6} />
-                            </div>
-                          </div>
-
-                          {/* Icon Container */}
-                          <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
-                            {/* Rotating Circle Background */}
-                            <Image
-                              src={step.iconSrc}
-                              alt={step.iconAlt}
-                              width={64}
-                              height={64}
-                              className="w-full h-full object-contain animate-spin-slow"
-                              priority={index === 0}
-                              sizes="(max-width: 640px) 56px, 64px"
-                            />
-                            
-                            {/* Centered Static Icon */}
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center">
-                              <Image
-                                src={step.centerIconSrc}
-                                alt={step.centerIconAlt}
-                                width={32}
-                                height={32}
-                                className="object-contain w-full h-full"
-                                priority={index === 0}
-                              />
-                            </div>
-                          </div>
-                          
-                          {/* Step Title */}
-                          <div 
-                            className={`${step.textColor} text-[13px] sm:text-sm leading-relaxed text-center w-full px-2 sm:px-4`}
-                            style={{ fontFamily: 'Radio Grotesk' }}
-                          >
-                            {step.title}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Vertical Connector Line for Mobile */}
-                  {index < steps.length - 1 && (
-                    <div className="flex justify-center w-full">
-                      <div className="relative w-px h-12 sm:h-16">
-                        {/* Background line - always visible as gray */}
-                        <div className="absolute inset-0 bg-white/40"></div>
-                        
-                        {/* Progress line - fills with white */}
-                        <motion.div
-                          key={`mobile-line-${index}-${animationKey}`}
-                          className="absolute inset-0 bg-white origin-top"
+                          className="absolute inset-0 bg-white/30 origin-top"
                           variants={verticalLineVariants}
                           initial="hidden"
                           animate={currentStep > index ? "visible" : "hidden"}
                         />
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </React.Fragment>
               ))}
             </div>
           </div>
-
-          <Offer/>
-          <DownArrow/>
+          <Offer />
+          <DownArrow />
         </div>
       </div>
     </div>
   );
 };
 
-export default ThreeStepsComponent;
+export default ThreeStepsComponent;          <DownArrow />

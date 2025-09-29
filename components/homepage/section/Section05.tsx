@@ -35,33 +35,26 @@ const Section05: React.FC = () => {
         <div
           className="relative text-center z-10 mt-8"
           style={{
-            fontFamily: 'Radio Grotesk',
-            fontWeight: 400,
-            fontSize: 'clamp(18px, 4vw, 42px)',
-            lineHeight: '0.9',
-            letterSpacing: '0%',
-            margin: '0 0 -0.5rem 0',
-            padding: '0.2em 0',
-           
-            color: 'transparent',
-            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
+          
+              fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+    
+          
           }}
         >
           <div className="flex flex-col gap-1">
             <div>
-              <ShinyText text="Forget everything you know" speed={5} className="gradient-white-text" />
-               {' '}
-              <ShinyText text="about website" speed={5} className="gradient-white-text" />
-            </div>
-            <div>
-              <ShinyText text="chat boxes, pop-ups, and static" speed={5} className="gradient-white-text" />
-              {' '}
-              <ShinyText text="FAQ pages." speed={5} className="gradient-white-text" />
+              <ShinyText text="Forget everything you know about website chat boxes, pop-ups, and static FAQ pages" speed={5} className="gradient-white-text" />
             </div>
             <div>
               <ShinyText text="This is different. This is" speed={5} className="gradient-white-text" />
@@ -76,7 +69,15 @@ const Section05: React.FC = () => {
             {/* First Row - Text left, Video right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-0 items-center">
               {/* Text Left */}
-              <div className="subtext1 leading-5 max-w-[460px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pr-8 2xl:pr-12 text-center lg:text-left order-2 lg:order-1">
+              <div 
+              style={{
+                fontSize: "clamp(13px, 2.73vw - 19px, 23px)",
+                fontWeight: 300,
+                color: "white",
+
+              }}
+              
+              className=" leading-5 max-w-[46px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pr-8 2xl:pr-12 text-center lg:text-left order-2 lg:order-1">
                 <p className="text-white font-semibold">
                   VoiceAgent AI is the world's first conversational website assistant
                   that your visitors can actually TALK to just like they're calling your
@@ -184,18 +185,19 @@ const Section05: React.FC = () => {
       <div
         className="relative text-center z-10 pt-8 sm:pt-16 lg:pt-20 2xl:pt-24"
         style={{
-          fontFamily: 'Radio Grotesk',
-          fontWeight: 400,
-          fontSize: 'clamp(25px, 6vw, 43px)',
-          lineHeight: '0.8' ,
-          letterSpacing: '0%',
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale', 
+          fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+     
         }}
       >
         <div>

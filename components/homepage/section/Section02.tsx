@@ -2,10 +2,10 @@ import React from 'react';
 import DownArrow from "@/components/ui/DownArrow";
 import ShinyText from '@/components/ui/ShinyText';
 
- 
+
 const Section02 = () => {
   const sections = [
-    { 
+    {
       title: (
         <>
           <span>67</span>
@@ -23,7 +23,7 @@ const Section02 = () => {
       ],
       imagePath: "/assets/images/section02/sec1.png"
     },
-    { 
+    {
       title: <span>While You Sleep, Your Competitors Are Stealing Your Customers.</span>,
       description: [
         <React.Fragment key="desc3">
@@ -46,7 +46,7 @@ const Section02 = () => {
         </React.Fragment>
       ],
       imagePath: "/assets/images/section02/sec3.png"
-    }, 
+    },
     {
       title: <span>Building A Customer Service Team Costs A Fortune... And You Need Multiple People For Round-The-Clock Coverage</span>,
       description: [
@@ -86,75 +86,58 @@ const Section02 = () => {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-     
-
+    <div className="relative overflow-hidden w-full">
       {/* Glow Effects - Same positioning as lg */}
       <div className="absolute top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
-      
+
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-        <div className="w-full">
-          
+      <div className="relative z-10 w-full max-w-8xl 2xl:max-w-[93%] mx-auto px-4 md:px-6 lg:px-16 2xl:px-0">
+        <div className="w-full space-y-20 md:space-y-8 2xl:space-y-0">
           {sections.map((section, index) => (
             <div
               key={index}
-               className={`
-                relative flex flex-col lg:flex-row gap-15 2xl:gap-30
-                text-white justify-center items-center pb-15 lg:pb-15
-                rounded-xl
-                ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}
-              `}
+              className={`relative flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center justify-between gap-8 md:gap-12 lg:gap-20 2xl:gap-28`}
             >
               {/* Text Section */}
-              <div className="w-full md:max-w-[500px] lg:w-[500px] xl:w-[550px] 2xl:w-[600px] flex flex-col items-center lg:items-start text-center lg:text-left">
-                <div 
-                  className="text-[22px] md:text-[30px] lg:text-[34px] xl:text-[38px] 2xl:text-[42px] font-semibold mb-4 leading-tight lg:leading-[1.2]"
-                >
-                  <ShinyText 
-                     disabled={false} 
+              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[38px] 2xl:text-[42px] font-semibold mb-4 md:mb-6 leading-tight lg:leading-[1.2]">
+                  <ShinyText
+                    disabled={false}
                     speed={6}
                     className="inline-block"
                   >
                     {section.title}
                   </ShinyText>
-                </div> 
-                <div className="relative w-full max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] 6xl:max-w-[650px]">
+                </div>
+                <div className="w-full max-w-2xl space-y-4 md:space-y-5">
                   {section.description.map((paragraph, paragraphIndex) => (
-                    <p 
-                      key={paragraphIndex} 
-                      className="subtext1 leading-relaxed"
+                    <p
+                      key={paragraphIndex}
+                      className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-200"
                     >
-                       {paragraph}
+                      {paragraph}
                     </p>
                   ))}
                 </div>
-              </div> 
+              </div>
 
               {/* Image Section */}
-              <div className="
-                w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[460px] 
-                h-48 sm:h-56 md:h-64 lg:h-[350px] 
-                
-                flex items-center justify-center 
-                flex-shrink-0 
-           
-                
-                overflow-hidden
-              ">
-                <img 
-                  src={section.imagePath}
-                  alt={`Illustration for ${section.title}`}
-                  className="w-full h-full object-contain rounded-[7px]"
-                />
+              <div className="w-full lg:w-1/2 flex items-center justify-center">
+                <div className="relative w-full max-w-md lg:max-w-none aspect-square">
+                  <img
+                    src={section.imagePath}
+                    alt={`Illustration for ${section.title}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
-            </div> 
+            </div>
           ))}
-          
-        </div> 
-      </div> 
-    
+        </div>
+      </div>
+
       {/* Down Arrow */}
       <DownArrow />
     </div>

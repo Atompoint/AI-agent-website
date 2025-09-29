@@ -125,18 +125,18 @@ const Section10: React.FC = () => {
         <div
           className="relative text-center"
           style={{
-            fontFamily: 'Radio Grotesk',
-            fontWeight: 400,
-            fontSize: 'clamp(25px, 4vw, 43px)',
-            lineHeight: '0.9',
-            letterSpacing: '0%',
-           
-         
-            color: 'transparent',
-            background: 'linear-gradient(263.99deg, #0C0C0C -5.95%, #FFFFFF 24.91%, #919191 47.69%, #FFFFFF 71.93%, #0C0C0C 107.2%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            fontFamily: 'Basis Grotesque Pro, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(25px, 3vw, 60px)',
+              lineHeight: '1.1',
+              margin: '0 0 0 0',
+              
+              letterSpacing: '0%',
+              color: 'transparent',
+              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
           }}
         >
           <div >
