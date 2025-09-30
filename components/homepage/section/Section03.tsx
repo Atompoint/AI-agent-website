@@ -148,7 +148,7 @@ const Section03: React.FC = () => {
       iconAlt: "Question Mark Icon",
       iconSize: 24,
       text: ["67% of website visitors abandon sites", "when they can't get immediate answers"],
-      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
+      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 2xl:w-14 2xl:h-14"
     },
     {
       id: 2,
@@ -157,7 +157,7 @@ const Section03: React.FC = () => {
       iconAlt: "Anxious Face Icon",
       iconSize: 24,
       text: ["79% say they won't return to a", "website after a bad user experience"],
-      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
+      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 2xl:w-12 2xl:h-12"
     },
     {
       id: 3,
@@ -166,7 +166,7 @@ const Section03: React.FC = () => {
       iconAlt: "Wings Icon",
       iconSize: 32,
       text: ["You lose an average of $1,430 for every", "1,000 visitors who leave confused"],
-      iconContainerClass: "w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12"
+      iconContainerClass: "w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 2xl:w-18 2xl:h-18"
     }
   ];
 
@@ -202,40 +202,20 @@ const Section03: React.FC = () => {
             {/* Centered content */}
             <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
               <h1
-                className="relative z-10 text-center mx-auto max-w-[730px] 2xl:max-w-[1150px] xl:max-w-[820px]"
-                style={{
-                  fontFamily: 'Basis Grotesque Pro, sans-serif',
-                  fontWeight: 700,
-                  fontSize: 'clamp(22px, 3vw, 60px)',
-                  lineHeight: '1.1',
-                  margin: '0 0 0 0',
-                  padding: '0 0',
-                  letterSpacing: '0%',
-                  color: 'transparent',
-                  background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-
-                }}
+                className="relative z-10 text-center mx-auto max-w-[730px] 2xl:max-w-[1150px] xl:max-w-[820px] Heading2"
               >
                 <div>
-                  <ShinyText text="Stop Losing Money Every Single Day Your Website Stays Silent!
+                  <ShinyText text="Stop Losing Money Every Single Day
 " speed={5} className="gradient-white-text" />
+{" "}
+<ShinyText text="Your Website Stays Silent!
+" speed={5} className="gradient-mask-text" />  
                 </div>
 
               </h1>
 
               <p
-                style={{
-                  fontSize: 'clamp(14px, 0.18vw + 13.7px, 23px)',
-                  fontWeight: 200,
-                  color: 'white',
-                  letterSpacing: '0.6px',
-
-                }}
-
-                className="mt-5">
+                className="mt-5 mb-10 2xl:text-[23px] xl:text-[20px] lg:text-[18px] font-light text-white md:text-[16px] text-[14px]">
                 The statistics are brutal!
               </p>
 
@@ -243,7 +223,7 @@ const Section03: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto py-10">
                 {statistics.map((stat) => (
                   <div key={stat.id} className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mb-2 flex items-center justify-center relative">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 2xl:w-24 2xl:h-24 mb-2 flex items-center justify-center relative">
                       <Image
                         src={stat.circleImage}
                         alt={stat.iconAlt}
@@ -262,12 +242,8 @@ const Section03: React.FC = () => {
                       </div>
                     </div>
                     <div
-                      style={{
-                        fontSize: 'clamp(15px, 0.216vw + 17.2px, 28.5px)',
-                        fontWeight: 600,
-                        color: 'rgba(255, 255, 255, 0.9)',
-                      }}
-                      className="py-2 sm:py-4 leading-tight px-4 ">
+                     
+                      className="py-2 sm:py-4 text-white font-semibold 2xl:text-[28.5px] xl:text-[24px] lg:text-[20px] md:text-[18px] text-[16px] leading-tight px-4 ">
                       {stat.text[0]}
                       <br />
                       {stat.text[1]}
@@ -281,33 +257,20 @@ const Section03: React.FC = () => {
       </div>
 
       {/* Comparison Section */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-5">
+      <div className="relative w-full max-w-[1800px] mx-auto ">
         <div className="relative z-10">
           <div className="py-15 w-full flex flex-col items-center justify-center">
             <h1
-              className="relative z-10 text-center mx-auto max-w-[730px] 2xl:max-w-[1150px] xl:max-w-[820px] px-4"
-              style={{
-                fontFamily: 'Basis Grotesque Pro, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(22px, 3vw, 60px)',
-                lineHeight: '1.1',
-                margin: '0 auto',
-                padding: '0',
-                letterSpacing: '0%',
-                color: 'transparent',
-                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="relative z-10 text-center mx-auto mb-8 px-4 Heading2"
+             
             >
               <div >
                 <ShinyText text="Why Business Owners Are Ditching" speed={5} className="gradient-white-text" />
               </div>
               <div >
-                <ShinyText text="Expensive Alternatives" speed={5} className="gradient-white-text" />
+                <ShinyText text="Expensive Alternatives" speed={5} className="gradient-white-text inline-block" />
                 {' '}
-                <ShinyText text="for VoiceAgent AI" speed={5} className="gradient-mask-text" />
+                <ShinyText text="for VoiceAgent AI" speed={5} className="gradient-mask-text inline-block" />
               </div>
             </h1>
           </div>
@@ -319,26 +282,25 @@ const Section03: React.FC = () => {
             {/* Desktop Grid (md and up) - Cards 1-3 in flex layout */}
             <div className="hidden lg:block">
   {/* Card Grid */}
-  <div className="flex justify-center items-stretch gap-6 lg:gap-12  mx-auto">
+  <div className="flex justify-center items-stretch gap-4 lg:gap-6 xl:gap-8 2xl:gap-12 mx-auto">
     {comparisonData.map((card) => (
       <div
         key={card.id}
-       
         className="flex flex-col flex-shrink-0 min-w-0 
-                   xl:w-[380px] xl:h-[355px] 
-                   2xl:w-[533px] 2xl:h-[500px]"
+                   lg:w-[320px] lg:h-[420px] lg:overflow-hidden
+                   xl:w-[380px] xl:h-[355px] xl:overflow-hidden
+                   2xl:w-[533px] 2xl:h-[500px] 2xl:overflow-hidden"
       >
-      
       
         <div className="relative w-full h-full">
           <div
             className={`w-full h-full rounded-[12px] border flex flex-col ${card.bgClass} ${card.borderClass}`}
             style={card.shadowStyle}
           >
-            <div className="flex flex-col h-full p-4 sm:p-5 md:p-6">
+            <div className="flex flex-col h-full p-6 ">
               {/* Header Section */}
               <div className="flex-shrink-0">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 2xl:w-[77px] 2xl:h-[77px] flex items-center justify-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-[77px] 2xl:h-[77px] flex items-center justify-center">
                   <div className="relative w-full h-full flex flex-col">
                     <Image
                       src={card.icon}
@@ -351,12 +313,8 @@ const Section03: React.FC = () => {
 
                 {/* Title */}
                 <div
-                  style={{
-                    fontSize: "clamp(18px, 0.65vw + 14px, 29px)", 
-                    fontWeight: 600,
-                    color: "white",
-                  }}
-                  className="font-bold text-white mb-3 mt-8 text-start leading-tight"
+              
+                  className="font-bold text-white 2xl:mb-5 2xl:text-[29px] xl:text-[20px] lg:text-[18px] text-white mb-2 mt-8 xl:mt-4 text-start leading-tight"
                 >
                   {card.title}
                 </div>
@@ -367,11 +325,11 @@ const Section03: React.FC = () => {
                 <ul className="space-y-2">
                   {card.features.map((feature, index) => (
                     <li key={index} className="flex items-start group">
-                      <FaArrowRightLong className="text-white text-xs mt-1.5 mr-3 flex-shrink-0" />
+                      <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 lg:mr-1.5 xl:mr-2 flex-shrink-0" />
                       <p
-                        className="pr-6 text-white"
+                        className="2xl:text-[20px] xl:text-[15px] lg:text-[14px] text-white"
                         style={{
-                          fontSize: 'clamp(12px, 10vw , 20px)',
+                         
                           lineHeight: 1.5,
                           letterSpacing: '0.6px',
                          
@@ -391,32 +349,20 @@ const Section03: React.FC = () => {
   </div>
 
   {/* Do Nothing Card - Separate Section */}
-  <div className="flex justify-center mt-8 md:mt-12 lg:mt-16 w-full">
+  <div className="flex justify-center mt-8 2xl:mb:20 md:mt-12 lg:mt-16 w-full">
     <div className="w-full  px-4 sm:px-6">
       <div className="w-full flex flex-col items-center">
         {/* Heading */}
         <h1
-          className="relative z-10 text-center mx-auto 
+          className="relative z-10 text-center mx-auto Heading2
                      "
-          style={{
-            fontFamily: "Basis Grotesque Pro, sans-serif",
-            fontWeight: 700,
-            fontSize: "clamp(22px, 3vw, 60px)",
-            lineHeight: "1.1",
-            margin: "0 0 30px 0",
-            color: "transparent",
-            background:
-              "linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
+
         >
           <ShinyText text={doNothingData.title} speed={5} className="gradient-white-text" />
         </h1>
 
         {/* Features */}
-        <div className="w-full flex justify-center mb-10">
+        <div className="w-full flex justify-center py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-3 ">
             {doNothingData.features.map((feature, index) => (
               <div key={index} className="flex items-center lg:items-start">
@@ -443,7 +389,7 @@ const Section03: React.FC = () => {
 
 
             {/* Mobile Carousel */}
-            <div className="block lg:hidden">
+            <div className="block lg:hidden px-4">
               <div id="default-carousel" className="relative w-full min-h-[410px]" data-carousel="slide">
                 {/* Carousel container with dynamic height */}
                 <div className="relative overflow-visible min-h-[410px]">
@@ -546,22 +492,8 @@ const Section03: React.FC = () => {
               <div className="w-full py-12 ">
                 <div className="w-full max-w-6xl mx-auto flex flex-col ">
                   <h1
-                    className="relative z-10 mx-auto text-center"
-                    style={{
-                      fontFamily: 'Basis Grotesque Pro, sans-serif',
-                      fontWeight: 700,
-                      fontSize: 'clamp(22px, 3vw, 60px)',
-                      lineHeight: '1.1',
-                      margin: '0 0 30px 0',
-                      padding: '0',
-                      letterSpacing: '0%',
-                      color: 'transparent',
-                      background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                      WebkitBackgroundClip: 'text',
-                      backgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-
-                    }}
+                    className="relative z-10 mx-auto mb-5 text-center Heading2"
+                   
                   >
                     <div >
                       <ShinyText text={doNothingData.title} speed={5} className="gradient-white-text" />
@@ -589,7 +521,7 @@ const Section03: React.FC = () => {
 
       {/* Final CTA Section */}
       <div
-        className="relative w-full p-6 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full p-4 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${Gradient.src})`
         }}
@@ -597,23 +529,10 @@ const Section03: React.FC = () => {
 
         <div className="w-full py-2 flex flex-col items-center justify-center">
           <h1
-            className="relative z-10 text-center mx-auto max-w-[730px] 2xl:max-w-[1400px] xl:max-w-[920px] px-4"
-            style={{
-              fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(22px, 3vw, 60px)',
-              lineHeight: '1.2',
-              margin: '0 auto',
-              padding: '0',
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
+            className="relative z-10 text-center mx-auto w-full Heading2"
+           
           >
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center max-w-[1500px] mx-auto items-center">
               <div> <ShinyText text="But what if I told you there's now a way to have a tireless smart voice agent on your website " speed={5} className="gradient-white-text" /></div>
               <div className="flex ml-2">
                 <ShinyText text="24/7!" speed={5} className="gradient-white-text" />

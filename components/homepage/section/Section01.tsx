@@ -154,25 +154,11 @@ const ThreeStepsComponent = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl w-full relative z-0">
+      <div className="max-w-7xl w-full items-center justify-center relative z-0">
         {/* Heading */}
         <h1
-          className="relative z-10 px-2 md:px-0 mt-[5%] md:mb-[3%] text-center md:w-[60%] mx-auto"
-          style={{
-            fontFamily: 'Basis Grotesque Pro, sans-serif',
-            fontWeight: 700,
-            fontSize: 'clamp(22px, 3vw, 60px)',
-            lineHeight: '1.1',
-            margin: '0 0 0 0',
-            padding: '0 0',
-            letterSpacing: '0%',
-            color: 'transparent',
-            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-  
-          }}
+          className="relative z-10 px-2 md:px-0  md:mb-[3%] text-center md:w-[60%] mx-auto Heading2"
+          
         >
           <div>
             <ShinyText text="All It Takes Is 3 Simple" speed={5} className="gradient-white-text inline-block" />

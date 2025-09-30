@@ -186,11 +186,10 @@ export default function HeroHeader() {
 
             {/* Heading */}
             <h1
-              className="relative z-10 px-2 md:px-0 mt-[5%] md:mt-[1%] 2xl:mb-[0.5%] 2xl:max-w-[70%] hidden md:block"
+              className="relative z-10 px-2 md:text-[30px] md:py-3 lg:py-0 lg:text-[35px] xl:text-[55px] 2xl:text-[65px] md:px-0 mt-[5%] md:mt-[1%] 2xl:mb-[0.5%] md:max-w-[700px] 2xl:max-w-[1680px] xl:max-w-[1379px] lg:max-w-[850px] hidden md:block"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
                 fontWeight: 800,
-                fontSize: 'clamp(25px, 6vw, 55px)',
                 lineHeight: '1.22',
                 letterSpacing: '0%',
                 color: 'transparent',

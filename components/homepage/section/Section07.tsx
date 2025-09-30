@@ -113,34 +113,18 @@ export default function Section07() {
 
         <div className="w-full  mx-auto px-2 sm:px-4">
         <div
-            className="relative text-center z-10  w-full py-10 lg:py-25 2xl:py-30"
-            style={{
-             
-                fontFamily: 'Basis Grotesque Pro, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(25px, 3vw, 60px)',
-                lineHeight: '1.1',
-                margin: '0 0 0 0',
-                
-                letterSpacing: '0%',
-                color: 'transparent',
-                background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-      
-              
-            }}
+            className="relative text-center z-10  w-full py-10 lg:py-25 2xl:py-30 Heading2"
+           
           >
             <div>
               <ShinyText text="Turn your Silent Website Into a 24/7" speed={5} className="gradient-white-text" />
             </div>
             <div >
-              <ShinyText text="Money-Making" speed={5} className="gradient-mask-text" />
+              <ShinyText text="Money-Making" speed={5} className="gradient-mask-text inline-block" />
               {' '}
-              <ShinyText text="Machine That" speed={5} className="gradient-white-text" />
+              <ShinyText text="Machine That" speed={5} className="gradient-white-text inline-block" />
               {' '}
-              <ShinyText text="Talks!" speed={5} className="gradient-mask-text" />
+              <ShinyText text="Talks!" speed={5} className="gradient-mask-text inline-block" />
             </div>
           </div>
 
@@ -165,14 +149,15 @@ export default function Section07() {
                 
                 <div className="w-full py-2 sm:py-3">
                   <h3 style={{
-                    fontSize: 'clamp(15px, 2vw, 22.5px)',
+                    fontSize: 'clamp(15px, 2vw, 34px)',
+                    lineHeight:1.3,
                   }}
-                  className="font-medium leading-tight sm:leading-5 lg:leading-7 w-full">
+                  className="font-semibold  w-full">
                     {feature.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] leading-5 text-gray-300 w-full">
+                  <p className="mt-2 sm:mt-3 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] leading-8 text-gray-300 w-full">
                     {feature.description}
                   </p>
                 </div>

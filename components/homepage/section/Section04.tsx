@@ -8,30 +8,13 @@ const Section04 = () => {
   return (
     <div className='flex flex-col items-center px-3 sm:px-3 md:px-5 lg:px-12 relative'>
       <div
-        className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8"
-        style={{
-      
-            fontFamily: 'Basis Grotesque Pro, sans-serif',
-            fontWeight: 700,
-            fontSize: 'clamp(25px, 3vw, 60px)',
-            lineHeight: '1.2',
-            margin: '0 0 5px 0',
-            
-            letterSpacing: '0%',
-            color: 'transparent',
-            background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-  
-         
-        
-        }}
+        className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8 Heading2"
+       
       >
         <div>
-          <ShinyText text="Introducing" speed={5} className="gradient-white-text" />
+          <ShinyText text="Introducing" speed={5} className="gradient-white-text inline-block" />
           {' '}
-          <ShinyText text="VoiceAgent AI" speed={5} className=" gradient-mask-text" />
+          <ShinyText text="VoiceAgent AI" speed={5} className=" gradient-mask-text inline-block" />
         </div>
       </div> 
       
@@ -45,12 +28,12 @@ const Section04 = () => {
       }}
       
       
-      className='text-center mt-5 mb-20 '>
+      className='text-center mt-5 mb-10 '>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
       
       {/* Image Container with Glow Effect - Responsive sizing */}
-      <div className="relative w-full max-w-[900px]">
+      <div className="relative w-full max-w-[1300px]">
        
 
         {/* Alternative CSS Glow if image doesn't exist - Responsive sizing */}

@@ -30,72 +30,50 @@ const Section05: React.FC = () => {
       {/* Background Glow Effect */}
       <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
        
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 2xl:px-8 relative z-10">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10">
         {/* Header */}
         <div
-          className="relative text-center z-10 mt-8"
-          style={{
-          
-              fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 60px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-    
-          
-          }}
+          className="relative text-center max-w-6xl 2xl:max-w-7xl mx-auto items-center z-10 mt-8 Heading2"
+         
         >
           <div className="flex flex-col gap-1">
             <div>
               <ShinyText text="Forget everything you know about website chat boxes, pop-ups, and static FAQ pages" speed={5} className="gradient-white-text" />
             </div>
             <div>
-              <ShinyText text="This is different. This is" speed={5} className="gradient-white-text" />
-              {' '}
-              <ShinyText text="REVOLUTIONARY" speed={5} className="gradient-mask-text" />
+              <ShinyText text="This is different. This is" speed={5} className="gradient-white-text inline-block" />
+              <ShinyText text="REVOLUTIONARY" speed={5} className="gradient-mask-text inline-block" />
             </div>
            </div>
         </div> 
 
-        <div className="flex justify-center items-center w-full pt-12 sm:pt-16 lg:pt-20 2xl:pt-24">
-          <div className="max-w-[921px] 2xl:max-w-[1200px] w-full">
+        <div className="flex justify-end w-full pt-12 sm:pt-16 lg:pt-20 2xl:pt-24">
+          <div className="w-full max-w-[1700px] px-4 sm:px-6 lg:px-8 2xl:px-8">
             {/* First Row - Text left, Video right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-0 items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
               {/* Text Left */}
               <div 
-              style={{
-                fontSize: "clamp(13px, 2.73vw - 19px, 23px)",
-                fontWeight: 300,
-                color: "white",
-
-              }}
+            
               
-              className=" leading-5 max-w-[46px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pr-8 2xl:pr-12 text-center lg:text-left order-2 lg:order-1">
+              className="leading-5 w-full 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] sm:max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] 2xl:max-w-[740px] text-sm sm:text-base lg:text-lg 2xl:text-xl 2xl:leading-7 lg:pr-8 2xl:pr-12 text-center lg:text-left order-2 lg:order-1">
                 <p className="text-white font-semibold">
                   VoiceAgent AI is the world's first conversational website assistant
                   that your visitors can actually TALK to just like they're calling your
                   business directly.
                 </p>
 
-                <p className="leading-12">
+                <p className="py-5 font-light 2xl:leading-18">
                   But here's where it gets incredible...
                 </p>
-                <p>
+                <p className='font-light'>
                   Not only does it respond with human-like speech in real-time, it can
-                  actually <span>NAVIGATE </span>your website while talking to your visitors, showing
+                  actually <span className='font-medium'>NAVIGATE </span>your website while talking to your visitors, showing
                   them exactly what they need to see, when they need to see it.
                 </p>
               </div>
 
               {/* Video Right */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] 2xl:w-[550px] h-48 sm:h-56 lg:h-64 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] sm:max-w-[550px] lg:max-w-[600px] xl:max-w-[650px] 2xl:w-[716px] h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
                 <video
                   className="w-full h-full object-cover rounded-[10px]"
                   src="/assets/videos/web1.mp4"
@@ -129,9 +107,9 @@ const Section05: React.FC = () => {
             </div>
             
             {/* Second Row - Video left, Text right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 items-center mt-12 sm:mt-14 lg:mt-16 gap-6 lg:gap-0">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 items-center mt-12 sm:mt-14 lg:mt-16 gap-6 lg:gap-10">
               {/* Video Left */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] lg:w-[460px] 2xl:w-[550px] h-48 sm:h-56 lg:h-64 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1">
+              <div className="bg-black rounded-[10px] w-full max-w-[460px] sm:max-w-[550px] lg:max-w-[600px] xl:max-w-[650px] 2xl:w-[716px] h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1">
                 <video
                   className="w-full h-full object-cover rounded-[10px]"
                   src="/assets/videos/web2.mp4"
@@ -164,7 +142,7 @@ const Section05: React.FC = () => {
               </div>
              
               {/* Text Right */}
-              <div className="subtext1 leading-5 max-w-[460px] lg:w-[460px] 2xl:max-w-[550px] 2xl:w-[550px] 2xl:text-lg 2xl:leading-7 lg:pl-8 2xl:pl-12 text-center lg:text-left order-2 lg:order-2">
+              <div className="leading-5 w-full sm:max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] 2xl:max-w-[740px]  2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] 2xl:leading-7 lg:pl-8 2xl:pl-12 text-center lg:text-left order-2 lg:order-2">
                 <p>
                   Imagine having your best person available 24/7, who knows every page
                   of your website by heart, never takes a day off, never gets tired, and
@@ -183,27 +161,13 @@ const Section05: React.FC = () => {
 
       {/* Demo Section Header */}
       <div
-        className="relative text-center z-10 pt-8 sm:pt-16 lg:pt-20 2xl:pt-24"
-        style={{
-          fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 60px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-     
-        }}
+        className="relative text-center z-10 pt-8 sm:pt-16 lg:pt-20 2xl:pt-24 Heading2"
+       
       >
         <div>
-          <ShinyText text="Watch" speed={5} className="gradient-white-text" />
+          <ShinyText text="Watch" speed={5} className="gradient-white-text inline-block" />
           {' '}
-          <ShinyText text="The Demo" speed={5} className="gradient-mask-text" />
+          <ShinyText text="The Demo" speed={5} className="gradient-mask-text inline-block" />
         </div >
       </div>  
 

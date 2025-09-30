@@ -63,26 +63,12 @@ const Section13: React.FC = () => {
       >
         {/* Content */}
         <div className="w-full px-4 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 w-full max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 w-full  mx-auto">
             {/* Right text - Top on mobile, right on desktop */}
             <div className="order-1 sm:order-3 flex-1 w-full sm:w-auto text-center sm:text-left">
              <h1
-                   className="relative z-10 text-center mx-auto"
-                   style={{
-                     fontFamily: 'Basis Grotesque Pro, sans-serif',
-                     fontWeight: 700,
-                     fontSize: 'clamp(25px, 6vw, 60px)',
-                     lineHeight: '1.1',
-                     margin: '0 0 0 0',
-                     padding: '0 0',
-                     letterSpacing: '0%',
-                     color: 'transparent',
-                     background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                     WebkitBackgroundClip: 'text',
-                     backgroundClip: 'text',
-                     WebkitTextFillColor: 'transparent',
-           
-                   }}
+                   className="relative z-10 text-center mx-auto Heading2"
+                   
                  >
                    <div>
                      <ShinyText text="See You On The Inside!" speed={5} className="gradient-white-text pb-0" />
@@ -92,7 +78,9 @@ const Section13: React.FC = () => {
             </div>
 
             {/* Center box (Image) */}
-            <div className="order-2 sm:order-2 w-[200px] overflow-hidden h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] 2xl:h-[282px] 2xl:w-[516px] flex-shrink-0">
+            <div className="order-2 sm:order-2 w-full h-full sm:w-[220px] sm:h-[220px] 
+              md:w-[260px] md:h-auto lg:w-[300px] lg:h-auto xl:w-[380px] xl:h-auto
+              2xl:w-[516px] 2xl:h-auto mx-auto overflow-hidden flex-shrink-0">
               <Image
                 src={MikeImage}
                 alt="Mike Formby"
@@ -107,22 +95,8 @@ const Section13: React.FC = () => {
             {/* Left text - Bottom on mobile, left on desktop */}
             <div className="order-3 sm:order-1 flex-1 w-full sm:w-auto text-center sm:text-right">
             <h1
-        className="relative z-10 text-center mx-auto"
-        style={{
-          fontFamily: 'Basis Grotesque Pro, sans-serif',
-          fontWeight: 700,
-          fontSize: 'clamp(25px, 6vw, 60px)',
-          lineHeight: '1.1',
-          margin: '0 0 0 0',
-          padding: '0 0',
-          letterSpacing: '0%',
-          color: 'transparent',
-          background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-
-        }}
+        className="relative z-10 text-center mx-auto Heading2"
+        
       >
         <div>
           <ShinyText text="Mikey Formby" speed={5} className="gradient-white-text pb-0" />
@@ -139,19 +113,8 @@ const Section13: React.FC = () => {
         <div className='py-10 md:py-20 lg:py-25 2xl:py-30'>
           {/* FAQ Title */}
           <h1
-            className="text-center mx-auto  2xl:mb-[50px]  mb-[20px]"
-            style={{
-              fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 6vw, 60px)',
-              lineHeight: '1.1',
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
+            className="text-center mx-auto  2xl:mb-[50px] Heading2 mb-[20px]"
+          
           >
             <div>
               <ShinyText text="Frequently Asked Questions" speed={5} className="gradient-white-text pb-0" />

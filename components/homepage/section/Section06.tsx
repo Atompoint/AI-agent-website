@@ -53,7 +53,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       )}
                     </div>
                     <div className="text-right w-full">
-                      <h3 className={`subtextpt2 py-1 leading-[1.5] transition-all ${
+                      <h3 className={`font-bold  2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] py-1 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -73,7 +73,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-34  md:w-50 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
+                      <h3 className={` 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] font-bold w-34  md:w-50 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -81,7 +81,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                   
-                  <div className="p-1 mt-2 lg:mt-4 transition-all">
+                  <div className="p-1 mt-2 lg:mt-0 transition-all">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
@@ -130,7 +130,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       )}
                     </div>
                     <div className="text-left w-full">
-                      <h3 className={`subtextpt2 py-1 leading-[1.5] transition-all ${
+                      <h3 className={` 2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] font-bold py-1 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -140,7 +140,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                 </div>
                 
                 <div className="hidden sm:flex items-start justify-start gap-2 sm:gap-3 md:gap-5 w-full">
-                  <div className="p-1 mt-2 lg:mt-4 2xl:mt-12 transition-all">
+                  <div className="p-1 mt-2 lg:mt-0 2xl:mt-0 transition-all">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
@@ -162,7 +162,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={`subtextpt2 w-32 md:w-50 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
+                      <h3 className={` 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] font-bold text-[14px] w-32 md:w-50 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -316,34 +316,20 @@ const TimelineUI: React.FC = () => {
       <div className="container mx-auto">
 
         <div
-  className="relative text-center z-10 py-12 md:py-30"
-  style={{
-    fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 60px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-    
-  }}
+  className="relative text-center z-10 py-12 md:py-30 Heading2"
+
 >
 <div >
-              <ShinyText text="Here's How This" speed={5} className="gradient-white-text" />
+              <ShinyText text="Here's How This" speed={5} className="gradient-white-text inline-block" />
            {' '}
-              <ShinyText text={`"Set It & Forget It"`}  speed={5} className=" gradient-mask-text" />
+              <ShinyText text={`"Set It & Forget It"`}  speed={5} className=" gradient-mask-text inline-block" />
               {' '}
-              <ShinyText text="System" speed={5} className="gradient-white-text" />
+              <ShinyText text="System" speed={5} className="gradient-white-text inline-block" />
             </div>
             <div >
-              <ShinyText text="Transforms Any Website Into" speed={5} className=" gradient-white-text" />
+              <ShinyText text="Transforms Any Website Into" speed={5} className=" gradient-white-text inline-block" />
               {' '}
-              <ShinyText text=" a Conversion Machine" speed={5} className=" gradient-white-text" />
+              <ShinyText text=" a Conversion Machine" speed={5} className=" gradient-white-text inline-block" />
             </div>
 </div>
         {/* Timeline Container */}

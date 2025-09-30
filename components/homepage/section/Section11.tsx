@@ -33,7 +33,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
 
       {/* Content Overlay */}
       <div className="relative p-4 sm:p-6 md:p-6 lg:p-8">
-        <h3 className="subtext3 mb-4 sm:mb-5 md:mb-5 lg:mb-6">
+        <h3 className="2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] font-semibold text-white mb-4 sm:mb-5 md:mb-5 lg:mb-6">
           {title}
         </h3>
 
@@ -53,7 +53,7 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
                   />
                 </svg>
               </div>
-              <span className="subtext1 text-sm sm:text-base md:text-sm">
+              <span className="2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] text-white">
                 {feature}
               </span>
             </div>
@@ -69,38 +69,25 @@ const PricingPlanCard: React.FC<PricingPlanProps> = ({ title, features, backgrou
 // Reusable Hero Section component
 const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
   return (
-    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative px-2 sm:px-4 w-full">
+    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative max-w-[1700px] px-2 sm:px-4 w-full">
       {/* Background Glow Effect */}
-      <div className="absolute top-[20rem] sm:top-[25rem] md:top-[28rem] lg:top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[550px] md:h-[420px] lg:w-[800px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[60px] sm:blur-[80px] md:blur-[85px] lg:blur-[120px] -z-10" />
+      <div className="absolute top-[20rem] sm:top-[25rem] md:top-[28rem] lg:top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[550px] md:h-[420px] lg:w-[1200px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[60px] sm:blur-[80px] md:blur-[85px] lg:blur-[120px] -z-10" />
       
       {/* Main Title */}
       <div
-        className="relative text-center z-10"
-        style={{
-          fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 60px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-        }}
+        className="relative text-center z-10 Heading2"
+        
       >
         <div>
-          <ShinyText text="Now Is the Time to Turn Your" speed={5} className="gradient-white-text" /> 
+          <ShinyText text="Now Is the Time to Turn Your" speed={5} className="gradient-white-text inline-block" /> 
          
         </div>
         <div>
-          <ShinyText text="Website Into a" speed={5} className="gradient-white-text" />  
+          <ShinyText text="Website Into a" speed={5} className="gradient-white-text inline-block" />  
           {' '}
-          <ShinyText text="24/7" speed={5} className="gradient-mask-text" />
+          <ShinyText text="24/7" speed={5} className="gradient-mask-text inline-block" />
           {' '}
-          <ShinyText text="Sales Machine" speed={5} className="gradient-white-text" />
+          <ShinyText text="Sales Machine" speed={5} className="gradient-white-text inline-block" />
         </div>
       </div>
     
@@ -118,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({description }) => {
         </div>
         
         {/* Description */}
-        <div className="space-y-3 sm:space-y-4 w-full subtext1 text-base sm:text-lg md:text-xl">
+        <div className="space-y-3 sm:space-y-4 w-full 2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] text-white">
           {description.map((paragraph, index) => (
             <p 
               key={index}
@@ -196,7 +183,7 @@ const Section11: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+    <div className="w-full max-w-7xl 2xl:max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
       {/* Hero Section */}
       <HeroSection 
        
@@ -205,21 +192,8 @@ const Section11: React.FC = () => {
       
       {/* Second Title */}
       <div
-        className="relative text-center z-10"
-        style={{
-          fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 60px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-        }}
+        className="relative text-center z-10 Heading2 mb-12"
+       
       >
         <div >
           <ShinyText text="Here's What You Get Access to" speed={5} className="gradient-white-text" />  
@@ -231,7 +205,7 @@ const Section11: React.FC = () => {
       </div>
 
       {/* Pricing Plans */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-4">
           {pricingPlans.map((plan, index) => (
             <PricingPlanCard

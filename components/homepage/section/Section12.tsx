@@ -5,42 +5,29 @@ import Image from 'next/image'
 
 const Section12 = () => {
   return (
-    <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+    <div className="w-full max-w-7xl 2xl:max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-4">
       <div className="w-full">
         {/* Main Title */}
         <div
-          className="relative text-center z-10 mb-4 sm:mb-8 md:mb-9 lg:mb-10"
-          style={{
-            fontFamily: 'Basis Grotesque Pro, sans-serif',
-                         fontWeight: 700,
-                         fontSize: 'clamp(25px, 3vw, 60px)',
-                         lineHeight: '1.1',
-                         margin: '0 0 0 0',
-                         
-                         letterSpacing: '0%',
-                         color: 'transparent',
-                         background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-                         WebkitBackgroundClip: 'text',
-                         backgroundClip: 'text',
-                         WebkitTextFillColor: 'transparent',
-          }}
+          className="relative text-center z-10 mb-4 sm:mb-8 md:mb-9 lg:mb-10 Heading2"
+         
         >
           <div >
             <ShinyText text="The Only Thing Standing Between" speed={5} className="gradient-white-text" />  
              
           </div>
           <div>
-            <ShinyText text="You and More Sales Is This" speed={5} className="gradient-white-text" />
+            <ShinyText text="You and More Sales Is This" speed={5} className="gradient-white-text inline-block" />
            
             {' '}
-            <ShinyText text="One Click" speed={5} className="gradient-mask-text" />  
+            <ShinyText text="One Click" speed={5} className="gradient-mask-text inline-block" />  
           </div>
         </div>  
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-0 sm:py-10 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-0 sm:py-10 md:py-12 lg:py-16 max-w-[1700px]">
           {/* Text Content */}
-          <div className="space-y-4 sm:space-y-5 md:space-y-6 w-full subtext1 text-base sm:text-lg md:text-xl order-2 lg:order-1">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 w-full 2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] text-white order-2 lg:order-1">
             <p>
               If you're on the fence, ask yourself: How much money have you already lost from visitors who left empty-handed?
             </p> 
