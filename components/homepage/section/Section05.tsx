@@ -36,7 +36,7 @@ const Section05: React.FC = () => {
           className="relative text-center max-w-[358px] sm:max-w-[600px] md:max-w-5xl lg:max-w-[880px] 2xl:max-w-7xl mx-auto items-center z-10 mt-8 Heading2 "
          
         >
-          <div className="flex flex-col 2xl:text-[60px]   xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 gap-1 leading-7 sm:leading-8">
+          <div className="flex flex-col 2xl:text-[60px]   xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 gap-1 sm:leading-8">
             <div>
               <ShinyText text="Forget everything you know about website chat boxes, pop-ups, and static FAQ pages" speed={5} className="gradient-white-text" />
             

@@ -51,8 +51,8 @@ const Section13: React.FC = () => {
                    mx-auto 
                    max-w-[387px] sm:max-w-full md:max-w-full lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1730px]
                    flex items-center justify-center 
-                   px-0 sm:px-2 sm:px-3 md:px-5 lg:px-6 xl:px-8 
-                   h-[240px] sm:h-[200px] md:h-[260px] lg:h-[300px] xl:h-[320px]  2xl:h-[374px] h-auto
+                   px-0 sm:px-2 md:px-5 lg:px-6 xl:px-8 
+                   sm:h-[200px] md:h-[260px] lg:h-[300px] xl:h-[320px] 2xl:h-[374px] h-auto
                    bg-gradient-to-r from-purple-900 via-purple-700 to-purple-900"
         style={{
           backgroundImage: `url(${Purple.src})`,
@@ -155,7 +155,7 @@ const Section13: React.FC = () => {
                 <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openFAQ === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="2xl:w-[810px] w-[90%] sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[810px] py-3">
+                  <div className="w-[90%] sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[810px] py-3">
                     <p className=" font-light leading-tight">
                       {faq.answer}
                     </p>
@@ -171,11 +171,11 @@ const Section13: React.FC = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="max-w-5xl mt-0 px-4 m:px-6 md:px-10 lg:px-15 2xl:px-0 2xl:mt-10 mt-5 mx-auto">
+      <div className="max-w-5xl px-4 m:px-6 md:px-10 lg:px-15 2xl:px-0 2xl:mt-10 mt-5 mx-auto">
         {/* Copyright Text */}
         <div>
           <p 
-            className="m-auto font-medium text-center 2xl:text-[20px] xl:text-[14.27px] lg:text-[13px] md:text-[13px] sm:text-[13px] text-[12px] leading-5 md:leading-5 lg:leading-6 font-light text-white/80"
+            className="m-auto font-medium text-center 2xl:text-[20px] xl:text-[14.27px] lg:text-[13px] md:text-[13px] sm:text-[13px] text-[12px] leading-5 md:leading-5 lg:leading-6 text-white/80"
           >
             © 2025 <span className="font-semibold text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
