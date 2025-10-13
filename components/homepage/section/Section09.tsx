@@ -14,7 +14,7 @@ const Section09 = () => {
           
           {/* Section Header */}
           <div
-            className="relative 2xl:text-[60px] max-w-[283px] mx-auto sm:max-w-[530px] md:max-w-[630px] lg:max-w-[80%] xl:max-w-[818px] 2xl::max-w-[1265px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 text-center z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16 2xl:mb-20"
+            className="relative 2xl:text-[60px] max-w-[283px] mx-auto sm:max-w-[530px] md:max-w-[630px] lg:max-w-[80%] xl:max-w-[818px] 2xl:max-w-[1265px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 text-center z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16 2xl:mb-20"
             
           >
             <div>
@@ -88,18 +88,15 @@ const Section09 = () => {
           </div>
 
           {/* Content Grid */}
-          <div className="w-full max-w-4xl xl:max-w-[1250px] 2xl:max-w-[1755px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:max-w-[1250px] lg:gap-12 xl:gap-50 px-4 sm:px-6 md:px-12 lg:px-0 items-center ">
-            {/* Left column - image */}
-            <div className="order-1 flex justify-center ">
-              <img 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto w-full xl:max-w-[1250px] 2xl:max-w-[1755px] lg:gap-12 xl:gap-50 items-center px-4 sm:px-6 md:px-12 lg:px-8 xl:px-0 2xl:py-5">
+            {/* Left column - text */}
+            <img 
                 src="/assets/images/section09/pt2.png" 
                 alt="14-Day Money Back Guarantee"
-                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] 2xl:h-[500px] 2xl:w-[830px] w-auto max-w-full object-contain rounded-lg"
+                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] 2xl:h-[524px] 2xl:w-[697px] w-auto max-w-full object-contain rounded-lg"
               />
-            </div>
-            
-            {/* Right column - text */}
+
+            {/* Right column - image */}
             <div className="space-y-4 sm:space-y-5 font-light 2xl:leading-7 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 text-center lg:text-left order-2 lg:order-1">
               <p >
                 We're so confident VoiceAgent AI will <strong>transform your website</strong> into a 
@@ -119,7 +116,7 @@ const Section09 = () => {
               </p>
             </div>
           </div>
-          </div>
+          
         </section>
         
       </div>

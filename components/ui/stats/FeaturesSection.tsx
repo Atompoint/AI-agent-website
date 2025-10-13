@@ -6,7 +6,7 @@ import { FEATURES } from './types';
 const FeaturesSection: React.FC = () => (
   <section>
     <header className="text-center">
-      <h2 className="2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] max-w-[341px] sm:max-w-[1200px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] w-full leading-7 lg:leading-12 md:leading-8 mx-auto 2xl:leading-17 Heading2">
+      <h2 className="2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] max-w-[341px] sm:max-w-[1200px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] 2xl:max-w-[1100px] w-full leading-7 lg:leading-12 md:leading-8 mx-auto 2xl:leading-17 Heading2">
        
         <ShinyText 
           text="Just a Few of the Ways VoiceAgent" 

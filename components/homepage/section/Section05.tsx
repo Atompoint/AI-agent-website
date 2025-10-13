@@ -49,113 +49,130 @@ const Section05: React.FC = () => {
         </h1> 
 
         <div className="flex justify-center w-full pt-12 sm:pt-16 lg:pt-20 2xl:pt-24">
-          <div className="w-full xl:max-w-[1250px] 2xl:max-w-[1755px] ">
-            {/* First Row - Text left, Video right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 2xl:gap-10 w-full xl:max-w-[1250px] 2xl:max-w-[1755px] items-center">
-              {/* Text Left */}
-              <div 
-            
-              
-              className="leading-5 w-full 2xl:text-[22px] xl:text-[16.27px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] sm:max-w-[500px] lg:max-w-[405px] xl:max-w-[540px] 2xl:max-w-[740px] text-sm sm:text-base lg:text-lg 2xl:text-xl 2xl:leading-7  text-center lg:text-left order-2 lg:order-1">
-                <p className="text-white font-semibold">
-                  VoiceAgent AI is the world's first conversational website assistant
-                  that your visitors can actually TALK to just like they're calling your
-                  business directly.
-                </p>
+        <div className="w-full flex justify-center">
+  <div className="w-full xl:max-w-[1250px] 2xl:max-w-[1755px] mx-auto grid grid-rows-2 gap-16 lg:gap-20">
 
-                <p className="py-5 font-normal 2xl:leading-16">
-                  But here's where it gets incredible...
-                </p>
-                <p className='font-normal'>
-                  Not only does it respond with human-like speech in real-time, it can
-                  actually <span className='font-medium'>NAVIGATE </span>your website while talking to your visitors, showing
-                  them exactly what they need to see, when they need to see it.
-                </p>
-              </div>
+    {/* ---------- Row 1: Text Left / Video Right ---------- */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between gap-10">
+      
+      {/* Text Left on lg, second on small */}
+      <div className="order-2 lg:order-1 w-full text-white text-center lg:text-left leading-6 2xl:leading-8 
+                      2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
+                      sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[540px] 2xl:max-w-[720px] mx-auto">
+        <p className="font-semibold">
+          VoiceAgent AI is the world's first conversational website assistant
+          that your visitors can actually TALK to just like they're calling your
+          business directly.
+        </p>
 
-              {/* Video Right */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] sm:max-w-[550px] lg:max-w-[600px] xl:max-w-[650px] 2xl:w-[716px] h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1 lg:order-2">
-                <video
-                  className="w-full h-full object-cover rounded-[10px]"
-                  src="/assets/videos/web1.mp4"
-                  controls={isVideo1Playing}
-                  muted
-                  playsInline
-                  onPlay={handleVideo1Play}
-                />
-                {!isVideo1Playing && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-                       onClick={() => {
-                         const video = document.querySelector('video[src="/assets/videos/web1.mp4"]') as HTMLVideoElement;
-                         if (video) {
-                           video.play();
-                           setIsVideo1Playing(true);
-                         }
-                       }}>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-black/30 rounded-full blur-sm transform scale-110"></div>
-                      <Image
-                        src={demoSection.playIcon1}
-                        width={60}
-                        height={60}
-                        alt="play button"
-                        className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
+        <p className="py-5 font-normal">
+          But here's where it gets incredible...
+        </p>
+
+        <p className="font-normal">
+          Not only does it respond with human-like speech in real-time, it can
+          actually <span className="font-medium">NAVIGATE</span> your website while talking to your visitors,
+          showing them exactly what they need to see, when they need to see it.
+        </p>
+      </div>
+
+      {/* Video Right on lg, first on small */}
+      <div className="order-1 lg:order-2 bg-black rounded-[10px] w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
+                      flex items-center justify-center relative overflow-hidden 
+                      max-w-[650px] 2xl:max-w-[716px] mx-auto">
+        <video
+          className="w-full h-full object-cover rounded-[10px]"
+          src="/assets/videos/web1.mp4"
+          controls={isVideo1Playing}
+          muted
+          playsInline
+          onPlay={handleVideo1Play}
+        />
+        {!isVideo1Playing && (
+          <div
+            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+            onClick={() => {
+              const video = document.querySelector('video[src="/assets/videos/web1.mp4"]') as HTMLVideoElement;
+              if (video) {
+                video.play();
+                setIsVideo1Playing(true);
+              }
+            }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-black/30 rounded-full blur-sm scale-110"></div>
+              <Image
+                src={demoSection.playIcon1}
+                width={60}
+                height={60}
+                alt="play button"
+                className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
+              />
             </div>
-            
-            {/* Second Row - Video left, Text right */}
-            <div className="flex flex-col lg:grid justify-items-end lg:grid-cols-2 items-center mt-12 sm:mt-14 lg:mt-16 gap-6  2xl:gap-10">
-              {/* Video Left */}
-              <div className="bg-black rounded-[10px] w-full max-w-[460px] sm:max-w-[550px] lg:max-w-[600px] xl:max-w-[650px] 2xl:w-[716px] h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 flex items-center justify-center relative overflow-hidden order-1">
-                <video
-                  className="w-full h-full object-cover rounded-[10px]"
-                  src="/assets/videos/web2.mp4"
-                  controls={isVideo2Playing}
-                  muted
-                  playsInline
-                  onPlay={handleVideo2Play}
-                />
-                {!isVideo2Playing && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-                       onClick={() => {
-                         const video = document.querySelector('video[src="/assets/videos/web2.mp4"]') as HTMLVideoElement;
-                         if (video) {
-                           video.play();
-                           setIsVideo2Playing(true);
-                         }
-                       }}>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-black/30 rounded-full blur-sm transform scale-110"></div>
-                      <Image
-                        src={demoSection.playIcon1}
-                        width={60}
-                        height={60}
-                        alt="play button"
-                        className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-             
-              {/* Text Right */}
-              <div className="leading-5 w-full sm:max-w-[500px] lg:max-w-[405px] xl:max-w-[500px] 2xl:max-w-[740px]  2xl:text-[22px] xl:text-[16px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] 2xl:leading-7  text-center lg:text-left order-2 lg:order-2">
-                <p>
-                  Imagine having your best person available 24/7, who knows every page
-                  of your website by heart, never takes a day off, never gets tired, and
-                  can handle unlimited customers simultaneously.
-                </p>
-                <p className="text-white font-semibold leading-5 py-5">
-                  That's exactly what you get with VoiceAgent AI.
-                </p>
-              </div>
-            </div>
-
           </div>
+        )}
+      </div>
+    </div>
+
+    {/* ---------- Row 2: Video Left / Text Right ---------- */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between gap-10">
+      
+      {/* Video Left (always first) */}
+      <div className="order-1 bg-black rounded-[10px] w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
+                      flex items-center justify-center relative overflow-hidden 
+                      max-w-[650px] 2xl:max-w-[716px] mx-auto">
+        <video
+          className="w-full h-full object-cover rounded-[10px]"
+          src="/assets/videos/web2.mp4"
+          controls={isVideo2Playing}
+          muted
+          playsInline
+          onPlay={handleVideo2Play}
+        />
+        {!isVideo2Playing && (
+          <div
+            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+            onClick={() => {
+              const video = document.querySelector('video[src="/assets/videos/web2.mp4"]') as HTMLVideoElement;
+              if (video) {
+                video.play();
+                setIsVideo2Playing(true);
+              }
+            }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-black/30 rounded-full blur-sm scale-110"></div>
+              <Image
+                src={demoSection.playIcon1}
+                width={60}
+                height={60}
+                alt="play button"
+                className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Text Right on lg, second on small */}
+      <div className="order-2 w-full text-white text-center lg:text-left leading-6 2xl:leading-8
+                      2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
+                      sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[540px] 2xl:max-w-[720px] mx-auto">
+        <p>
+          Imagine having your best person available 24/7, who knows every page
+          of your website by heart, never takes a day off, never gets tired, and
+          can handle unlimited customers simultaneously.
+        </p>
+        <p className="text-white font-semibold py-5">
+          That's exactly what you get with VoiceAgent AI.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+       
         </div> 
 
       </div>

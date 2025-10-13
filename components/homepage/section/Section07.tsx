@@ -76,7 +76,7 @@ export default function Section07() {
         <div className="text-center relative mb-0 w-full max-w-[1600px] px-4 sm:px-6">
           <div 
          
-            className="Heading3 xl:text-[36.6px] 2xl:text-[52px] max-w-[80%] mx-auto lg:text-[30px] md:text-[25px] text-[20px]
+            className="Heading3 xl:text-[36.6px] 2xl:text-[52px] max-w-[80%] 2xl:max-w-[1500px] mx-auto lg:text-[30px] md:text-[25px] text-[20px]
             "
           >
             <ShinyText
@@ -100,20 +100,19 @@ export default function Section07() {
           </div>
         </div>
 
-        <div className="w-full  mx-auto px-2 sm:px-4">
+        <div className="w-full mx-auto px-2 sm:px-4">
         <div
-            className="relative text-center z-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 max-w-[325px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] w-full py-10 lg:py-25 mx-auto 2xl:py-30 Heading2"
+            className="relative text-center z-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 max-w-[325px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] 2xl:max-w-[1200px] w-full py-10 lg:py-25 mx-auto 2xl:py-30 Heading2"
            
           >
             <div>
-              <ShinyText text="Turn your Silent Website Into a 24/7" speed={5} className="gradient-white-text" />
+              <ShinyText text="Turn your Silent Website Into a" speed={5} className="gradient-white-text inline-block" />
             
           {' '}
-              <ShinyText text="Money-Making" speed={5} className="gradient-mask-text inline-block" />
+              <ShinyText text="24/7 Money-Making Machine" speed={5} className="gradient-mask-text inline-block" />
               {' '}
-              <ShinyText text="Machine That" speed={5} className="gradient-white-text inline-block" />
-              {' '}
-              <ShinyText text="Talks!" speed={5} className="gradient-mask-text inline-block" />
+              <ShinyText text="That Talks!" speed={5} className="gradient-white-text inline-block" />
+             
             </div>
           </div>
 
