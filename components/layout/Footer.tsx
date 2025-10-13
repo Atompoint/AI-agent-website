@@ -19,16 +19,13 @@ const Footer: React.FC = () => {
         
         {/* Footer Links */}
         <footer className="relative z-10 sm:px-15 px-10">
-          <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-5  md:gap-10 lg:gap-12 xl:gap-18 2xl:gap-25 w-full max-w-screen-xl mx-auto py-6 sm:py-8 md:py-9 lg:py-10 xl:py-10 2xl:py-15">
+          <div className="flex flex-wrap justify-center items-center px-8 gap-5 sm:gap-5  md:gap-10 lg:gap-12 xl:gap-18 2xl:gap-25 w-full md:max-w-screen-xl mx-auto py-6 sm:py-8 md:py-9 lg:py-10 xl:py-10 2xl:py-15">
             {footerLinks.map((link, index) => (
               <a
-              style={{
-                fontSize: 'clamp(10px, 2vw, 20px)',
-                wordSpacing:'2px',
-              }}
+            
                 key={index}
                 href={link.href}
-                className="font-normal"
+                className="font-normal 2xl:text-[20px] xl:text-[14.23px] lg:text-[13px] md:text-[12px] sm:text-[10px] text-[10px]"
               >
                 {link.name}
               </a>

@@ -8,7 +8,7 @@ const Offer = () => {
     <div className="mx-auto text-center ">
       {/* Heading */}
       <h1
-        className="relative z-10 text-center mx-auto px-4 Heading2"
+        className="relative z-10 text-center mx-auto px-4 Heading2  2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-10 md:leading-8 2xl:leading-15"
       
       >
         <div>
@@ -18,7 +18,7 @@ const Offer = () => {
       </h1>
       <div >
         {/* CTA Button */}
-        <div className='py-5 2xl:py-10'>
+        <div className='py-3 md:py-4 2xl:py-10'>
           <div className="relative inline-block rounded-full overflow-visible">
             {/* Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#C67DFF] via-[#3420C6] to-[#0079FF] blur-sm opacity-50 scale-100"></div>
@@ -52,7 +52,7 @@ const Offer = () => {
             alt="Payment Card"
             width={450}
             height={0}
-            className="w-[200px] sm:w-[340px] md:w-[425px] xl:w-[530px] lg:w-[428px] 2xl:w-[590px] h-auto object-contain"
+            className="w-[200px] sm:w-[340px] md:w-[425px] xl:w-[420px] lg:w-[428px] 2xl:w-[590px] h-auto object-contain"
             priority
           />
         </div>

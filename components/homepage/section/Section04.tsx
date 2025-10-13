@@ -2,16 +2,16 @@ import React from 'react'
 import DownArrow from '../../ui/DownArrow'
 import ShinyText from '@/components/ui/ShinyText';
 import Image from 'next/image'
-import { ShineBorder } from "@/components/magicui/shine-border";
+
 
 const Section04 = () => {
   return (
     <div className='flex flex-col items-center px-3 sm:px-3 md:px-5 lg:px-12 relative'>
       <div
-        className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8 Heading2"
+        className="relative text-center z-10 mt-4 sm:mt-6 md:mt-8 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[23px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2"
        
       >
-        <div>
+        <div className='inline-block'>
           <ShinyText text="Introducing" speed={5} className="gradient-white-text inline-block" />
           {' '}
           <ShinyText text="VoiceAgent AI" speed={5} className=" gradient-mask-text inline-block" />
@@ -28,7 +28,7 @@ const Section04 = () => {
       }}
       
       
-      className='text-center mt-5 mb-10 '>
+      className='text-center mt-5 text-white 2xl:text-[23px] xl:text-[16.27px] lg:text-[15px] text-[13px]'>
         The Game-Changer That's Making "Silent" Websites Extinct
       </div>
       
@@ -36,17 +36,16 @@ const Section04 = () => {
       <div className="relative w-full max-w-[1300px]">
        
 
-        {/* Alternative CSS Glow if image doesn't exist - Responsive sizing */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[150px] sm:w-[350px] sm:h-[250px] md:w-[500px] md:h-[350px] lg:w-[600px] lg:h-[400px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 sm:opacity-25 md:opacity-30 blur-[50px] sm:blur-[75px] md:blur-[100px] -z-10" />
+       
         
         {/* Main Image with Shine Border - Responsive border and padding */}
-        <div className="relative w-full flex justify-center">
+        <div className="relative w-full flex justify-center mt-[-6%]">
           <Image
-            src="/assets/images/mainimage.png"
+            src="/assets/images/mainimage1.png"
             width={1200}
             height={900}
             alt="product web image"
-            className="object-contain h-auto w-full 2xl:w-[1295px] 2xl:h-[745px] relative z-10 rounded-2xl"
+            className="object-contain h-auto w-full 2xl:w-[1295px] 2xl:h-[745px] xl:w-[922px] xl:h-[617px] lg:w-[600px] lg:h-[400px] md:w-[500px] md:h-[350px] sm:w-[600px] sm:h-[auto] relative z-10 rounded-2xl"
             priority
           />
         </div>

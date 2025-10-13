@@ -5,39 +5,37 @@ import Image from 'next/image'
 
 const Section12 = () => {
   return (
-    <div className="w-full max-w-7xl 2xl:max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-4">
+    <div className="w-full max-w-7xl 2xl:max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-5 2xl:px-4">
       <div className="w-full">
         {/* Main Title */}
-        <div
-          className="relative text-center z-10 mb-4 sm:mb-8 md:mb-9 lg:mb-10 Heading2"
+        <h1
+          className="relative text-center z-10 mb-4 max-w-[271px] mx-auto sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] 2xl:max-w-[1200px] sm:mb-8 md:mb-9 lg:mb-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2"
          
         >
           <div >
-            <ShinyText text="The Only Thing Standing Between" speed={5} className="gradient-white-text" />  
+            <ShinyText text="The Only Thing Standing Between You" speed={5} className="gradient-white-text" />  
              
           </div>
           <div>
-            <ShinyText text="You and More Sales Is This" speed={5} className="gradient-white-text inline-block" />
+            <ShinyText text="and More Sales Is This" speed={5} className="gradient-white-text inline-block" />
            
             {' '}
             <ShinyText text="One Click" speed={5} className="gradient-mask-text inline-block" />  
           </div>
-        </div>  
+        </h1>  
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-0 sm:py-10 md:py-12 lg:py-16 max-w-[1700px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:px-12 md:px-15 lg:px-0 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-0 sm:py-4 md:py-6 max-w-[1700px] items-center justify-center">
           {/* Text Content */}
-          <div className="space-y-4 sm:space-y-5 md:space-y-6 w-full 2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] text-white order-2 lg:order-1">
+          <div className="space-y-4 sm:space-y-4 md:space-y-5 w-full text-center lg:text-left 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 2xl:leading-7 font-light order-2 lg:order-1">
             <p>
               If you're on the fence, ask yourself: How much money have you already lost from visitors who left empty-handed?
             </p> 
 
             <p>
-              Every day you wait, your competitors are stealing your customers.
-              The math is simple:
-            </p>
-            
-            <p>
+            Every day you wait, your competitors are stealing your customers.
+            The math is simple:
+            <br/>
               <span className='font-semibold'>
                 Keep doing nothing = Keep losing 67% of visitors
                 Add VoiceAgent AI = Start converting them into customers

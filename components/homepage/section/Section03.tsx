@@ -7,6 +7,7 @@ import DownArrow from '../../ui/DownArrow';
 import { FaArrowRightLong } from "react-icons/fa6";
 import Gradient from "@/public/assets/images/gradient.png"
 import { BsStars } from "react-icons/bs";
+import MobileComparisonCarousel from '@/components/ui/mobileStack';
 
 const Section03: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
@@ -146,52 +147,56 @@ const Section03: React.FC = () => {
       circleImage: "/assets/icons/onlycircle.svg",
       icon: "/assets/icons/qmark.svg",
       iconAlt: "Question Mark Icon",
-      iconSize: 24,
-      text: ["67% of website visitors abandon sites", "when they can't get immediate answers"],
-      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 2xl:w-14 2xl:h-14"
+      text: ["67% of website visitors abandon sites when they can't get immediate answers"],
     },
     {
       id: 2,
       circleImage: "/assets/icons/onlycircle.svg",
       icon: "/assets/icons/anxious.svg",
       iconAlt: "Anxious Face Icon",
-      iconSize: 24,
-      text: ["79% say they won't return to a", "website after a bad user experience"],
-      iconContainerClass: "w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 2xl:w-12 2xl:h-12"
+      text: ["79% say they won't return to a website after a bad user experience"],
     },
     {
       id: 3,
       circleImage: "/assets/icons/onlycircle.svg",
       icon: "/assets/icons/wing.svg",
       iconAlt: "Wings Icon",
-      iconSize: 32,
-      text: ["You lose an average of $1,430 for every", "1,000 visitors who leave confused"],
-      iconContainerClass: "w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 2xl:w-18 2xl:h-18"
+      text: ["You lose an average of $1,430 for every 1,000 visitors who leave confused"],
     }
   ];
 
   return (
     <div className="relative flex flex-col justify-center items-center overflow-hidden ">
-      {/* Enhanced Glow Effect - Responsive */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-radial-gradient(circle at center, rgba(90, 39, 177, 0.15) 0%, rgba(31, 11, 70, 0) 60%)">
-        </div>
-      </div>
+      {/* Glow Effect */}
+      <div
+        className="absolute w-[492.07px] h-[861.73px] -z-10"
+        style={{
+          background: 'linear-gradient(180deg, #1F0B46 5%, #DEBFFF 29%, #5A27B1 58%, #BF84F9 92%)',
+          filter: 'blur(150px)',
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          top: '0',
+
+          opacity: 0.2
+        }}
+      />
 
       {/* Spotlight section with ShineBorder */}
       <div className="relative w-full flex  justify-center">
-        <div className="relative w-full bg-[#060012] rounded-2xl overflow-hidden">
+        <div className="relative w-full bg-[#060012] border-t-[0.1px] border-white/10 border-b-[0.1px] border-white/10  overflow-hidden">
           <div className="relative w-full py-10 md:py-15 flex flex-col items-center justify-center z-10 overflow-hidden">
 
             {/* Light rays container */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-64 sm:h-80 lg:h-96 z-0 pointer-events-none">
               <LightRays
                 raysOrigin="top-center"
-                raysColor="#480596"
-                raysSpeed={1.5}
-                lightSpread={0.8}
-                rayLength={1.2}
-                followMouse={true}
+                raysColor="#5706B4"
+                raysSpeed={1.2}
+                lightSpread={1}
+                rayLength={0.6}
+                fadeDistance={2}
+                followMouse={false}
                 mouseInfluence={0.1}
                 noiseAmount={0.1}
                 distortion={0.05}
@@ -200,53 +205,57 @@ const Section03: React.FC = () => {
             </div>
 
             {/* Centered content */}
-            <div className="relative z-10 w-full text-center flex flex-col items-center justify-center">
+            <div className="relative z-10 w-full px-4 text-center flex flex-col items-center justify-center">
               <h1
-                className="relative z-10 text-center mx-auto max-w-[730px] 2xl:max-w-[1150px] xl:max-w-[820px] Heading2"
+                className="relative z-10 text-center mx-auto 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 max-w-[250px] sm:max-w-[475px] 2xl:max-w-[1150px] md:max-w-[820px]  sm:px-3 Heading2"
               >
                 <div>
                   <ShinyText text="Stop Losing Money Every Single Day
-" speed={5} className="gradient-white-text" />
-{" "}
-<ShinyText text="Your Website Stays Silent!
-" speed={5} className="gradient-mask-text" />  
+" speed={5} className="gradient-white-text inline-block" />
+                  {' '}
+                  <ShinyText text="Your Website Stays Silent!
+" speed={5} className="gradient-mask-text inline-block" />
                 </div>
 
               </h1>
 
               <p
-                className="mt-5 mb-10 2xl:text-[23px] xl:text-[20px] lg:text-[18px] font-light text-white md:text-[16px] text-[14px]">
+                className="mt-3 2xl:mb-10 mb-0 2xl:text-[23px] xl:text-[16px] lg:text-[15px] font-light text-white md:text-[16px] text-[14px]">
                 The statistics are brutal!
               </p>
 
+
               {/* Statistics Cards - Dynamic */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto py-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto pt-10 pb-5 relative z-10">
                 {statistics.map((stat) => (
                   <div key={stat.id} className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 2xl:w-24 2xl:h-24 mb-2 flex items-center justify-center relative">
-                      <Image
-                        src={stat.circleImage}
-                        alt={stat.iconAlt}
-                        height={75}
-                        width={75}
-                        className="w-full h-full object-contain rotate-alternate"
-                      />
-                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${stat.iconContainerClass} flex items-center justify-center`}>
-                        <Image
-                          src={stat.icon}
-                          alt={stat.iconAlt}
-                          width={stat.iconSize}
-                          height={stat.iconSize}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
+                   <div className="w-14 h-14 sm:w-16 mb-3 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 2xl:w-24 2xl:h-24 flex items-center justify-center relative">
+  <Image
+    src={stat.circleImage}
+    alt={stat.iconAlt}
+    width={stat.id === 3 ? 56 : 48} // Slightly larger for wing icon
+    height={stat.id === 3 ? 56 : 48}
+    className="w-full h-full object-contain rotate-alternate"
+  />
+  <div className="absolute inset-0 flex items-center justify-center">
+    <Image
+      src={stat.icon}
+      alt={stat.iconAlt}
+      width={stat.id === 3 ? 28 : 24}
+      height={stat.id === 3 ? 28 : 24}
+      className={`object-contain ${
+        stat.id === 3 
+          ? 'w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 xl:w-14 xl:h-14 2xl:w-17 2xl:h-17' 
+          : 'w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 2xl:w-11 2xl:h-11'
+      }`}
+    />
+  </div>
+</div>
                     <div
-                     
-                      className="py-2 sm:py-4 text-white font-semibold 2xl:text-[28.5px] xl:text-[24px] lg:text-[20px] md:text-[18px] text-[16px] leading-tight px-4 ">
-                      {stat.text[0]}
-                      <br />
-                      {stat.text[1]}
+
+                      className="py-2 sm:py-4 max-w-[300px] xl:max-w-[400px] 2xl:max-w-[500px] md:2xl:mb-10 text-white font-semibold 2xl:text-[28.5px] xl:text-[20px] lg:text-[20px] md:text-[18px] text-[16px] leading-tight xl:px-8 2xl:px-10">
+
+                      {stat.text}
                     </div>
                   </div>
                 ))}
@@ -259,133 +268,121 @@ const Section03: React.FC = () => {
       {/* Comparison Section */}
       <div className="relative w-full max-w-[1800px] mx-auto ">
         <div className="relative z-10">
-          <div className="py-15 w-full flex flex-col items-center justify-center">
+          <div className="py-15 2xl:py-22 w-full mx-auto">
             <h1
-              className="relative z-10 text-center mx-auto mb-8 px-4 Heading2"
-             
+              className="relative z-10 text-center mx-auto px-4  2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2"
+
             >
-              <div >
+               <div >
                 <ShinyText text="Why Business Owners Are Ditching" speed={5} className="gradient-white-text" />
               </div>
               <div >
-                <ShinyText text="Expensive Alternatives" speed={5} className="gradient-white-text inline-block" />
+                <ShinyText text="Expensive Alternatives" speed={5} className="gradient-white-text " />
                 {' '}
-                <ShinyText text="for VoiceAgent AI" speed={5} className="gradient-mask-text inline-block" />
+                <ShinyText text="for VoiceAgent AI" speed={5} className="gradient-mask-text " />
               </div>
-            </h1>
+            </h1>   
+            
           </div>
-
+ 
 
 
           {/* Comparison Grid/Carousel Container */}
           <div className="w-full mx-auto relative">
             {/* Desktop Grid (md and up) - Cards 1-3 in flex layout */}
             <div className="hidden lg:block">
-  {/* Card Grid */}
-  <div className="flex justify-center items-stretch gap-4 lg:gap-6 xl:gap-8 2xl:gap-12 mx-auto">
-    {comparisonData.map((card) => (
-      <div
-        key={card.id}
-        className="flex flex-col flex-shrink-0 min-w-0 
-                   lg:w-[320px] lg:h-[420px] lg:overflow-hidden
+              {/* Card Grid */}
+              <div className="flex justify-center items-stretch gap-4 lg:gap-6 xl:gap-15 2xl:gap-12 mx-auto">
+                {comparisonData.map((card) => (
+                  <div
+                    key={card.id}
+                    className="flex flex-col flex-shrink-0 min-w-0 
+                   lg:w-[320px] lg:h-[380px] lg:overflow-hidden
                    xl:w-[380px] xl:h-[355px] xl:overflow-hidden
                    2xl:w-[533px] 2xl:h-[500px] 2xl:overflow-hidden"
-      >
-      
-        <div className="relative w-full h-full">
-          <div
-            className={`w-full h-full rounded-[12px] border flex flex-col ${card.bgClass} ${card.borderClass}`}
-            style={card.shadowStyle}
-          >
-            <div className="flex flex-col h-full p-6 ">
-              {/* Header Section */}
-              <div className="flex-shrink-0">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-[77px] 2xl:h-[77px] flex items-center justify-center">
-                  <div className="relative w-full h-full flex flex-col">
-                    <Image
-                      src={card.icon}
-                      alt={card.iconAlt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
+                  >
 
-                {/* Title */}
-                <div
-              
-                  className="font-bold text-white 2xl:mb-5 2xl:text-[29px] xl:text-[20px] lg:text-[18px] text-white mb-2 mt-8 xl:mt-4 text-start leading-tight"
-                >
-                  {card.title}
-                </div>
-              </div>
-
-              {/* Features Section */}
-              <div className="flex-1 flex flex-col justify-start mt-2">
-                <ul className="space-y-2">
-                  {card.features.map((feature, index) => (
-                    <li key={index} className="flex items-start group">
-                      <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 lg:mr-1.5 xl:mr-2 flex-shrink-0" />
-                      <p
-                        className="2xl:text-[20px] xl:text-[15px] lg:text-[14px] text-white"
-                        style={{
-                         
-                          lineHeight: 1.5,
-                          letterSpacing: '0.6px',
-                         
-                        }}
+                    <div className="relative w-full h-full">
+                      <div
+                        className={`w-full h-full rounded-[12px] border flex flex-col ${card.bgClass} ${card.borderClass}`}
+                        style={card.shadowStyle}
                       >
-                        {feature}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
+                        <div className="flex flex-col h-full p-6 ">
+                          {/* Header Section */}
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-[56px] mb-5 xl:h-[56px] 2xl:w-[77px] 2xl:h-[77px] flex items-center justify-center">
+                              <div className="relative w-full h-full flex flex-col">
+                                <Image
+                                  src={card.icon}
+                                  alt={card.iconAlt}
+                                  fill
+                                  className="object-contain"
+                                />
 
-  {/* Do Nothing Card - Separate Section */}
-  <div className="flex justify-center mt-8 2xl:mb:20 md:mt-12 lg:mt-16 w-full">
-    <div className="w-full  px-4 sm:px-6">
-      <div className="w-full flex flex-col items-center">
-        {/* Heading */}
-        <h1
-          className="relative z-10 text-center mx-auto Heading2
+                              </div>
+                            </div>
+
+                            {/* Title */}
+                            <div
+
+                              className="font-bold text-white 2xl:mb-5 2xl:text-[29px] xl:text-[20px] lg:text-[18px] text-white mb-2 mt-8 xl:mt-8 2xl:mt-8 text-start leading-tight"
+                            >
+                              {card.title}
+                            </div>
+                          </div>
+
+                          {/* Features Section */}
+                          <div className="flex-1 flex flex-col justify-start mt-2">
+                          <ul className="space-y-2">
+  {card.features.map((feature, index) => (
+    <li key={index} className="flex items-start group">
+      <FaArrowRightLong className="text-white text-[14px] mr-2 lg:mr-1.5 xl:mt-1 xl:mr-2 font-normal flex-shrink-0" />
+      <p className="2xl:text-[20px] xl:text-[14px] leading-5 font-normal 2xl:leading-8 lg:text-[14px] text-white">
+        {feature}
+      </p>
+    </li>
+  ))}
+</ul>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Do Nothing Card - Separate Section */}
+              <div className="flex justify-center mt-8 2xl:mb:20 xl:mb-10 md:mt-12 lg:mt-16 w-full">
+                <div className="w-full  px-4 sm:px-6">
+                  <div className="w-full flex flex-col items-center">
+                    {/* Heading */}
+                    <h1
+                      className="relative z-10 text-center mx-auto Heading2  2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 
                      "
 
-        >
-          <ShinyText text={doNothingData.title} speed={5} className="gradient-white-text" />
-        </h1>
+                    >
+                      <ShinyText text={doNothingData.title} speed={5} className="gradient-white-text" />
+                    </h1>
 
-        {/* Features */}
-        <div className="w-full flex justify-center py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-3 ">
-            {doNothingData.features.map((feature, index) => (
-              <div key={index} className="flex items-center lg:items-start">
-                <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
-                <p
-                   className=" text-white"
-                   style={{
-                     fontSize: 'clamp(12px, 10vw , 20px)',
-                     lineHeight: 1.5,
-                     letterSpacing: '0.6px',
-                    
-                   }}
-                >
-                  {feature}
-                </p>
+                    {/* Features */}
+                    <div className="w-full flex justify-center py-10">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-3 ">
+                        {doNothingData.features.map((feature, index) => (
+                          <div key={index} className="flex items-center">
+                          <FaArrowRightLong className="text-white font-normal text-[20px] mr-2 flex-shrink-0" />
+                          <p className="2xl:text-[20px] xl:text-[14px] leading-5 2xl:leading-8 lg:text-[14px] text-white">
+                            {feature}
+                          </p>
+                        </div>
+                        
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            </div>
 
 
             {/* Mobile Carousel */}
@@ -397,8 +394,8 @@ const Section03: React.FC = () => {
                     <div
                       key={card.id}
                       className={`w-full transition-all duration-500 ease-in-out transform ${index === activeSlide
-                          ? 'opacity-100 translate-x-0 relative'
-                          : 'opacity-0 absolute inset-0 pointer-events-none'
+                        ? 'opacity-100 translate-x-0 relative'
+                        : 'opacity-0 absolute inset-0 pointer-events-none'
                         }`}
                       data-carousel-item
                       style={{
@@ -445,9 +442,7 @@ const Section03: React.FC = () => {
                                   <ul className="space-y-2 sm:space-y-3">
                                     {card.features.map((feature, featureIndex) => (
                                       <li key={featureIndex} className="flex items-start group">
-                                        <div className="flex-shrink-0 mt-1 mr-2">
-                                          <div className="w-1 h-1 rounded-full bg-white/80 mt-2 group-hover:bg-white transition-colors"></div>
-                                        </div>
+                                        <FaArrowRightLong className="text-white text-[14px] mt-0.5 mr-2 lg:mr-1.5 xl:mr-2 flex-shrink-0" />
                                         <p style={{
 
                                           fontSize: 'clamp(12px, 0.152vw + 12.05px, 20px)',
@@ -457,7 +452,7 @@ const Section03: React.FC = () => {
                                           wordWrap: 'break-word',
                                           overflowWrap: 'break-word',
                                         }}
-                                          className="font-light pr-6"
+                                          className="font- pr-6"
                                         >{feature}</p>
                                       </li>
                                     ))}
@@ -489,30 +484,35 @@ const Section03: React.FC = () => {
               </div>
 
               {/* Do Nothing Card - Outside Carousel */}
-              <div className="w-full py-12 ">
-                <div className="w-full max-w-6xl mx-auto flex flex-col ">
-                  <h1
-                    className="relative z-10 mx-auto mb-5 text-center Heading2"
-                   
-                  >
-                    <div >
-                      <ShinyText text={doNothingData.title} speed={5} className="gradient-white-text" />
+              <div className="w-full py-12">
+                <div className="w-full max-w-6xl mx-auto flex flex-col">
+                  <h1 className="relative z-10 mx-auto mb-5 text-center md:text-[30px] sm:text-[25px] text-[24px] Heading2">
+                    <div>
+                      <ShinyText
+                        text={doNothingData.title}
+                        speed={5}
+                        className="gradient-white-text"
+                      />
                     </div>
-
                   </h1>
 
-                  <div className="w-full flex justify-center">
-                    <div className="grid grid-cols-1 gap-x-3 gap-y-2 max-w-md w-full">
-                      {doNothingData.features.map((feature, index) => (
-                        <div key={index} className="flex items-start">
-                          <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
-                          <span className="text-white/90 subtextpt2 leading-relaxed">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Features Section */}
+                  <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 gap-x-3 gap-y-2 max-w-md w-full mx-auto text-left">
+                      <div className="flex flex-col self-center text-left">
+                        {doNothingData.features.map((feature, index) => (
+                          <div key={index} className="flex items-start">
+                            <FaArrowRightLong className="text-white text-xs mt-1.5 mr-2 flex-shrink-0" />
+                            <span className="text-white subtextpt2 leading-relaxed">
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div></div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -521,7 +521,7 @@ const Section03: React.FC = () => {
 
       {/* Final CTA Section */}
       <div
-        className="relative w-full p-4 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full p-2 sm:p-10 lg:p-12 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${Gradient.src})`
         }}
@@ -530,13 +530,14 @@ const Section03: React.FC = () => {
         <div className="w-full py-2 flex flex-col items-center justify-center">
           <h1
             className="relative z-10 text-center mx-auto w-full Heading2"
-           
+
           >
-            <div className="flex flex-col justify-center max-w-[1500px] mx-auto items-center">
-              <div> <ShinyText text="But what if I told you there's now a way to have a tireless smart voice agent on your website " speed={5} className="gradient-white-text" /></div>
+            <div className="flex 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 flex-col mt-5 justify-center w-full xl:max-w-[75%] lg:max-w-4xl md:max-w-3xl sm:max-w-2xl 2xl:max-w-[1500px] mx-auto items-center">
+              <div>
+                <ShinyText text="But what if I told you there's now a way to have a tireless smart voice agent on your website " speed={5} className="gradient-white-text" /></div>
               <div className="flex ml-2">
                 <ShinyText text="24/7!" speed={5} className="gradient-white-text" />
-                <BsStars className="text-white text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] 2xl:text-[60px] ml-3  -rotate-90" />
+                <BsStars className="text-white text-[20px] sm:text-[20px] md:text-[20px] lg:text-[33px] 2xl:text-[55px] ml-3 mt-1 -rotate-90" />
               </div>
             </div>
 
@@ -546,16 +547,10 @@ const Section03: React.FC = () => {
         </div>
 
         <p
-          style={{
-            fontSize: "clamp(13px, 2.73vw - 19px, 23px)",
-            fontWeight: 200,
-            color: 'white',
-            letterSpacing: '0.6px',
 
-          }
-          }
 
-          className="text-center max-w-[1100px] mx-auto py-4">
+
+          className="2xl:text-[23px] xl:text-[16.27px] lg:text-[15px] text-[14px] font-light text-center max-w-[80%] md:max-w-[60%] 2xl:max-w-[1100px] mx-auto py-4">
           Ready to answer every question, handle every objection, and guide every visitor straight to your checkout page
         </p>
       </div>

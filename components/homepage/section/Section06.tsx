@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect, useRef } from 'react';
 import DownArrow from '../../ui/DownArrow';
 import Offer from '@/components/ui/Offer';
@@ -8,9 +7,7 @@ import ShinyText from '@/components/ui/ShinyText';
 interface TimelineStepData {
   step: string;
   imageUrl?: string;
-  icon?: React.ComponentType<{ className?: string }>;
   title: string;
-  subtitle?: string;
   position: 'left' | 'right';
 }
 
@@ -21,7 +18,7 @@ interface TimelineStepProps {
 }
 
 const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) => {
-  const { step, imageUrl, icon: Icon, title, subtitle, position } = data;
+  const { step, imageUrl, title, position } = data;
   
   return (
     <div className={`relative transition-all duration-500 ease-out transform ${
@@ -38,8 +35,13 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                 <div className="sm:hidden w-full">
                   <div className="flex flex-col items-end">
                     <div className="flex flex-col items-end mb-1">
-                      <div className="num2 text-sm text-gray-400">
-                        {step.padStart(2, '0')}
+                      <div className="text-white text-[30px] font-bold">
+                      <ShinyText
+                        text={step.padStart(2, '0')}
+                        disabled={!isActive}
+                        speed={6}
+                        className="block leading-none"
+                      />
                       </div>
                       {imageUrl && (
                         <img 
@@ -53,7 +55,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       )}
                     </div>
                     <div className="text-right w-full">
-                      <h3 className={`font-bold  2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] py-1 leading-[1.5] transition-all ${
+                      <h3 className={`font-medium  2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] py-1 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -61,10 +63,10 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                 </div>
-                
-                <div className="hidden sm:flex items-start justify-end gap-1 sm:gap-2 w-full">
+                {/* desktop */}
+                <div className="hidden sm:flex items-start justify-end gap-1 sm:gap-2 xl:gap-5 w-full">
                   <div className='flex flex-col items-right justify-end content-end'>
-                    <div className="num2 transition-all">
+                    <div className="xl:text-[60px] mb-2 2xl:text-[82px] lg:text-[50px] text-white text-[30px] tracking-[-4px] font-bold transition-all">
                       <ShinyText
                         text={step.padStart(2, '0')}
                         disabled={!isActive}
@@ -73,7 +75,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={` 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] font-bold w-34  md:w-50 lg:w-55 2xl:w-88 py-2 leading-[1.5] transition-all ${
+                    <h3 className={` 2xl:text-[22px] xl:text-[16px] lg:text-[15px] md:text-[14px] sm:text-[14px] font-semibold text-[14px] w-32 md:w-50 lg:w-75 xl:w-69 2xl:w-88 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -81,27 +83,20 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                   
-                  <div className="p-1 mt-2 lg:mt-0 transition-all">
-                    {imageUrl && (
-                      <img 
-                        src={imageUrl} 
-                        alt={`Step ${step} icon`}
-                        className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 2xl:w-14 2xl:h-14 object-contain transition-all ${
-                          isActive ? 'opacity-100' : 'opacity-60'
-                        }`}
-                        style={{ filter: 'brightness(0) invert(1)' }}
-                      />
-                    )}
-                  </div>
+                  <div className="p-1 mt-6 transition-all">
+  {imageUrl && (
+    <img 
+      src={imageUrl} 
+      alt={`Step ${step} icon`}
+      className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 2xl:w-20 2xl:h-20 object-contain transition-all ${
+        isActive ? 'opacity-100' : 'opacity-60'
+      }`}
+      style={{ filter: 'brightness(0) invert(1)' }}
+    />
+  )}
+</div>
                 </div>
               </div>
-              {subtitle && (
-                <p className={`subtextpt2 italic transition-all ${
-                  isActive ? 'text-gray-300' : 'text-gray-500'
-                }`}>
-                  {subtitle}
-                </p>
-              )}
             </div>
           )}
         </div>
@@ -115,8 +110,13 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                 <div className="sm:hidden w-full">
                   <div className="flex flex-col items-start">
                     <div className="flex flex-col items-start mb-1">
-                      <div className="num2 text-sm text-gray-400">
-                        {step.padStart(2, '0')}
+                    <div className="text-white text-[30px] font-bold">
+                      <ShinyText
+                        text={step.padStart(2, '0')}
+                        disabled={!isActive}
+                        speed={6}
+                        className="block leading-none"
+                      />
                       </div>
                       {imageUrl && (
                         <img 
@@ -130,7 +130,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       )}
                     </div>
                     <div className="text-left w-full">
-                      <h3 className={` 2xl:text-[22px] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] font-bold py-1 leading-[1.5] transition-all ${
+                      <h3 className={`sm:text-[14px] text-[14px] font-medium py-1 leading-[1.5] transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -138,14 +138,14 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     </div>
                   </div>
                 </div>
-                
-                <div className="hidden sm:flex items-start justify-start gap-2 sm:gap-3 md:gap-5 w-full">
-                  <div className="p-1 mt-2 lg:mt-0 2xl:mt-0 transition-all">
+                {/* desktop */}
+                <div className="hidden sm:flex items-start w-full">
+                  <div className="flex-shrink-0 mt-8 w-10 md:w-12 lg:w-14 xl:w-15 2xl:w-18 pr-2 md:pr-3 lg:pr-4">
                     {imageUrl && (
                       <img 
                         src={imageUrl} 
                         alt={`Step ${step} icon`}
-                        className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 2xl:w-14 2xl:h-14 object-contain transition-all ${
+                        className={`w-full h-auto  object-contain transition-all ${
                           isActive ? 'opacity-100' : 'opacity-60'
                         }`}
                         style={{ filter: 'brightness(0) invert(1)' }}
@@ -153,7 +153,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                     )}
                   </div>
                   <div className='flex flex-col items-right justify-end content-end'>
-                    <div className="num2 transition-all">
+                    <div className="xl:text-[60px] mb-2 2xl:text-[82px] lg:text-[50px] text-white text-[30px] tracking-[-4px] font-bold transition-all">
                       <ShinyText
                         text={step.padStart(2, '0')}
                         disabled={!isActive}
@@ -162,7 +162,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ data, isActive, index }) =>
                       />
                     </div>
                     <div style={{letterSpacing: '0.8px'}}>
-                      <h3 className={` 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] font-bold text-[14px] w-32 md:w-50 lg:w-66 2xl:w-88 py-1 leading-[1.3]  transition-all ${
+                      <h3 className={` 2xl:text-[22px] xl:text-[16px] lg:text-[15px] md:text-[14px] sm:text-[14px] font-semibold text-[14px] w-32 md:w-50 lg:w-75 xl:w-62 2xl:w-88 py-1 leading-[1.3]  transition-all ${
                         isActive ? 'text-white' : 'text-gray-400'
                       }`}>
                         {title}
@@ -313,23 +313,23 @@ const TimelineUI: React.FC = () => {
   return (
     <div className="min-h-screen px-4">
       <Offer/>
-      <div className="container mx-auto">
+      <div className=" mx-auto">
 
         <div
-  className="relative text-center z-10 py-12 md:py-30 Heading2"
+  className="relative text-center w-full z-10 py-12 md:py-30 mx-auto  lg:max-w-[1700px] 2xl:max-w-[1700px] 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2"
 
 >
 <div >
-              <ShinyText text="Here's How This" speed={5} className="gradient-white-text inline-block" />
+              <ShinyText text="Here's How This" speed={5} className="gradient-white-text " />
            {' '}
-              <ShinyText text={`"Set It & Forget It"`}  speed={5} className=" gradient-mask-text inline-block" />
+              <ShinyText text={`"Set It & Forget It"`}  speed={5} className=" gradient-mask-text " />
               {' '}
-              <ShinyText text="System" speed={5} className="gradient-white-text inline-block" />
-            </div>
-            <div >
-              <ShinyText text="Transforms Any Website Into" speed={5} className=" gradient-white-text inline-block" />
+              <ShinyText text="System Transforms" speed={5} className="gradient-white-text " />
               {' '}
-              <ShinyText text=" a Conversion Machine" speed={5} className=" gradient-white-text inline-block" />
+              <ShinyText text="Any Website Into" speed={5} className=" gradient-white-text " />
+              {' '}
+              <ShinyText text=" a Conversion Machine" speed={5} className=" gradient-white-text" />
+             
             </div>
 </div>
         {/* Timeline Container */}

@@ -43,7 +43,7 @@ export default function Section07() {
     {
       title: "Natural Interruption Handling Just Like Real Conversations",
       description: "Visitors can interrupt your AI anytime to ask follow-up questions or change topics, creating fluid conversations that feel completely natural.",
-      icon: "/assets/icons/setting.svg"
+      icon: "/assets/icons/qmark1.svg"
     },
     {
       title: "Works Perfectly On Any Website Platform",
@@ -76,28 +76,16 @@ export default function Section07() {
         <div className="text-center relative mb-0 w-full max-w-[1600px] px-4 sm:px-6">
           <div 
          
-            style={{
-              fontFamily: 'Basis Grotesque Pro, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(25px, 3vw, 52px)',
-              lineHeight: '1.1',
-              margin: '0 0 0 0',
-              
-              letterSpacing: '0%',
-              color: 'transparent',
-              background: 'linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-    
-            }}
+            className="Heading3 xl:text-[36.6px] 2xl:text-[52px] max-w-[80%] mx-auto lg:text-[30px] md:text-[25px] text-[20px]
+            "
           >
             <ShinyText
               text="The entire setup takes less than 60 seconds. No technical skills required. No content creation needed. No ongoing maintenance."
               disabled={false}
               speed={6}
-              className="gradient-white-text"
+              className="gradient-white-text "
             />
+
            
           </div>
 
@@ -106,20 +94,21 @@ export default function Section07() {
             <div className="w-full max-w-[900px] h-[7px] 
               bg-gradient-to-r 
               from-transparent via-purple-300 to-transparent 
-              bg-[length:100%_100%] bg-no-repeat">
+              bg-[length:100%_100%] bg-no
+              -repeat">
             </div>
           </div>
         </div>
 
         <div className="w-full  mx-auto px-2 sm:px-4">
         <div
-            className="relative text-center z-10  w-full py-10 lg:py-25 2xl:py-30 Heading2"
+            className="relative text-center z-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 max-w-[325px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] w-full py-10 lg:py-25 mx-auto 2xl:py-30 Heading2"
            
           >
             <div>
               <ShinyText text="Turn your Silent Website Into a 24/7" speed={5} className="gradient-white-text" />
-            </div>
-            <div >
+            
+          {' '}
               <ShinyText text="Money-Making" speed={5} className="gradient-mask-text inline-block" />
               {' '}
               <ShinyText text="Machine That" speed={5} className="gradient-white-text inline-block" />
@@ -130,7 +119,7 @@ export default function Section07() {
 
 
           {/* Features Grid - 3 columns, 4 rows with responsive design */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 xl:gap-15 2xl:gap-20 w-full  px-2 sm:px-4 lg:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 sm:gap-x-15 xl:gap-x-35 xl:gap-y-2  2xl:gap-x-30 w-full  ">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col space-y-3 sm:space-y-4 pb-5 w-full items-center sm:items-start text-center sm:text-left">
                 {/* Icon container */}
@@ -147,17 +136,14 @@ export default function Section07() {
                   </div>
                 </div>
                 
-                <div className="w-full py-2 sm:py-3">
-                  <h3 style={{
-                    fontSize: 'clamp(15px, 2vw, 34px)',
-                    lineHeight:1.3,
-                  }}
-                  className="font-semibold  w-full">
+                <div className="w-full py-2  sm:py-3">
+                  <h3 
+                  className="font-medium text-[15px] md:text-[16px] lg:text-[20px] leading-6 md:leading-8 2xl:leading-10 xl:text-[22.4px] 2xl:text-[34px] w-full">
                     {feature.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="mt-2 sm:mt-3 2xl:text-[22px] xl:text-[20xp] lg:text-[18px] md:text-[16px] sm:text-[14px] text-[14px] leading-8 text-gray-300 w-full">
+                  <p className="mt-2 sm:mt-3 2xl:text-[22px] 2xl:pr-15 xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 2xl:leading-8 text-gray-300 w-full">
                     {feature.description}
                   </p>
                 </div>

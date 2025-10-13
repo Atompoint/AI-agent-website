@@ -14,11 +14,11 @@ const Section02 = () => {
         </>
       ),
       description: [
-        <React.Fragment key="desc1">
-          Every single day, <b>qualified prospects</b> land on your website <b>ready to buy</b>. But within seconds, they're <b>confused, frustrated</b>, and clicking the back button. They can't find the information they need.
+        <React.Fragment key="desc1">  
+          Every <b>single day</b>, qualified prospects land on your website ready to buy. But <b>within seconds</b>, they're <b>confused, frustrated</b>, and clicking the back button. <b>They can't find the information they need.</b>
         </React.Fragment>,
         <React.Fragment key="desc2">
-          They don't know where to go next. So they <b>leave</b>... and <b>buy from your competitor</b> instead. While you sleep, eat, and live your life, potential customers are <b>abandoning</b> your website every few minutes. That's <b>money walking out the door</b> 24/7.
+          They don't know where to go next. So they <b>leave</b>... and <b>buy from your competitor</b> instead. While you sleep, eat, and live your life, potential customers are abandoning your website every few minutes. That's <b>money walking out the door</b> 24/7.
         </React.Fragment>
       ],
       imagePath: "/assets/images/section02/sec1.png"
@@ -92,30 +92,34 @@ const Section02 = () => {
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-8xl 2xl:max-w-[93%] mx-auto px-4 md:px-6 lg:px-16 2xl:px-0">
-        <div className="w-full space-y-20 md:space-y-8 2xl:space-y-0">
+      <div className="relative z-10 w-full max-w-7xl md:max-w-[90%] lg:max-w-[93%] 2xl:max-w-[93%] mx-auto px-4 md:px-8 sm:px-12 lg:px-12 2xl:px-0">
+        <div className="w-full space-y-12 md:space-y-12 lg:space-y-6 xl:space-y-0">
           {sections.map((section, index) => (
             <div
               key={index}
               className={`relative flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center justify-between gap-8 md:gap-12 lg:gap-20 2xl:gap-28`}
+                } items-center justify-between gap-5 md:gap-8 lg:gap-20 2xl:gap-28`}
             >
               {/* Text Section */}
               <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[38px] 2xl:text-[42px] font-semibold mb-4 md:mb-6 leading-tight lg:leading-[1.2]">
+                <div 
+                style={{
+                  fontFamily: 'Basis Grotesque Pro, sans-serif',
+                }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[37px] 2xl:text-[52px] font-bold leading-tight sm:leading-8 md:leading-9 lg:leading-10 2xl:leading-14">
                   <ShinyText
                     disabled={false}
                     speed={6}
-                    className="inline-block"
+                 
                   >
                     {section.title}
                   </ShinyText>
                 </div>
-                <div className="w-full max-w-2xl space-y-4 md:space-y-5">
+                <div className="w-full 2xl:max-w-2xl xl:max-w-lg max-w-2xl space-y-4 mt-5 md:space-y-5">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p
                       key={paragraphIndex}
-                      className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-200"
+                      className="text-[12px] sm:text-[13px] md:text-[14px] xl:text-[16px] 2xl:text-[23px] leading-5 2xl:leading-8  lg:leading-6 text-white font-light"
                     >
                       {paragraph}
                     </p>

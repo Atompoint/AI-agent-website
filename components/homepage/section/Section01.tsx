@@ -157,21 +157,22 @@ const ThreeStepsComponent = () => {
       <div className="max-w-7xl w-full items-center justify-center relative z-0">
         {/* Heading */}
         <h1
-          className="relative z-10 px-2 md:px-0  md:mb-[3%] text-center md:w-[60%] mx-auto Heading2"
+          className="relative z-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-10 md:leading-8 2xl:leading-15 md:mb-[3%] text-center  mx-auto Heading2"
           
         >
           <div>
-            <ShinyText text="All It Takes Is 3 Simple" speed={5} className="gradient-white-text inline-block" />
+          <div> <ShinyText text="All It Takes Is 3 Simple" speed={5} className="gradient-white-text inline-block" /></div>
+           
+          <div><ShinyText text="Steps and" speed={5} className="gradient-white-text inline-block" />
             {' '}
-            <ShinyText text="Steps and" speed={5} className="gradient-white-text inline-block" />
-            {' '}
-            <ShinyText text="You're Done" speed={5} className="gradient-mask-text inline-block" />
+            <ShinyText text="You're Done" speed={5} className="gradient-mask-text inline-block" /></div>
+            
           </div>
         </h1>
 
         {/* Horizontal Stepper */}
         <div className="mx-auto">
-          <div className="py-20 sm:py-15 md:py-20">
+          <div className="py-10 sm:py-15 md:py-20 lg:py-25 2xl:py-30">
             <div className="relative flex flex-col lg:flex-row items-center lg:items-start justify-between  gap-8 lg:gap-30">
               {steps.map((step, index) => (
                 <React.Fragment key={index}>
@@ -264,13 +265,71 @@ const ThreeStepsComponent = () => {
                       )}
                     </AnimatePresence>
 
-                    {/* Connector Line - Only show between items on desktop */}
+                    {/* Connector Line - Only show between items on xl */}
                     {index < steps.length - 1 && (
+                      <div className="hidden xl:block absolute"
+                        style={{
+                          top: '60px',
+                          left: '65%',
+                          width: '350px',
+                          height: '1px',
+                          zIndex: 1
+                        }}
+                      >
+                        <motion.div
+                          key={`desktop-line-${index}-${animationKey}`}
+                          className="absolute inset-0 bg-white/30 origin-left"
+                          variants={stepperLineVariants}
+                          initial="hidden"
+                          animate={currentStep > index ? "visible" : "hidden"}
+                        />
+                      </div>
+                    )}
+ {index < steps.length - 1 && (
+                      <div className="hidden xl:block absolute"
+                        style={{
+                          top: '60px',
+                          left: '65%',
+                          width: '350px',
+                          height: '1px',
+                          zIndex: 1
+                        }}
+                      >
+                        <motion.div
+                          key={`desktop-line-${index}-${animationKey}`}
+                          className="absolute inset-0 bg-white/30 origin-left"
+                          variants={stepperLineVariants}
+                          initial="hidden"
+                          animate={currentStep > index ? "visible" : "hidden"}
+                        />
+                      </div>
+                    )}
+{/* lg */}
+{index < steps.length - 1 && (
                       <div className="hidden lg:block absolute"
                         style={{
-                          top: '55px',
-                          left: '75%',
-                          width: '280px',
+                          top: '60px',
+                          left: '68%',
+                          width: '270px',
+                          height: '1px',
+                          zIndex: 1
+                        }}
+                      >
+                        <motion.div
+                          key={`desktop-line-${index}-${animationKey}`}
+                          className="absolute inset-0 bg-white/30 origin-left"
+                          variants={stepperLineVariants}
+                          initial="hidden"
+                          animate={currentStep > index ? "visible" : "hidden"}
+                        />
+                      </div>
+                    )}
+ {index < steps.length - 1 && (
+                      <div className="hidden xl:block absolute"
+                        style={{
+                          top: '60px',
+                          left: '65%',
+                          width: '350px',
                           height: '1px',
                           zIndex: 1
                         }}
@@ -309,4 +368,4 @@ const ThreeStepsComponent = () => {
   );
 };
 
-export default ThreeStepsComponent;          <DownArrow />
+export default ThreeStepsComponent;        

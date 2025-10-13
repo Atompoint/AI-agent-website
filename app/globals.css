@@ -102,8 +102,7 @@ line-height: 22.8px;
 .Heading2{
   font-family: 'Basis Grotesque Pro', sans-serif;
   font-weight: 700;
-  font-size: clamp(22px, 3vw, 60px);
-  line-height: 1.1;
+ 
   letter-spacing: 0;
   color: transparent;
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
@@ -112,6 +111,17 @@ line-height: 22.8px;
   -webkit-text-fill-color: transparent;
 }
 
+.Heading3{
+  font-family: 'Basis Grotesque Pro', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: transparent;
+  background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .border-class{
    border: '1px solid #FFFFFF12',
@@ -138,11 +148,7 @@ letter-spacing: -0.4px;
  letter-spacing: -2px;
 
 }
-.num2{
-  font-size: clamp(30px, 6vw, 80px);
-  font-weight: 800;
-  margin-bottom: 5px;
-}
+
 /* Custom Scrollbar */
 .custom-scrollbar {
   scrollbar-width: thin;
@@ -167,6 +173,7 @@ letter-spacing: -0.4px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+
 .gradient-mask-text {
   background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
   -webkit-background-clip: text;
@@ -176,6 +183,7 @@ letter-spacing: -0.4px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .gradient-white-text {
   background: linear-gradient(95.14deg,rgb(187, 190, 211) 4.45%, #FFFFFF 29.02%, #FFFFFF 60.85%, #9698A6 95.61%);
