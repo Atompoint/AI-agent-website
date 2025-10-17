@@ -48,7 +48,7 @@ const Offer = () => {
         {/* Payment Card */}
         <div className="w-full h-full flex justify-center items-center ">
           <Image
-            src="/assets/images/card.svg"
+            src="/assets/images/offer/card.svg"
             alt="Payment Card"
             width={450}
             height={0}

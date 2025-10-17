@@ -122,6 +122,17 @@ line-height: 22.8px;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gradient-text {
+  background: linear-gradient(
+    -83deg,
+    #ac92e0 5%,
+    #debfff 29%,
+    #967dc0 58%,
+    #bf84f9 92%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .border-class{
    border: '1px solid #FFFFFF12',
@@ -148,6 +159,26 @@ letter-spacing: -0.4px;
  letter-spacing: -2px;
 
 }
+
+.gradient-border {
+  border: 2px solid #BF84F9;
+  border-radius: 10px;
+  padding: 2px 5px;
+  color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    118.93deg,
+    rgba(31, 11, 70, 0.22) 5%,
+    rgba(222, 191, 255, 0.22) 29%,
+    rgba(90, 39, 177, 0.22) 58%,
+    rgba(191, 132, 249, 0.22) 92%
+  );
+}
+
+
+
+
+
+
 
 /* Custom Scrollbar */
 .custom-scrollbar {

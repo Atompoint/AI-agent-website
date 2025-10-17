@@ -53,46 +53,46 @@ export const FEATURES: Feature[] = [
   {
     title: "Answer Last-Minute Questions That Prevent Sales",
     description: "Visitors can quickly ask about shipping, returns, compatibility, instead of leaving to find answers elsewhere.",
-    icon: "/assets/icons/qmark2.svg"
+    icon: "/assets/icons/section08/1.svg"
   },
   {
     title: "Qualify Leads Who Are Ready to Engage",
     description: "Your AI gathers visitor information through voice then directs them to your booking page or contact form.",
-    icon: "/assets/icons/voice.svg"
+    icon: "/assets/icons/section08/2.svg"
   },
   {
     title: "Turn Product Pages Into Personal Shopping Experiences",
     description: "Visitors can ask: \"Which size should I get?\" or \"How does this compare?\" just like talking to a sales associate.",
-    icon: "/assets/icons/bag.svg"
+    icon: "/assets/icons/section08/3.svg"
   },
   {
     title: "Handle Peak Traffic Without Hiring Extra Staff",
     description: "Unlimited visitors get instant voice answers while your competitors' chat boxes crash or have long wait times.",
-    icon: "/assets/icons/gb.svg"
+    icon: "/assets/icons/section08/4.svg"
   },
   {
     title: "Help Serious Buyers Get the Information They Need",
     description: "Visitors get detailed explanations to their specific questions that push them over the buying line.",
-    icon: "/assets/icons/shake.svg"
+    icon: "/assets/icons/section08/5.svg"
   },
   {
     title: "Capture Information From Motivated Prospects",
     description: "Your AI guides engaged visitors to contact forms or lead capture pages after answering their questions.",
-    icon: "/assets/icons/cycle.svg"
+    icon: "/assets/icons/section08/6.svg"
   },
   {
     title: "Make Complex Products Easy to Understand",
     description: "Visitors can simply ask: \"How does this work?\" or \"Is this right for my situation?\" and get clear answers.",
-    icon: "/assets/icons/verified.svg"
+    icon: "/assets/icons/section08/7.svg"
   },
   {
     title: "Make Mobile Shopping Easier Than Ever Before",
     description: "Mobile visitors click once and speak their questions instead of typing on small keyboards or forms.",
-    icon: "/assets/icons/phone.svg"
+    icon: "/assets/icons/section08/8.svg"
   },
   {
     title: "Help Visitors Choose the Right Pricing Plan",
     description: "Visitors describe their needs so your AI can recommend the perfect option and guide them to sign up.",
-    icon: "/assets/icons/dollar1.svg"
+    icon: "/assets/icons/section08/9.svg"
   }
 ];

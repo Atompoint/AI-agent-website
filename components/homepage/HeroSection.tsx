@@ -257,7 +257,7 @@ export default function HeroHeader() {
               >
                 <Image
                   ref={circleImageRef}
-                  src="/assets/images/Circle.png"
+                  src="/assets/images/herosection/Circle.png"
                   alt="circle"
                   width={2000}
                   height={1800}
@@ -271,7 +271,7 @@ export default function HeroHeader() {
                 <ContainerScroll>
 
                   <img
-                    src="/assets/images/main1.png"
+                    src="/assets/images/section05/main1.png"
                     alt="hero"
                     height={720}
                     width={1400}

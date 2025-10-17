@@ -5,7 +5,7 @@ import LightRays from '@/components/ui/LightRays';
 import ShinyText from '@/components/ui/ShinyText';
 import DownArrow from '../../ui/DownArrow';
 import { FaArrowRightLong } from "react-icons/fa6";
-import Gradient from "@/public/assets/images/gradient.png"
+import Gradient from "@/public/assets/images/section03/gradient.png"
 import { BsStars } from "react-icons/bs";
 import MobileComparisonCarousel from '@/components/ui/mobileStack';
 
@@ -335,7 +335,7 @@ const Section03: React.FC = () => {
                             <ul className="space-y-2">
                               {card.features.map((feature, index) => (
                                 <li key={index} className="flex items-start group">
-                                  <FaArrowRightLong className="text-white text-[14px] mr-2 lg:mr-1.5 xl:mt-1 xl:mr-2 font-normal flex-shrink-0" />
+                                  <FaArrowRightLong className="text-white text-[14px] mr-2 lg:mr-1.5 xl:mt-2 xl:mr-2 font-normal flex-shrink-0" />
                                   <p className="2xl:text-[20px] xl:text-[14px] leading-5 font-normal 2xl:leading-8 lg:text-[14px] text-white">
                                     {feature}
                                   </p>

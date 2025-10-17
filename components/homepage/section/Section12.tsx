@@ -61,7 +61,7 @@ const Section12 = () => {
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full">
             <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[420px] xl:h-[480px] 2xl:h-[520px] rounded-[12px] overflow-hidden">
               <Image
-                src="/assets/images/fence.png"
+                src="/assets/images/section12/fence.png"
                 alt="24/7 Sales Machine"
                 fill
                 className="object-contain rounded-[12px]"

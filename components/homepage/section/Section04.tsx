@@ -41,7 +41,7 @@ const Section04 = () => {
         {/* Main Image with Shine Border - Responsive border and padding */}
         <div className="relative w-full flex justify-center mt-[-6%]">
           <Image
-            src="/assets/images/mainimage1.png"
+            src="/assets/images/section04/mainimage1.png"
             width={1200}
             height={900}
             alt="product web image"

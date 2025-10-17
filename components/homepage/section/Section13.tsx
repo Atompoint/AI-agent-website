@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import Purple from '@/public/assets/images/purple.png'
-import MikeImage from '@/public/assets/images/mike1.png'
+import Purple from '@/public/assets/images/section13/purple.png'
+import MikeImage from '@/public/assets/images/section13/mike.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
 

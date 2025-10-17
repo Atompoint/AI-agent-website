@@ -6,24 +6,17 @@ import ShinyText from '@/components/ui/ShinyText';
 import { ShineBorder } from "@/components/magicui/shine-border";
  
 const Section05: React.FC = () => {
-  const [isVideo1Playing, setIsVideo1Playing] = useState(false);
-  const [isVideo2Playing, setIsVideo2Playing] = useState(false);
+  
 
   // Demo section
   const demoSection = {
-    mainImage: "/assets/images/main1.png",
-    playIcon: "/assets/images/play.png",
-    playIcon1: "/assets/icons/play1.svg"
+    mainImage: "/assets/images/section05/main1.png",
+    playIcon: "/assets/images/section05/play.png",
+   
     
   };
 
-  const handleVideo1Play = () => {
-    setIsVideo1Playing(true);
-  };
-
-  const handleVideo2Play = () => {
-    setIsVideo2Playing(true);
-  };
+  
 
   return (
     <div className="text-white min-h-screen relative overflow-hidden">
@@ -77,40 +70,20 @@ const Section05: React.FC = () => {
       </div>
 
       {/* Video Right on lg, first on small */}
-      <div className="order-1 lg:order-2 bg-black rounded-[10px] w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
+      <div className="order-1 lg:order-2  w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
                       flex items-center justify-center relative overflow-hidden 
-                      max-w-[650px] 2xl:max-w-[716px] mx-auto">
-        <video
-          className="w-full h-full object-cover rounded-[10px]"
-          src="/assets/videos/web1.mp4"
-          controls={isVideo1Playing}
-          muted
-          playsInline
-          onPlay={handleVideo1Play}
+                      max-w-[650px] 2xl:max-w-[726px] mx-auto">
+        <Image
+          className="w-full h-full object-contain"
+          src="/assets/images/section05/1.png"
+         height={436}
+         width={726}
+         alt="section05"
         />
-        {!isVideo1Playing && (
-          <div
-            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-            onClick={() => {
-              const video = document.querySelector('video[src="/assets/videos/web1.mp4"]') as HTMLVideoElement;
-              if (video) {
-                video.play();
-                setIsVideo1Playing(true);
-              }
-            }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-black/30 rounded-full blur-sm scale-110"></div>
-              <Image
-                src={demoSection.playIcon1}
-                width={60}
-                height={60}
-                alt="play button"
-                className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
-              />
-            </div>
-          </div>
-        )}
+       
+          
+            
+        
       </div>
     </div>
 
@@ -118,40 +91,20 @@ const Section05: React.FC = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between gap-10">
       
       {/* Video Left (always first) */}
-      <div className="order-1 bg-black rounded-[10px] w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
+      <div className="order-1  w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
                       flex items-center justify-center relative overflow-hidden 
-                      max-w-[650px] 2xl:max-w-[716px] mx-auto">
-        <video
-          className="w-full h-full object-cover rounded-[10px]"
-          src="/assets/videos/web2.mp4"
-          controls={isVideo2Playing}
-          muted
-          playsInline
-          onPlay={handleVideo2Play}
+                      max-w-[650px] 2xl:max-w-[726px] mx-auto">
+        <img
+          className="w-full h-full object-contain "
+          src="/assets/images/section05/2.png"
+          height={436}
+         width={726}
+         alt="section05"
         />
-        {!isVideo2Playing && (
-          <div
-            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-            onClick={() => {
-              const video = document.querySelector('video[src="/assets/videos/web2.mp4"]') as HTMLVideoElement;
-              if (video) {
-                video.play();
-                setIsVideo2Playing(true);
-              }
-            }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-black/30 rounded-full blur-sm scale-110"></div>
-              <Image
-                src={demoSection.playIcon1}
-                width={60}
-                height={60}
-                alt="play button"
-                className="cursor-pointer hover:scale-110 transition-transform duration-200 relative z-10 drop-shadow-2xl"
-              />
-            </div>
-          </div>
-        )}
+       
+         
+           
+         
       </div>
 
       {/* Text Right on lg, second on small */}
@@ -203,7 +156,7 @@ const Section05: React.FC = () => {
             className="absolute inset-0 rounded-2xl pointer-events-none"
           />
           <Image
-            src="/assets/images/main1.png"
+            src="/assets/images/section05/main1.png"
             width={1400}
             height={1050}
             alt="product web image"

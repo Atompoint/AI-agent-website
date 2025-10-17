@@ -20,7 +20,7 @@ const PricingHero: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full sm:px-12 md:px-25 lg:px-0 2xl:max-w-[1755px] xl:max-w-[1255px] gap-8 xl:gap-20 items-center mx-auto">
         <div className="flex justify-center">
           <Image
-            src="/assets/images/sales.png"
+            src="/assets/images/section11/sales.png"
             alt="24/7 Sales Machine"
             width={870}
             height={410}
