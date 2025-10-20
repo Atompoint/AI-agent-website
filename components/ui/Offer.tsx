@@ -18,13 +18,13 @@ const Offer = () => {
       </h1>
       <div >
         {/* CTA Button */}
-        <div className='py-3 md:py-4 2xl:py-10'>
+        <div className='pt-3 pb-1 md:pt-4 md:pb-2 2xl:pt-10 2xl:pb-4'>
           <div className="relative inline-block rounded-full overflow-visible">
             {/* Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#C67DFF] via-[#3420C6] to-[#0079FF] blur-sm opacity-50 scale-100"></div>
 
             {/* Button Background */}
-            <div className="relative rounded-full p-[4px]">
+            <div className="relative rounded-full pt-[4px] pb-[2px]">
               {/* Actual Button */}
               <button className="relative inline-flex 2xl:w-[818px] 2xl:h-[116px] xl:w-[595px] xl:h-[83px] w-[250px] h-[60px] sm:w-[400px] sm:h-[60px] md:w-[525px] md:h-[75px] lg:w-[600px] lg:h-[80px] items-center justify-center  cursor-pointer bg-black rounded-full transition-all duration-300 hover:scale-100">
                 <p 
@@ -52,7 +52,7 @@ const Offer = () => {
             alt="Payment Card"
             width={450}
             height={0}
-            className="w-[200px] sm:w-[340px] md:w-[425px] xl:w-[420px] lg:w-[428px] 2xl:w-[590px] h-auto object-contain"
+            className="w-[200px] sm:w-[340px] md:w-[425px] xl:w-[560px] lg:w-[528px] 2xl:w-[786px] h-auto object-contain"
             priority
           />
         </div>

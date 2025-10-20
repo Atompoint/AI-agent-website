@@ -5,7 +5,7 @@ import Purple from '@/public/assets/images/section13/purple.png'
 import MikeImage from '@/public/assets/images/section13/mike.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
-
+import Threads from '@/components/ui/Threads';
 
 interface FAQItem {
   question: string
@@ -156,7 +156,7 @@ const Section13: React.FC = () => {
                   openFAQ === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="w-[90%] sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[810px] py-3">
-                    <p className=" font-light leading-tight">
+                    <p className=" font-light leading-tight ext-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[22px]">
                       {faq.answer}
                     </p>
                   </div>
@@ -166,16 +166,22 @@ const Section13: React.FC = () => {
           </div>
         </div>
         
+<div style={{ width: '100%', height: '600px', position: 'absolute', opacity:'25%' }}>
+  <Threads
+    amplitude={2}
+    distance={0}
+    enableMouseInteraction={false}
+  />
+</div>
       <div className='2xl:pb-30 pb-10'> {/* Offer Section */}
         <Offer/></div>
       </div>
-
       {/* Copyright Section */}
-      <div className="max-w-5xl px-4 m:px-6 md:px-10 lg:px-15 2xl:px-0 2xl:mt-10 mt-5 mx-auto">
+      <div className="max-w-6xl px-4 m:px-6 md:px-10 lg:px-15 2xl:px-0 2xl:mt-10 mt-5 mx-auto">
         {/* Copyright Text */}
         <div>
           <p 
-            className="m-auto font-medium text-center 2xl:text-[20px] xl:text-[14.27px] lg:text-[13px] md:text-[13px] sm:text-[13px] text-[12px] leading-5 md:leading-5 lg:leading-6 text-white/80"
+            className="m-auto font-medium text-center 2xl:text-[20px] xl:text-[14.27px] lg:text-[13px] md:text-[13px] sm:text-[13px] text-[12px] leading-5 md:leading-5 lg:leading-6 2xl:leading-7 text-white/80"
           >
             © 2025 <span className="font-semibold text-white">Voice AI</span> All rights reserved. This website, its content, and all materials contained herein are protected by copyright, trademark, and 
             other intellectual property laws. Unauthorized use, reproduction, or distribution of any content, including text, images, logos, or designs, is 
@@ -187,7 +193,7 @@ const Section13: React.FC = () => {
 
         {/* Copyright Notice */}
         <div className="text-center py-6 sm:py-8 md:py-9 xl:py-10 lg:py-10 2xl:py-15">
-          <p  className='font-semibold 2xl:text-[15px] xl:text-[13px] lg:text-[12px] md:text-[11px] sm:text-[10px] text-[9px]'>
+          <p  className='font-semibold 2xl:text-[18px] xl:text-[16px] lg:text-[14px] md:text-[13px] sm:text-[12px] text-[10px]'>
             Copyright © 2025 Voice AI
           </p>
         </div>

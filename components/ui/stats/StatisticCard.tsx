@@ -29,11 +29,11 @@ const StatisticCard: React.FC<StatisticCardProps> = ({
       <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 ">
         <div className={`relative z-10 h-full ${typeof statistic.description === 'string' ? 'flex items-end' : 'block'}`}>
           {typeof statistic.description === 'string' ? (
-            <p className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-4  lg:leading-5 xl:leading-6 font-normal text-white max-w-md">
+            <p className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-4  lg:leading-5 xl:leading-6 2xl:leading-8 font-normal text-white max-w-md">
               {statistic.description}
             </p>
           ) : (
-            <div className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-4  lg:leading-5 xl:leading-6 font-normal text-white">
+            <div className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-4  lg:leading-5 xl:leading-6 2xl:leading-8  font-normal text-white max-w-xs">
               {statistic.description}
             </div>
           )}

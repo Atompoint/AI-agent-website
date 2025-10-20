@@ -60,7 +60,7 @@ export default function HeroHeader() {
         // Animate Circle with parallax effect
         gsap.to(img, {
           rotation: "+=190",
-          y: 20,
+          y: 10,
           opacity: 0.7,
           force3D: true,
           duration: 1,
@@ -157,7 +157,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Main content flow - fade in after particles */}
-        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-2 sm:gap-3 md:gap-4 lg:gap-10">
+        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-2 sm:gap-3 md:gap-4 lg:gap-10 2xl:gap-25">
 
           {/* Header */}
           <div className="flex-none">
@@ -165,10 +165,10 @@ export default function HeroHeader() {
           </div>
 
           {/* Hero Heading & Content */}
-          <div className="max-w-8xl gap-2 sm:gap-0 lg:gap-4 flex flex-col items-center justify-center flex-1 text-center mx-auto mt-[5%] lg:mt-[1%] 2xl:mt-[6%]">
+          <div className="max-w-8xl gap-2 sm:gap-0 lg:gap-4 flex flex-col items-center justify-center flex-1 text-center mx-auto ">
             {/* Label */}
             <h2
-              className="relative max-w-[85%] text-[14px] md:text-[15px] lg:text-[16px] xl:text-[16.27px] 2xl:text-[23px] md:max-w-[100%] px-2 py-2 sm:px-6 lg:px-6 h-auto min-h-[40px] sm:min-h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px] font-light shadow-[0_0_10px_rgba(191,132,249,0.3)]"
+              className="relative max-w-[85%] font-thin text-[14px] md:text-[15px] lg:text-[16px] xl:text-[16.27px] 2xl:text-[23px] md:max-w-[100%] px-2 py-2 2xl:py-3 sm:px-6 lg:px-6 h-auto min-h-[40px] sm:min-h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px]  shadow-[0_0_10px_rgba(191,132,249,0.3)]"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
                 lineHeight: '1.1',
@@ -183,7 +183,7 @@ export default function HeroHeader() {
 
             {/* Heading */}
             <h1
-              className="relative z-10 px-2 md:text-[30px] md:py-4 lg:py-2 lg:text-[35px] xl:text-[45px] 2xl:text-[67px] md:px-0 md:max-w-[700px] 2xl:max-w-[1680px] xl:max-w-[1179px] lg:max-w-[850px] hidden md:block"
+              className="relative z-10 px-2 md:text-[30px] md:py-4 lg:py-2 2xl:py-3 lg:text-[35px] xl:text-[45px] 2xl:text-[67px] md:px-0 md:max-w-[700px] 2xl:max-w-[1680px] xl:max-w-[1179px] lg:max-w-[850px] hidden md:block"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
                 fontWeight: 800,
@@ -233,7 +233,7 @@ export default function HeroHeader() {
             </h1>
 
             {/* Subtext */}
-            <p className="w-[90%] md:w-[68%] xl:w-[78%] 2xl:w-[60%] font-bold text-[16px] 2xl:text-[23px] xl:text-[24px] lg:text-[14px] leading-6 xl:leading-7 lg:leading-6 2xl:leading-10" style={{
+            <p className="w-[90%] md:w-[68%] xl:w-[78%]  font-bold text-[16px] 2xl:text-[34.3px] xl:text-[24px] lg:text-[14px] leading-6 xl:leading-7 lg:leading-6 2xl:leading-10" style={{
               fontFamily: 'Basis Grotesque Pro, sans-serif',
              
             
@@ -248,8 +248,8 @@ export default function HeroHeader() {
           </div>
 
           {/* Image With Circle Background */}
-          <div className="flex-none flex justify-center -mt-[10%] md:-mt-[13%] lg:mt-[-10%] 2xl:mt-[-7%]">
-            <div className="relative w-full max-w-6xl flex flex-col items-center">
+          <div className="flex-none flex justify-center -mt-[10%] md:-mt-[13%] lg:mt-[-10%] 2xl:mt-[-10%]">
+            <div className="relative w-full max-w-8xl flex flex-col items-center">
               {/* Circle image behind */}
               <div
                 style={{ clipPath: "inset(10% 0 40% 0)" }} // hides bottom 30% only
@@ -261,7 +261,7 @@ export default function HeroHeader() {
                   alt="circle"
                   width={2000}
                   height={1800}
-                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[2100px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
+                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[1800px] 2xl:max-w-[1900px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
                   draggable={false}
                 />
               </div>
@@ -300,7 +300,7 @@ export default function HeroHeader() {
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[100px] h-[100px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] 2xl:w-[170px] 2xl:h-[170px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-0 md:right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'}`}
+                className={`w-[100px] h-[100px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] 2xl:w-[150px] 2xl:h-[150px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-0 md:right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'}`}
               />
               <div className="mt-0 inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
                 <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] 2xl:text-[20px] -rotate-90" />
@@ -312,9 +312,9 @@ export default function HeroHeader() {
 
         {/* Features Section */}
         <div className="relative z-20 pt-8 sm:pt-14 md:pt-16 lg:pt-20 flex justify-center">
-          <div className="w-full max-w-7xl 2xl:max-w-8xl px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-7xl 2xl:max-w-[1455px] px-4 sm:px-6 lg:px-8 2xl:px-0">
             <div className="flex justify-center">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 sm:gap-x-20 sm:gap-y-10 xl:gap-x-18 lg:gap-x-15 gap-y-6 lg:gap-y-12 md:gap-y-8 max-w-6xl 2xl:max-w-7xl">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 sm:gap-x-20 sm:gap-y-10 xl:gap-x-18 lg:gap-x-15 gap-y-6 lg:gap-y-12 md:gap-y-8 2xl:gap-x-25 max-w-6xl 2xl:max-w-none">
                 {features.map((feature, i) => (
                   <div key={i} className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 group">
                     <div className="flex-shrink-0 mt-0.5 sm:mt-1">

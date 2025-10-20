@@ -1,7 +1,7 @@
 import React from 'react';
 import DownArrow from "@/components/ui/DownArrow";
 import ShinyText from '@/components/ui/ShinyText';
-
+import Threads from '@/components/ui/Threads';
 
 const Section02 = () => {
   const sections = [
@@ -69,8 +69,8 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/3.png"
     },
     {
-      title: (<><div className='2xl:block block xl:block lg:hidden md:block sm:block'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For <span className='gradient-border'>Round-The-Clock Coverage</span></div>
-     <div className='hidden 2xl:hidden xl:hidden lg:block md:hidden sm:hidden'>Building A Customer Service Team <span className='gradient-border'>Costs A </span><span>Fortune...</span> And You Need Multiple People For <span className='gradient-border'>Round-The-Clock </span><span className='gradient-border'>Coverage</span></div>
+      title: (<><div className='2xl:block block xl:hidden lg:hidden md:block sm:block'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For <span className='gradient-border'>Round-The-Clock Coverage</span></div>
+     <div className='hidden 2xl:hidden xl:block lg:block md:hidden sm:hidden'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For Round-The-Clock <span className='gradient-border'>Coverage</span></div>
       </>),
       description: [
         <React.Fragment key="desc7">
@@ -83,7 +83,7 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/4.png"
     },
     {
-      title:(<> <div className="block 2xl:block xl:block md:block">Most AI Tools Promise Easy Setup... Then <span className='gradient-border'>Waste Weeks Of</span><span className='gradient-border'> Your Time</span></div>
+      title:(<> <div className="block 2xl:block xl:block md:block">Most AI Tools Promise Easy Setup... Then <span className='gradient-border'>Waste Weeks Of</span>{" "}<span className='gradient-border'> Your Time</span></div>
       <div className="block 2xl:hidden xl:hidden md:hidden">Most AI Tools Promise Easy Setup... Then <span className='gradient-border'>Waste Weeks Of Your Time</span></div></>),
       description: [
         <React.Fragment key="desc9">
@@ -96,7 +96,8 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/5.png"
     },
     {
-      title: <div>Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing Dozens Daily</span></div>,
+      title: (<><div className="block 2xl:block xl:block md:block">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing Dozens Daily</span></div>
+      <div className="block 2xl:hidden xl:hidden md:block">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing</span>{' '}<span className='gradient-border'> Dozens Daily</span></div></>),
       description: [
         <React.Fragment key="desc11">
           Your visitor is <b>90% ready to buy</b>. They just need to know about <b>shipping times, return policies, or technical specs</b>. It's a <b>simple question</b> that would take 30 seconds to answer. But there's <b>no way</b> for them to get that answer quickly.
@@ -115,8 +116,16 @@ const Section02 = () => {
       <div className="absolute top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
 
+
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl sm:max-w-[95%] md:max-w-[80%] lg:max-w-[99%] 2xl:max-w-[96%] mx-auto px-3 md:px-4 sm:px-12 lg:px-7 xl:px-17 2xl:px-15">
+<div style={{ width: '100%', height: '600px', position: 'absolute',top:'6%', opacity:'25%' }}>
+  <Threads
+    amplitude={1.6}
+    distance={0}
+    enableMouseInteraction={false}
+  />
+</div>
+      <div className="relative z-10 w-full max-w-7xl sm:max-w-[95%] md:max-w-[80%] lg:max-w-[99%] 2xl:max-w-[96%] mx-auto px-3 md:px-4 sm:px-12 lg:px-7 xl:px-15 2xl:px-15">
         <div className="w-full space-y-12 md:space-y-12 lg:space-y-6 xl:space-y-0">
           {sections.map((section, index) => (
             <div
@@ -130,7 +139,7 @@ const Section02 = () => {
                 style={{
                   fontFamily: 'Basis Grotesque Pro, sans-serif',
                 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[37px] 2xl:text-[52px] font-bold leading-9 sm:leading-11 md:leading-13 lg:leading-12 2xl:leading-16">
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[37px] 2xl:text-[52px] font-bold leading-9 sm:leading-11 md:leading-13 lg:leading-12 xl:leading-14 2xl:leading-18">
                   <ShinyText
                     disabled={false}
                     speed={6}
@@ -139,7 +148,7 @@ const Section02 = () => {
                     {section.title}
                   </ShinyText>
                 </div>
-                <div className="w-full 2xl:max-w-2xl xl:max-w-lg max-w-2xl space-y-4 mt-5 md:space-y-5">
+                <div className="w-full 2xl:max-w-4xl xl:max-w-lg max-w-2xl space-y-4 mt-5 md:space-y-5">
                   {section.description.map((paragraph, paragraphIndex) => (
                     <p
                       key={paragraphIndex}

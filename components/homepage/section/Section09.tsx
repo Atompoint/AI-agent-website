@@ -93,7 +93,7 @@ const Section09 = () => {
             <img 
                 src="/assets/images/section09/pt2.png" 
                 alt="14-Day Money Back Guarantee"
-                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] 2xl:h-[524px] 2xl:w-[697px] w-auto max-w-full object-contain rounded-lg"
+                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] 2xl:h-[500px] 2xl:w-[830px] w-auto max-w-full object-contain rounded-lg"
               />
 
             {/* Right column - image */}

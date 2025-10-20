@@ -20,17 +20,17 @@ const PricingPlanCard: React.FC<PricingPlanCardProps> = ({ title, features, back
       />
 
       {/* Content Overlay */}
-      <div className="relative p-4 sm:p-6 md:p-6 lg:p-8">
-        <h3 className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 font-semibold text-center md:text-left tracking-[0.5px] mb-5">
+      <div className="relative p-4 sm:p-6 md:p-6 lg:p-8 2xl:p-13">
+        <h3 className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 font-semibold text-center md:text-left tracking-[0.5px] mb-5 2xl:mb-10">
           {title}
         </h3>
 
-        <div className="space-y-1.5 sm:space-y-2 md:space-y-4 2xl:space-y-6 mb-6 sm:mb-7 mt-5 md:mb-6 lg:mb-8">
+        <div className="space-y-1.5 sm:space-y-2 md:space-y-4 2xl:space-y-3 ">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2 sm:gap-2.5 md:gap-2.5">
               <div className="text-green-500 mt-0.5 sm:mt-1 md:mt-0.5 flex-shrink-0">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-4 md:h-4 2xl:w-8 2xl:h-8"
+                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-4 md:h-4 2xl:w-7 2xl:h-7"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -41,7 +41,7 @@ const PricingPlanCard: React.FC<PricingPlanCardProps> = ({ title, features, back
                   />
                 </svg>
               </div>
-              <span className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 tracking-[0.6px] font-light">
+              <span className="2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 tracking-[0.6px] mt-2 font-light">
                 {feature}
               </span>
             </div>

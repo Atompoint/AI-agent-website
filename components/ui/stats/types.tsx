@@ -39,7 +39,7 @@ export const STATISTICS: Statistic[] = [
   {
     description: (
       <div className="absolute bottom-0 left-0 right-0">
-        <span>
+        <span className='block w-full max-w-lg'>
           Live chat alone increases conversions by 12-20% <strong>imagine what VOICE can do</strong>
         </span>
       </div>

@@ -142,7 +142,7 @@ const ThreeStepsComponent = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
+    <div className="relative h-auto flex items-center justify-center sm:pt-8 sm:px-8 overflow-hidden" ref={componentRef}>
       {/* Updated Glow Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div

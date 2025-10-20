@@ -43,74 +43,61 @@ const Section05: React.FC = () => {
 
         <div className="flex justify-center w-full pt-12 sm:pt-16 lg:pt-20 2xl:pt-24">
         <div className="w-full flex justify-center">
-  <div className="w-full xl:max-w-[1250px] 2xl:max-w-[1755px] mx-auto grid grid-rows-2 gap-16 lg:gap-20">
-
-    {/* ---------- Row 1: Text Left / Video Right ---------- */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between gap-10">
-      
-      {/* Text Left on lg, second on small */}
-      <div className="order-2 lg:order-1 w-full text-white text-center lg:text-left leading-6 2xl:leading-8 
-                      2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
-                      sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[540px] 2xl:max-w-[720px] mx-auto">
+  <div className="w-full xl:max-w-[1250px] 2xl:max-w-[1755px] mx-auto space-y-20">
+    {/* ---------- Row 1: Text Left / Image Right ---------- */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Text Left */}
+      <div className="order-2 lg:order-1 w-full text-white text-center lg:text-left leading-6 2xl:leading-8
+                    2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
+                    sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[650px] 2xl:max-w-[805px] mx-auto lg:mx-0">
         <p className="font-semibold">
           VoiceAgent AI is the world's first conversational website assistant
           that your visitors can actually TALK to just like they're calling your
           business directly.
         </p>
-
-        <p className="py-5 font-normal">
+        <p className="py-5 font-light">
           But here's where it gets incredible...
         </p>
-
-        <p className="font-normal">
+        <p className="font-light">
           Not only does it respond with human-like speech in real-time, it can
           actually <span className="font-medium">NAVIGATE</span> your website while talking to your visitors,
           showing them exactly what they need to see, when they need to see it.
         </p>
       </div>
 
-      {/* Video Right on lg, first on small */}
-      <div className="order-1 lg:order-2  w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
-                      flex items-center justify-center relative overflow-hidden 
-                      max-w-[650px] 2xl:max-w-[726px] mx-auto">
-        <Image
-          className="w-full h-full object-contain"
-          src="/assets/images/section05/1.png"
-         height={436}
-         width={726}
-         alt="section05"
-        />
-       
-          
-            
-        
+      {/* Image Right */}
+      <div className="order-1 lg:order-2 w-full flex justify-center">
+        <div className="w-full max-w-[650px] 2xl:max-w-[837px] mx-auto">
+          <Image
+            className="w-full h-auto max-h-[320px] 2xl:max-h-none 2xl:h-auto object-contain"
+            src="/assets/images/section05/1.png"
+            width={837}
+            height={444}
+            alt="section05"
+          />
+        </div>
       </div>
     </div>
 
-    {/* ---------- Row 2: Video Left / Text Right ---------- */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between gap-10">
-      
-      {/* Video Left (always first) */}
-      <div className="order-1  w-full h-48 sm:h-56 lg:h-64 xl:h-72 2xl:h-80 
-                      flex items-center justify-center relative overflow-hidden 
-                      max-w-[650px] 2xl:max-w-[726px] mx-auto">
-        <img
-          className="w-full h-full object-contain "
-          src="/assets/images/section05/2.png"
-          height={436}
-         width={726}
-         alt="section05"
-        />
-       
-         
-           
-         
+    {/* ---------- Row 2: Image Left / Text Right ---------- */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Image Left */}
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-[650px] 2xl:max-w-[837px] mx-auto">
+          <img
+            className="w-full h-auto max-h-[320px] 2xl:max-h-none 2xl:h-auto object-contain"
+            src="/assets/images/section05/2.png"
+            width={837}
+            height={436}
+            alt="section05"
+          />
+        </div>
       </div>
 
-      {/* Text Right on lg, second on small */}
-      <div className="order-2 w-full text-white text-center lg:text-left leading-6 2xl:leading-8
-                      2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
-                      sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[540px] 2xl:max-w-[720px] mx-auto">
+      {/* Text Right */}
+      <div className="w-full text-white text-center lg:text-left leading-6 2xl:leading-8
+                    2xl:text-[22px] xl:text-[18px] lg:text-[17px] md:text-[16px] text-[14px]
+                    sm:max-w-[500px] lg:max-w-[450px] xl:max-w-[540px] font-light 2xl:max-w-[805px] mx-auto">
         <p>
           Imagine having your best person available 24/7, who knows every page
           of your website by heart, never takes a day off, never gets tired, and
@@ -124,9 +111,7 @@ const Section05: React.FC = () => {
   </div>
 </div>
 
-
-       
-        </div> 
+      </div>
 
       </div>
 

@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             
                 key={index}
                 href={link.href}
-                className="font-normal 2xl:text-[20px] xl:text-[14.23px] lg:text-[13px] md:text-[12px] sm:text-[10px] text-[10px]"
+                className="font-light 2xl:text-[19px] xl:text-[14.23px] lg:text-[13px] md:text-[12px] sm:text-[10px] text-[10px]"
               >
                 {link.name}
               </a>
