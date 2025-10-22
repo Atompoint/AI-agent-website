@@ -18,7 +18,6 @@ export default function Home() {
   return (
    <div className="w-full overflow-hidden">
       <HeroSection/>
-
       <Section01/>
       <Section02/>
       <Section03/>

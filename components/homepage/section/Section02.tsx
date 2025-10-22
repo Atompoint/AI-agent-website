@@ -1,7 +1,7 @@
 import React from 'react';
 import DownArrow from "@/components/ui/DownArrow";
 import ShinyText from '@/components/ui/ShinyText';
-import Threads from '@/components/ui/Threads';
+
 
 const Section02 = () => {
   const sections = [
@@ -41,8 +41,9 @@ const Section02 = () => {
     {
       title: (
         <>
-         <div className='block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block'>While You Sleep, Your Competitors Are <span className='gradient-border'>Stealing Your Customers.</span></div>
-         <div className='lg:block hidden xl:hidden hidden'>While You Sleep, Your Competitors Are <span className='gradient-border'>Stealing </span><span className='gradient-border'>Your Customers.</span></div> <div className='hidden 2xl:block xl:block lg:hidden md:block sm:hidden'>While You Sleep, Your Competitors Are <span className='gradient-border'>Stealing Your </span><span className="gradient-border">Customers.</span></div></>  ),
+         <div className='hidden 2xl:hidden xl:hidden lg:hidden md:hidden sm:block'>While You Sleep, Your Competitors Are <span className='gradient-border'>Stealing Your Customers.</span></div>
+         <div className='lg:block md:hidden sm:hidden xl:hidden block'>While You Sleep, Your Competitors Are <span className='gradient-border '>Stealing</span> Your <span className='gradient-border'>Customers.</span></div> <div className='hidden 2xl:block xl:block lg:hidden md:block sm:hidden'>While You Sleep, Your Competitors Are <span className='gradient-border'>Stealing Your </span><span className="gradient-border">Customers.</span></div>
+        </>  ),
       description: [
         <React.Fragment key="desc3">
           It's 2 AM and someone visits your website <b>ready to buy</b>. They have <b>one simple question</b>. But there's <b>nobody there</b> to answer it. So they <b>leave</b> and find a competitor who CAN help them right now.
@@ -51,13 +52,13 @@ const Section02 = () => {
           You wake up the next morning having <b>no idea</b> you just lost a <b>$500, $1000, or even $5000 sale</b> while you were dreaming. This happens <b>every single night</b>. Your business is <b>bleeding money</b> during the 16 hours a day you're not actively monitoring your website.
         </React.Fragment>
       ],
-      imagePath: "/assets/images/section02/2.png"
+      imagePath: "/assets/images/section02/02.png"
     },
     {
       title: (<>
-     <div className="hidden lg:block xl:hidden sm:hidden">Live Chat Tools Are <span className='gradient-border'>Bleeding Your Business</span><span className='gradient-border'>Dry...</span> And They Don't Even Work</div> 
-      <div className="hidden sm:block md:hidden ">Live Chat Tools Are <span className='gradient-border'>Bleeding Your Business</span><span className='gradient-border'> BusinessDry...</span> And They Don't Even Work</div> 
-      <div className='block 2xl:block xl:block lg:hidden md:block sm:hidden'>Live Chat Tools Are <span className='gradient-border'>Bleeding</span>{' '}<span className='gradient-border'> Your Business Dry...</span> And They Don't Even Work</div></>),
+     <div className="block lg:block xl:hidden sm:block">Live Chat Tools Are <span className='gradient-border ml-1'>Bleeding</span>{' '}Your Business <span className='gradient-border'>Dry...</span> And They Don't Even Work</div> 
+      <div className="hidden sm:hidden md:hidden ">Live Chat Tools Are <span className='gradient-border'>Bleeding Your Business</span><span className='gradient-border'> Business Dry...</span> And They Don't Even Work</div> 
+      <div className='hidden 2xl:block xl:block lg:hidden md:block sm:hidden'>Live Chat Tools Are <span className='gradient-border'>Bleeding</span>{' '}<span className='gradient-border'> Your Business Dry...</span> And They Don't Even Work</div></>),
       description: [
         <React.Fragment key="desc5">
           You're paying <b>$200+ per month</b> for live chat software that forces your visitors into <b>frustrating typing marathons</b>. They ask a question, <b>wait for a response</b>, then type another message trying to clarify.
@@ -69,9 +70,9 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/3.png"
     },
     {
-      title: (<><div className='2xl:block block xl:hidden lg:hidden md:block sm:block'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For <span className='gradient-border'>Round-The-Clock Coverage</span></div>
-     <div className='hidden 2xl:hidden xl:block lg:block md:hidden sm:hidden'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For Round-The-Clock <span className='gradient-border'>Coverage</span></div>
-      </>),
+      title: (<><div className='2xl:block hidden xl:hidden lg:hidden md:hidden sm:hidden'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For <span className='gradient-border'>Round-The-Clock Coverage</span></div>
+     <div className='hidden 2xl:hidden sm:block xl:block lg:hidden md:block sm:block'>Building A Customer Service Team <span className='gradient-border'>Costs A Fortune...</span> And You Need Multiple People For Round-The-Clock <span className='gradient-border'>Coverage</span></div>
+          <div className='block 2xl:hidden xl:hidden lg:block md:hidden sm:hidden'>Building A Customer Service Team <span className='gradient-border'>Costs A</span>{' '}<span> Fortune...</span> And You Need Multiple People For Round-The-Clock <span className='gradient-border'>Coverage</span></div> </>),
       description: [
         <React.Fragment key="desc7">
           Want <b>24/7 customer service</b>? You'll need <b>multiple full-time employees</b> to cover all shifts around the clock. That's <b>substantial monthly salaries</b> for each person. Add <b>training costs, management overhead, sick leave</b> coverage and workspace expenses.
@@ -83,8 +84,29 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/4.png"
     },
     {
-      title:(<> <div className="block 2xl:block xl:block md:block">Most AI Tools Promise Easy Setup... Then <span className='gradient-border'>Waste Weeks Of</span>{" "}<span className='gradient-border'> Your Time</span></div>
-      <div className="block 2xl:hidden xl:hidden md:hidden">Most AI Tools Promise Easy Setup... Then <span className='gradient-border'>Waste Weeks Of Your Time</span></div></>),
+     title: (
+  <>
+    {/* Version 1 — visible only on md and 2xl */}
+    <div className="hidden md:hidden xl:hidden lg:hidden 2xl:block">
+      Most AI Tools Promise Easy Setup... Then{" "}
+      <span className="gradient-border">Waste Weeks</span>{" "}
+      <span className="ml-1 sm:ml-0 gradient-border">Of Your Time</span>
+    </div>
+
+    {/* Version 2 — visible on lg and xl */}
+    <div className="hidden md:hidden lg:block xl:hidden 2xl:hidden">
+      Most AI Tools Promise Easy Setup... Then{" "}
+      <span className="gradient-border">Waste</span> Weeks Of Your
+    {' '}  <span className="gradient-border">Time</span>
+    </div>
+     <div className="block md:block lg:hidden xl:block 2xl:hidden">
+      Most AI Tools Promise Easy Setup... Then{" "}
+      <span className="gradient-border">Waste Weeks</span>  Of Your
+    {' '}  <span className="gradient-border">Time</span>
+    </div>
+  </>
+),
+
       description: [
         <React.Fragment key="desc9">
           You sign up <b>excited</b>, thinking you'll be <b>up and running in minutes</b>. Instead, you spend <b>hours</b> uploading documents, <b>training the AI</b>, writing FAQs, and configuring settings. <b>Days turn into weeks</b>.
@@ -96,8 +118,10 @@ const Section02 = () => {
       imagePath: "/assets/images/section02/5.png"
     },
     {
-      title: (<><div className="block 2xl:block xl:block md:block">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing Dozens Daily</span></div>
-      <div className="block 2xl:hidden xl:hidden md:block">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing</span>{' '}<span className='gradient-border'> Dozens Daily</span></div></>),
+      title: (<><div className="hidden 2xl:block xl:hidden sm:hidden lg:hidden md:hidden">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing Dozens Daily</span></div>
+      <div className="hidden 2xl:hidden xl:block sm:block lg:hidden md:block">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing</span>{' '}<span className='gradient-border'> Dozens Daily</span></div>
+            <div className="hidden 2xl:hidden  sm:hidden xl:hidden lg:block md:hidden">Every Unanswered Question Is A <span className='gradient-border'>Lost Sale...</span> And You're <span className='gradient-border'>Losing Dozens</span>{' '}<span className='gradient-border'> Daily</span></div>
+             <div className=" block sm:hidden">Every Unanswered Question Is A <span className='gradient-border'>Lost</span>{' '} Sale... And You're <span className='gradient-border'>Losing</span>{' '}<span className='gradient-border'>Dozens Daily</span></div></>),
       description: [
         <React.Fragment key="desc11">
           Your visitor is <b>90% ready to buy</b>. They just need to know about <b>shipping times, return policies, or technical specs</b>. It's a <b>simple question</b> that would take 30 seconds to answer. But there's <b>no way</b> for them to get that answer quickly.
@@ -111,21 +135,15 @@ const Section02 = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden w-full">
+    <div className="relative overflow-hidden mt-10 w-full">
       {/* Glow Effects - Same positioning as lg */}
       <div className="absolute top-48 right-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
       <div className="absolute bottom-96 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-to-tr from-[#5A27B1] to-[#9F7AEA] opacity-30 blur-[80px] md:blur-[100px] -z-10"></div>
 
 
       {/* Content Container */}
-<div style={{ width: '100%', height: '600px', position: 'absolute',top:'6%', opacity:'25%' }}>
-  <Threads
-    amplitude={1.6}
-    distance={0}
-    enableMouseInteraction={false}
-  />
-</div>
-      <div className="relative z-10 w-full max-w-7xl sm:max-w-[95%] md:max-w-[80%] lg:max-w-[99%] 2xl:max-w-[96%] mx-auto px-3 md:px-4 sm:px-12 lg:px-7 xl:px-15 2xl:px-15">
+
+      <div className="relative z-10 w-full max-w-7xl sm:max-w-[95%] md:max-w-[80%] lg:max-w-[99%] 2xl:max-w-[96%] mx-auto px-3 md:px-4 sm:px-12 lg:px-5 xl:px-15 2xl:px-15">
         <div className="w-full space-y-12 md:space-y-12 lg:space-y-6 xl:space-y-0">
           {sections.map((section, index) => (
             <div
@@ -134,12 +152,12 @@ const Section02 = () => {
                 } items-center justify-between gap-5 md:gap-8 lg:gap-20 2xl:gap-26`}
             >
               {/* Text Section */}
-              <div className="w-full lg:w-1/2  flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="w-full lg:w-1/2  2xl:max-w-[804px] flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div 
                 style={{
                   fontFamily: 'Basis Grotesque Pro, sans-serif',
                 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[37px] 2xl:text-[52px] font-bold leading-9 sm:leading-11 md:leading-13 lg:leading-12 xl:leading-14 2xl:leading-18">
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[37px] 2xl:text-[52px] font-bold leading-10 sm:leading-11 md:leading-13 lg:leading-13 xl:leading-14 2xl:leading-18">
                   <ShinyText
                     disabled={false}
                     speed={6}

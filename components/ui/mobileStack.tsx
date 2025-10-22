@@ -38,7 +38,7 @@ const MobileComparisonCarousel: React.FC<MobileComparisonCarouselProps> = ({
   const TOTAL_CARDS = comparisonData.length; // Total number of cards
 
   return (
-    <div className="block lg:hidden bg-black text-white py-10">
+    <div className="block lg:hidden  text-white py-10">
       <div className="relative px-4" style={{ minHeight: '20px'}}>
         {comparisonData.map((card, index) => (
           <motion.div
@@ -59,13 +59,14 @@ const MobileComparisonCarousel: React.FC<MobileComparisonCarouselProps> = ({
             className={`w-full max-w-md mx-auto border-2 border-white/10 rounded-2xl p-6 overflow-y-auto transition-all duration-300 hover:border-[#BF84F9] hover:bg-gradient-to-br hover:from-[#1F0B46]/10 hover:via-[#DEBFFF]/10 hover:to-[#5A27B1]/10 ${card.bgClass} ${card.borderClass}`}
             style={{
               ...card.shadowStyle,
-              height: '350px',
+              height: '377px',
               position: 'sticky',
               top: `${CARD_OFFSET * index}px`,
               zIndex: index + 1,
               marginTop: index > 0 ? `-${CARD_OFFSET * 0.6}px` : '0',
               transform: 'translateY(0px)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              overflow:'hidden',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = '0 4px 20px rgba(191, 132, 249, 0.2)';

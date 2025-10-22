@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${questrial.variable}`}>
-      <body className="font-manrope ">
+      <body className="font-manrope overflow-x-hidden">
        
           {children}
    </body>

@@ -52,7 +52,7 @@ const Offer = () => {
             alt="Payment Card"
             width={450}
             height={0}
-            className="w-[200px] sm:w-[340px] md:w-[425px] xl:w-[560px] lg:w-[528px] 2xl:w-[786px] h-auto object-contain"
+            className="w-[240px] sm:w-[340px] md:w-[425px] xl:w-[560px] lg:w-[528px] 2xl:w-[786px] h-auto object-contain"
             priority
           />
         </div>

@@ -86,51 +86,24 @@ export default function Section07() {
 
       <div className="max-w-[1756px] mx-auto">
         {/* Section Header */}
-        <div className="text-center relative mb-0 w-full px-4 sm:px-6">
-          <div
-            className="Heading3 xl:text-[36.6px] 2xl:text-[52px] max-w-[80%] 2xl:max-w-[1585px] mx-auto lg:text-[30px] md:text-[25px] text-[20px]"
-          >
-            <ShinyText
-              text="The entire setup takes less than 60 seconds. No technical skills required. No content creation needed. No ongoing maintenance."
-              disabled={false}
-              speed={6}
-              className="gradient-white-text"
-            />
-          </div>
-
-          {/* Gradient line */}
-          <div className="flex justify-center w-full m-4">
-            <div
-              className="w-full max-w-[900px] h-[7px] relative 
-              bg-[linear-gradient(-90deg,_#111314_15%,_#BF84F9_48%,_#111314_80%)]
-              mix-blend-screen 
-              [mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]
-              [mask-size:100%_100%]
-              [mask-repeat:no-repeat]"
-            ></div>
-          </div>
-        </div>
+      
 
         {/* Title Section */}
         <div className="w-full mx-auto px-2 sm:px-4">
-          <div
-            className="relative text-center z-10 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 max-w-[325px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] 2xl:max-w-[1200px] w-full py-8 lg:py-15 mx-auto 2xl:py-20 Heading2"
-          >
-            <div>
+          <div className="relative z-10 w-full py-8 lg:py-15 2xl:py-20 mx-auto">
+            <div className="text-center 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-[1.2] font-bold max-w-[325px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px] 2xl:max-w-[1200px] mx-auto px-4">
               <ShinyText
-                text="Turn your Silent Website Into a 24/7"
+                text="Turn your Silent Website Into a 24/7 "
                 speed={5}
                 className="gradient-white-text inline-block"
               />
-              {" "}
               <ShinyText
                 text="Money-Making Machine"
                 speed={5}
                 className="gradient-mask-text inline-block"
               />
-              {" "}
               <ShinyText
-                text="That Talks!"
+                text=" That Talks!"
                 speed={5}
                 className="gradient-white-text inline-block"
               />
@@ -139,35 +112,36 @@ export default function Section07() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-start items-stretch space-y-4 lg:space-y-2 p-6"
-            >
-              {/* Title - fixed height for perfect alignment */}
-              <h3 className="gradient-text text-xl md:text-2xl lg:text-[22px] 2xl:text-[27.4px] font-bold lg:w-[85%] 2xl:w-[100%] leading-tight min-h-[64px] 2xl:min-h-[80px] flex items-center">
-                {feature.title}
-              </h3>
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+  {features.map((feature, index) => (
+    <div
+      key={index}
+      className="flex flex-col justify-start items-center xl:items-stretch text-center xl:text-left space-y-4 lg:space-y-2 p-6"
+    >
+      {/* Title */}
+      <h3 className="gradient-text text-xl md:text-2xl lg:text-[22px] 2xl:text-[27.4px] font-bold lg:w-[85%] 2xl:w-[100%] leading-tight min-h-[64px] 2xl:min-h-[80px] flex items-center justify-center xl:justify-start">
+        {feature.title}
+      </h3>
 
-              {/* Image */}
-              <div className="relative w-full aspect-video overflow-hidden flex items-center justify-center">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 1280px) 100vw, 50vw"
-                />
-              </div>
+      {/* Image */}
+      <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-full aspect-video overflow-hidden flex items-center justify-center mx-auto">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          fill
+          className="object-contain"
+          sizes="(max-width: 1280px) 100vw, 50vw"
+        />
+      </div>
 
-              {/* Description */}
-              <p className="text-white font-normal text-base lg:text-[18px] 2xl:leading-8 2xl:text-[23px]">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      {/* Description */}
+      <p className="text-white font-normal text-base lg:text-[18px] 2xl:leading-8 2xl:text-[23px] sm:w-[90%] md:w-[80%] lg:w-full xl:w-auto mx-auto">
+        {feature.description}
+      </p>
+    </div>
+  ))}
+</div>
+
       </div>
 
       <DownArrow />

@@ -5,7 +5,7 @@ import Purple from '@/public/assets/images/section13/purple.png'
 import MikeImage from '@/public/assets/images/section13/mike.png'
 import ShinyText from '@/components/ui/ShinyText';
 import Offer from '@/components/ui/Offer';
-import Threads from '@/components/ui/Threads';
+
 
 interface FAQItem {
   question: string
@@ -166,13 +166,7 @@ const Section13: React.FC = () => {
           </div>
         </div>
         
-<div style={{ width: '100%', height: '600px', position: 'absolute', opacity:'25%' }}>
-  <Threads
-    amplitude={2}
-    distance={0}
-    enableMouseInteraction={false}
-  />
-</div>
+
       <div className='2xl:pb-30 pb-10'> {/* Offer Section */}
         <Offer/></div>
       </div>

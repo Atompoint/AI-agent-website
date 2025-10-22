@@ -4,7 +4,8 @@ import Image from "next/image";
 import DownArrow from '../../ui/DownArrow';
 import ShinyText from '@/components/ui/ShinyText';
 import { ShineBorder } from "@/components/magicui/shine-border";
- 
+import Offer from '@/components/ui/Offer';
+
 const Section05: React.FC = () => {
   
 
@@ -19,14 +20,14 @@ const Section05: React.FC = () => {
   
 
   return (
-    <div className="text-white min-h-screen relative overflow-hidden">
+    <div className="text-white  relative overflow-hidden">
       {/* Background Glow Effect */}
       <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
        
       <div className="mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0 relative z-10">
         {/* Header */}
         <h1
-          className="relative text-center max-w-[358px] sm:max-w-[600px] md:max-w-5xl lg:max-w-[880px] 2xl:max-w-7xl mx-auto items-center z-10 mt-8 Heading2 "
+          className="relative text-center max-w-[358px] sm:max-w-[600px] md:max-w-5xl lg:max-w-[880px] 2xl:max-w-7xl mx-auto items-center z-10 Heading2 "
          
         >
           <div className="flex flex-col 2xl:text-[60px]   xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 gap-1 sm:leading-8">
@@ -128,7 +129,7 @@ const Section05: React.FC = () => {
       </div>  
 
       {/* Image Container with Glow Effect */}
-      <div className="relative max-w-[900px] 2xl:max-w-[1100px] m-auto mt-8 2xl:mt-12 px-4">
+      <div className="relative max-w-[500px] md:max-w-[600px] lg:max-w-[900px] 2xl:max-w-[1100px] m-auto mt-8 2xl:mt-12 px-4">
         {/* Glow Image - positioned behind main image */}
         <div className="absolute top-[0%] lg:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] h-[400px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#5A27B1] to-[#9F7AEA] opacity-20 blur-[80px] sm:blur-[100px] -z-10" />
         
@@ -167,6 +168,8 @@ const Section05: React.FC = () => {
       </div>
       
       <DownArrow />
+      <div className='mb-10 2xl:mb-20'> <Offer /></div>
+      
     </div>
   ); 
 }; 

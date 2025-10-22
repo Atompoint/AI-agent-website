@@ -12,7 +12,7 @@ const ComparisonColumn: React.FC<ComparisonColumnProps> = ({ title, items, isPos
   const iconColor = isPositive ? "text-green-500" : "text-red-500";
 
   return (
-    <div className="relative w-full h-full max-w-[390px] sm:max-w-[400px] xl:max-w-[525px] 2xl:max-w-[735px] 2xl:max-h-[683px] rounded-lg overflow-hidden mx-auto">
+    <div className="relative w-full h-full max-w-[390px] sm:max-w-[400px] lg:max-w-[500px] xl:max-w-[525px] 2xl:max-w-[735px] 2xl:max-h-[683px] rounded-lg overflow-hidden mx-auto">
       <ShineBorder
         borderWidth={2}
         duration={23}

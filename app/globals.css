@@ -104,11 +104,7 @@ line-height: 22.8px;
   font-weight: 700;
  
   letter-spacing: 0;
-  color: transparent;
-  background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+ 
 }
 
 .Heading3{
@@ -116,11 +112,7 @@ line-height: 22.8px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0;
-  color: transparent;
-  background: linear-gradient(93.89deg, #1F0B46 0.91%, #DEBFFF 11.47%, #5A27B1 55.16%, #BF84F9 71.42%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+ 
 }
 .gradient-text {
   background: linear-gradient(
@@ -172,6 +164,15 @@ letter-spacing: -0.4px;
     rgba(90, 39, 177, 0.22) 58%,
     rgba(191, 132, 249, 0.22) 92%
   );
+}
+.enlarged-image-container {
+  transform: scale(1.1); /* Slightly larger than normal */
+  
+}
+
+/* Ensure the image container stays centered after scaling */
+.enlarged-image-container {
+  margin: 0 auto;
 }
 
 

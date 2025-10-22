@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const PricingHero: React.FC = () => {
   return (
-    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative max-w-[1700px] mx-auto  px-2 sm:px-4 lg:px-10 w-full">
+    <div className="mb-12 sm:mb-16 md:mb-14 lg:mb-20 relative max-w-[1700px] mx-auto  px-5 sm:px-6 lg:px-10 w-full">
       <div className="absolute top-[20rem] sm:top-[25rem] md:top-[28rem] lg:top-[40rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] sm:w-[500px] sm:h-[400px] md:w-[550px] md:h-[420px] lg:w-[1200px] lg:h-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-300/10 to-transparent blur-[60px] sm:blur-[80px] md:blur-[85px] lg:blur-[120px] -z-10" />
       <h1 className="relative text-center z-10 max-w-[283px] sm:max-w-[90%] mx-auto 2xl:text-[60px] xl:text-[42px] lg:text-[38px] md:text-[30px] sm:text-[25px] text-[24px] leading-7 lg:leading-12 md:leading-8 2xl:leading-17 Heading2 mb-20">
         <div>

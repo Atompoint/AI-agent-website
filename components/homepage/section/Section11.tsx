@@ -15,7 +15,7 @@ const Section11: React.FC = () => {
   const pricingPlans: PricingPlan[] = [
     {
       title: "AIVoicer - Startup",
-      backgroundImage: "/assets/images/rec4.png",
+      backgroundImage: "/assets/images/section11/rec4.png",
       features: [
         "Create Up To 3 Smart Voice Agents",
         "200 Minutes of Voice Conversations",
@@ -36,7 +36,7 @@ const Section11: React.FC = () => {
     },
     {
       title: "AI Voicer Professional",
-      backgroundImage: "/assets/images/rec4.png",
+      backgroundImage: "/assets/images/section11/rec4.png",
       features: [
         "Create Up To 10 Smart Voice Agents",
         "1,000 Minutes of Voice Conversations",

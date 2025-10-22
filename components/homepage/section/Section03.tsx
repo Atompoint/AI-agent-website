@@ -112,23 +112,25 @@ const Section03: React.FC = () => {
         'High abandonment rates'
       ]
     },
-    {
-      id: 3,
-      title: 'VoiceAgent AI',
-      icon: '/assets/icons/AI.svg',
-      iconAlt: 'VoiceAgent AI icon',
-      borderClass: 'border-[#BF84F9]',
-      bgClass: 'bg-gradient-to-br from-[#1F0B46]/10 via-[#DEBFFF]/10 to-[#5A27B1]/10',
-      shadowStyle: { boxShadow: '0 4px 20px rgba(191, 132, 249, 0.2)' },
-      features: [
-        'ONE-TIME payment (not monthly fees)',
-        'Works 24/7/365 automatically',
-        'Handles simultaneous conversations',
-        'Natural voice interactions customers love',
-        'Actually navigates your website while talking',
-        'Setup in under 60 seconds'
-      ]
-    }
+   {
+  id: 3,
+  title: 'VoiceAgent AI',
+  icon: '/assets/icons/AI.svg',
+  iconAlt: 'VoiceAgent AI icon',
+  borderClass: 'border-[#BF84F9]',
+  bgClass:
+    'bg-gradient-to-br from-[#1F0B46]/10 via-[#DEBFFF]/10 to-[#5A27B1]/10 backdrop-blur-lg bg-opacity-30',
+  shadowStyle: { boxShadow: '0 4px 20px rgba(191, 132, 249, 0.2)' },
+  features: [
+    'ONE-TIME payment (not monthly fees)',
+    'Works 24/7/365 automatically',
+    'Handles simultaneous conversations',
+    'Natural voice interactions customers love',
+    'Actually navigates your website while talking',
+    'Setup in under 60 seconds'
+  ]
+}
+
   ];
 
   const doNothingData = {
@@ -227,7 +229,7 @@ const Section03: React.FC = () => {
 
 
               {/* Statistics Cards - Dynamic */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-2 mx-auto pt-10 pb-5 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-7 xl:gap-2 mx-auto pt-10 pb-5 relative z-10">
                 {statistics.map((stat) => (
                   <div key={stat.id} className="flex flex-col items-center text-center">
                    <div className="w-14 h-14 sm:w-16 mb-3 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 2xl:w-24 2xl:h-24 flex items-center justify-center relative">
@@ -293,7 +295,7 @@ const Section03: React.FC = () => {
             {/* Desktop Grid (md and up) - Cards 1-3 in flex layout */}
             <div className="hidden lg:block">
               {/* Card Grid */}
-              <div className="flex justify-center items-stretch gap-4 lg:gap-6 xl:gap-15 2xl:gap-12 mx-auto">
+              <div className="flex justify-center items-stretch gap-4 lg:gap-3 xl:gap-15 2xl:gap-12 mx-auto">
                 {comparisonData.map((card) => (
                   <div
                     key={card.id}
@@ -333,12 +335,12 @@ const Section03: React.FC = () => {
                           </div>
 
                           {/* Features Section */}
-                          <div className="flex-1 flex flex-col justify-start mt-2">
+                          <div className="flex-1 flex flex-col max-w-[453px]  justify-start mt-2">
                           <ul className="space-y-2">
   {card.features.map((feature, index) => (
     <li key={index} className="flex items-start group">
-      <FaArrowRightLong className="text-white text-[14px] mr-2 lg:mr-1.5 xl:mt-1 xl:mr-2 2xl:mt-2 font-normal flex-shrink-0" />
-      <p className="2xl:text-[20px] xl:text-[14px] leading-5 font-normal 2xl:leading-8 lg:text-[14px] text-white">
+      <FaArrowRightLong className="text-white text-[14px] mr-2 lg:mr-1.5 lg:mt-1 xl:mt-1 xl:mr-2 2xl:mt-2 font-normal flex-shrink-0" />
+      <p className="2xl:text-[20px] max-w-[425px] xl:text-[14px] leading-5 font-normal 2xl:leading-8 lg:text-[14px] text-white">
         {feature}
       </p>
     </li>
@@ -371,7 +373,7 @@ const Section03: React.FC = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-3 ">
                         {doNothingData.features.map((feature, index) => (
                           <div key={index} className="flex items-center">
-                          <FaArrowRightLong className="text-white font-normal text-[20px] mr-2 flex-shrink-0" />
+                          <FaArrowRightLong className="text-white font-normal text-[14px] mr-2 flex-shrink-0" />
                           <p className="2xl:text-[20px] xl:text-[14px] leading-5 2xl:leading-8 lg:text-[14px] text-white">
                             {feature}
                           </p>
@@ -429,7 +431,7 @@ const Section03: React.FC = () => {
 
 
 
-          className="2xl:text-[23px] xl:text-[16.27px] lg:text-[15px] text-[14px] font-light text-center max-w-[80%] md:max-w-[60%] 2xl:max-w-[1100px] mx-auto py-4">
+          className="2xl:text-[23px] xl:text-[16.27px] lg:text-[15px] text-[14px] font-light text-center max-w-[100%] md:max-w-[60%] 2xl:max-w-[1100px] mx-auto pb-4">
           Ready to answer every question, handle every objection, and guide every visitor straight to your checkout page
         </p>
       </div>

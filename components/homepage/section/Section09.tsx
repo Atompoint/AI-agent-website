@@ -32,7 +32,7 @@ const Section09 = () => {
           {/* Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto w-full xl:max-w-[1250px] 2xl:max-w-[1755px] lg:gap-12 xl:gap-50 items-center px-4 sm:px-6 md:px-12 lg:px-8 xl:px-0 2xl:py-5">
             {/* Left column - text */}
-            <div className="space-y-4 sm:space-y-5 font-light 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 2xl:leading-7 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-5 font-light 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 2xl:leading-7 text-center lg:text-left order-2 lg:order-1">
               <p>
                 As the world's first <strong>smart voice AI</strong> agent for websites, we're offering 
                 this exclusive <strong>founding member discount</strong> to help early adopters get 
@@ -93,11 +93,11 @@ const Section09 = () => {
             <img 
                 src="/assets/images/section09/pt2.png" 
                 alt="14-Day Money Back Guarantee"
-                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] 2xl:h-[500px] 2xl:w-[830px] w-auto max-w-full object-contain rounded-lg"
+                className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:w-[600px] xl:h-[372px] 2xl:h-[500px] 2xl:w-[830px] w-auto max-w-full object-contain mx-auto sm:mx-auto md:mx-auto rounded-lg"
               />
 
             {/* Right column - image */}
-            <div className="space-y-4 sm:space-y-5 font-light 2xl:leading-7 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-5 font-light 2xl:leading-7 2xl:text-[22px] xl:text-[16.27px] lg:text-[15px] md:text-[14px] sm:text-[13px] text-[13px] leading-5 text-center lg:text-left order-2 lg:order-1">
               <p >
                 We're so confident VoiceAgent AI will <strong>transform your website</strong> into a 
                 <strong> conversion machine that we're backing it with our iron-clad 14-Day 

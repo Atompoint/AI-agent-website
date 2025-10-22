@@ -157,7 +157,7 @@ export default function HeroHeader() {
         </div>
 
         {/* Main content flow - fade in after particles */}
-        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-2 sm:gap-3 md:gap-4 lg:gap-10 2xl:gap-25">
+        <div className="flex flex-col min-h-[50vh] sm:min-h-[50vh] md:min-h-screen lg:min-h-screen gap-5 sm:gap-7 md:gap-8 lg:gap-10 2xl:gap-25">
 
           {/* Header */}
           <div className="flex-none">
@@ -171,7 +171,7 @@ export default function HeroHeader() {
               className="relative max-w-[85%] font-thin text-[14px] md:text-[15px] lg:text-[16px] xl:text-[16.27px] 2xl:text-[23px] md:max-w-[100%] px-2 py-2 2xl:py-3 sm:px-6 lg:px-6 h-auto min-h-[40px] sm:min-h-[40px] inline-flex items-center justify-center text-center border-1 border-[#BF84F9] rounded-[32px]  shadow-[0_0_10px_rgba(191,132,249,0.3)]"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
-                lineHeight: '1.1',
+                lineHeight: '1.2',
                 letterSpacing: '0%',
                 textAlign: 'center',
                 background: `linear-gradient(135deg, rgba(31,11,70,0.24) 5%, rgba(222,191,255,0.24) 29%, rgba(90,39,177,0.24) 58%, rgba(191,132,249,0.24) 92%)`,
@@ -209,11 +209,11 @@ export default function HeroHeader() {
             
            {/* Heading */}
            <h1
-              className="relative z-10 p-3 sm:p-5 md:hidden"
+              className="relative z-10 p-3 text-[19px] sm:p-5 md:hidden"
               style={{
                 fontFamily: 'Basis Grotesque Pro, sans-serif',
                 fontWeight: 800,
-                fontSize: 'clamp(25px, 6vw, 55px)',
+             
                 lineHeight: '1.2',
                 letterSpacing: '0%',
                 color: 'transparent',
@@ -233,7 +233,7 @@ export default function HeroHeader() {
             </h1>
 
             {/* Subtext */}
-            <p className="w-[90%] md:w-[68%] xl:w-[78%]  font-bold text-[16px] 2xl:text-[34.3px] xl:text-[24px] lg:text-[14px] leading-6 xl:leading-7 lg:leading-6 2xl:leading-10" style={{
+            <p className="w-[90%] md:w-[68%] xl:w-[78%]  font-bold text-[12px] 2xl:text-[33px] xl:text-[24px] lg:text-[14px] leading-4 xl:leading-7 lg:leading-6 2xl:leading-10" style={{
               fontFamily: 'Basis Grotesque Pro, sans-serif',
              
             
@@ -261,7 +261,7 @@ export default function HeroHeader() {
                   alt="circle"
                   width={2000}
                   height={1800}
-                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[1800px] 2xl:max-w-[1900px] h-auto object-contain scale-[0.9] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
+                  className="w-full max-w-[1600px] sm:max-w-[1500px] md:max-w-[1700px] lg:max-w-[1800px] 2xl:max-w-[1900px] h-auto object-contain scale-[1] sm:scale-[0.9] md:scale-none lg:scale-[1]" // slightly increased size
                   draggable={false}
                 />
               </div>
@@ -300,7 +300,7 @@ export default function HeroHeader() {
                 alt="Voice Agent Microphone"
                 width={130}
                 height={130}
-                className={`w-[100px] h-[100px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] 2xl:w-[150px] 2xl:h-[150px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-0 md:right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'}`}
+                className={`w-[90px] h-[90px] shadow-md sm:w-[110px] sm:h-[110px] lg:w-[130px] lg:h-[130px] 2xl:w-[150px] 2xl:h-[150px] object-contain cursor-pointer transition-all duration-1000 ease-in-out ${isSticky ? 'fixed bottom-6 right-0 md:right-6 z-50 group-hover:scale-110' : 'group-hover:scale-110 transform-gpu'}`}
               />
               <div className="mt-0 inline-flex items-center justify-center border border-white/5 bg-black/50 rounded-full px-3 py-1.5 sm:py-2">
                 <BsStars className="mr-1.5 sm:mr-2 text-[14px] sm:text-[15px] md:text-[17px] 2xl:text-[20px] -rotate-90" />
