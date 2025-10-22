@@ -13,6 +13,8 @@ interface Step {
   iconAlt: string;
   centerIconAlt: string;
   textColor: string;
+  imageSrc: string;
+  imageAlt: string;
 }
 
 const ThreeStepsComponent = () => {
@@ -26,6 +28,10 @@ const ThreeStepsComponent = () => {
       number: '01',
       stepText: 'STEP',
       title: 'Enter Your Domain Name And Click Add',
+      iconSrc: '/assets/icons/icon-1.svg',
+      centerIconSrc: '/assets/icons/center-1.svg',
+      iconAlt: 'Step 1 Icon',
+      centerIconAlt: 'Step 1 Center Icon',
       imageSrc: '/assets/images/section01/01.png',
       imageAlt: 'Step 1',
       textColor: 'text-black',
@@ -34,6 +40,10 @@ const ThreeStepsComponent = () => {
       number: '02',
       stepText: 'STEP',
       title: 'Copy And Paste The Code On Your Website',
+      iconSrc: '/assets/icons/icon-2.svg',
+      centerIconSrc: '/assets/icons/center-2.svg',
+      iconAlt: 'Step 2 Icon',
+      centerIconAlt: 'Step 2 Center Icon',
       imageSrc: '/assets/images/section01/0002.png',
       imageAlt: 'Step 2',
       textColor: 'text-black',
@@ -42,6 +52,10 @@ const ThreeStepsComponent = () => {
       number: '03',
       stepText: 'STEP',
       title: "Hit The Call Button & Test It Out. You're Done",
+      iconSrc: '/assets/icons/icon-3.svg',
+      centerIconSrc: '/assets/icons/center-3.svg',
+      iconAlt: 'Step 3 Icon',
+      centerIconAlt: 'Step 3 Center Icon',
       imageSrc: '/assets/images/section01/03.png',
       imageAlt: 'Step 3',
       textColor: 'text-black',
